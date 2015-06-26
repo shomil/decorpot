@@ -32,12 +32,12 @@ dependencies {
 
 // Embeded Jetty for testing
 jettyRun{
-	contextPath = "spring4"
+	contextPath = "decorpot"
 	httpPort = 8080
 }
 
 jettyRunWar{
-	contextPath = "spring4"
+	contextPath = "decorpot"
 	httpPort = 8080
 }
 
@@ -48,7 +48,7 @@ eclipse {
     component {
       
       //define context path, default to project folder name
-      contextPath = 'spring4'
+      contextPath = 'decorpot'
       
     }
     

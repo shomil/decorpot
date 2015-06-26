@@ -1,6 +1,6 @@
 .classpath
 .gradle/*
-.setting/*
+.settings/*
 bin/*
 .lock
 .project

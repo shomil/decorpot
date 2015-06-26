@@ -1,0 +1,4 @@
+include 'decorpot-web'
+include 'decorpot-services'
+include 'decorpot-repository'
+include 'decorpot-core'

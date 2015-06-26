@@ -21,24 +21,24 @@ subprojects {
 }
 
 dependencies {
-    compile(':decorpot-core')
+ 	compile(':decorpot-core')
     compile(":decorpot-repository")
     compile(":decorpot-services")
-    compile 'ch.qos.logback:logback-classic:1.1.3'
-    compile 'org.springframework:spring-webmvc:4.1.6.RELEASE'
-    compile 'javax.servlet:jstl:1.2'
-    
+	compile 'ch.qos.logback:logback-classic:1.1.3'
+	compile 'org.springframework:spring-webmvc:4.1.6.RELEASE'
+	compile 'javax.servlet:jstl:1.2'
+	
 }
 
 // Embeded Jetty for testing
 jettyRun{
-    contextPath = "spring4"
-    httpPort = 8080
+	contextPath = "spring4"
+	httpPort = 8080
 }
 
 jettyRunWar{
-    contextPath = "spring4"
-    httpPort = 8080
+	contextPath = "spring4"
+	httpPort = 8080
 }
 
 //For Eclipse IDE only

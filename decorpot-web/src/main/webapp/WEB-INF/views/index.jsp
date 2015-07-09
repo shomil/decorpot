@@ -3,22 +3,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gradle + Spring MVC</title>
 
-	<link href="<c:url value="/resources/core/css/bootstrap.min.css" />" rel="stylesheet">
-    <link href="<c:url value="/resources/core/css/style.css" />" rel="stylesheet">
-    <link href="<c:url value="/resources/core/css/normalize.css" />" rel="stylesheet">
-    <link href="<c:url value="/resources/core/css/reset.css" />" rel="stylesheet">
-  <link href="<c:url value="/resources/core/css/carousel.css" />" rel="stylesheet">
-  <script src="js/modernizr.js"></script> <!-- Modernizr -->
-
+	<link href="resources/core/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/core/css/style.css" rel="stylesheet">
+    <link href="resources/core/css/login.css" rel="stylesheet">
+    <link href="resources/core/css/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" href="resources/core/css/reset.css"> <!-- CSS reset -->
+  <link rel="stylesheet" href="resources/core/css/carousel.css"> <!-- Resource style -->
+  <script src="resources/core/js/modernizr.js"></script> <!-- Modernizr -->
+  
 </head>
 
 <body>
     <div id="mainPage"> 
-      
-      <div id="header">
-        <div id="top-bar" class="row"></div>
+      <div id="top-bar" class="row"></div>
         <div class="row" style="
     margin-top: 1%;">
         <div id = "logo" class="col-md-6">DECORPOT.COM</div>
@@ -78,7 +80,7 @@
             </ul>
         </div>
         </div>
-        </div>
+      
 
         <div class="row mid">
           <div id="backgroundImage" class="left"></div>
@@ -87,27 +89,27 @@
             <div class = "titleText">Why Us</div>
               <ul>
                   <li class="service">
-                      <img src="/resources/core/img/furniture05.png" width="200" height="200" alt="" />
+                      <img src="resources/core/img/furniture05.png" width="200" height="200" alt="" />
                       <h4>2 years for free service</h4>
                       <h2>lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum </h2>
                   </li>
                   <li class="service">
-                      <img src="/resources/core/img/furniture01.jpg" width="200" height="200" alt="" />
+                      <img src="resources/core/img/furniture01.jpg" width="200" height="200" alt="" />
                       <h4>Easy customization</h4>
                       <h2>lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum </h2>
                   </li>
                   <li class="service">
-                      <img src="/resources/core/img/furniture02.jpg" width="200" height="200" alt="" />
+                      <img src="resources/core/img/furniture02.jpg" width="200" height="200" alt="" />
                       <h4>10 years of garantee</h4>
                       <h2>lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum </h2>
                   </li>
                   <li class="service">
-                      <img src="/resources/core/img/furniture03.jpg" width="200" height="200" alt="" />
+                      <img src="resources/core/img/furniture03.jpg" width="200" height="200" alt="" />
                       <h4>45 days completion&#42</h4>
                       <h2>lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum </h2>
                   </li>
                    <li class="service">
-                      <img src="/resources/core/img/furniture04.jpg" width="200" height="200" alt="" />
+                      <img src="resources/core/img/furniture04.jpg" width="200" height="200" alt="" />
                       <h4>cheapest in market</h4>
                       <h2>lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum </h2>
                   </li>
@@ -116,26 +118,26 @@
           <div class = "imageMenus container">
               <div class = "image-tiles col-md-4">
                 <a href="#">
-                  <img class="imageMenu" src="../img/living.jpg" width="316" height="343">
+                  <img class="imageMenu" src="resources/core/img/living.jpg" width="316" height="343">
                   <h3 class = "imageMenuCation">Living Room</h3>
                 </a>
               </div>
               <div class = "image-tiles col-md-4">
                 <a href="#">
-                  <img class="imageMenu" src="../img/kitchen.jpg" width="316" height="343">
+                  <img class="imageMenu" src="resources/core/img/kitchen.jpg" width="316" height="343">
                   <h3 class = "imageMenuCation">Kitchen</h3>
                 </a>
               </div>
               <div class = "image-tiles col-md-4">
                 <a href="#">
-                  <img class="imageMenu" src="../img/dining.jpg" width="316" height="343">
+                  <img class="imageMenu" src="resources/core/img/dining.jpg" width="316" height="343">
                   <h3 class = "imageMenuCation">Dining</h3>
                 </a>
               </div>
               
               <div class = "image-tiles col-md-12">
                 <a href="#">
-                  <img class="imageMenu" src="../img/bedroom.jpg" width="1098" height="343">
+                  <img class="imageMenu" src="resources/core/img/bedroom.jpg" width="1098" height="343">
                   <h3 class = "imageMenuCation">Bedroom</h3>
                 </a>
               </div>
@@ -146,7 +148,7 @@
                 <li>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     <div class="cd-author">
-                        <img src="../img/avatar-1.jpg" alt="Author image">
+                        <img src="resources/core/img/avatar-1.jpg" alt="Author image">
                             <ul class="cd-author-info">
                                 <li>MyName</li>
                                 <li>CEO, AmberCreative</li>
@@ -157,7 +159,7 @@
                 <li>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     <div class="cd-author">
-                        <img src="../img/avatar-1.jpg" alt="Author image">
+                        <img src="resources/core/img/avatar-1.jpg" alt="Author image">
                             <ul class="cd-author-info">
                                 <li>MyName</li>
                                 <li>CEO, AmberCreative</li>
@@ -168,7 +170,7 @@
                 <li>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     <div class="cd-author">
-                        <img src="../img/avatar-1.jpg" alt="Author image">
+                        <img src="resources/core/img/avatar-1.jpg" alt="Author image">
                             <ul class="cd-author-info">
                                 <li>MyName</li>
                                 <li>CEO, AmberCreative</li>
@@ -186,12 +188,15 @@
           <div class="row"></div>
       </div>
       </footer>
-       </div> 
-  </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script src="<c:url value="/resources/core/js/bootstrap.min.js" />"></script>
-<script src="<c:url value="/resources/core/js/masonry.pkgd.min.js"/>"></script>
-<script src="<c:url value="/resources/core/js/jquery.flexslider-min.js"/>"></script>
+      
+       
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="resources/core/js/bootstrap.min.js"></script>
+    <script src="resources/core/js/login.js"></script>
+<script src="resources/core/js/masonry.pkgd.min.js"></script>
+<script src="resources/core/js/jquery.flexslider-min.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function($){
   //create the slider
@@ -209,7 +214,7 @@ jQuery(document).ready(function($){
     }
   });
 });
-</script>
+</script> 
 
 </body>
 </html>

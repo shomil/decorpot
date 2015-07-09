@@ -62,7 +62,7 @@ jettyRunWar{
 //For Eclipse IDE only
 eclipse {
 
-wtp {
+  wtp {
     component {
       
       //define context path, default to project folder name

@@ -13,14 +13,14 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "com.mkyong.helloworld.web" })
+@ComponentScan(basePackages = { "com.decorpot.spring.config" })
 public class WebConfig extends WebMvcConfigurerAdapter {
 	@Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
     }
  
-    @Override
+   /* @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
@@ -44,5 +44,5 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         resource.setBasename("classpath:messages");
         resource.setDefaultEncoding("UTF-8");
         return resource;
-    }
+    }*/
 }

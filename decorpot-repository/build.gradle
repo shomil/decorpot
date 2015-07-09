@@ -1,4 +1,4 @@
 dependencies {
     testCompile 'junit:junit:4.11'
-    compile 'org.springframework:spring-jdbc:4.1.6.RELEASE'
+    compile project(':decorpot-core')
 }

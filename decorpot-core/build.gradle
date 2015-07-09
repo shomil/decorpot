@@ -1,3 +1,10 @@
+apply plugin: 'maven-publish'
+
+group = 'com.ugam.platform'
+
 dependencies {
-    testCompile 'junit:junit:4.11'
+	compile 'org.springframework:spring-aop:3.2.2.RELEASE'
+	compile 'aspectj:aspectjtools:1.5.4'
+	compile 'org.springframework.ws:spring-ws-core:2.1.4.RELEASE'
+	compile 'joda-time:joda-time:2.3'
 }

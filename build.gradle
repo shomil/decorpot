@@ -8,10 +8,11 @@ sourceCompatibility = 1.7
 targetCompatibility = 1.7
 
 repositories {
-    mavenLocal()
-    mavenCentral()
-}
-
+        maven { url "http://repo1.maven.org/maven2/"}
+        maven { url "http://repo.springsource.org/libs-milestone" }
+        maven { url "http://repo.spring.io/" }
+    }
+    
 subprojects {
     apply plugin: 'java'
  
@@ -21,25 +22,39 @@ subprojects {
 }
 
 dependencies {
-    compile(':decorpot-core')
-    compile(":decorpot-repository")
-    compile(":decorpot-services")
-    compile 'ch.qos.logback:logback-classic:1.1.3'
+    compile 'org.slf4j:slf4j-log4j12:1.7.5'
+        compile 'org.slf4j:jcl-over-slf4j:1.7.5'
+        compile 'log4j:log4j:1.2.17'
+        compile 'commons-lang:commons-lang:2.5'
+    compile 'log4j:log4j:1.2.16'
     compile 'org.springframework:spring-webmvc:4.1.6.RELEASE'
     compile 'javax.servlet:jstl:1.2'
+    compile 'net.sourceforge.jtds:jtds:1.3.0'
+        compile 'org.springframework.data:spring-data-jdbc-core:1.0.0.RELEASE'
+        compile 'org.springframework:spring-tx:3.2.3.RELEASE'
+        compile 'org.springframework:spring-context-support:3.2.3.RELEASE'
+        compile 'org.springframework:spring-core:3.2.3.RELEASE'
+        compile 'org.slf4j:slf4j-api:1.6.0'
+        testCompile 'junit:junit:4.11'
+        testCompile 'org.mockito:mockito-all:1.9.5'
     
 }
 
+configurations {
+    all*.exclude module: 'commons-logging'
+    springDoclet
+}
+
+dependencies {
+    compile project(':decorpot-web')
+ }
+
 // Embeded Jetty for testing
 jettyRun{
-    contextPath = "spring4"
+    contextPath = "root"
     httpPort = 8080
 }
 
-jettyRunWar{
-    contextPath = "spring4"
-    httpPort = 8080
-}
 
 //For Eclipse IDE only
 eclipse {
@@ -48,7 +63,7 @@ eclipse {
     component {
       
       //define context path, default to project folder name
-      contextPath = 'spring4'
+      contextPath = 'root'
       
     }
     

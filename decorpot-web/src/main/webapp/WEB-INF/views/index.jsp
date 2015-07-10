@@ -6,7 +6,7 @@
 <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gradle + Spring MVC</title>
+<title>decorpot.com</title>
 
 	<link href="resources/core/css/bootstrap.min.css" rel="stylesheet">
     <link href="resources/core/css/style.css" rel="stylesheet">
@@ -16,10 +16,15 @@
   <link rel="stylesheet" href="resources/core/css/carousel.css"> <!-- Resource style -->
   <script src="resources/core/js/modernizr.js"></script> <!-- Modernizr -->
   
+  <c:forEach var="entry" items="${pageScripts}">
+		<script src="resources/core/js/application/${entry}.js" ></script>
+</c:forEach>
+<link rel="stylesheet" href="resources/core/css/application/${css}.css">
 </head>
 
 <body>
     <div id="mainPage"> 
+    <div id="header">
       <div id="top-bar" class="row"></div>
         <div class="row" style="
     margin-top: 1%;">
@@ -31,7 +36,7 @@
         <div class = "clearer"></div>
         <div class ="row navigation-bar">
           <div class = "col-md-8">
-          <ui class = "primary-menu">
+          <ul class = "primary-menu">
             <li class = "menudropdown">
               <a href="#">Themes</a>
               <ul class = "sub-menu">
@@ -64,7 +69,7 @@
                 <a href="http://youtube.com">About us</a>
             </li>
 
-          </ui>
+          </ul>
         </div>
         <div class = "col-md-4">
           <ul class="nav navbar-nav navbar-right main-top-nav-right">
@@ -80,7 +85,7 @@
             </ul>
         </div>
         </div>
-      
+      </div>
 
         <div class="row mid">
           <div id="backgroundImage" class="left"></div>
@@ -188,7 +193,7 @@
           <div class="row"></div>
       </div>
       </footer>
-      
+      </div>
        
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

@@ -125,7 +125,7 @@ footer{
         display: inline-block;
         position: relative;
         line-height: 21px;
-        text-align: center;
+        text-align: left;
     }
     .primary-menu li a{
         display: block;

@@ -30,7 +30,7 @@ body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}
 .btn:hover {background: #E4E4E2;}
 .btn_red:hover {background: #C12B05;}
 
-a.btn {color:#666; text-align: center; text-decoration: none;}
+a.btn {color:black; text-align: center; text-decoration: none;}
 a.btn_red {color: #FFF;}
 
 .one_half {width:50%; display: block; float:left;}
@@ -46,16 +46,27 @@ a.btn_red {color: #FFF;}
 
 /* Social Login Form */
 .social_login {}
-.social_login .social_box {display:block; clear:both; padding:10px; margin-bottom: 10px; background: #F4F4F2; overflow: hidden;}
-.social_login .icon {display:block; width:10px; padding:5px 10px; margin-right: 10px; float:left; color:#FFF; font-size:16px; text-align: center;} 
+.social_login .social_box {display:block; clear:both; padding:10px; margin-bottom: 10px; overflow: hidden;}
+.social_login .fb{
+	background-color : rgb(21, 13, 137);
+}
+
+.social_login .google{
+	background-color : rgb(123, 19, 19);
+}
+.social_login .icon {display:block; width:10px; padding:5px 26px; margin-right: 10px; float:left; color:#FFF; font-size:16px; text-align: center;} 
 .social_login .fb .icon {background:#3B5998;}
 .social_login .google .icon {background:#DD4B39;}
-.social_login .icon_title {display:block; padding:5px 0; float:left; font-weight: bold; font-size: 16px; color:#777;}
+.social_login .icon_title {display:block; padding:5px 0; float:left; font-weight: 300; font-size: 15px; color:#F9F9F9;;}
 .social_login .social_box:hover {background: #E4E4E2;}
 
 .centeredText {text-align: center; margin: 20px 0; clear: both; overflow: hidden; text-transform: uppercase;}
 
 .action_btns {clear:both; overflow: hidden;}
+
+.action_btns .btn{
+	border-radius : 0px !important;
+}
 .action_btns a {display: block;}
 
 /* User Login Form */

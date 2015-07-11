@@ -37,21 +37,27 @@
               <li class = "menudropdown">
                 <a href="#">Themes</a>
                 <ul class = "sub-menu">
-                  <li><a href="#">Laptops</a></li>
-                  <li><a href="#">Monitors</a></li>
-                  <li><a href="#">Printers</a></li>
+                  <li><a href="#">Classic</a></li>
+                  <li><a href="#">Contemporary</a></li>
+                  <li><a href="#">Minimalastic</a></li>
+                 <li><a href="#">Modern</a></li>
+                 <li><a href="#">Fusion</a></li>
                 </ul>
               </li>
               <li class = "menudropdown">
-                <a href="#">Apparments</a>
+                <a href="#">Space</a>
                 <ul class = "sub-menu">
-                  <li><a href="#">Laptops</a></li>
-                  <li><a href="#">Monitors</a></li>
-                  <li><a href="#">Printers</a></li>
+                  <li><a href="#">Drawing</a></li>
+                  <li><a href="#">Dining</a></li>
+                  <li><a href="#">Kitchen</a></li>
+                  <li><a href="#">Master Bedroom</a></li>
+                  <li><a href="#">Guest Bedroom</a></li>
+                  <li><a href="#">Kids Bedroom</a></li>
+                  
                 </ul>
               </li>
               <li class = "menudropdown">
-                <a href="http://youtube.com">Size</a>
+                <a href="#">Size</a>
                 <ul class = "sub-menu">
                   <li><a href="#">Laptops</a></li>
                   <li><a href="#">Monitors</a></li>
@@ -70,7 +76,7 @@
             <ul class="nav navbar-nav navbar-right main-top-nav-right">
               
               <li class="dropdown main-top-nav-right-link login-signup">
-                <a href="#modal" class="btn " id="modal_trigger">
+                <a href="#modal" id="modal_trigger">
                   <i class="glyphicon glyphicon-search" aria-hidden="true"></i> Log in | Sign up
                 </a>
               </li>
@@ -82,87 +88,9 @@
             </ul>
           </div>
         </div>
-        <!--Modal login Pop up Box -->
-        <div id="modal" class="popupContainer" style="display:none;">
-          <header class="popupHeader">
-            <span class="header_title">Login</span>
-            <span class="modal_close"><i class="fa fa-times"></i></span>
-          </header>
-          <section class="popupBody">
-            <!-- Social Login -->
-            <div class="social_login">
-              <div class="">
-                <a href="#" class="social_box fb">
-                  <span class="icon"><i class="fa fa-facebook"></i></span>
-                  <span class="icon_title">Connect with Facebook</span>
-                </a>
-                <a href="#" class="social_box google">
-                  <span class="icon"><i class="fa fa-google-plus"></i></span>
-                  <span class="icon_title">Connect with Google</span>
-                </a>
-              </div>
-              <div class="centeredText">
-                <span>Or use your Email address</span>
-              </div>
-              <div class="action_btns">
-                <div class="one_half">
-                  <a href="#" id="login_form" class="btn">Login</a>
-                </div>
-                <div class="one_half last">
-                  <a href="#" id="register_form" class="btn">Sign up</a>
-                </div>
-              </div>
-            </div>
-            <!-- Username & Password Login form -->
-            <div class="user_login">
-              <form>
-                <label>Email / Username</label> <input type="text" /> <br /> <label>Password</label>
-                <input type="password" /> <br />
-                <div class="checkbox">
-                  <input id="remember" type="checkbox" />
-                  <label for="remember">Remember me on this computer</label>
-                </div>
-                <div class="action_btns">
-                  <div class="one_half">
-                    <a href="#" class="btn back_btn">
-                      <i class="fa fa-angle-double-left"></i> Back
-                    </a>
-                  </div>
-                  <div class="one_half last">
-                    <a href="#" class="btn btn_red">Login</a>
-                  </div>
-                </div>
-              </form>
-              <a href="#" class="forgot_password">Forgot password?</a>
-            </div>
-            <!-- Register Form -->
-            <div class="user_register">
-              <form>
-                <label>Full Name</label>
-                <input type="text" /> <br />
-                <label>Email Address</label>
-                <input type="email" /> <br />
-                <label>Password</label>
-                <input type="password" /> <br />
-                <div class="checkbox">
-                  <input id="send_updates" type="checkbox" />
-                  <label for="send_updates">Send me occasional email updates</label>
-                </div>
-                <div class="action_btns">
-                  <div class="one_half">
-                    <a href="#" class="btn back_btn">
-                    <i class="fa fa-angle-double-left"></i> Back</a>
-                  </div>
-                  <div class="one_half last">
-                    <a href="#" class="btn btn_red">Register</a>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </section>
-        </div>
-        <!-- End of Modal Login Box-->
+        
       </div><!-- End of div = header-->
+      <div class = "clearer"></div>
       <div class="row mid">
         <div id="backgroundImage" class="left"></div>
         <div id="services">
@@ -269,7 +197,86 @@
       </div>
     </footer>
   </div><!--mainPage-->
-    
+    <!--Modal login Pop up Box -->
+        <div id="modal" class="popupContainer" style="display:none;">
+          <header class="popupHeader">
+            <span class="header_title">Login</span>
+            <span class="modal_close"><i class="fa fa-times"></i></span>
+          </header>
+          <section class="popupBody">
+            <!-- Social Login -->
+            <div class="social_login">
+              <div class="">
+                <a href="#" class="social_box fb">
+                  <span class="icon"><i class="fa fa-facebook"></i></span>
+                  <span class="icon_title">Connect with Facebook</span>
+                </a>
+                <a href="#" class="social_box google">
+                  <span class="icon"><i class="fa fa-google-plus"></i></span>
+                  <span class="icon_title">Connect with Google</span>
+                </a>
+              </div>
+              <div class="centeredText">
+                <span>Or use your Email address</span>
+              </div>
+              <div class="action_btns">
+                <div class="one_half">
+                  <a href="#" id="login_form" class="btn">Login</a>
+                </div>
+                <div class="one_half last">
+                  <a href="#" id="register_form" class="btn">Sign up</a>
+                </div>
+              </div>
+            </div>
+            <!-- Username & Password Login form -->
+            <div class="user_login">
+              <form>
+                <label>Email / Username</label> <input type="text" /> <br /> <label>Password</label>
+                <input type="password" /> <br />
+                <div class="checkbox">
+                  <input id="remember" type="checkbox" />
+                  <label for="remember">Remember me on this computer</label>
+                </div>
+                <div class="action_btns">
+                  <div class="one_half">
+                    <a href="#" class="btn back_btn">
+                      <i class="fa fa-angle-double-left"></i> Back
+                    </a>
+                  </div>
+                  <div class="one_half last">
+                    <a href="#" class="btn btn_red">Login</a>
+                  </div>
+                </div>
+              </form>
+              <a href="#" class="forgot_password">Forgot password?</a>
+            </div>
+            <!-- Register Form -->
+            <div class="user_register">
+              <form>
+                <label>Full Name</label>
+                <input type="text" /> <br />
+                <label>Email Address</label>
+                <input type="email" /> <br />
+                <label>Password</label>
+                <input type="password" /> <br />
+                <div class="checkbox">
+                  <input id="send_updates" type="checkbox" />
+                  <label for="send_updates">Send me occasional email updates</label>
+                </div>
+                <div class="action_btns">
+                  <div class="one_half">
+                    <a href="#" class="btn back_btn">
+                    <i class="fa fa-angle-double-left"></i> Back</a>
+                  </div>
+                  <div class="one_half last">
+                    <a href="#" class="btn btn_red">Register</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+        <!-- End of Modal Login Box-->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

@@ -2,16 +2,19 @@
 
 #backgroundImage {
 	background: url("../../img/home-decor6.jpg") 26% 0%;
-	width: 93%;
+	width: 100%;
 	height: 21%;
 	position: relative;
-	margin-left: 4%;
+	
 	background-repeat: no-repeat;
 }
 
 .mid {
 	height: 84%;
-	padding-top: 10%;
+  /* padding-top: 0%; */
+  background-color: white;
+  width: 95%;
+  margin-left: 3%;
 }
 
 #services {

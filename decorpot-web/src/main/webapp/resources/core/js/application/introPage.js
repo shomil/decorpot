@@ -1,4 +1,4 @@
-jQuery(document).ready(function($){
+/*$(document).ready(function($){
   //create the slider
   $('.cd-testimonials-wrapper').flexslider({
     selector: ".cd-testimonials > li",
@@ -13,4 +13,4 @@ jQuery(document).ready(function($){
       });
     }
   });
-});
+});*/

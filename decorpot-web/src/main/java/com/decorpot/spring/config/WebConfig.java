@@ -1,11 +1,11 @@
 package com.decorpot.spring.config;
 
+import javax.sql.DataSource;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.support.ReloadableResourceBundleMessageSource;
-import org.springframework.web.multipart.commons.CommonsMultipartResolver;
-import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -30,6 +30,17 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 		.addResourceLocations("/resources/**")
 		.addResourceLocations("classpath:/META-INF/resources/");
 		registry.addResourceHandler("/views/**").addResourceLocations("/views/**");
+	}
+    
+    @Bean
+	public DataSource getDataSource() {
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setUrl("jdbc:mysql://decorpotdb.cvxkjdlwiyuo.us-west-2.rds.amazonaws.com:3306");
+		dataSource.setUsername("Decorpot");
+		dataSource.setPassword("Interior1");
+		
+		return dataSource;
 	}
 
 }

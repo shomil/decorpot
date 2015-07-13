@@ -2,16 +2,15 @@ package com.decorpot.repository.models;
 
 public class Image {
 	
-	private String imagePath;
+	private String imagePathHd;
 	private int imageId;
-	private String theme;
-	private String other1;
-	private String other2;
-	public String getImagePath() {
-		return imagePath;
+	private int viewId;
+	private String imagePathSmall;
+	public String getImagePathHd() {
+		return imagePathHd;
 	}
-	public void setImagePath(String imagePath) {
-		this.imagePath = imagePath;
+	public void setImagePathHd(String imagePathHd) {
+		this.imagePathHd = imagePathHd;
 	}
 	public int getImageId() {
 		return imageId;
@@ -19,24 +18,18 @@ public class Image {
 	public void setImageId(int imageId) {
 		this.imageId = imageId;
 	}
-	public String getTheme() {
-		return theme;
+	public int getViewId() {
+		return viewId;
 	}
-	public void setTheme(String theme) {
-		this.theme = theme;
+	public void setViewId(int viewId) {
+		this.viewId = viewId;
 	}
-	public String getOther1() {
-		return other1;
+	public String getImagePathSmall() {
+		return imagePathSmall;
 	}
-	public void setOther1(String other1) {
-		this.other1 = other1;
-	}
-	public String getOther2() {
-		return other2;
-	}
-	public void setOther2(String other2) {
-		this.other2 = other2;
+	public void setImagePathSmall(String imagePathSmall) {
+		this.imagePathSmall = imagePathSmall;
 	}
 	
-
+	
 }

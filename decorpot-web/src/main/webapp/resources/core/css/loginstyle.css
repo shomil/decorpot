@@ -48,15 +48,15 @@ a.btn_red {color: #FFF;}
 .social_login {}
 .social_login .social_box {display:block; clear:both; padding:10px; margin-bottom: 10px; overflow: hidden;}
 .social_login .fb{
-	background-color : rgb(21, 13, 137);
+	background-color : #3B5998;
 }
 
 .social_login .google{
-	background-color : rgb(123, 19, 19);
+	background-color : #d73d32;
 }
 .social_login .icon {display:block; width:10px; padding:5px 26px; margin-right: 10px; float:left; color:#FFF; font-size:16px; text-align: center;} 
 .social_login .fb .icon {background:#3B5998;}
-.social_login .google .icon {background:#DD4B39;}
+.social_login .google .icon {background:#d73d32;}
 .social_login .icon_title {display:block; padding:5px 0; float:left; font-weight: 300; font-size: 15px; color:#F9F9F9;;}
 .social_login .social_box:hover {background: #E4E4E2;}
 

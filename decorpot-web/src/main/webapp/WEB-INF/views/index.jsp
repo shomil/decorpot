@@ -57,11 +57,18 @@
                 </ul>
               </li>
               <li class = "menudropdown">
-                <a href="#">Size</a>
+                <a href="#">BHK Type</a>
                 <ul class = "sub-menu">
-                  <li><a href="#">Laptops</a></li>
-                  <li><a href="#">Monitors</a></li>
-                  <li><a href="#">Printers</a></li>
+                  <li><a href="#">2 BHK</a></li>
+                  <li><a href="#">3 BHK</a></li>
+                </ul>
+              </li>
+              <li class = "menudropdown">
+                <a href="#">Furnitures</a>
+                <ul class = "sub-menu">
+                  <li><a href="#">Table</a></li>
+                  <li><a href="#">Bed</a></li>
+                  <li><a href="#">Sofa</a></li>
                 </ul>
               </li>
               <li class = "menudropdown">

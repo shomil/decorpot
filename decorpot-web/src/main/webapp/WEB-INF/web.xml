@@ -3,7 +3,7 @@
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 
-	<display-name>DECORPOT>COM</display-name>
+	<display-name>DECORPOT.COM</display-name>
 	<description>Spring MVC web application</description>
 
 	<!-- For web context -->

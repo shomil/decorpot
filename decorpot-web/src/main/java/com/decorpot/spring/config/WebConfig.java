@@ -13,7 +13,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "com.decorpot.spring.config", "com.decorpot.spring.controller", "com.decorpot" })
+@ComponentScan(basePackages = { "com.decorpot.spring.config", "com.decorpot.spring.controller", "com.decorpot.*" })
 public class WebConfig extends WebMvcConfigurerAdapter {
  
     @Bean
@@ -36,7 +36,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	public DataSource getDataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://decorpotdb.cvxkjdlwiyuo.us-west-2.rds.amazonaws.com:3306");
+		dataSource.setUrl("jdbc:mysql://decorpotdb.cvxkjdlwiyuo.us-west-2.rds.amazonaws.com");
 		dataSource.setUsername("Decorpot");
 		dataSource.setPassword("Interior1");
 		

@@ -22,10 +22,11 @@ subprojects {
 
 dependencies {
   compile project (':decorpot-services')
-	
-	
+	compile 'org.springframework:spring-webmvc:4.1.6.RELEASE'
+	compile 'org.springframework:spring-core:3.2.3.RELEASE'
   compile 'org.springframework:spring-jdbc:4.1.6.RELEASE'
 	compile 'javax.servlet:jstl:1.2'
+	compile 'com.sun.jersey:jersey-client:1.18.1'
   compile 'javax.servlet:javax.servlet-api:3.0.1'
   compile 'mysql:mysql-connector-java:5.1.35'
   providedCompile 'javax.servlet:servlet-api:2.5'

@@ -1,4 +1,16 @@
 dependencies {
-    testCompile 'junit:junit:4.11'
-     compile project(':decorpot-repository')
+	testCompile 'junit:junit:4.11'
+	compile project(':decorpot-repository')
+}
+apply plugin: 'eclipse'
+
+repositories {
+    maven { url "http://repo1.maven.org/maven2/"}
+	maven { url "http://repo.springsource.org/libs-milestone" }
+}
+
+dependencies {
+	compile 'org.springframework:spring-webmvc:4.1.6.RELEASE'
+	compile 'org.springframework:spring-core:3.2.3.RELEASE'
+	  compile 'org.springframework:spring-jdbc:4.1.6.RELEASE'
 }

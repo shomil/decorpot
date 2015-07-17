@@ -35,7 +35,7 @@
           <div class = "col-md-8">
             <ul class = "primary-menu">
               <li class = "menudropdown">
-                <a href="#/home">Themes</a>
+                <a href="#/images">Themes</a>
                 <ul class = "sub-menu">
                   <li><a href="#/classic">Classic</a></li>
                   <li><a href="#/contemporary">Contemporary</a></li>

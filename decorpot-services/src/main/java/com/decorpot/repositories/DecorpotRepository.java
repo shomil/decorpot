@@ -11,6 +11,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import com.decorpot.repository.models.Image;
+
 /**
  * @author vaseem.mohammed
  *
@@ -19,14 +21,14 @@ import org.springframework.stereotype.Repository;
 public class DecorpotRepository {
 	
 
-	JdbcTemplate jdbcTemplate;
+	private JdbcTemplate jdbcTemplate;
 	
 	@Autowired
 	public DecorpotRepository(DataSource dataSource) {
 		jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 	
-	public List<DatabaseList> getImages(){
+	public List<DatabaseList> getDatabaseName(){
 		return jdbcTemplate.query("show databases", new RowMapper<DatabaseList>() {
 
 			@Override
@@ -34,6 +36,17 @@ public class DecorpotRepository {
 				DatabaseList databaseList = new DatabaseList();
 				databaseList.setDatabaseName(rs.getString(1));
 				return databaseList;
+			}
+		});
+	}
+	
+	public List<Image> getImages(){
+		return jdbcTemplate.query("show databases", new RowMapper<Image>() {
+
+			@Override
+			public Image mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Image image = new Image();
+				return image;
 			}
 		});
 	}

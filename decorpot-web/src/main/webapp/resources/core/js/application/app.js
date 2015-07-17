@@ -14,10 +14,14 @@ decorpot.config(['$routeProvider', '$provide', function($routeProvider, $provide
         return $delegate;
     });
 	
-	$routeProvider.when('/home', {
+	$routeProvider.when('/', {
 		templateUrl: 'resources/partials/home.html',
 		controller: 'DecorpotCtrl'
-	}).otherwise({
+	}).$routeProvider.when('/images', {
+		templateUrl: 'resources/partials/imageList.html',
+		controller: 'ImageListController'
+	})
+	.otherwise({
 		redirectTo: '/home'
 	});
 }]);

@@ -31,8 +31,7 @@ public class DecorpotServiceImpl implements DecorpotServices{
 
 	@Override
 	public List<Map<String, Object>> getImageListSpace(String space, Integer toPrice, Integer fromPrice, Integer pageNum) {
-		if(pageNum == null)
-			pageNum = defaultPageNum;
+		
 		int to=pageNum*this.defaultList, from=(pageNum-1)*this.defaultList+1;
 		
 		

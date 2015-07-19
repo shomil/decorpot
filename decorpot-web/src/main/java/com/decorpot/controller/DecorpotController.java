@@ -3,14 +3,13 @@ package com.decorpot.controller;
 import java.util.List;
 import java.util.Map;
 
-import javax.ws.rs.PathParam;
 import javax.ws.rs.QueryParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.decorpot.repository.models.Image;
 import com.decorpot.services.DecorpotServices;
 
 @RestController
@@ -25,10 +24,12 @@ public class DecorpotController extends DefaultController{
 	}
 	
 	@RequestMapping(value="/imageList/{space}")
-	public List<Map<String, Object>> getImageListSpace(@QueryParam("from") int fromPrice,
-			@QueryParam("to") int toPrice,
-			@QueryParam("page") Integer pageNum,
-			@PathParam("space") String space) {
-		return decorpotServices.getImageListSpace(space, toPrice, fromPrice, pageNum);
+	public List<Map<String, Object>> getImageListSpace(@PathVariable String space,
+			@QueryParam("from") int from,
+			@QueryParam("to") int to,
+			@QueryParam("page") Integer page
+			
+			) {
+		return decorpotServices.getImageListSpace(space, to, from, page);
 	}
 }

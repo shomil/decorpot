@@ -8,5 +8,5 @@ import com.decorpot.repository.models.Image;
 
 public interface DecorpotServices {
 	public List<Map<String, Object>> getDataBaseTables();
-	public List<Map<String, Object>> getimageList();
+	public List<Map<String, Object>> getImageListSpace(String space, Integer toPrice, Integer fromPrice, Integer pageNum);
 }

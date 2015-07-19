@@ -1,6 +1,7 @@
 package com.decorpot.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +17,12 @@ public class DecorpotController extends DefaultController{
 	DecorpotServices decorpotServices;
 	
 	@RequestMapping(value="/test")
-	public List<Image> index() {
-		return decorpotServices.getImages();
+	public List<Map<String, Object>> index() {
+		return decorpotServices.getDataBaseTables();
+	}
+	
+	@RequestMapping(value="/imageList")
+	public List<Map<String, Object>> getDataBaseTables() {
+		return decorpotServices.getimageList();
 	}
 }

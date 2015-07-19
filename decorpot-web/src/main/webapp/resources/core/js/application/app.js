@@ -17,11 +17,11 @@ decorpot.config(['$routeProvider', '$provide', function($routeProvider, $provide
 	$routeProvider.when('/', {
 		templateUrl: 'resources/partials/home.html',
 		controller: 'DecorpotCtrl'
-	}).$routeProvider.when('/themes:param', {
+	}).when('/themes/:param', {
 		templateUrl: 'resources/partials/imageList.html',
 		controller: 'ImageListController'
 	})
 	.otherwise({
-		redirectTo: '/home'
+		redirectTo: '/'
 	});
 }]);

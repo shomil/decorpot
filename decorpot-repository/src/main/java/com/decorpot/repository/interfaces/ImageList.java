@@ -6,6 +6,7 @@ import java.util.Map;
 import com.decorpot.repository.models.Image;
 
 public interface ImageList {
-	public List<Map<String, Object>> getImageListing(String theme);
+	public List<Map<String, Object>> getImageListSpace(String space,
+			Integer toPrice, Integer fromPrice, Integer to, Integer from);
 
 }

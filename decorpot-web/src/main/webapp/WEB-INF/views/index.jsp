@@ -196,6 +196,7 @@
     <script src="resources/core/js/masonry.pkgd.min.js"></script>
     <script src="resources/core/js/jquery.flexslider-min.js"></script>
     <script src="resources/core/js/application/app.js"></script>
+    <script src="resources/core/js/application/services.js"></script>
     <script src="resources/core/js/application/controllers.js"></script>
     <script type="text/javascript">
     

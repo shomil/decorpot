@@ -8,10 +8,18 @@ decorpotCtrls.controller('DecorpotCtrl', ['$scope', '$routeParams', function($sc
 	
 }]);
 
+<<<<<<< HEAD
 decorpotCtrls.controller('ImageListController', ['$scope', '$routeParams', 'interiors', function($scope, $routeParams, interiors){
+=======
+decorpotCtrls.controller('ImageListController', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http, $q){
+>>>>>>> branch 'master' of https://github.com/shomil/decorpot.git
 	
 	$scope.imageList = {};
+<<<<<<< HEAD
 	/*var responsePromise = $http.get("/test");
+=======
+	var responsePromise = $http.get("imageListSpace/living?from=300000&to=200000&page=1");
+>>>>>>> branch 'master' of https://github.com/shomil/decorpot.git
 	responsePromise.success(function(data, status, headers, config) {
         $scope.imageList = data;
         console.log(data);

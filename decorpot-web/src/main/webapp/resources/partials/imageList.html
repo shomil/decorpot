@@ -1,173 +1,23 @@
 
 <div id="two-columns" class="grid-container">
 	<ul class="rig columns-2">
-		<li>
-			<div id="imageContainer">
-				<img src="img/img1.jpg" />
+		<li ng-repeat="image in imageList | filter:query">
+			<div id="imageContainer" >
+				<img src="{{image.path_small}}" />
 				<div id="imageText">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					<p>{{image.description_short}}</p>
 				</div>
 
 			</div>
 			<div id="priceText">
 				<div class="col-xs-6">
-					<span>Starting from </span><span>Rs 100000</span>
+					<span>Starting from </span><span>Rs {{image.price}}</span>
 				</div>
 				<div class="col-xs-6"></div>
 
 			</div>
 		</li>
-		<li>
-			<div id="imageContainer">
-				<img src="img/img1.jpg" />
-				<div id="imageText">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				</div>
-
-			</div>
-			<div id="priceText">
-				<div class="col-xs-6">
-					<span>Starting from </span><span>Rs 100000</span>
-				</div>
-				<div class="col-xs-6"></div>
-
-			</div>
-		</li>
-		<li>
-			<div id="imageContainer">
-				<img src="img/img1.jpg" />
-				<div id="imageText">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				</div>
-
-			</div>
-			<div id="priceText">
-				<div class="col-xs-6">
-					<span>Starting from </span><span>Rs 100000</span>
-				</div>
-				<div class="col-xs-6"></div>
-
-			</div>
-		</li>
-		<li>
-			<div id="imageContainer">
-				<img src="img/img1.jpg" />
-				<div id="imageText">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				</div>
-
-			</div>
-			<div id="priceText">
-				<div class="col-xs-6">
-					<span>Starting from </span><span>Rs 100000</span>
-				</div>
-				<div class="col-xs-6"></div>
-
-			</div>
-		</li>
-		<li>
-			<div id="imageContainer">
-				<img src="img/img1.jpg" />
-				<div id="imageText">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				</div>
-
-			</div>
-			<div id="priceText">
-				<div class="col-xs-6">
-					<span>Starting from </span><span>Rs 100000</span>
-				</div>
-				<div class="col-xs-6"></div>
-
-			</div>
-		</li>
-		<li>
-			<div id="imageContainer">
-				<img src="img/img1.jpg" />
-				<div id="imageText">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				</div>
-
-			</div>
-			<div id="priceText">
-				<div class="col-xs-6">
-					<span>Starting from </span><span>Rs 100000</span>
-				</div>
-				<div class="col-xs-6"></div>
-
-			</div>
-		</li>
-		<li>
-			<div id="imageContainer">
-				<img src="img/img1.jpg" />
-				<div id="imageText">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				</div>
-
-			</div>
-			<div id="priceText">
-				<div class="col-xs-6">
-					<span>Starting from </span><span>Rs 100000</span>
-				</div>
-				<div class="col-xs-6"></div>
-
-			</div>
-		</li>
-		<li>
-			<div id="imageContainer">
-				<img src="img/img1.jpg" />
-				<div id="imageText">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				</div>
-
-			</div>
-			<div id="priceText">
-				<span>Starting from </span><span>Rs 100000</span>
-			</div>
-		</li>
-		<li>
-			<div id="imageContainer">
-				<img src="img/img1.jpg" />
-				<div id="imageText">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				</div>
-
-			</div>
-			<div id="priceText">
-				<div class="col-xs-6">
-					<span>Starting from </span><span>Rs 100000</span>
-				</div>
-				<div class="col-xs-6"></div>
-
-			</div>
-		</li>
-		<li>
-			<div id="imageContainer">
-				<img src="img/img1.jpg" />
-				<div id="imageText">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-				</div>
-
-			</div>
-			<div id="priceText">
-				<div class="col-xs-6">
-					<span>Starting from </span><span>Rs 100000</span>
-				</div>
-				<div class="col-xs-6"></div>
-
-			</div>
-		</li>
-
+		
 
 	</ul>
 </div>

@@ -17,7 +17,7 @@ import com.decorpot.repository.models.Image;
 public class DecorpotServiceImpl implements DecorpotServices{
 
 	private int defaultList = 10;
-	private int defaultPageNum = 1;
+	private String smallImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/low_image/";
 	@Resource
 	DecorpotRepository decorpotRepository;
 	
@@ -35,7 +35,12 @@ public class DecorpotServiceImpl implements DecorpotServices{
 		int to=pageNum*this.defaultList, from=(pageNum-1)*this.defaultList+1;
 		
 		
-		return imageList.getImageListSpace( space, toPrice, fromPrice, to, from);
+		 List<Map<String, Object>> images = imageList.getImageListSpace( space, toPrice, fromPrice, to, from);
+		 
+		 for(Map<String, Object> image : images){
+			 image.put("path_small", smallImageUrl+image.get("path_small").toString());
+		 }
+		 return images;
 	}
 
 }

@@ -17,7 +17,7 @@ decorpot.config(['$routeProvider', '$provide', function($routeProvider, $provide
 	$routeProvider.when('/', {
 		templateUrl: 'resources/partials/home.html',
 		controller: 'DecorpotCtrl'
-	}).when('/themes/:param', {
+	}).when('/imageListSpace/:param', {
 		templateUrl: 'resources/partials/imageList.html',
 		controller: 'ImageListController'
 	})

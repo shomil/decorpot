@@ -23,7 +23,7 @@ public class DecorpotController extends DefaultController{
 		return decorpotServices.getDataBaseTables();
 	}
 	
-	@RequestMapping(value="/imageList/{space}")
+	@RequestMapping(value="imageListSpace/{space}")
 	public List<Map<String, Object>> getImageListSpace(@PathVariable String space,
 			@QueryParam("from") int from,
 			@QueryParam("to") int to,

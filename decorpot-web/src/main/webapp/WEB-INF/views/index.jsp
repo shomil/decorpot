@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>decorpot.com</title>
+    <script type="text/javascript">
+    var _contextPath = "${pageContext.request.contextPath}";
+</script>
     <link href="resources/core/css/bootstrap.min.css" rel="stylesheet">
     <link href="resources/core/css/style.css" rel="stylesheet">
     <link href="resources/core/css/login.css" rel="stylesheet">
@@ -45,14 +48,15 @@
                 </ul>
               </li>
               <li class = "menudropdown">
-                <a href="#">Space</a>
+                <a href="#imageListSpace">Space</a>
                 <ul class = "sub-menu">
-                  <li><a href="#">Drawing</a></li>
-                  <li><a href="#">Dining</a></li>
-                  <li><a href="#">Kitchen</a></li>
-                  <li><a href="#">Master Bedroom</a></li>
-                  <li><a href="#">Guest Bedroom</a></li>
-                  <li><a href="#">Kids Bedroom</a></li>
+                 <li><a href="#imageListSpace/living">Living</a></li>
+                  <li><a href="#imageListSpace/drawing">Drawing</a></li>
+                  <li><a href="#imageListSpace/dining">Dining</a></li>
+                  <li><a href="#/imageListSpace/kitchen">Kitchen</a></li>
+                  <li><a href="#imageListSpace/materBedroom">Master Bedroom</a></li>
+                  <li><a href="#imageListSpace/guestBedroom">Guest Bedroom</a></li>
+                  <li><a href="#imageListSpace/kidsbedroom">Kids Bedroom</a></li>
                   
                 </ul>
               </li>

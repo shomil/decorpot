@@ -30,6 +30,10 @@ public class DecorpotController extends DefaultController{
 			@QueryParam("page") Integer page
 			
 			) {
-		return decorpotServices.getImageListSpace(space, to, from, page);
+		long start = System.currentTimeMillis();
+		List<Map<String, Object>> images = decorpotServices.getImageListSpace(space, to, from, page);
+		long end = System.currentTimeMillis();
+		System.out.println(end-start);
+		return images;
 	}
 }

@@ -142,7 +142,7 @@ footer {
 }
 
 .primary-menu li ul.sub-menu {
-	min-width: 125px; /* Set width of the dropdown */
+	min-width: 145px; /* Set width of the dropdown */
 	background: white;
 	display: none;
 	position: absolute;
@@ -159,12 +159,13 @@ footer {
 ul.sub-menu li a { transition: all .2s ease-in-out; }
 ul.sub-menu li:hover > a { transform: scale(1.1); 
 font-weight: 800 !important;
+padding-left: 15px;
 }
 
 .primary-menu li ul.sub-menu li {
 	display: block;
 	margin-bottom: 5px;
-	margin-top: 5px;
+	    margin-top: 15px;
 	border-bottom: 1px;
     border-bottom-color: black;
     border-bottom-style: dashed;
@@ -185,6 +186,7 @@ font-weight: 800 !important;
 	    font-size: initial;
 	    margin-left: 5px;
 	    white-space:nowrap;
+	    align-content: center;
 }
 
 ul.rig {
@@ -299,11 +301,16 @@ ul.rig.columns-4 li {
   
  }
  
- 
  #priceText .col-xs-6{
    margin-top: 5%;
   font-family: fantasy;
   font-size: initial;
   font-weight: 200;
     color: black;
+ }
+ 
+ .imageFilters{
+     padding-top: 2%;
+    padding-bottom: 5%;
+    margin-left: 16%;
  }

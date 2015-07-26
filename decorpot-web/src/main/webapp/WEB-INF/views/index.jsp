@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="resources/core/css/carousel.css"> <!-- Resource style -->
     <script src="resources/core/js/modernizr.js"></script> <!-- Modernizr -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="resources/core/css/ion.rangeSlider.skinModern.css">
+    <link rel="stylesheet" href="resources/core/css/normalize.css">
+    <link rel="stylesheet" href="resources/core/css/ion.rangeSlider.css">
     <c:forEach var="entry" items="${pageScripts}">
     <script src="resources/core/js/application/${entry}.js" ></script>
     </c:forEach>
@@ -203,9 +206,11 @@
     <script src="resources/core/js/application/services.js"></script>
     <script src="resources/core/js/application/controllers.js"></script>
     <script src="resources/core/js/application/directives.js"></script>
+    <script src="resources/core/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
     <script type="text/javascript">
     
 					jQuery(document).ready(function($) {
+						
 						//create the slider
 						$('.cd-testimonials-wrapper').flexslider({
 							selector : ".cd-testimonials > li",
@@ -248,7 +253,7 @@
 							$(".header_title").text('Login');
 							return false;
 						});
-					})
+					});
 				</script>
   </body>
 </html>

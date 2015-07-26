@@ -184,6 +184,7 @@ font-weight: 800 !important;
 	font-weight: 200;
 	    font-size: initial;
 	    margin-left: 5px;
+	    white-space:nowrap;
 }
 
 ul.rig {

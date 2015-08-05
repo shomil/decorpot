@@ -20,6 +20,9 @@ decorpot.config(['$routeProvider', '$provide', function($routeProvider, $provide
 	}).when('/imageListSpace/:param', {
 		templateUrl: 'resources/partials/imageList.html',
 		controller: 'ImageListController'
+	}).when('/imageView/:param', {
+		templateUrl: 'resources/partials/imageView.html',
+		controller: 'ImageViewController'
 	})
 	.otherwise({
 		redirectTo: '/'

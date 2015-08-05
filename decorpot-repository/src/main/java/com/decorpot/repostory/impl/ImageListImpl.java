@@ -20,6 +20,7 @@ public class ImageListImpl implements ImageList {
 
 	private String imageListSql = "SELECT * FROM Decorpot.image_categorization ic inner join Decorpot.group_color_mapping gcm on  ic.groupid= gcm.groupid inner join Decorpot.image_location il on gcm.imageid = il.imageid inner join (select groupid, min(price) price from Decorpot.group_price_mapping where price >= ? and price <= ? group by groupid) priceTemp on priceTemp.groupid = ic.groupid where ic.spaces = ? LIMIT ?,?";
 
+	private String imageViewSql = "select * from Decorpot.image_location il inner join Decorpot.group_color_mapping gcm on gcm.imageid = il.imageid where groupid = ?";
 	@Autowired
 	public ImageListImpl(DataSource dataSource) {
 		jdbcTemplate = new JdbcTemplate(dataSource);
@@ -34,5 +35,13 @@ public class ImageListImpl implements ImageList {
 		System.out.println(to +"  "+ from+"  " + fromPrice+"   "+toPrice+"  "+space);
 		return jdbcTemplate.queryForList(imageListSql,200000,300000,space,from,to);
 	}
+
+	@Override
+	public List<Map<String, Object>> getImageListSpace(int groupId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
 
 }

@@ -36,4 +36,26 @@ public class DecorpotController extends DefaultController{
 		System.out.println(end-start);
 		return images;
 	}
+	
+	
+	@RequestMapping(value="image/{groupid}/{color}")
+	public List<Map<String, Object>> getViewsByColors(@PathVariable int groupid,
+			@PathVariable String color
+			) {
+		long start = System.currentTimeMillis();
+		List<Map<String, Object>> views = decorpotServices.getViewsByColors(color, groupid);
+		long end = System.currentTimeMillis();
+		System.out.println(end-start);
+		return views;
+	}
+	
+	@RequestMapping(value="color/{groupid}")
+	public List<Map<String, Object>> getColorsByGroup(@PathVariable int groupid){
+		long start = System.currentTimeMillis();
+		List<Map<String, Object>> colors = decorpotServices.getColorsByGroup(groupid);
+		long end = System.currentTimeMillis();
+		System.out.println(end-start);
+		return colors;
+		
+	}
 }

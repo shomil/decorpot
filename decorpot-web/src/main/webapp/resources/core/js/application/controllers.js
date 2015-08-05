@@ -20,6 +20,35 @@ decorpotCtrls.controller('ImageListController', [ '$scope', '$routeParams', 'int
 	
 } ]);
 
-decorpotCtrls.controller('ImageViewController', [ '$scope', '$routeParams',function($scope, $routeParams) {
+decorpotCtrls.controller('ImageViewController', [ '$scope', '$routeParams', 'imageView', function($scope, $routeParams, imageView) {
+	
+	imageView.getColors($routeParams.groupid).success(function(data) {
+
+		$scope.colors = data;
+	});
 	
 } ]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -11,3 +11,16 @@ services.service('interiors', function($http){
 	};
 	
 });
+
+
+services.service('imageView', function($http){
+	
+	return{
+		getColors : function(groupid){
+			var url = "";
+			url = "color/"+groupid;
+			return $http.get(url);
+		}
+	};
+	
+});

@@ -10,5 +10,9 @@ public interface ImageList {
 			Integer toPrice, Integer fromPrice, Integer to, Integer from);
 	
 	public List<Map<String, Object>> getImageListSpace(int groupId);
+	
+	public List<Map<String, Object>> getViewsByColors(String color, int groupid);
+	
+	public List<Map<String, Object>> getColorsByGroup(int groupid);
 
 }

@@ -118,19 +118,13 @@
             <span class="header_title">Login</span>
             <span class="modal_close"><i class="fa fa-times"></i></span>
           </header>
-          <section class="popupBody">
+          <section class="popupBody" ng-controller='LoginCtrl'>
             <!-- Social Login -->
-            <div class="social_login">
-              <div class="">
-                <a href="#" class="social_box fb">
-                  <span class="icon"><i class="fa fa-facebook"></i></span>
-                  <span class="icon_title">Connect with Facebook</span>
-                </a>
-                <a href="#" class="social_box google">
-                  <span class="icon"><i class="fa fa-google-plus"></i></span>
-                  <span class="icon_title">Connect with Google</span>
-                </a>
-              </div>
+            		<button class="btn btn-facebook" ng-click="authenticate('facebook')">Sign in with Facebook</button>
+
+
+	            	<button class="btn btn-google-plus" ng-click="authenticate('google')">Sign in with Google</button>
+
               <div class="centeredText">
                 <span>Or use your Email address</span>
               </div>
@@ -203,8 +197,10 @@
     <script src="resources/core/js/masonry.pkgd.min.js"></script>
     <script src="resources/core/js/jquery.flexslider-min.js"></script>
     <script src="resources/core/js/application/app.js"></script>
+    <script src="//cdn.jsdelivr.net/satellizer/0.11.3/satellizer.min.js"></script>
     <script src="resources/core/js/application/services.js"></script>
     <script src="resources/core/js/application/controllers.js"></script>
+    <script src="resources/core/js/application/login.js"></script>
     <script src="resources/core/js/application/directives.js"></script>
     <script src="resources/core/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
     <script type="text/javascript">

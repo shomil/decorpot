@@ -17,6 +17,7 @@ decorpotCtrls.controller('DecorpotCtrl', [ '$scope', '$routeParams', function($s
 		} ]);*/
 
 decorpotCtrls.controller('ImageListController', [ '$scope', '$routeParams', 'interiors', function($scope, $routeParams, interiors ) {
+
 	
 	interiors.getImages($routeParams.param).success(function(data) {
 		$scope.imageList = data;

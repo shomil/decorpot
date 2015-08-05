@@ -14,6 +14,7 @@ decorpotCtrls.controller('ImageListController', [ '$scope', '$routeParams', 'int
 	$scope.to = 300000;
 	$scope.page = 1;
 	interiors.getImages($routeParams.param, $scope.from, $scope.to, $scope.page).success(function(data) {
+
 		$scope.imageList = data;
 	});
 	

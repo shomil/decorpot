@@ -2,10 +2,10 @@
  * @author: vaseem.mohammed
  * @date  : 12-07-2015
  */
-var decorpot = angular.module('decorpot', ['ngRoute']);
+var decorpot = angular.module('decorpot', ['ngRoute', 'satellizer']);
 
 //
-decorpot.config(['$routeProvider', '$provide', function($routeProvider, $provide){
+decorpot.config(['$routeProvider', '$provide', '$authProvider', function($routeProvider, $provide, $authProvider){
 	
 	$provide.decorator('ngViewDirective', function($delegate) {
         var directive = $delegate[0];
@@ -27,4 +27,14 @@ decorpot.config(['$routeProvider', '$provide', function($routeProvider, $provide
 	.otherwise({
 		redirectTo: '/'
 	});
+	
+	$authProvider.google({
+		clientId: '605704716648-1da3ccngddsc51nb6bacevoom9g3hotq.apps.googleusercontent.com'
+	});
+	
+	$authProvider.facebook({
+		clientId: '676572255812456'
+	});
+	
+	
 }]);

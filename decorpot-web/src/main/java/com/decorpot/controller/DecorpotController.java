@@ -38,7 +38,7 @@ public class DecorpotController extends DefaultController{
 	}
 	
 	
-	@RequestMapping(value="image/{groupid}/{color}")
+	@RequestMapping(value="image/group/{groupid}/color/{color}")
 	public List<Map<String, Object>> getViewsByColors(@PathVariable int groupid,
 			@PathVariable String color
 			) {

@@ -25,7 +25,16 @@ decorpotCtrls.controller('ImageViewController', [ '$scope', '$routeParams', 'ima
 	imageView.getColors($routeParams.groupid).success(function(data) {
 
 		$scope.colors = data;
+		
 	});
+	
+	$scope.getViewsByColors = function(color){
+		imageView.getViewByColor($routeParams.groupid, color.color).success(function(data){
+			$scope.color.views = data;
+			console.log($scope);
+		});
+	};
+		
 	
 } ]);
 

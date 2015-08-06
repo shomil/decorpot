@@ -2,8 +2,8 @@
 	<div id="imageView">
 		<div class="col-md-6">
 		<ul id = "colors">
-			<li ng-repeat="color in colors | filter:query" ng-switch on='$first'>
-				<div style="background-color : {{color.color}}; height : 20px; width : 20px;" ng-switch-when='true' ng-click="getViewsByColors(color)">
+			<li ng-repeat="color in colors | filter:query" >
+				<div style="background-color : {{color.color}}; height : 20px; width : 20px;"  ng-init="($first) ? getViewsByColors(color) : ''">
 				</div>
 			</li>
 		</ul>

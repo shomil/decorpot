@@ -20,7 +20,7 @@ public class ImageListImpl implements ImageList {
 
 	private String imageListSql = "SELECT * FROM Decorpot.image_categorization ic inner join Decorpot.group_color_mapping gcm on  ic.groupid= gcm.groupid inner join Decorpot.image_location il on gcm.imageid = il.imageid inner join (select groupid, min(price) price from Decorpot.group_price_mapping where price >= ? and price <= ? group by groupid) priceTemp on priceTemp.groupid = ic.groupid where ic.spaces = ? LIMIT ?,?";
 
-	private String imageViewSql = "select * from Decorpot.image_location il inner join Decorpot.group_color_mapping gcm on gcm.imageid = il.imageid where groupid = ?";
+	private String imageViewByColorSql = "select * from Decorpot.image_location il inner join Decorpot.group_color_mapping gcm on gcm.imageid = il.imageid where gcm.groupid = ? and gcm.color = ?";
 	
 	private String colorByGroupid = "select color from Decorpot.group_color_mapping where groupid = ?";
 	
@@ -49,7 +49,7 @@ public class ImageListImpl implements ImageList {
 	@Override
 	public List<Map<String, Object>> getViewsByColors(String color, int groupid) {
 		// TODO Auto-generated method stub
-		 return jdbcTemplate.queryForList(colorByGroupid,color,groupid);
+		 return jdbcTemplate.queryForList(imageViewByColorSql,groupid,color);
 	}
 
 	@Override

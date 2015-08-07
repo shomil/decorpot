@@ -30,12 +30,20 @@ decorpotCtrls.controller('ImageViewController', [ '$scope', '$routeParams', 'ima
 	
 	if(typeof $scope.color == 'undefined')
 		$scope.color = {};
+	$scope.color.thumbnails = [];
 	$scope.getViewsByColors = function(color){
 		imageView.getViewsByColors($routeParams.groupid, color.color).success(function(data){
 			$scope.color.thumbnails = data;
 			console.log($scope);
 		});
-	};	
+	};
+	
+	$scope.getHdImage = function(imageSlId){
+		for(var i =0; i< $scope.color.thumbnails.length ; i++){
+			if($scope.color.thumbnails[i]['imageSlId'] == imageSlId)
+				$scope.path_hd = $scope.color.thumbnails[i]['path_hd'];
+		}
+	};
 } ]);
 
 

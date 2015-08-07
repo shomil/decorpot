@@ -494,6 +494,7 @@ ul.rig.columns-4 li {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+      cursor: pointer;
 }
 
 #imageView{
@@ -504,3 +505,11 @@ ul.rig.columns-4 li {
 	height : 40px; 
 	width : 40px;
 }
+
+#imageHd{
+	height: auto;
+    width: auto;
+    max-width: 895px;
+    max-height: 431px;
+}
+

@@ -49,6 +49,7 @@ public class DecorpotServiceImpl implements DecorpotServices{
 		List<Map<String, Object>> images =  imageList.getViewsByColors(color, groupid);
 		for(Map<String, Object> image : images){
 			 image.put("path_small", smallImageUrl+image.get("path_small").toString());
+			 image.put("path_hd", smallImageUrl+image.get("path_hd").toString());
 		 }
 		 return images;
 		

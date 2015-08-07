@@ -1,27 +1,28 @@
 <div class="col-md-9">
 	<div id="imageView">
-		<div class="col-md-6">
+		<div class="col-md-6 smallicons">
 			<div id="smalliconsText">Select Color</div>
 			<ul id="colors">
-				<li ng-repeat="color in colors | filter:query"><div
-						id="imageViewContainer">
-						<div style="background-color: {{color.color"
-							ng-init="($first) ? getViewsByColors(color) : ''"></div>
-					</div></li>
+				<li ng-repeat="color in colors | filter:query">
+						<div id="imageViewContainer" style="background-color: {{color.color}}"
+							ng-init="($first) ? getViewsByColors(color) : ''" ng-click = "getViewsByColors(color)"></div>
+					</li>
 			</ul>
 
 		</div>
 		<div class="col-md-6 smallicons">
 
-			<div id="smalliconsText">Select Color</div>
+			<div id="smalliconsText">See this in different Angle</div>
 			<ul id="thumbnails">
 				<li ng-repeat="thumbnail in color.thumbnails  | filter:query">
-						<img id="imageViewContainer" src="{{thumbnail.path_small}}" />
+						<img id="imageViewContainer" src="{{thumbnail.path_small}}" ng-init="($first) ? getHdImage(thumbnail.imageSlId) : ''" ng-click = "getHdImage(thumbnail.imageSlId)"/>
 					</li>
 			</ul>
 		</div>
 	</div>
 	<div class="clearer"></div>
-	<div id="imageHDView"></div>
+	<div id="imageHDView">
+		<img id="imageHd" src="{{path_hd}}">
+	</div>
 </div>
 <div class="col-md-3"></div>

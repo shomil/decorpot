@@ -21,9 +21,9 @@ services.service('imageView', function($http){
 			url = "color/"+groupid;
 			return $http.get(url);
 		},
-		getViewByColor : function(groupid, color){
+		getViewsByColors : function(groupid, color){
 			var url = "";
-			url = "image/groupid/" +groupid+ "/color/" + color;
+			url = "image/group/" +groupid+ "/color/" + color;
 			return $http.get(url);
 		}
 	};

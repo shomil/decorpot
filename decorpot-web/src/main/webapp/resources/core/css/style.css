@@ -479,3 +479,28 @@ ul.rig.columns-4 li {
     opacity: 1;
   }
 }
+
+.smallicons li {
+  display: inline-block;
+  padding: 2px;
+  margin: 0 0 1.5% 1.5%;
+  background: #fff;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  font-size: 1rem;
+  vertical-align: top;
+  box-shadow: 0 0 5px #ddd;
+  position: relative;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+#imageView{
+	margin-top: 4%;
+}
+
+#imageViewContainer{
+	height : 40px; 
+	width : 40px;
+}

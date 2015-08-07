@@ -28,14 +28,14 @@ decorpotCtrls.controller('ImageViewController', [ '$scope', '$routeParams', 'ima
 		
 	});
 	
+	if(typeof $scope.color == 'undefined')
+		$scope.color = {};
 	$scope.getViewsByColors = function(color){
-		imageView.getViewByColor($routeParams.groupid, color.color).success(function(data){
-			$scope.color.views = data;
+		imageView.getViewsByColors($routeParams.groupid, color.color).success(function(data){
+			$scope.color.thumbnails = data;
 			console.log($scope);
 		});
-	};
-		
-	
+	};	
 } ]);
 
 

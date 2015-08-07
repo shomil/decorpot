@@ -1,18 +1,25 @@
 <div class="col-md-9">
 	<div id="imageView">
 		<div class="col-md-6">
-		<ul id = "colors">
-			<li ng-repeat="color in colors | filter:query" >
-				<div style="background-color : {{color.color}}; height : 20px; width : 20px;"  ng-init="($first) ? getViewsByColors(color) : ''">
-				</div>
-			</li>
-		</ul>
-		
-		<ul id = "thumbnails">
-		<li></li>
-		</ul>
+			<div id="smalliconsText">Select Color</div>
+			<ul id="colors">
+				<li ng-repeat="color in colors | filter:query"><div
+						id="imageViewContainer">
+						<div style="background-color: {{color.color"
+							ng-init="($first) ? getViewsByColors(color) : ''"></div>
+					</div></li>
+			</ul>
+
 		</div>
-		<div class="col-md-6"></div>
+		<div class="col-md-6 smallicons">
+
+			<div id="smalliconsText">Select Color</div>
+			<ul id="thumbnails">
+				<li ng-repeat="thumbnail in color.thumbnails  | filter:query">
+						<img id="imageViewContainer" src="{{thumbnail.path_small}}" />
+					</li>
+			</ul>
+		</div>
 	</div>
 	<div class="clearer"></div>
 	<div id="imageHDView"></div>

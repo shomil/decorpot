@@ -46,7 +46,12 @@ public class DecorpotServiceImpl implements DecorpotServices{
 	@Override
 	public List<Map<String, Object>> getViewsByColors(String color, int groupid) {
 		// TODO Auto-generated method stub
-		return imageList.getViewsByColors(color, groupid);
+		List<Map<String, Object>> images =  imageList.getViewsByColors(color, groupid);
+		for(Map<String, Object> image : images){
+			 image.put("path_small", smallImageUrl+image.get("path_small").toString());
+		 }
+		 return images;
+		
 	}
 
 	@Override

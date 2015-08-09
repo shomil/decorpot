@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="resources/core/css/ion.rangeSlider.skinModern.css">
     <link rel="stylesheet" href="resources/core/css/normalize.css">
     <link rel="stylesheet" href="resources/core/css/ion.rangeSlider.css">
+    <link rel="shortcut icon" href="http://i489.photobucket.com/albums/rr251/JokerKarimme/Icon/AdrianaLima.png">
     <c:forEach var="entry" items="${pageScripts}">
     <script src="resources/core/js/application/${entry}.js" ></script>
     </c:forEach>

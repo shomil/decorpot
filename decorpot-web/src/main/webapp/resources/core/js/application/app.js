@@ -20,7 +20,7 @@ decorpot.config(['$routeProvider', '$provide', '$authProvider', function($routeP
 	}).when('/imageListSpace/:param', {
 		templateUrl: 'resources/partials/imageList.html',
 		controller: 'ImageListController'
-	}).when('/imageView/:param', {
+	}).when('/imageView/:groupid', {
 		templateUrl: 'resources/partials/imageView.html',
 		controller: 'ImageViewController'
 	})

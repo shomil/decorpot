@@ -1,3 +1,4 @@
+apply plugin: 'eclipse'
 dependencies {
 	testCompile 'junit:junit:4.11'
 	compile project(':decorpot-repository')

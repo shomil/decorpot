@@ -36,5 +36,33 @@ decorpot.config(['$routeProvider', '$provide', '$authProvider', function($routeP
 		clientId: '676572255812456'
 	});
 	
+	$authProvider.facebook({
+	  url: '/decorpot/auth/facebook',
+	  authorizationEndpoint: 'https://www.facebook.com/v2.3/dialog/oauth',
+	  redirectUri: window.location.protocol + '//' + window.location.host + '/decorpot',
+	  scope: 'email',
+	  scopeDelimiter: ',',
+	  requiredUrlParams: ['display', 'scope'],
+	  display: 'popup',
+	  type: '2.0',
+	  popupOptions: { width: 481, height: 269 }
+	});
+
+	// Google
+	$authProvider.google({
+	  url: '/decorpot/auth/google',
+	  authorizationEndpoint: 'https://accounts.google.com/o/oauth2/auth',
+	  redirectUri: window.location.protocol + '//' + window.location.host + '/decorpot',
+	  scope: ['profile', 'email'],
+	  scopePrefix: 'openid',
+	  scopeDelimiter: ' ',
+	  requiredUrlParams: ['scope'],
+	  optionalUrlParams: ['display'],
+	  display: 'popup',
+	  type: '2.0',
+	  popupOptions: { width: 580, height: 400 }
+	});
+
+	
 	
 }]);

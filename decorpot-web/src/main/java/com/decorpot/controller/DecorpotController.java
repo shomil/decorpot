@@ -23,6 +23,16 @@ public class DecorpotController extends DefaultController{
 		return decorpotServices.getDataBaseTables();
 	}
 	
+	@RequestMapping(value="/auth/facebook")
+	public String loginWithFacebook(@QueryParam("code") String authorizationCode){
+		return authorizationCode;
+	}
+	
+	@RequestMapping(value="/auth/google")
+	public String loginWithGoogle(@QueryParam("code") String authorizationCode){
+		return authorizationCode;
+	}
+	
 	@RequestMapping(value="imageListSpace/{space}")
 	public List<Map<String, Object>> getImageListSpace(@PathVariable String space,
 			@QueryParam("from") int from,

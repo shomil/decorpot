@@ -4,19 +4,23 @@
 			<div id="smalliconsText">Select Color</div>
 			<ul id="colors">
 				<li ng-repeat="color in colors | filter:query">
-						<div id="imageViewContainer" style="background-color: {{color.color}}"
-							ng-init="($first) ? getViewsByColors(color) : ''" ng-click = "getViewsByColors(color)"></div>
-					</li>
+					<div id="imageViewContainer" style="background-color: {{
+						color.color}};"
+						ng-init="($first) ? getViewsByColors(color) : ''"
+						ng-click="getViewsByColors(color)"></div>
+				</li>
 			</ul>
 
 		</div>
 		<div class="col-md-6 smallicons">
 
-			<div id="smalliconsText">See this in different Angle</div>
+			<div id="smalliconsText">Select Angle</div>
 			<ul id="thumbnails">
 				<li ng-repeat="thumbnail in color.thumbnails  | filter:query">
-						<img id="imageViewContainer" src="{{thumbnail.path_small}}" ng-init="($first) ? getHdImage(thumbnail.imageSlId) : ''" ng-click = "getHdImage(thumbnail.imageSlId)"/>
-					</li>
+					<img id="imageViewContainer" src="{{thumbnail.path_small}}"
+					ng-init="($first) ? getHdImage(thumbnail.imageSlId) : ''"
+					ng-click="getHdImage(thumbnail.imageSlId)" />
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -25,4 +29,42 @@
 		<img id="imageHd" src="{{path_hd}}">
 	</div>
 </div>
-<div class="col-md-3"></div>
+<div class="col-md-3" id="rightSection">
+	<div id="getDone"><h5>Get this done at attractive price of Rs. 100000.00</h5></div>
+	<div id="title"><h2>Image Title</h2></div>
+	<div id="desc"><p>lorum ipsum totum ipsum lorum ipsum totum ipsum
+		lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum
+		ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum
+		totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum
+		ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum
+		lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum totum
+		ipsum lorum ipsum totum ipsum lorum ipsum totum ipsum lorum ipsum
+		totum ipsum lorum ipsum totum ipsum</p></div>
+	<div class="clearer"></div>
+	<div id="selectionRadio">
+		<div id="iwantTo">I want to</div>
+		<div id="radioButton">
+			<input type="radio" name="selection" value=1 ng-model="content"/>  Buy this image
+		</div>
+		<div id="radioButton">
+			<input type="radio" name="selection" value=2 ng-model="content"/>  Get this done
+		</div>
+	</div>
+
+	<div class = "clearer"></div>
+	<div id="contents">
+	<div id="content" ng-show="content == 1">
+		<p id="infoText">Buy this image at only Rs. 1000.Buying this image you will get B&Q and free call back from experts for complete explanation</p>
+		<input type = "checkbox" ng-model="customization">  Include customization @Rs499.00
+		<br>
+		<input id="custText"type="text" class="form-control" ng-show="customization">
+		<br>
+		<a id="addToCart" class="btn btn-primary btn-lg buyNCartButton" href="#">Add To Cart</a>
+		<a id="buyNow" class="btn btn-primary btn-lg" href="#">Buy Now</a>	
+	</div>
+
+	<div id="content" ng-show="content == 2">
+		<p id="infoText">Buy this image at only Rs. 1000.Buying this image you will get B&Q and free call back from experts for complete explanation</p>
+		<a id="getItDone" class="btn btn-primary btn-lg" href="#">Get It Done!</a>	
+	</div>
+</div>

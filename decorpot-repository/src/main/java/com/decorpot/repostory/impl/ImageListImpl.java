@@ -57,7 +57,12 @@ public class ImageListImpl implements ImageList {
 		// TODO Auto-generated method stub
 		return jdbcTemplate.queryForList(colorByGroupid,groupid);
 	}
-	
-	
+
+	@Override
+	public List<Map<String, Object>> getImageListThemes(String theme,
+			Integer toPrice, Integer fromPrice, Integer to, Integer from) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

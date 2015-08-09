@@ -61,7 +61,7 @@
 }
 
 .navigation-bar {
-	padding-top: 3%;
+	padding-top: 1%;
 	z-index: 25;
 }
 
@@ -498,7 +498,8 @@ ul.rig.columns-4 li {
 }
 
 #imageView{
-	margin-top: 4%;
+	margin-top: 2%;
+	overflow : auto;
 }
 
 #imageViewContainer{
@@ -507,9 +508,82 @@ ul.rig.columns-4 li {
 }
 
 #imageHd{
-	height: auto;
+	    height: auto;
     width: auto;
-    max-width: 895px;
-    max-height: 431px;
+    max-width: 100%;
+    max-height: 40%;
 }
 
+#radioButton{
+	    float: left;
+    margin-left: 13px;
+    font-size: 16px !important;
+    margin-top: 10px;
+}
+
+#selectionRadio{
+	margin-top: 19px;
+}
+
+#rightSection{
+	font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	color : black;
+	overflow: auto;
+}
+
+#iwantTo{
+	font-size: 20px;
+    color: red !important;
+    font-weight: 400;
+}
+
+#infoText{
+	font-size: 16px;
+}
+
+#custText{
+    margin-top: 8px;
+    height: 4em;
+    width: 14em;
+    margin-bottom: 8px;
+}
+
+#addToCart{
+	    float: left;
+    padding:14px 22px !important;
+    color : white !important;
+    background-color : #188618  !important;
+}
+
+#buyNow{
+	float: left;
+    padding: 14px 34px !important;
+    color : white !important;
+    background-color : #1A2898 !important;
+    margin-left: 24px;
+}
+
+#contents{
+	    margin-top: 18px;
+}
+
+#getDone h5{
+	color: red;
+    font-size: 15px;
+}
+
+#getDone{
+	margin-top : 17px;
+}
+
+#getItDone{
+	float: left;
+    padding: 14px 34px !important;
+    color : white !important;
+    background-color : #1A2898 !important;
+    margin-left: 24px;
+}

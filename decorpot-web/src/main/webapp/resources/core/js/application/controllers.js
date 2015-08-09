@@ -44,6 +44,11 @@ decorpotCtrls.controller('ImageViewController', [ '$scope', '$routeParams', 'ima
 				$scope.path_hd = $scope.color.thumbnails[i]['path_hd'];
 		}
 	};
+	
+	$scope.IsVisible = false;
+    $scope.ShowHide = function () {
+        $scope.IsVisible = $scope.ShowPassport;
+    };
 } ]);
 
 

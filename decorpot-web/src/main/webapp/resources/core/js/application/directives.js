@@ -13,6 +13,7 @@ decortDirectives.directive("priceRange", function() {
 		max : 300000,
 		prefix : "Rs.",
 		prettify_enabled: true,
+		step : 50000
 	});
 });
 

@@ -66,7 +66,6 @@ public class ImageListImpl implements ImageList {
 		System.out.println("getImageListTheme" +to +"  "+ from+"  " + fromPrice+"   "+toPrice+"  "+theme);
 		return jdbcTemplate.queryForList(imageListSql,200000,300000,theme,from,to);
 	}
-	
-	
+
 
 }

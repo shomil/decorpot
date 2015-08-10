@@ -11,7 +11,7 @@ angular.module('decorpot').controller('LoginCtrl', function($scope, $auth) {
         })
         .catch(function(response) {
         	console.log({
-            content: response.data.message,
+            content: response,
             animation: 'fadeZoomFadeDown',
             type: 'material',
             duration: 3
@@ -30,7 +30,7 @@ angular.module('decorpot').controller('LoginCtrl', function($scope, $auth) {
         })
         .catch(function(response) {
         	console.log({
-            content: response.data ? response.data.message : response,
+            content: response,
             animation: 'fadeZoomFadeDown',
             type: 'material',
             duration: 3

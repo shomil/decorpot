@@ -9,12 +9,15 @@ decorpotCtrls.controller('DecorpotCtrl', [ '$scope', '$routeParams', function($s
 		} ]);
 
 decorpotCtrls.controller('ImageListController', [ '$scope', '$routeParams', 'interiors', '$location', function($scope, $routeParams, interiors, $location ) {
+	console.log('before location');
 	console.log($location);
 	$scope.from = 100000;
 	$scope.to = 300000;
 	$scope.page = 1;
-	interiors.getImages($routeParams.param, $scope.from, $scope.to, $scope.page).success(function(data) {
-
+	$scope.imagePath = $location.$$path.split("/")[1];
+	console.log($scope.imagePath);
+	interiors.getImages($scope.imagePath,$routeParams.param, $scope.from, $scope.to, $scope.page).success(function(data) {
+		console.log(data);
 		$scope.imageList = data;
 	});
 	

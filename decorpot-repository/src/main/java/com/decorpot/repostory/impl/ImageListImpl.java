@@ -36,7 +36,7 @@ public class ImageListImpl implements ImageList {
 			toPrice = this.defaultToPrice;
 		if(fromPrice == null)
 			fromPrice = this.defaultFromPrice;
-		System.out.println(to +"  "+ from+"  " + fromPrice+"   "+toPrice+"  "+space);
+		System.out.println("getImageListSpace" +to +"  "+ from+"  " + fromPrice+"   "+toPrice+"  "+space);
 		return jdbcTemplate.queryForList(imageListSql,200000,300000,space,from,to);
 	}
 
@@ -56,6 +56,15 @@ public class ImageListImpl implements ImageList {
 	public List<Map<String, Object>> getColorsByGroup(int groupid) {
 		// TODO Auto-generated method stub
 		return jdbcTemplate.queryForList(colorByGroupid,groupid);
+	}
+
+	@Override
+	public List<Map<String, Object>> getImageListTheme(String theme, Integer toPrice, Integer fromPrice, Integer to, Integer from) {
+		if(toPrice == null) toPrice = this.defaultToPrice;
+		if(fromPrice ==null) fromPrice = this.defaultFromPrice;
+		theme = "living";
+		System.out.println("getImageListTheme" +to +"  "+ from+"  " + fromPrice+"   "+toPrice+"  "+theme);
+		return jdbcTemplate.queryForList(imageListSql,200000,300000,theme,from,to);
 	}
 	
 	

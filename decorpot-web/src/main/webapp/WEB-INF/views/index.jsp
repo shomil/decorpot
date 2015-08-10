@@ -41,13 +41,13 @@
           <div class = "col-md-8">
             <ul class = "primary-menu">
               <li class = "menudropdown">
-                <a href="#/images">Themes</a>
+                <a href="#/imageListTheme">Themes</a>
                 <ul class = "sub-menu">
-                  <li><a href="#/classic">Classic</a></li>
-                  <li><a href="#/contemporary">Contemporary</a></li>
-                  <li><a href="#/minimalastic">Minimalastic</a></li>
-                 <li><a href="#/modern">Modern</a></li>
-                 <li><a href="#/fusion">Fusion</a></li>
+                  <li><a href="#/imageListTheme/classic">Classic</a></li>
+                  <li><a href="#/imageListTheme/contemporary">Contemporary</a></li>
+                  <li><a href="#/imageListTheme/minimalistic">Minimalistic</a></li>
+                 <li><a href="#/imageListTheme/modern">Modern</a></li>
+                 <li><a href="#/imageListTheme/fusion">Fusion</a></li>
                 </ul>
               </li>
               <li class = "menudropdown">

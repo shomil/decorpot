@@ -23,6 +23,9 @@ decorpot.config(['$routeProvider', '$provide', '$authProvider', function($routeP
 	}).when('/imageView/:groupid', {
 		templateUrl: 'resources/partials/imageView.html',
 		controller: 'ImageViewController'
+	}).when('/imageListTheme/:param',{
+		templateUrl: 'resources/partials/imageList.html',
+		controller: 'ImageListController'
 	})
 	.otherwise({
 		redirectTo: '/'

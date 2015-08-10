@@ -10,7 +10,7 @@ public class IntroPageController extends DefaultController  {
 	
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String navigateToDashboard(final Model m) {
-        
+        System.out.println("decorpot-web/IntroPageController");
        m.addAttribute("title", "Test Funda");
         return navigateWithModels(m, "introPage", "introPage", "introPage");
     }

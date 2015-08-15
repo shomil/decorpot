@@ -29,11 +29,11 @@ decorpot.config(['$routeProvider', '$provide', '$authProvider', function($routeP
 	});
 	
 	$authProvider.google({
-		clientId: '605704716648-1da3ccngddsc51nb6bacevoom9g3hotq.apps.googleusercontent.com'
+		clientId: '333854512360-bsm18ai5gc6keg3teh8u6vsj9v1aobbo.apps.googleusercontent.com'
 	});
 	
 	$authProvider.facebook({
-		clientId: '676572255812456'
+		clientId: '1644581525812851'
 	});
 	
 	$authProvider.facebook({
@@ -62,7 +62,5 @@ decorpot.config(['$routeProvider', '$provide', '$authProvider', function($routeP
 	  type: '2.0',
 	  popupOptions: { width: 580, height: 400 }
 	});
-
-	
 	
 }]);

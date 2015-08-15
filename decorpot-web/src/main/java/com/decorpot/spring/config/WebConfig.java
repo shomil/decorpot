@@ -11,6 +11,8 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import com.google.api.client.auth.oauth2.AuthorizationCodeFlow;
+
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = { "com.decorpot.spring.config", "com.decorpot.spring.controller", "com.decorpot.*" })
@@ -42,5 +44,4 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 		
 		return dataSource;
 	}
-
 }

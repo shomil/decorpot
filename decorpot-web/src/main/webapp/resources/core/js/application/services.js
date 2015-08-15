@@ -32,7 +32,8 @@ services.service('imageView', function($http){
 });
 
 services.service('cart', function($http){
-	
+	var counter =0 ;
+	var 
 	return {
 		checkout : function(){
 			
@@ -40,6 +41,12 @@ services.service('cart', function($http){
 		
 		addToCart : function(gruopid){
 			
+			counter++;
+			return counter;
+		},
+		
+		getCartCounter : function(){
+			return counter;
 		}
 	};
 });

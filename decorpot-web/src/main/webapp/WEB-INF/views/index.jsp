@@ -30,7 +30,7 @@
   </head>
   <body>
     <div id="mainPage">
-      <div id="header">
+      <div id="header" ng-controller = "DecorpotCtrl">
         <div id="top-bar" class="row"></div>
         <div class="row" style="margin-top: 1%;">
           <div id = "logo" class="col-md-6">DECORPOT.COM</div>
@@ -97,7 +97,7 @@
               </li>
               <li class="dropdown main-top-nav-right-link cart" >
                 <a rel="nofollow" id="login_link" class="login_link" href="#signin-panel" data-toggle="modal" data-target="#signIn">
-                  <i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i> Cart(0)
+                  <i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i> Cart({{cartCounter}})
                 </a>
               </li>
             </ul>

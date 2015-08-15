@@ -57,14 +57,15 @@
 		<p id="infoText">Buy this image at only Rs. 1000.Buying this image you will get B&Q and free call back from experts for complete explanation</p>
 		<input type = "checkbox" ng-model="customization">  Include customization @Rs499.00
 		<br>
-		<input id="custText"type="text" class="form-control" ng-show="customization">
+		<input id="custText"type="text" class="form-control" ng-show="customization" ng-model="custText">
 		<br>
-		<a id="addToCart" class="btn btn-primary btn-lg buyNCartButton" href="#">Add To Cart</a>
-		<a id="buyNow" class="btn btn-primary btn-lg" href="#">Buy Now</a>	
+		<div id="addToCart" class="btn btn-primary btn-lg buyNCartButton" ng-click="addToCart(groupid)">Add To Cart</div>
+		<a id="buyNow" class="btn btn-primary btn-lg" href="#/buy/{{groupid}}">Buy Now</a>	
 	</div>
 
 	<div id="content" ng-show="content == 2">
 		<p id="infoText">Buy this image at only Rs. 1000.Buying this image you will get B&Q and free call back from experts for complete explanation</p>
-		<a id="getItDone" class="btn btn-primary btn-lg" href="#">Get It Done!</a>	
+		<div id="addToCart" class="btn btn-primary btn-lg buyNCartButton" ng-click="addToCart(groupid)">Add To Cart</div>
+		<a id="getItDone" class="btn btn-primary btn-lg" href="#/done/{{groupid}}">Get It Done!</a>	
 	</div>
 </div>

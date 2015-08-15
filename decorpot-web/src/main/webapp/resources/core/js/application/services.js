@@ -30,3 +30,16 @@ services.service('imageView', function($http){
 	};
 	
 });
+
+services.service('cart', function($http){
+	
+	return {
+		checkout : function(){
+			
+		},
+		
+		addToCart : function(gruopid){
+			
+		}
+	};
+});

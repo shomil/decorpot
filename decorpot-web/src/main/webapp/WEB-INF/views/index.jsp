@@ -32,7 +32,7 @@
   </head>
   <body>
     <div id="mainPage">
-      <div id="header">
+      <div id="header" ng-controller = "DecorpotCtrl">
         <div id="top-bar" class="row"></div>
         <div class="row" style="margin-top: 1%;">
           <div id = "logo" class="col-md-6">DECORPOT.COM</div>
@@ -44,13 +44,13 @@
           <div class = "col-md-8">
             <ul class = "primary-menu">
               <li class = "menudropdown">
-                <a href="#/images">Themes</a>
+                <a href="#/imageListTheme">Themes</a>
                 <ul class = "sub-menu">
-                  <li><a href="#/classic">Classic</a></li>
-                  <li><a href="#/contemporary">Contemporary</a></li>
-                  <li><a href="#/minimalastic">Minimalastic</a></li>
-                 <li><a href="#/modern">Modern</a></li>
-                 <li><a href="#/fusion">Fusion</a></li>
+                  <li><a href="#/imageListTheme/classic">Classic</a></li>
+                  <li><a href="#/imageListTheme/contemporary">Contemporary</a></li>
+                  <li><a href="#/imageListTheme/minimalistic">Minimalistic</a></li>
+                 <li><a href="#/imageListTheme/modern">Modern</a></li>
+                 <li><a href="#/imageListTheme/fusion">Fusion</a></li>
                 </ul>
               </li>
               <li class = "menudropdown">
@@ -105,7 +105,7 @@
               
               <li class="dropdown main-top-nav-right-link cart" >
                 <a rel="nofollow" id="login_link" class="login_link" href="#signin-panel" data-toggle="modal" data-target="#signIn">
-                  <i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i> Cart(0)
+                  <i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i> Cart({{cartCounter}})
                 </a>
               </li>
             </ul>

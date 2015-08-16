@@ -42,7 +42,7 @@ decorpotCtrls.controller('ImageListController', [
 						console.log(data);
 						$scope.imageList = data;
 					});
-			$scope.cartCounter = cart.getCartCounter();
+			
 
 		} ]);
 
@@ -54,6 +54,7 @@ decorpotCtrls.controller('ImageViewController', [
 		'cart',
 		function($scope, $routeParams, imageView, $auth, cart) {
 			$scope.selection = {};
+			$scope.groupId = $routeParams.groupid;
 			imageView.getColors($routeParams.groupid).success(function(data) {
 
 				$scope.colors = data;
@@ -82,6 +83,7 @@ decorpotCtrls.controller('ImageViewController', [
 
 			$scope.addToCart = function(groupid) {
 				console.log($auth.isAuthenticated());
+				console.log($auth.getPayload());
 				return cart.addToCart(groupid);
 
 			};

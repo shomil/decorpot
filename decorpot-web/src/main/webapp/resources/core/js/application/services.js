@@ -31,22 +31,33 @@ services.service('imageView', function($http){
 	
 });
 
-services.service('cart', function($http){
-	var counter =0 ;
-	sessionStorage.setItem('cartCounter', counter);
+services.service('cart', function($http, $auth){
+	if($auth.isAuthenticated()){
+		//get all images from db check through sessionStorage if any missing add it. and post all new.
+	}
+	var cartImages = sessionStorage.getItem('cartImages') === null ? [] : sessionStorage.getItem('cartImages');
+	sessionStorage.setItem('cartImages', cartImages);
 	return {
 		checkout : function(){
+			if(!$auth.isAuthenticated()){
+				//ask to login
+			}
 			
 		},
 		
 		addToCart : function(gruopid){
+			cartImages = sessionStorage.getItem('cartImages');
+			if(cartImages.indexOf(gruopid) < 0){
+				cartImages.push(groupid);
+				sessionStorage.setItem('cartImages', cartImages);
+				//post
+			}
 			
-			counter++;
-			return counter;
+			return cartImages.length;
 		},
 		
 		getCartCounter : function(){
-			return counter;
+			return cartImages.length;
 		}
 		
 	};

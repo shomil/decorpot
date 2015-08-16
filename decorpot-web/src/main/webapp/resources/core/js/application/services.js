@@ -33,7 +33,7 @@ services.service('imageView', function($http){
 
 services.service('cart', function($http){
 	var counter =0 ;
-	var 
+	//var 
 	return {
 		checkout : function(){
 			

@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/ico" href="resources/core/img/favicon.ico" />
+    
     <title>decorpot.com</title>
     <script type="text/javascript">
     var _contextPath = "${pageContext.request.contextPath}";
@@ -95,6 +97,12 @@
                   <i class="glyphicon glyphicon-search" aria-hidden="true"></i> Log in | Sign up
                 </a>
               </li>
+              
+              <li class="hide dropdown main-top-nav-right-link login-signup">
+                <a>Logout
+                </a>
+              </li>
+              
               <li class="dropdown main-top-nav-right-link cart" >
                 <a rel="nofollow" id="login_link" class="login_link" href="#signin-panel" data-toggle="modal" data-target="#signIn">
                   <i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i> Cart({{getCartCounter()}})
@@ -198,7 +206,8 @@
     <script src="resources/core/js/masonry.pkgd.min.js"></script>
     <script src="resources/core/js/jquery.flexslider-min.js"></script>
     <script src="resources/core/js/application/app.js"></script>
-    <script src="//cdn.jsdelivr.net/satellizer/0.11.3/satellizer.min.js"></script>
+    <script src="resources/core/js/application/satellizer.js"></script>
+    <script src="resources/core/js/angularytics.js"></script>
     <script src="resources/core/js/application/services.js"></script>
     <script src="resources/core/js/application/controllers.js"></script>
     <script src="resources/core/js/application/login.js"></script>
@@ -251,6 +260,18 @@
 							return false;
 						});
 					});
+					
 				</script>
+					<script>
+					  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+					  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+					  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+					  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+					  ga('create', 'UA-66374032-1', 'auto');
+					  ga('send', 'pageview');
+					  ga('set', '&uid', ""); // Set the user ID using signed-in user_id.
+					</script>
+				
   </body>
 </html>

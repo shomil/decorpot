@@ -22,17 +22,7 @@ public class DecorpotController extends DefaultController{
 	public List<Map<String, Object>> index() {
 		return decorpotServices.getDataBaseTables();
 	}
-	
-	@RequestMapping(value="/auth/facebook")
-	public String loginWithFacebook(@QueryParam("code") String authorizationCode){
-		return authorizationCode;
-	}
-	
-	@RequestMapping(value="/auth/google")
-	public String loginWithGoogle(@QueryParam("code") String authorizationCode){
-		return authorizationCode;
-	}
-	
+		
 	@RequestMapping(value="imageListSpace/{space}")
 	public List<Map<String, Object>> getImageListSpace(@PathVariable String space,
 			@QueryParam("from") int from,
@@ -40,7 +30,6 @@ public class DecorpotController extends DefaultController{
 			@QueryParam("page") Integer page
 			
 			) {
-		System.out.println("Decorpot-web/src/main/java/com.decorpot.controller/DecorpotController.java.getImageListSpace");
 		long start = System.currentTimeMillis();
 		List<Map<String, Object>> images = decorpotServices.getImageListSpace(space, to, from, page);
 		long end = System.currentTimeMillis();
@@ -68,14 +57,5 @@ public class DecorpotController extends DefaultController{
 		System.out.println(end-start);
 		return colors;
 		
-	}
-	@RequestMapping(value="imageListTheme/{theme}")
-	public List<Map<String,Object>> getImageListTheme(@PathVariable String theme,
-						@QueryParam("from") int from,
-						@QueryParam("to") int to,
-						@QueryParam("page") Integer page){
-		System.out.println("Decorpot-web/src/main/java/com.decorpot.controller/DecorpotController.java.getImageListTheme");
-		List<Map<String,Object>> images = decorpotServices.getImageListTheme(theme, to, from, page);
-		return images;
 	}
 }

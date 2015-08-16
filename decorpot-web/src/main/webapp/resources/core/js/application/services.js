@@ -32,8 +32,8 @@ services.service('imageView', function($http){
 });
 
 services.service('cart', function($http){
-	var counter =0;
-	//var
+	var counter =0 ;
+	sessionStorage.setItem('cartCounter', counter);
 	return {
 		checkout : function(){
 			
@@ -48,5 +48,6 @@ services.service('cart', function($http){
 		getCartCounter : function(){
 			return counter;
 		}
+		
 	};
 });

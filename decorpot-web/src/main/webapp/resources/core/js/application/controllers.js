@@ -41,7 +41,6 @@ decorpotCtrls.controller('ImageViewController', [
 		'cart',
 		function($scope, $routeParams, imageView, $auth, cart) {
 			$scope.selection = {};
-			$scope.cartCounter = 10;
 			imageView.getColors($routeParams.groupid).success(function(data) {
 
 				$scope.colors = data;

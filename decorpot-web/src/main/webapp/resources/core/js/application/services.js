@@ -31,12 +31,13 @@ services.service('imageView', function($http){
 	
 });
 
-services.service('cart', function($http, $auth){
+services.service('cart',  function($http, User, $auth){
 	if($auth.isAuthenticated()){
 		//get all images from db check through sessionStorage if any missing add it. and post all new.
 	}
-	var cartImages = sessionStorage.getItem('cartImages') === null ? [] : sessionStorage.getItem('cartImages');
-	sessionStorage.setItem('cartImages', cartImages);
+	console.log(User.getUser());
+	var cartImages = (sessionStorage.getItem('cartImages') === null) ? [] : JSON.parse(sessionStorage.getItem('cartImages'));
+	sessionStorage.setItem('cartImages', JSON.stringify(cartImages));
 	return {
 		checkout : function(){
 			if(!$auth.isAuthenticated()){
@@ -45,11 +46,11 @@ services.service('cart', function($http, $auth){
 			
 		},
 		
-		addToCart : function(gruopid){
-			cartImages = sessionStorage.getItem('cartImages');
-			if(cartImages.indexOf(gruopid) < 0){
+		addToCart : function(groupid){
+			cartImages = JSON.parse(sessionStorage.getItem('cartImages'));
+			if(cartImages.indexOf(groupid) < 0){
 				cartImages.push(groupid);
-				sessionStorage.setItem('cartImages', cartImages);
+				sessionStorage.setItem('cartImages', JSON.stringify(cartImages));
 				//post
 			}
 			

@@ -26,7 +26,7 @@ public class DecorpotController extends DefaultController{
 	}
 		
 	@RequestMapping(value="imageListSpace/{space}", method = RequestMethod.GET)
-	public ImageDetail getImageListSpace(@PathVariable String space,
+	public List<ImageDetail> getImageListSpace(@PathVariable String space,
 			@QueryParam("from") int from,
 			@QueryParam("to") int to,
 			@QueryParam("page") Integer page
@@ -36,7 +36,7 @@ public class DecorpotController extends DefaultController{
 		List<ImageDetail> images = decorpotServices.getImageListSpace(space, to, from, page);
 		long end = System.currentTimeMillis();
 		System.out.println(end-start);
-		return images.get(0);
+		return images;
 	}
 	
 	

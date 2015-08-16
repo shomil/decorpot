@@ -1,6 +1,5 @@
 package com.decorpot.controller;
 
-
 import static com.decorpot.controller.Constants.AUTH_CODE;
 import static com.decorpot.controller.Constants.CLIENT_ID_KEY;
 import static com.decorpot.controller.Constants.CLIENT_SECRET;
@@ -33,7 +32,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 @RequestMapping(value = "/auth")
 public class AuthController extends DefaultController {
@@ -42,7 +40,8 @@ public class AuthController extends DefaultController {
 	public static final ObjectMapper MAPPER = new ObjectMapper();
 
 	@RequestMapping(value = "facebook", method = RequestMethod.POST)
-	public String loginWithFacebook(@RequestBody Payload payload) throws URISyntaxException {
+	public String loginWithFacebook(@RequestBody Payload payload)
+			throws URISyntaxException {
 
 		final String accessTokenUrl = "https://graph.facebook.com/v2.3/oauth/access_token";
 
@@ -54,7 +53,7 @@ public class AuthController extends DefaultController {
 		nameValuePairs.add(new BasicNameValuePair(REDIRECT_URI_KEY, payload
 				.getRedirectUri()));
 		nameValuePairs.add(new BasicNameValuePair(CODE_KEY, payload.getCode()));
-		
+
 		return get(accessTokenUrl, nameValuePairs);
 	}
 
@@ -66,16 +65,17 @@ public class AuthController extends DefaultController {
 
 		List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(1);
 		nameValuePairs.add(new BasicNameValuePair(GRANT_TYPE_KEY, AUTH_CODE));
-		nameValuePairs.add(new BasicNameValuePair(CLIENT_ID_KEY, payload.getClientId()));
+		nameValuePairs.add(new BasicNameValuePair(CLIENT_ID_KEY, payload
+				.getClientId()));
 		nameValuePairs.add(new BasicNameValuePair(CLIENT_SECRET, CS_GOOGLE));
-		nameValuePairs.add(new BasicNameValuePair(REDIRECT_URI_KEY, payload.getRedirectUri()));
+		nameValuePairs.add(new BasicNameValuePair(REDIRECT_URI_KEY, payload
+				.getRedirectUri()));
 		nameValuePairs.add(new BasicNameValuePair(CODE_KEY, payload.getCode()));
 
 		return post(accessTokenUrl, nameValuePairs);
 	}
 
-	@SuppressWarnings("unchecked")
-	private String post(String url, List<NameValuePair> parameters){
+	private String post(String url, List<NameValuePair> parameters) {
 		StringBuffer result = new StringBuffer();
 
 		try (CloseableHttpClient httpClient = HttpClientBuilder.create()
@@ -96,12 +96,12 @@ public class AuthController extends DefaultController {
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
-		
+
 		return result.toString();
 	}
-	
-	@SuppressWarnings("unchecked")
-	private String get(String url, List<NameValuePair> parameters) throws URISyntaxException{
+
+	private String get(String url, List<NameValuePair> parameters)
+			throws URISyntaxException {
 		StringBuffer result = new StringBuffer();
 
 		try (CloseableHttpClient httpClient = HttpClientBuilder.create()
@@ -123,10 +123,10 @@ public class AuthController extends DefaultController {
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
-		
+
 		return result.toString();
 	}
-	
+
 	public static class Payload {
 
 		String clientId;

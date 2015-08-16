@@ -12,7 +12,7 @@ angular.module('decorpot').controller('LoginCtrl', function($scope, $auth, $http
         	
         	if(provider == 'google'){
             	$http.get('https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=' + response.data.access_token).success(function(response){
-            		User.setUser(response.data);
+            		User.setUser(response);
             		console.log('userInfo => `', response, provider);
             	});        		
         	}else{

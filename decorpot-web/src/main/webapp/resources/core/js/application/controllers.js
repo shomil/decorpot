@@ -16,7 +16,8 @@ decorpotCtrls.controller('DecorpotCtrl', [ '$scope', '$routeParams', 'cart', '$a
 				return $auth.isAuthenticated();
 			}, function(newValue, oldValue){
 				$scope.isAuthenticated = newValue;
-				$scope.name = User.getUser().name;
+				$scope.name = User.getUser().name || "Guest";
+				console.log('User.getUser() => ', User.getUser());
 			});
 			
 		} ]);

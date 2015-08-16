@@ -96,9 +96,14 @@
                   <i class="glyphicon glyphicon-search" aria-hidden="true"></i> Log in | Sign up
                 </a>
               </li>
+              <li ng-show="isAuthenticated" class="dropdown main-top-nav-right-link login-signup">
+                <a>
+                  Hi {{name}}!
+                </a>
+              </li>
               
               <li ng-show="isAuthenticated" class="dropdown main-top-nav-right-link login-signup">
-                <a href="#">Hi {{name}}!
+                <a href="#">
                   Logout
                 </a>
               </li>

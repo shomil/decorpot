@@ -4,16 +4,17 @@
  */
 var decorpotCtrls = angular.module('decorpot');
 
-decorpotCtrls.controller('DecorpotCtrl', 'cart', [ '$scope', '$routeParams', 'cart',
-		function($scope, $routeParams, cart) {
-	$scope.cartCounter = cart.getCartCounter();
+decorpotCtrls.controller('DecorpotCtrl', [ '$scope', '$routeParams',
+		'cart', function($scope, $routeParams, cart) {
+			$scope.cartCounter = cart.getCartCounter();
 		} ]);
 
-decorpotCtrls.controller('ImageListController',  [
+decorpotCtrls.controller('ImageListController', [
 		'$scope',
 		'$routeParams',
 		'interiors',
-		'$location', 'cart',
+		'$location',
+		'cart',
 		function($scope, $routeParams, interiors, $location, cart) {
 			console.log('before location');
 			console.log($location);

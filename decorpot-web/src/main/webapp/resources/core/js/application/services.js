@@ -34,7 +34,6 @@ services.service('imageView', function($http){
 services.service('cart', function($http){
 	var counter =0 ;
 	sessionStorage.setItem('cartCounter', counter);
-	//var 
 	return {
 		checkout : function(){
 			

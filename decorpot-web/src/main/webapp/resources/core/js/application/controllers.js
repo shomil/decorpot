@@ -6,7 +6,7 @@ var decorpotCtrls = angular.module('decorpot');
 
 decorpotCtrls.controller('DecorpotCtrl', [ '$scope', '$routeParams', 'cart',
 		function($scope, $routeParams, cart) {
-			$scope.cartCounter = cart.getCartCounter();
+			$scope.getCartCounter = cart.getCartCounter;
 		} ]);
 
 decorpotCtrls.controller('ImageListController', [

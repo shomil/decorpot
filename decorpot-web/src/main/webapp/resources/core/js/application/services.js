@@ -32,7 +32,8 @@ services.service('imageView', function($http){
 });
 
 services.service('cart', function($http){
-	var counter =0 ; 
+	var counter =0;
+	//var
 	return {
 		checkout : function(){
 			

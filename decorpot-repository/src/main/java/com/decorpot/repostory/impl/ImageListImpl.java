@@ -1,5 +1,8 @@
 package com.decorpot.repostory.impl;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -7,9 +10,11 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.decorpot.repository.interfaces.ImageList;
+import com.decorpot.repository.models.ImageDetail;
 
 @Repository
 public class ImageListImpl implements ImageList {
@@ -31,19 +36,31 @@ public class ImageListImpl implements ImageList {
 	}
 
 	@Override
-	public List<Map<String, Object>> getImageListSpace(String space, Integer toPrice, Integer fromPrice, Integer to, Integer from) {
+	public List<ImageDetail> getImageListSpace(String space, Integer toPrice, Integer fromPrice, Integer to, Integer from) {
 		if(toPrice == null)
 			toPrice = this.defaultToPrice;
 		if(fromPrice == null)
 			fromPrice = this.defaultFromPrice;
+		Map<String, Object> params = new HashMap<>();
+		params.put("toPrice", toPrice);
+		params.put("fromPrice", fromPrice);
+		params.put("space", space);
+		params.put("to", to);
+		params.put("from", from);
+		
 		System.out.println("getImageListSpace" +to +"  "+ from+"  " + fromPrice+"   "+toPrice+"  "+space);
-		return jdbcTemplate.queryForList(imageListSql,200000,300000,space,from,to);
+		List<ImageDetail> imgDetailsList =  jdbcTemplate.query(imageListSql, new Object[] {fromPrice, toPrice, space, from, to}, new ImageDetailMapper());
+		return imgDetailsList;
 	}
-
-	@Override
-	public List<Map<String, Object>> getImageListSpace(int groupId) {
-		// TODO Auto-generated method stub
-		return null;
+	public class ImageDetailMapper implements RowMapper<ImageDetail> {
+	public ImageDetail mapRow(ResultSet rs, int rowNum) throws SQLException {
+		ImageDetail imgDetail = new ImageDetail();
+		imgDetail.setGroupId(rs.getInt("groupid"));
+		imgDetail.setPathSmall(rs.getString("path_small"));
+		imgDetail.setPrice(rs.getInt("price"));
+		imgDetail.setDescriptionShort(rs.getString("description_short"));
+	      return imgDetail;
+	   }
 	}
 
 	@Override
@@ -65,6 +82,12 @@ public class ImageListImpl implements ImageList {
 		theme = "living";
 		System.out.println("getImageListTheme" +to +"  "+ from+"  " + fromPrice+"   "+toPrice+"  "+theme);
 		return jdbcTemplate.queryForList(imageListSql,200000,300000,theme,from,to);
+	}
+
+	@Override
+	public List<ImageDetail> getImageListSpace(int groupId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

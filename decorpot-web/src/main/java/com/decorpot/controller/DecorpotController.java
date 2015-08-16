@@ -8,8 +8,10 @@ import javax.ws.rs.QueryParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.decorpot.repository.models.ImageDetail;
 import com.decorpot.services.DecorpotServices;
 
 @RestController
@@ -23,18 +25,18 @@ public class DecorpotController extends DefaultController{
 		return decorpotServices.getDataBaseTables();
 	}
 		
-	@RequestMapping(value="imageListSpace/{space}")
-	public List<Map<String, Object>> getImageListSpace(@PathVariable String space,
+	@RequestMapping(value="imageListSpace/{space}", method = RequestMethod.GET)
+	public ImageDetail getImageListSpace(@PathVariable String space,
 			@QueryParam("from") int from,
 			@QueryParam("to") int to,
 			@QueryParam("page") Integer page
 			
 			) {
 		long start = System.currentTimeMillis();
-		List<Map<String, Object>> images = decorpotServices.getImageListSpace(space, to, from, page);
+		List<ImageDetail> images = decorpotServices.getImageListSpace(space, to, from, page);
 		long end = System.currentTimeMillis();
 		System.out.println(end-start);
-		return images;
+		return images.get(0);
 	}
 	
 	

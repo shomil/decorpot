@@ -36,7 +36,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.decorpot.auth.AuthUtils;
-import com.fasterxml.jackson.core.JsonParseException;
 
 @RestController
 @RequestMapping(value = "/auth")
@@ -53,7 +52,7 @@ public class AuthController extends DefaultController {
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "google", method = RequestMethod.POST)
 	public String loginWithGoogle(@RequestBody Payload payload)
-			throws JsonParseException, IOException {
+			throws  IOException {
 
 		final String accessTokenUrl = "https://accounts.google.com/o/oauth2/token";
 		final String peopleApiUrl = "https://www.googleapis.com/plus/v1/people/me/openIdConnect";

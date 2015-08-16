@@ -9,11 +9,11 @@
 <div id="two-columns" class="grid-container">
 	<ul class="rig columns-2">
 		<li ng-repeat="image in imageList | filter:query">
-		<a href="#imageView/{{image.groupid}}">
+		<a href="#imageView/{{image.groupId}}">
 			<div id="imageContainer">
-				<img bn-lazy-src="{{image.path_small}}" />
+				<img bn-lazy-src="{{image.pathSmall}}" />
 				<div id="imageText">
-					<p>{{image.description_short}}</p>
+					<p>{{image.descriptionShort}}</p>
 				</div>
 
 			</div>

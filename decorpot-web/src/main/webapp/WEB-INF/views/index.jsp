@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="resources/core/css/ion.rangeSlider.skinModern.css">
     <link rel="stylesheet" href="resources/core/css/normalize.css">
     <link rel="stylesheet" href="resources/core/css/ion.rangeSlider.css">
-    <link rel="shortcut icon" href="http://i489.photobucket.com/albums/rr251/JokerKarimme/Icon/AdrianaLima.png">
+    <link rel="shortcut icon" href="https://fbstatic-a.akamaihd.net/rsrc.php/yl/r/H3nktOa7ZMg.ico">
     <c:forEach var="entry" items="${pageScripts}">
     <script src="resources/core/js/application/${entry}.js" ></script>
     </c:forEach>
@@ -33,7 +33,7 @@
       <div id="header" ng-controller = "DecorpotCtrl">
         <div id="top-bar" class="row"></div>
         <div class="row" style="margin-top: 1%;">
-          <div id = "logo" class="col-md-6">DECORPOT.COM</div>
+          <div id = "logo" class="col-md-6">DECORPOT.COM</div> 
           <div class="col-xs-6 text-right pull-right text-muted"> care@decorpot.com | +91 8123029902</div>
         </div>
         

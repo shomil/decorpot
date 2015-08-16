@@ -51,3 +51,14 @@ services.service('cart', function($http){
 		
 	};
 });
+
+
+services.service('User', function(){
+	this.User = {};
+	this.setUser = function(obj){
+		this.User = obj;
+	}
+	this.getUser = function(){
+		return this.User;
+	}
+});

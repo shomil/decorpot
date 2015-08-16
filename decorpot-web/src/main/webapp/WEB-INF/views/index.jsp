@@ -91,17 +91,18 @@
           </div>
           <div class = "col-md-4">
             <ul class="nav navbar-nav navbar-right main-top-nav-right">
-              
-              <li class="dropdown main-top-nav-right-link login-signup">
+              <li ng-hide="isAuthenticated" class="dropdown main-top-nav-right-link login-signup">
                 <a href="#modal" id="modal_trigger">
                   <i class="glyphicon glyphicon-search" aria-hidden="true"></i> Log in | Sign up
                 </a>
               </li>
               
-              <li class="hide dropdown main-top-nav-right-link login-signup">
-                <a>Logout
+              <li ng-show="isAuthenticated" class="dropdown main-top-nav-right-link login-signup">
+                <a href="#">Hi {{name}}!
+                  Logout
                 </a>
               </li>
+          
               
               <li class="dropdown main-top-nav-right-link cart" >
                 <a rel="nofollow" id="login_link" class="login_link" href="#signin-panel" data-toggle="modal" data-target="#signIn">

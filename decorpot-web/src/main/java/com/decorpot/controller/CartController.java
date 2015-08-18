@@ -13,19 +13,19 @@ import com.decorpot.cart.models.CartAddition;
 @RestController
 public class CartController {
 	
-	@RequestMapping(value="/addToCart" , method = RequestMethod.POST)
+	@RequestMapping(value="/cart" , method = RequestMethod.POST)
 	public String addToCart(@RequestBody CartAddition cartAddition, HttpServletRequest request) {
 		System.out.println(cartAddition.toString());
 		return "success";
 	}
 	
-	@RequestMapping(value="/getCartDetails/{email}" , method = RequestMethod.GET)
+	@RequestMapping(value="/cart/{email}" , method = RequestMethod.GET)
 	public String getCartDetails(@PathParam ("email") String email, HttpServletRequest request) {
 		System.out.println(email);
 		return "success";
 	}
 	
-	@RequestMapping(value="/getCartDetails/{email}/{groupId}" , method = RequestMethod.DELETE)
+	@RequestMapping(value="/cart/{email}/{groupId}" , method = RequestMethod.DELETE)
 	public String deleteFromCart(@PathParam ("email") String email, @PathParam ("groupId") int groupId, HttpServletRequest request) {
 		System.out.println(email);
 		return "success";

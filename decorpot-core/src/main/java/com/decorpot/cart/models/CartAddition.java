@@ -6,7 +6,7 @@ public class CartAddition {
 	
 	private String email;
 	private String name;
-	private int [] groupId;
+	private CartImageDetails [] cartImageDetails;
 	public String getEmail() {
 		return email;
 	}
@@ -19,16 +19,18 @@ public class CartAddition {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int[] getGroupId() {
-		return groupId;
+	public CartImageDetails [] getCartImageDetails() {
+		return cartImageDetails;
 	}
-	public void setGroupId(int[] groupId) {
-		this.groupId = groupId;
+	public void setCartImageDetails(CartImageDetails [] cartImageDetails) {
+		this.cartImageDetails = cartImageDetails;
 	}
 	@Override
 	public String toString() {
-		return "CartAddition [email=" + email + ", name=" + name + ", groupId="
-				+ Arrays.toString(groupId) + "]";
+		return "CartAddition [email=" + email + ", name=" + name
+				+ ", cartImageDetails=" + Arrays.toString(cartImageDetails)
+				+ "]";
 	}
+	
 
 }

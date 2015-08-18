@@ -80,11 +80,11 @@ services.service('cart', function($http, User, $auth) {
 });
 
 services.service('User', function() {
-	this.User = {};
+	var userObj = {};
 	this.setUser = function(obj) {
-		this.User = obj;
+		userObj = obj;
 	}
 	this.getUser = function() {
-		return this.User;
+		return userObj;
 	}
 });

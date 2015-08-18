@@ -300,7 +300,7 @@
         };
 
         shared.setToken = function(response, redirect) {
-          var accessToken = response && response.data.access_token;
+          var accessToken = response && response.data.credentials.access_token;
           var token;
 
           if (accessToken) {

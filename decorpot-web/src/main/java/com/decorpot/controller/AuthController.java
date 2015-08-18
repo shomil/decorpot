@@ -15,7 +15,9 @@ import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -26,7 +28,10 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
+import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.node.ObjectNode;
+import org.codehaus.jackson.type.TypeReference;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -54,7 +59,39 @@ public class AuthController extends DefaultController {
 				.getRedirectUri()));
 		nameValuePairs.add(new BasicNameValuePair(CODE_KEY, payload.getCode()));
 
-		return get(accessTokenUrl, nameValuePairs);
+		String result = "{}";
+
+		String tokenExchange = get(accessTokenUrl, nameValuePairs);
+		Map<String, String> responseJson = new HashMap<String, String>();
+		ObjectMapper mapper = new ObjectMapper();
+		ObjectNode obj;
+
+		try {
+			//System.out.println("tokenExchange => " + tokenExchange);
+			responseJson = mapper.readValue(tokenExchange,
+					new TypeReference<HashMap<String, String>>() {
+					});
+
+			List<NameValuePair> queryParameters = new ArrayList<NameValuePair>(
+					1);
+			queryParameters.add(new BasicNameValuePair("expires_in", "json"));
+			queryParameters.add(new BasicNameValuePair("access_token",
+					responseJson.get("access_token")));
+			queryParameters.add(new BasicNameValuePair("token_type", "Bearer"));
+			queryParameters.add(new BasicNameValuePair("fields",
+					"id,email,name"));
+
+			String googleUserInfo = getFBUserProfileAndUpdate(queryParameters);
+			obj = mapper.createObjectNode();
+			obj.put("credentials", mapper.readTree(tokenExchange));
+			obj.put("user", mapper.readTree(googleUserInfo));
+
+			result = mapper.writeValueAsString(obj);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+		return result;
 	}
 
 	@RequestMapping(value = "google", method = RequestMethod.POST)
@@ -72,7 +109,47 @@ public class AuthController extends DefaultController {
 				.getRedirectUri()));
 		nameValuePairs.add(new BasicNameValuePair(CODE_KEY, payload.getCode()));
 
-		return post(accessTokenUrl, nameValuePairs);
+		String tokenExchange = post(accessTokenUrl, nameValuePairs);
+
+		String result = "{}";
+
+		Map<String, String> responseJson = new HashMap<String, String>();
+		ObjectMapper mapper = new ObjectMapper();
+		ObjectNode obj;
+		try {
+			responseJson = mapper.readValue(tokenExchange,
+					new TypeReference<HashMap<String, String>>() {
+					});
+			String googleUserInfo = getGoogleUserProfileAndUpdate(responseJson
+					.get("access_token"));
+			obj = mapper.createObjectNode();
+			obj.put("credentials", mapper.readTree(tokenExchange));
+			obj.put("user", mapper.readTree(googleUserInfo));
+
+			result = mapper.writeValueAsString(obj);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		//
+
+		return result;
+	}
+
+	private String getGoogleUserProfileAndUpdate(String accessToken)
+			throws URISyntaxException {
+		final String profileUrl = "https://www.googleapis.com/oauth2/v1/userinfo";
+		List<NameValuePair> queryParameters = new ArrayList<NameValuePair>(1);
+		queryParameters.add(new BasicNameValuePair("alt", "json"));
+		queryParameters
+				.add(new BasicNameValuePair("access_token", accessToken));
+
+		return get(profileUrl, queryParameters);
+	}
+
+	private String getFBUserProfileAndUpdate(List<NameValuePair> queryParameters)
+			throws URISyntaxException {
+		final String profileUrl = "https://graph.facebook.com/v2.3/me";
+		return get(profileUrl, queryParameters);
 	}
 
 	private String post(String url, List<NameValuePair> parameters) {
@@ -108,7 +185,7 @@ public class AuthController extends DefaultController {
 				.build()) {
 
 			URI uri = new URIBuilder(url).addParameters(parameters).build();
-			System.out.println("uri => " + uri);
+			//System.out.println("uri => " + uri);
 			HttpGet getRequest = new HttpGet(uri);
 			getRequest.setHeader("User-Agent", USER_AGENT);
 

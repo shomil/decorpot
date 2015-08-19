@@ -32,10 +32,13 @@ import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.node.ObjectNode;
 import org.codehaus.jackson.type.TypeReference;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.decorpot.repository.core.UserRepository;
 
 @RestController
 @RequestMapping(value = "/auth")
@@ -44,6 +47,9 @@ public class AuthController extends DefaultController {
 	private final String USER_AGENT = "Mozilla/5.0";
 	public static final ObjectMapper MAPPER = new ObjectMapper();
 
+	@Autowired
+	UserRepository userRepository;
+	
 	@RequestMapping(value = "facebook", method = RequestMethod.POST)
 	public String loginWithFacebook(@RequestBody Payload payload)
 			throws URISyntaxException {
@@ -84,9 +90,15 @@ public class AuthController extends DefaultController {
 			String googleUserInfo = getFBUserProfileAndUpdate(queryParameters);
 			obj = mapper.createObjectNode();
 			obj.put("credentials", mapper.readTree(tokenExchange));
-			obj.put("user", mapper.readTree(googleUserInfo));
+			JsonNode user = mapper.readTree(googleUserInfo);
+			obj.put("user", user);
 
+			Map<String, Object> userMap = mapper.convertValue(user, Map.class);
+			
+			System.out.println(userRepository.addUser(userMap));
+			
 			result = mapper.writeValueAsString(obj);
+			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -124,8 +136,13 @@ public class AuthController extends DefaultController {
 					.get("access_token"));
 			obj = mapper.createObjectNode();
 			obj.put("credentials", mapper.readTree(tokenExchange));
-			obj.put("user", mapper.readTree(googleUserInfo));
+			JsonNode user = mapper.readTree(googleUserInfo);
+			obj.put("user", user);
 
+			Map<String, Object> userMap = mapper.convertValue(user, Map.class);
+			
+			System.out.println(userRepository.addUser(userMap));
+			
 			result = mapper.writeValueAsString(obj);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

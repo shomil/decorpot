@@ -32,38 +32,32 @@ services.service('imageView', function($http) {
 });
 
 services.service('cart', function($http, User, $auth) {
-	if ($auth.isAuthenticated()) {
-		//get all images from db check through sessionStorage if any missing add it. and post all new.
-	}
-	console.log(User.getUser());
+	
 	var cartImages = (sessionStorage.getItem('cartImages') === null) ? []
 			: JSON.parse(sessionStorage.getItem('cartImages'));
 	sessionStorage.setItem('cartImages', JSON.stringify(cartImages));
 	return {
 		checkout : function() {
 			if (!$auth.isAuthenticated()) {
-				//ask to login
+				// ask to login
 			}
 
 		},
 
-		addToCart : function(groupid) {
+		addToCart : function(CartImagesDetails) {
 			cartImages = JSON.parse(sessionStorage.getItem('cartImages'));
-			if (cartImages.indexOf(groupid) < 0) {
-				cartImages.push(groupid);
+			if (cartImages.indexOf(CartImagesDetails.groupid) < 0) {
+				cartImages.push(CartImagesDetails);
 				sessionStorage
 						.setItem('cartImages', JSON.stringify(cartImages));
-				//post
 				if ($auth.isAuthenticated()) {
-					var groupIds = [];
-					groupIds.push(groupid)
+					CartImagesDetails.email = User.getUser().email;
+					CartImagesDetails.name = User.getUser().given_name;
 					$http({
 						method : "post",
-						url : "addToCart",
+						url : "cart",
 						data : {
-							email : User.getUser().email,
-							name : User.getUser().given_name,
-							groupId : groupIds
+							CartImagesDetails
 						}
 					});
 				}
@@ -74,6 +68,25 @@ services.service('cart', function($http, User, $auth) {
 
 		getCartCounter : function() {
 			return cartImages.length;
+		},
+		
+		removeFromCart : function(groupId){
+			cartImages = JSON.parse(sessionStorage.getItem('cartImages'));
+			var imageIndex = cartImages.indexOf(CartImagesDetails.groupid);
+			iif (imageIndex > -1) {
+				cartImages = cartImages.splice(imageIndex, 1);
+				sessionStorage.setItem('cartImages', JSON.stringify(cartImages));
+			}
+			if (!$auth.isAuthenticated()) {
+				$http({
+					method: "delete",
+					url: "cart/" +User.getUser().email+ "/" +groupId
+				});
+			}
+		},
+		
+		refreshCart : function(){
+			
 		}
 
 	};

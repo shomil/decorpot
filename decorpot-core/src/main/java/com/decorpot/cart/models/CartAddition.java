@@ -1,12 +1,36 @@
 package com.decorpot.cart.models;
 
-import java.util.List;
 
 public class CartAddition {
 	
 	private String email;
 	private String name;
-	private List<CartImageDetails> cartImageDetails;
+	private int groupId;
+	private String buyType;
+	private String custText;
+	
+	public int getGroupId() {
+		return groupId;
+	}
+	public void setGroupId(int groupId) {
+		this.groupId = groupId;
+	}
+	public String getBuyType() {
+		return buyType;
+	}
+	public void setBuyType(String buyType) {
+		this.buyType = buyType;
+	}
+	public String getCustText() {
+		return custText;
+	}
+	public void setCustText(String custText) {
+		this.custText = custText;
+	}
+	public enum buyType{
+		onlyImage, complete;
+	}
+	
 	public String getEmail() {
 		return email;
 	}
@@ -19,13 +43,5 @@ public class CartAddition {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<CartImageDetails> getCartImageDetails() {
-		return cartImageDetails;
-	}
-	public void setCartImageDetails(List<CartImageDetails> cartImageDetails) {
-		this.cartImageDetails = cartImageDetails;
-	}
 	
-	
-
 }

@@ -1,4 +1,4 @@
-angular.module('decorpot').controller('LoginCtrl', function($scope, $auth, $http, User) {
+angular.module('decorpot').controller('LoginCtrl',['$scope', '$auth', '$http', 'User','cart', '$rootScope' function($scope, $auth, $http, User, cart, $rootScope) {
     
     $scope.authenticate = function(provider) {
       $auth.authenticate(provider)
@@ -12,6 +12,7 @@ angular.module('decorpot').controller('LoginCtrl', function($scope, $auth, $http
           }, response, provider);
         	console.log(User.getUser());
         	$('.modal_close').trigger('click');//temporary need to change
+        	$rootScope.$broadcast('loggedIn');
         })
         .catch(function(response) {
         	console.log({
@@ -24,4 +25,4 @@ angular.module('decorpot').controller('LoginCtrl', function($scope, $auth, $http
     };
    
     
-  });
+  }]);

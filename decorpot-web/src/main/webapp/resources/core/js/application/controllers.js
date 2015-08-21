@@ -4,8 +4,8 @@
  */
 var decorpotCtrls = angular.module('decorpot');
 
-decorpotCtrls.controller('DecorpotCtrl', [ '$scope', '$routeParams', 'cart', '$auth', 'User',
-		function($scope, $routeParams, cart, $auth, User) {
+decorpotCtrls.controller('DecorpotCtrl', [ '$scope', '$routeParams', 'cart', '$auth', 'User', '$rootScope',
+		function($scope, $routeParams, cart, $auth, User, $rootScope) {
 			$scope.getCartCounter = cart.getCartCounter;
 			
 			$scope.isAuthenticated = $auth.isAuthenticated();
@@ -19,6 +19,9 @@ decorpotCtrls.controller('DecorpotCtrl', [ '$scope', '$routeParams', 'cart', '$a
 				$scope.name = User.getUser().name || "Guest";
 				console.log('User.getUser() => ', User.getUser());
 			});
+			$rootScope.$on('loggedIn', function () {
+	             //do stuff
+	        })
 			
 		} ]);
 
@@ -85,7 +88,8 @@ decorpotCtrls.controller('ImageViewController', [
 				var CartImagesDetails = {};
 				CartImagesDetails.groupId = $scope.groupId;
 				CartImagesDetails.buyType = $scope.content;
-				return cart.addToCart(groupid);
+				CartImagesDetails.custText = $scope.custText;
+				return cart.addToCart(CartImagesDetails);
 
 			};
 		} ]);

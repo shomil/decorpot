@@ -25,16 +25,13 @@ public class CartRepoImpl implements CartRepo {
 
 	@Override
 	public void addToCart(CartAddition cartAddition) {
-		List<CartImageDetails> imageDetailsList = cartAddition
-				.getCartImageDetails();
-		for (CartImageDetails imageDetails : imageDetailsList) {
+		
 			jdbcTemplate.update(
 					addToCartSql,
 					new Object[] { cartAddition.getEmail(),
-							cartAddition.getName(), imageDetails.getGroupId(),
-							imageDetails.getBuyType(),
-							imageDetails.getCustText() });
-		}
+							cartAddition.getName(), cartAddition.getGroupId(),
+							cartAddition.getBuyType(),
+							cartAddition.getCustText() });
 
 	}
 

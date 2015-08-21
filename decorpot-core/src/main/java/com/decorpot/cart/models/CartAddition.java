@@ -1,12 +1,12 @@
 package com.decorpot.cart.models;
 
-import java.util.Arrays;
+import java.util.List;
 
 public class CartAddition {
 	
 	private String email;
 	private String name;
-	private CartImageDetails [] cartImageDetails;
+	private List<CartImageDetails> cartImageDetails;
 	public String getEmail() {
 		return email;
 	}
@@ -19,18 +19,13 @@ public class CartAddition {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public CartImageDetails [] getCartImageDetails() {
+	public List<CartImageDetails> getCartImageDetails() {
 		return cartImageDetails;
 	}
-	public void setCartImageDetails(CartImageDetails [] cartImageDetails) {
+	public void setCartImageDetails(List<CartImageDetails> cartImageDetails) {
 		this.cartImageDetails = cartImageDetails;
 	}
-	@Override
-	public String toString() {
-		return "CartAddition [email=" + email + ", name=" + name
-				+ ", cartImageDetails=" + Arrays.toString(cartImageDetails)
-				+ "]";
-	}
+	
 	
 
 }

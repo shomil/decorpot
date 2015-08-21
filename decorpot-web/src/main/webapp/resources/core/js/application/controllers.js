@@ -82,8 +82,9 @@ decorpotCtrls.controller('ImageViewController', [
 			
 
 			$scope.addToCart = function(groupid) {
-				console.log($auth.isAuthenticated());
-				console.log($auth.getPayload());
+				var CartImagesDetails = {};
+				CartImagesDetails.groupId = $scope.groupId;
+				CartImagesDetails.buyType = $scope.content;
 				return cart.addToCart(groupid);
 
 			};

@@ -4,7 +4,7 @@ import com.decorpot.cart.models.CartAddition;
 
 public interface CartRepo {
 	
-	public String addToCart( CartAddition cartAddition);
+	public void addToCart( CartAddition cartAddition);
 	public String getCartDetails(String email);
 
 }

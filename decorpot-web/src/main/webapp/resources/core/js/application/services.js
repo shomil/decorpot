@@ -33,9 +33,9 @@ services.service('imageView', function($http) {
 
 services.service('cart', function($http, User, $auth) {
 	
-	var cartImages = (sessionStorage.getItem('cartImages') === null) ? []
-			: JSON.parse(sessionStorage.getItem('cartImages'));
-	sessionStorage.setItem('cartImages', JSON.stringify(cartImages));
+	var cartImages = (localStorage.getItem('cartImages') === null) ? []
+			: JSON.parse(localStorage.getItem('cartImages'));
+	localStorage.setItem('cartImages', JSON.stringify(cartImages));
 	return {
 		checkout : function() {
 			if (!$auth.isAuthenticated()) {
@@ -45,10 +45,10 @@ services.service('cart', function($http, User, $auth) {
 		},
 
 		addToCart : function(CartImagesDetails) {
-			cartImages = JSON.parse(sessionStorage.getItem('cartImages'));
+			cartImages = JSON.parse(localStorage.getItem('cartImages'));
 			if (cartImages.indexOf(CartImagesDetails.groupId) < 0) {
 				cartImages.push(CartImagesDetails);
-				sessionStorage
+				localStorage
 						.setItem('cartImages', JSON.stringify(cartImages));
 				if ($auth.isAuthenticated()) {
 					CartImagesDetails.email = User.getUser().email;
@@ -69,11 +69,11 @@ services.service('cart', function($http, User, $auth) {
 		},
 		
 		removeFromCart : function(groupId){
-			cartImages = JSON.parse(sessionStorage.getItem('cartImages'));
+			cartImages = JSON.parse(localStorage.getItem('cartImages'));
 			var imageIndex = cartImages.indexOf(groupid);
 			if (imageIndex > -1) {
 				cartImages = cartImages.splice(imageIndex, 1);
-				sessionStorage.setItem('cartImages', JSON.stringify(cartImages));
+				localStorage.setItem('cartImages', JSON.stringify(cartImages));
 			}
 			if (!$auth.isAuthenticated()) {
 				$http({
@@ -94,8 +94,10 @@ services.service('User', function() {
 	var userObj = {};
 	this.setUser = function(obj) {
 		userObj = obj;
+		localStorage
+		.setItem('userObj', JSON.stringify(userObj));
 	}
 	this.getUser = function() {
-		return userObj;
+		return JSON.parse(localStorage.getItem('userObj'));;
 	}
 });

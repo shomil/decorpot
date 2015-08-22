@@ -46,7 +46,7 @@ services.service('cart', function($http, User, $auth) {
 
 		addToCart : function(CartImagesDetails) {
 			cartImages = JSON.parse(sessionStorage.getItem('cartImages'));
-			if (cartImages.indexOf(CartImagesDetails.groupid) < 0) {
+			if (cartImages.indexOf(CartImagesDetails.groupId) < 0) {
 				cartImages.push(CartImagesDetails);
 				sessionStorage
 						.setItem('cartImages', JSON.stringify(cartImages));
@@ -56,9 +56,7 @@ services.service('cart', function($http, User, $auth) {
 					$http({
 						method : "post",
 						url : "cart",
-						data : {
-							CartImagesDetails
-						}
+						data : CartImagesDetails
 					});
 				}
 			}
@@ -72,8 +70,8 @@ services.service('cart', function($http, User, $auth) {
 		
 		removeFromCart : function(groupId){
 			cartImages = JSON.parse(sessionStorage.getItem('cartImages'));
-			var imageIndex = cartImages.indexOf(CartImagesDetails.groupid);
-			iif (imageIndex > -1) {
+			var imageIndex = cartImages.indexOf(groupid);
+			if (imageIndex > -1) {
 				cartImages = cartImages.splice(imageIndex, 1);
 				sessionStorage.setItem('cartImages', JSON.stringify(cartImages));
 			}

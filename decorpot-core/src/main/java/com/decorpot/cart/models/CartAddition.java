@@ -8,6 +8,7 @@ public class CartAddition {
 	private int groupId;
 	private String buyType;
 	private String custText;
+	private boolean isCustomized = false;
 	
 	public int getGroupId() {
 		return groupId;
@@ -43,5 +44,18 @@ public class CartAddition {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public boolean isCustomized() {
+		return isCustomized;
+	}
+	public void setCustomized(boolean isCustomized) {
+		this.isCustomized = isCustomized;
+	}
+	@Override
+	public String toString() {
+		return "CartAddition [email=" + email + ", name=" + name + ", groupId="
+				+ groupId + ", buyType=" + buyType + ", custText=" + custText
+				+ ", isCustomized=" + isCustomized + "]";
+	}
+	
 	
 }

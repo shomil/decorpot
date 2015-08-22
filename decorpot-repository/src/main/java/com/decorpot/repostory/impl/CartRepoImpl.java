@@ -1,7 +1,5 @@
 package com.decorpot.repostory.impl;
 
-import java.util.List;
-
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,14 +7,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.decorpot.cart.models.CartAddition;
-import com.decorpot.cart.models.CartImageDetails;
 import com.decorpot.repository.interfaces.CartRepo;
 
 @Repository
 public class CartRepoImpl implements CartRepo {
 
 	private JdbcTemplate jdbcTemplate;
-	private String addToCartSql = "insert into cart (EMAIL, NAME, GROUP_ID, BUY_TYPE, CUST_TEXT) values (?, ?, ?, ?, ?)";
+	private String addToCartSql = "insert into Decorpot.cart (EMAIL, NAME, GROUP_ID, BUY_TYPE, CUST_TEXT, IS_CUSTOMIZED) values (?, ?, ?, ?, ?, ?)";
 
 	@Autowired
 	public CartRepoImpl(DataSource dataSource) {
@@ -31,7 +28,7 @@ public class CartRepoImpl implements CartRepo {
 					new Object[] { cartAddition.getEmail(),
 							cartAddition.getName(), cartAddition.getGroupId(),
 							cartAddition.getBuyType(),
-							cartAddition.getCustText() });
+							cartAddition.getCustText(), cartAddition.isCustomized() });
 
 	}
 

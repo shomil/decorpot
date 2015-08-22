@@ -89,6 +89,7 @@ decorpotCtrls.controller('ImageViewController', [
 				CartImagesDetails.groupId = $scope.groupId;
 				CartImagesDetails.buyType = $scope.content;
 				CartImagesDetails.custText = $scope.custText;
+				CartImagesDetails.isCustomized = $scope.customization;
 				return cart.addToCart(CartImagesDetails);
 
 			};

@@ -1,4 +1,4 @@
-angular.module('decorpot').controller('LoginCtrl',['$scope', '$auth', '$http', 'User','cart', '$rootScope' function($scope, $auth, $http, User, cart, $rootScope) {
+angular.module('decorpot').controller('LoginCtrl', ['$scope', '$auth', '$http', 'User','cart', '$rootScope', function($scope, $auth, $http, User, cart, $rootScope) {
     
     $scope.authenticate = function(provider) {
       $auth.authenticate(provider)

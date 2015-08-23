@@ -1,4 +1,5 @@
 apply plugin: 'maven-publish'
+apply plugin: 'eclipse'
 
 group = 'com.ugam.platform'
 

@@ -4,12 +4,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.decorpot.cart.models.CartAddition;
+import com.decorpot.cart.models.CartDetails;
 import com.decorpot.services.CartServices;
 
 
@@ -28,9 +30,9 @@ public class CartController {
 	}
 	
 	@RequestMapping(value="/{email}" , method = RequestMethod.GET)
-	public String getCartDetails(@PathParam ("email") String email, HttpServletRequest request) {
+	public CartDetails getCartDetails(@PathVariable String email, HttpServletRequest request) {
 		System.out.println(email);
-		return "success";
+		return cartServices.getCartDetails(email);
 	}
 	
 	@RequestMapping(value="/{email}/{groupId}" , method = RequestMethod.DELETE)

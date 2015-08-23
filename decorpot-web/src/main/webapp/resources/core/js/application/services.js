@@ -39,8 +39,12 @@ services.service('cart', function($http, User, $auth) {
 	return {
 		checkout : function() {
 			if (!$auth.isAuthenticated()) {
-				// ask to login
+				$('#modal_trigger').click();
 			}
+			return $http({
+				method : "get",
+				url : "cart/" + User.getUser().email
+			});
 
 		},
 

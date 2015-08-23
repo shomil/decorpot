@@ -1,12 +1,11 @@
 package com.decorpot.repository.interfaces;
 
-import java.util.List;
-
 import com.decorpot.cart.models.CartAddition;
+import com.decorpot.cart.models.CartDetails;
 
 public interface CartRepo {
 	
 	public void addToCart( CartAddition cartAdditions);
-	public String getCartDetails(String email);
+	public CartDetails getCartDetails(String email);
 
 }

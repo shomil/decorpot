@@ -7,6 +7,8 @@ public class CartImageDetails {
 	private String buyType;
 	private String custText;
 	private double price;
+	private String pathSamll;
+	private String imageTitle;
 	
 	public int getGroupId() {
 		return groupId;
@@ -55,6 +57,26 @@ public class CartImageDetails {
 
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+
+	public String getPathSamll() {
+		return pathSamll;
+	}
+
+
+	public void setPathSamll(String pathSamll) {
+		this.pathSamll = pathSamll;
+	}
+
+
+	public String getImageTitle() {
+		return imageTitle;
+	}
+
+
+	public void setImageTitle(String imageTitle) {
+		this.imageTitle = imageTitle;
 	}
 
 

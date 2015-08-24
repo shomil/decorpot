@@ -26,6 +26,9 @@ decorpot.config(['$routeProvider', '$provide', '$authProvider', function($routeP
 	}).when('/imageListTheme/:param',{
 		templateUrl: 'resources/partials/imageList.html',
 		controller: 'ImageListController'
+	}).when('/checkout',{
+		templateUrl : 'resources/partials/cart.html',
+		controller : 'CartController'
 	})
 	.otherwise({
 		redirectTo: '/'

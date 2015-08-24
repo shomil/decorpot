@@ -120,7 +120,7 @@
 
 						<li class="dropdown main-top-nav-right-link cart"><a
 							rel="nofollow" id="login_link" class="login_link"
-							href="#signin-panel" data-toggle="modal" data-target="#signIn">
+							href="#/checkout" data-toggle="modal" data-target="#signIn">
 								<i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i>
 								Cart({{getCartCounter()}})
 						</a></li>

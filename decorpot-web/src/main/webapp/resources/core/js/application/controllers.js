@@ -94,3 +94,7 @@ decorpotCtrls.controller('ImageViewController', [
 
 			};
 		} ]);
+
+decorpotCtrls.controller('CartController', [ '$scope', 'cart', function($scope, cart){
+	
+}])

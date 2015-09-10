@@ -41,7 +41,7 @@
 		<div id="header" ng-controller="DecorpotCtrl">
 			<div id="top-bar" class="row"></div>
 			<div class="row" style="margin-top: 1%;">
-				<div id="logo" class="col-md-6"><img src="resources/core/img/logofinal.png" width="200" height="50" alt="" /></div>
+				<div id="logo" class="col-md-6"><img src="resources/core/img/logofinal.png" width="300" height="50" alt="" /></div>
 				<div class="col-xs-6 text-right pull-right text-muted">
 					care@decorpot.com | +91 8123029902</div>
 			</div>
@@ -84,11 +84,11 @@
 							</ul></li>
 						<li class="menudropdown"><a href="#projects">Completed Projects</a>
 						</li>
-						<li class="menudropdown"><a href="#contact">Contact
+						<li class="menudropdown"><a href="#contacts">Contact
 								us</a></li>
 					</ul>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4 hide">
 					<ul class="nav navbar-nav navbar-right main-top-nav-right">
 						<li ng-hide="isAuthenticated"
 							class="dropdown main-top-nav-right-link login-signup"><a

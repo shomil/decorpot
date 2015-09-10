@@ -1,11 +1,11 @@
 @CHARSET "UTF-8";
 
 #backgroundImage {
-	background: url("../../img/home-decor6.jpg") 26% 0%;
+	background: url("../../img/MIMBR8.jpg") 26% 0%;
 	width: 100%;
-	height: 21%;
+	height: 550px;
 	position: relative;
-	
+	background-size: 100% 100%;
 	background-repeat: no-repeat;
 }
 
@@ -13,13 +13,11 @@
 	height: 84%;
   /* padding-top: 0%; */
   background-color: white;
-  width: 95%;
-  margin-left: 3%;
 }
 
 #services {
 	height: 25%;
-	padding-top: 47%;
+	padding-top: 2%;
 }
 
 #services li {
@@ -70,14 +68,13 @@
 }
 
 .imageMenus {
-	margin-top: 18%;
 	width: 80%;
 	margin-left: 11%;
 }
 
 .image-tiles {
-	margin-bottom: -17%;
-	margin-top: 27%;
+	padding-top: 3%;
+    padding-bottom: 3%;
 }
 
 .col-md-4 .imageMenuCation {

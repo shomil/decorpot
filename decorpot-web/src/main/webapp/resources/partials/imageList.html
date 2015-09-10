@@ -1,6 +1,6 @@
-<div class="imageFilters">
+<div class="imageFilters hide">
 	<div class="col-md-2 ">
-	<div  price-range id="priceRange"></div>
+	<div  class="hide" id="priceRange"></div>
 	</div>
 	<div class="col-md-4 themes"></div>
 	<div class="col-md-4 themes"></div>
@@ -12,10 +12,6 @@
 		<a href="#imageView/{{image.groupId}}">
 			<div id="imageContainer">
 				<img bn-lazy-src="{{image.pathSmall}}" />
-				<div id="imageText">
-					<p>{{image.descriptionShort}}</p>
-				</div>
-
 			</div>
 			<div id="priceText">
 				<div class="col-xs-6">

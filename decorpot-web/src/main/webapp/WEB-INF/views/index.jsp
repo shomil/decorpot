@@ -41,7 +41,7 @@
 		<div id="header" ng-controller="DecorpotCtrl">
 			<div id="top-bar" class="row"></div>
 			<div class="row" style="margin-top: 1%;">
-				<div id="logo" class="col-md-3"><a href="#/" ><img src="resources/core/img/logofinal.png" width="300" height="50" alt="" /></a></div>
+				<div id="logo" class="col-md-3"><a href="#/" ><img src="resources/core/img/Logofinal.png" width="300" height="50" alt="" /></a></div>
 				<div class=" navigation-bar col-md-6">
 				<div class="col-md-8">
 					<ul class="primary-menu">

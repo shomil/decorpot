@@ -97,4 +97,12 @@ decorpotCtrls.controller('ImageViewController', [
 
 decorpotCtrls.controller('CartController', [ '$scope', 'cart', function($scope, cart){
 	
-}])
+}]);
+
+decorpotCtrls.controller('ProjectsController', [ '$scope', 'cart', function($scope, cart){
+	
+}]);
+
+decorpotCtrls.controller('ContactsController', [ '$scope', 'cart', function($scope, cart){
+	
+}]);

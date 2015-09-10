@@ -37,24 +37,11 @@
 </c:forEach>
 <link rel="stylesheet" href="resources/core/css/application/${css}.css">
 </head>
-<body>
-	<div id="fountainTextG">
-		<div id="fountainTextG_1" class="fountainTextG">L</div>
-		<div id="fountainTextG_2" class="fountainTextG">o</div>
-		<div id="fountainTextG_3" class="fountainTextG">a</div>
-		<div id="fountainTextG_4" class="fountainTextG">d</div>
-		<div id="fountainTextG_5" class="fountainTextG">i</div>
-		<div id="fountainTextG_6" class="fountainTextG">n</div>
-		<div id="fountainTextG_7" class="fountainTextG">g</div>
-		<div id="fountainTextG_8" class="fountainTextG">.</div>
-		<div id="fountainTextG_9" class="fountainTextG">.</div>
-		<div id="fountainTextG_10" class="fountainTextG">.</div>
-	</div>
 	<div id="mainPage">
 		<div id="header" ng-controller="DecorpotCtrl">
 			<div id="top-bar" class="row"></div>
 			<div class="row" style="margin-top: 1%;">
-				<div id="logo" class="col-md-6">DECORPOT.COM</div>
+				<div id="logo" class="col-md-6"><img src="resources/core/img/logofinal.png" width="200" height="50" alt="" /></div>
 				<div class="col-xs-6 text-right pull-right text-muted">
 					care@decorpot.com | +91 8123029902</div>
 			</div>
@@ -63,7 +50,7 @@
 			<div class="row navigation-bar">
 				<div class="col-md-8">
 					<ul class="primary-menu">
-						<li class="menudropdown"><a href="#/imageListTheme">Themes</a>
+						<li class="menudropdown hide"><a href="#/imageListTheme">Themes</a>
 							<ul class="sub-menu">
 								<li><a href="#/imageListTheme/classic">Classic</a></li>
 								<li><a href="#/imageListTheme/contemporary">Contemporary</a></li>
@@ -84,20 +71,20 @@
 								<li><a href="#imageListSpace/kidsbedroom">Kids Bedroom</a></li>
 
 							</ul></li>
-						<li class="menudropdown"><a href="#">BHK Type</a>
+						<li class="menudropdown hide"><a href="#">BHK Type</a>
 							<ul class="sub-menu">
 								<li><a href="#">2 BHK</a></li>
 								<li><a href="#">3 BHK</a></li>
 							</ul></li>
-						<li class="menudropdown"><a href="#">Furnitures</a>
+						<li class="menudropdown hide"><a href="#">Furnitures</a>
 							<ul class="sub-menu">
 								<li><a href="#">Table</a></li>
 								<li><a href="#">Bed</a></li>
 								<li><a href="#">Sofa</a></li>
 							</ul></li>
-						<li class="menudropdown"><a href="http://youtube.com">Profile</a>
+						<li class="menudropdown"><a href="#projects">Completed Projects</a>
 						</li>
-						<li class="menudropdown"><a href="http://youtube.com">About
+						<li class="menudropdown"><a href="#contact">Contact
 								us</a></li>
 					</ul>
 				</div>

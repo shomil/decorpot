@@ -10,10 +10,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.decorpot.repository.models.ImageDetail;
 import com.decorpot.services.DecorpotServices;
 
+@EnableWebMvc
 @RestController
 public class DecorpotController extends DefaultController{
 
@@ -25,7 +27,7 @@ public class DecorpotController extends DefaultController{
 		return decorpotServices.getDataBaseTables();
 	}
 		
-	@RequestMapping(value="imageListSpace/{space}", method = RequestMethod.GET)
+	@RequestMapping(value="imageListSpace/{space}", method = RequestMethod.GET, headers="Accept=*/*", produces="application/json")
 	public List<ImageDetail> getImageListSpace(@PathVariable String space,
 			@QueryParam("from") int from,
 			@QueryParam("to") int to,
@@ -40,7 +42,7 @@ public class DecorpotController extends DefaultController{
 	}
 	
 	
-	@RequestMapping(value="image/group/{groupid}/color/{color}")
+	@RequestMapping(value="image/group/{groupid}/color/{color}", headers="Accept=*/*", method = RequestMethod.GET, produces="application/json")
 	public List<Map<String, Object>> getViewsByColors(@PathVariable int groupid,
 			@PathVariable String color
 			) {
@@ -51,7 +53,7 @@ public class DecorpotController extends DefaultController{
 		return views;
 	}
 	
-	@RequestMapping(value="color/{groupid}")
+	@RequestMapping(value="color/{groupid}", method = RequestMethod.GET, headers="Accept=*/*", produces="application/json")
 	public List<Map<String, Object>> getColorsByGroup(@PathVariable int groupid){
 		long start = System.currentTimeMillis();
 		List<Map<String, Object>> colors = decorpotServices.getColorsByGroup(groupid);

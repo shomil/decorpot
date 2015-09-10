@@ -29,6 +29,12 @@ decorpot.config(['$routeProvider', '$provide', '$authProvider', function($routeP
 	}).when('/checkout',{
 		templateUrl : 'resources/partials/cart.html',
 		controller : 'CartController'
+	}).when('/projects',{
+		templateUrl : 'resources/partials/projects.html',
+		controller : 'ProjectsController'
+	}).when('/contacts',{
+		templateUrl : 'resources/partials/contacts.html',
+		controller : 'ContactsController'
 	})
 	.otherwise({
 		redirectTo: '/'

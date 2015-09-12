@@ -31,11 +31,12 @@
 <link rel="stylesheet" href="resources/core/css/normalize.css">
 <link rel="stylesheet" href="resources/core/css/ion.rangeSlider.css">
 <link rel="shortcut icon"
-	href="https://fbstatic-a.akamaihd.net/rsrc.php/yl/r/H3nktOa7ZMg.ico">
+	href="resource/core/img/decorIcon.ico">
 <c:forEach var="entry" items="${pageScripts}">
 	<script src="resources/core/js/application/${entry}.js"></script>
 </c:forEach>
 <link rel="stylesheet" href="resources/core/css/application/${css}.css">
+
 </head>
 	<div id="mainPage">
 		<div id="header" ng-controller="DecorpotCtrl">

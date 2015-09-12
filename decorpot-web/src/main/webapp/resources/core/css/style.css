@@ -150,7 +150,11 @@ transform
 
 
 
+
+
 :scale
+
+
 
 
 
@@ -161,13 +165,19 @@ transform
 
 
 
+
+
 );
 color
 
 
 
 
+
+
 :rgb
+
+
 
 
 
@@ -189,7 +199,11 @@ color
 
 
 
+
+
 :scale
+
+
 
 
 
@@ -200,13 +214,19 @@ color
 
 
 
+
+
 );
 color
 
 
 
 
+
+
 :rgb
+
+
 
 
 
@@ -228,7 +248,11 @@ color
 
 
 
+
+
 :scale
+
+
 
 
 
@@ -239,13 +263,19 @@ color
 
 
 
+
+
 );
 color
 
 
 
 
+
+
 :rgb
+
+
 
 
 
@@ -267,7 +297,11 @@ color
 
 
 
+
+
 :scale
+
+
 
 
 
@@ -278,13 +312,19 @@ color
 
 
 
+
+
 );
 color
 
 
 
 
+
+
 :rgb
+
+
 
 
 
@@ -306,7 +346,11 @@ color
 
 
 
+
+
 :scale
+
+
 
 
 
@@ -317,13 +361,19 @@ color
 
 
 
+
+
 );
 color
 
 
 
 
+
+
 :rgb
+
+
 
 
 
@@ -423,8 +473,8 @@ color
 	text-decoration: none !important;
 	font-size: large;
 	font-style: normal;
-	    font-family: serif;
-    font-weight: initial;
+	font-family: serif;
+	font-weight: initial;
 	font-stretch: semi-condensed;
 	line-height: 1em;
 }
@@ -779,10 +829,14 @@ opacity
 
 
 
+
+
 :
 
 
+
  
+
 
 
 1;
@@ -804,10 +858,14 @@ opacity
 
 
 
+
+
 :
 
 
+
  
+
 
 
 1;
@@ -1017,4 +1075,72 @@ opacity
 .center {
 	margin-top: 6%;
 	margin-left: 33%;
+}
+
+.sidebar {
+	list-style-type: none;
+}
+
+#projects {
+	margin-top: 2%;
+	margin-left: -3%;
+}
+
+.eachSidebar {
+	border-bottom: 1px solid rgba(107, 108, 109, 0.19);
+	position: relative;
+	display: block;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #333;
+	width: 100%;
+}
+
+.eachSidebar a {
+	padding: 18px 10px;
+	color: #fff;
+	background: #699C3A;
+	text-shadow: none;
+	width: 100%;
+	position: relative;
+	display: block;
+	text-decoration: none;
+}
+
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.col-xs-5ths {
+    width: 20%;
+    float: left;
+}
+
+@media (min-width: 768px) {
+    .col-sm-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-lg-5ths {
+        width: 20%;
+        float: left;
+    }
 }

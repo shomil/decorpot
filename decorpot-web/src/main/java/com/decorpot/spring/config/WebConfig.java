@@ -20,6 +20,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
  
     @Bean
     public InternalResourceViewResolver jspViewResolver() {
+    	System.out.println("WebConfig:InternalResourceViewResolver");
         InternalResourceViewResolver bean = new InternalResourceViewResolver();
         bean.setPrefix("/WEB-INF/views/");
         bean.setSuffix(".jsp");
@@ -28,6 +29,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
  
     @Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    	System.out.println("WebConfig:addResourceHandlers");
 		registry.addResourceHandler("/resources/**")
 		.addResourceLocations("/resources/")
 		.addResourceLocations("classpath:/META-INF/resources/");
@@ -36,12 +38,13 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     
     @Bean
 	public DataSource getDataSource() {
+    	System.out.println("WebConfig:getDataSource");
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 		dataSource.setUrl("jdbc:mysql://decorpotdb.cvxkjdlwiyuo.us-west-2.rds.amazonaws.com");
 		dataSource.setUsername("Decorpot");
 		dataSource.setPassword("Interior1");
-		
+		System.out.println("datasource = "+dataSource);
 		return dataSource;
 	}
 }

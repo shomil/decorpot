@@ -56,14 +56,13 @@
 						<li class="menudropdown"><a href="#imageListSpace">Space</a>
 							<ul class="sub-menu">
 								<li><a href="#imageListSpace/living">Living</a></li>
-								<li><a href="#imageListSpace/drawing">Drawing</a></li>
 								<li><a href="#imageListSpace/dining">Dining</a></li>
 								<li><a href="#/imageListSpace/kitchen">Kitchen</a></li>
-								<li><a href="#imageListSpace/materBedroom">Master
+								<li><a href="#imageListSpace/master_Bedroom">Master
 										Bedroom</a></li>
-								<li><a href="#imageListSpace/guestBedroom">Guest
+								<li><a href="#imageListSpace/guest_Bedroom">Guest
 										Bedroom</a></li>
-								<li><a href="#imageListSpace/kidsbedroom">Kids Bedroom</a></li>
+								<li><a href="#imageListSpace/kids_bedroom">Kids Bedroom</a></li>
 
 							</ul></li>
 						<li class="menudropdown hide"><a href="#">BHK Type</a>

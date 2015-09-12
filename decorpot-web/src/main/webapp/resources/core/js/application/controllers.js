@@ -34,8 +34,8 @@ decorpotCtrls.controller('ImageListController', [
 		function($scope, $routeParams, interiors, $location, cart) {
 			console.log('before location');
 			console.log($location);
-			$scope.from = 100000;
-			$scope.to = 300000;
+			$scope.from = 10000;
+			$scope.to = 10000000;
 			$scope.page = 1;
 			$scope.imagePath = $location.$$path.split("/")[1];
 			console.log($scope.imagePath);

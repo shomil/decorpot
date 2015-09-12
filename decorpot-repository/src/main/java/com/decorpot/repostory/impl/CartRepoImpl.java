@@ -26,6 +26,7 @@ public class CartRepoImpl implements CartRepo {
 	private String cartDetailsSql = "select * from Decorpot.cart where email = ?";
 	@Autowired
 	public CartRepoImpl(DataSource dataSource) {
+		System.out.println("decorpot-repository/CartRepoImpl:CartRepoImpl()");
 		jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 

@@ -21,6 +21,7 @@ public class UserRepository {
 	String ADD_USER = "INSERT INTO Decorpot.USERS (id, name, email) VALUES (:id, :name, :email)";
 	@Autowired
 	public UserRepository(DataSource dataSource){
+		System.out.println("decorpot-repository/UserRepository:UserRepository()");
 		this.dataSource = dataSource;
 		jdbcTemplate = new JdbcTemplate(dataSource);
 		namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource);

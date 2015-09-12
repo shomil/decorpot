@@ -9,8 +9,8 @@ var decortDirectives = angular.module('decorpot');
 decortDirectives.directive("priceRange", function() {
 	$("#priceRange").ionRangeSlider({
 		type : "double",
-		min : 100000,
-		max : 300000,
+		min : 10000,
+		max : 10000000,
 		prefix : "Rs.",
 		prettify_enabled: true,
 		step : 50000

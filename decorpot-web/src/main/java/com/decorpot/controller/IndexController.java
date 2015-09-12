@@ -10,6 +10,7 @@ public class IndexController extends DefaultController {
 
 	@RequestMapping(value = "/*", method = RequestMethod.GET)
 	public String index() {
+		System.out.println("decorpot-web/IndexController:index()");
 		return "redirect:/";
 	}
 }

@@ -24,7 +24,7 @@ public class ImageListImpl implements ImageList {
 	private JdbcTemplate jdbcTemplate;
 
 	private String imageListSql = "SELECT * FROM Decorpot.image_categorization ic inner join Decorpot.group_color_mapping gcm on  ic.groupid= gcm.groupid inner join Decorpot.image_location il on gcm.imageid = il.imageid inner join (select groupid, min(price) price from Decorpot.group_price_mapping where price >= ? and price <= ? group by groupid) priceTemp on priceTemp.groupid = ic.groupid where ic.spaces = ? LIMIT ?,?";
-
+	private String imageSpaceSql = "SELECT * FROM Decorpot.GROUP_ATTRIBUTE ga inner join Decorpot.IMAGE_ATTRIBUTE ia on ga.group_id = ia.group_id where ga.price >= ? and ga.price <= ? and  ga.space = ?";
 	private String imageViewByColorSql = "select * from Decorpot.image_location il inner join Decorpot.group_color_mapping gcm on gcm.imageid = il.imageid where gcm.groupid = ? and gcm.color = ?";
 	
 	private String colorByGroupid = "select color from Decorpot.group_color_mapping where groupid = ?";
@@ -32,6 +32,7 @@ public class ImageListImpl implements ImageList {
 	
 	@Autowired
 	public ImageListImpl(DataSource dataSource) {
+		System.out.println("Decorpot-respository/ImageListImpl:constructor");
 		jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 
@@ -47,31 +48,42 @@ public class ImageListImpl implements ImageList {
 		params.put("space", space);
 		params.put("to", to);
 		params.put("from", from);
-		
+		System.out.println("decorpot-repository/ImageListImpl:getImageListSpace");
 		System.out.println("getImageListSpace" +to +"  "+ from+"  " + fromPrice+"   "+toPrice+"  "+space);
-		List<ImageDetail> imgDetailsList =  jdbcTemplate.query(imageListSql, new Object[] {fromPrice, toPrice, space, from, to}, new ImageDetailMapper());
+		//List<ImageDetail> imgDetailsList =  jdbcTemplate.query(imageListSql, new Object[] {fromPrice, toPrice, space, from, to}, new ImageDetailMapper());
+		List<ImageDetail> imgDetailsList =  jdbcTemplate.query(imageSpaceSql, new Object[] {fromPrice, toPrice, space}, new ImageDetailMapper());
+		System.out.println("queryDone");
 		return imgDetailsList;
 	}
 	public class ImageDetailMapper implements RowMapper<ImageDetail> {
 	public ImageDetail mapRow(ResultSet rs, int rowNum) throws SQLException {
+		System.out.println("decorpot-repository/ImageListImpl:ImageDetailMapper" );
+		System.out.println("rs = "+rs +" rowNum = "+rowNum);
 		ImageDetail imgDetail = new ImageDetail();
-		imgDetail.setGroupId(rs.getInt("groupid"));
+		/*imgDetail.setGroupId(rs.getInt("groupid"));
 		imgDetail.setPathSmall(rs.getString("path_small"));
 		imgDetail.setPrice(rs.getInt("price"));
-		imgDetail.setDescriptionShort(rs.getString("description_short"));
-	      return imgDetail;
+		imgDetail.setDescriptionShort(rs.getString("description_short"));*/
+		imgDetail.setGroupId(rs.getInt("group_id"));
+		imgDetail.setPathSmall(rs.getString("image_path"));
+		imgDetail.setPrice(rs.getInt("price"));
+		imgDetail.setDescriptionShort(rs.getString("image_description"));
+		System.out.println("Image Detail return ");
+	    return imgDetail;
 	   }
 	}
 
 	@Override
 	public List<Map<String, Object>> getViewsByColors(String color, int groupid) {
 		// TODO Auto-generated method stub
+		System.out.println("decorpot-repository/ImageListImpl:getViewsByColors()");
 		 return jdbcTemplate.queryForList(imageViewByColorSql,groupid,color);
 	}
 
 	@Override
 	public List<Map<String, Object>> getColorsByGroup(int groupid) {
 		// TODO Auto-generated method stub
+		System.out.println("decorpot-repository/ImageListImpl:getColorsByGroup()");
 		return jdbcTemplate.queryForList(colorByGroupid,groupid);
 	}
 

@@ -19,12 +19,16 @@ services.service('imageView', function($http) {
 	return {
 		getColors : function(groupid) {
 			var url = "";
+			console.log('services:imageView:getColors');
 			url = "color/" + groupid;
+			console.log($http.get(url));
 			return $http.get(url);
 		},
 		getViewsByColors : function(groupid, color) {
+			console.log('services:imageView:getViewsByColors');
 			var url = "";
 			url = "image/group/" + groupid + "/color/" + color;
+			console.log($http.get(url));
 			return $http.get(url);
 		}
 	};

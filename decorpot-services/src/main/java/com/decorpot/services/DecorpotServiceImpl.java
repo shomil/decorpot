@@ -18,7 +18,8 @@ import com.decorpot.repository.models.ImageDetail;
 public class DecorpotServiceImpl implements DecorpotServices{
 
 	private int defaultList = 10;
-	private String smallImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/low_image/";
+	//private String smallImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/low_image/";
+	private String smallImageUrl =  "https://s3-ap-southeast-1.amazonaws.com/decorpot/image_lot_small/";
 	@Resource
 	DecorpotRepository decorpotRepository;
 	
@@ -27,26 +28,28 @@ public class DecorpotServiceImpl implements DecorpotServices{
 	
 	@Override
 	public List<Map<String, Object>> getDataBaseTables() {
+		System.out.println("decorpot-services/DecorpotServiceImpl:getDataBaseTables");
 		return decorpotRepository.getDatabaseName();
 	}
 
 	@Override
 	public List<ImageDetail> getImageListSpace(String space, Integer toPrice, Integer fromPrice, Integer pageNum) {
-		
+		System.out.println("decorpot-services/DecorpotServiceImpl:getImageListSpace");
 		int to=pageNum*this.defaultList, from=(pageNum-1)*this.defaultList+1;
-		System.out.println("services/com.decorpot.services/DecorpotServiceImpl.getImageListSpace");
+		System.out.println("to= "+to+" and from= "+from);
 		
 		List<ImageDetail> images = imageList.getImageListSpace( space, toPrice, fromPrice, to, from);
 		 
 		 for(ImageDetail image : images){
 			 image.setPathSmall(smallImageUrl+image.getPathSmall());
 		 }
+		 System.out.println("Images Returned");
 		 return images;
 	}
 
 	@Override
 	public List<Map<String, Object>> getViewsByColors(String color, int groupid) {
-		// TODO Auto-generated method stub
+		System.out.println("decorpot-services/DecorpotServiceImpl:getViewsByColors()");
 		List<Map<String, Object>> images =  imageList.getViewsByColors(color, groupid);
 		for(Map<String, Object> image : images){
 			 image.put("path_small", smallImageUrl+image.get("path_small").toString());

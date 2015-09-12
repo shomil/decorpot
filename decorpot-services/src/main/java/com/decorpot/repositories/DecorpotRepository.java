@@ -27,10 +27,12 @@ public class DecorpotRepository {
 	
 	@Autowired
 	public DecorpotRepository(DataSource dataSource) {
+		System.out.println("decorpot-services/DecorpotRepository:DecorpotRepository()");
 		jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 	
 	public List<Map<String, Object>> getDatabaseName(){
+		System.out.println("decorpot-services/DecorpotRepository:getDatabaseName");
 		return jdbcTemplate.queryForList(imageListSql);
 		/*return jdbcTemplate.query("show databases", new RowMapper<DatabaseList>() {
 
@@ -44,10 +46,12 @@ public class DecorpotRepository {
 	}
 	
 	public List<Image> getImages(){
+		System.out.println("decorpot-services/DecorpotRepository:getImages()");
 		return jdbcTemplate.query("show databases", new RowMapper<Image>() {
 
 			@Override
 			public Image mapRow(ResultSet rs, int rowNum) throws SQLException {
+				System.out.println("decorpot-services/DecorpotRepository:getImages():maprow()");
 				Image image = new Image();
 				return image;
 			}

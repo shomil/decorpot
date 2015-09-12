@@ -25,51 +25,57 @@ public class CompressJPEG {
 		int i = 0;
 		//String[] fileName = new String[100];
 		List<String> fileNameList = new ArrayList<String>(100);
-		File file =  new File("../../../imgs_decor/imagesForDecorpot");
+		File file =  new File("../../../imgs_decor/Salarpuria_hd");
 		Collection<File> files = FileUtils.listFiles(file, null, true);     
 		for(File file2 : files)
 		{
 			fileNameList.add(file2.getName());
 		    System.out.println(file2.getName());   
-		    System.out.println(i);
+		    System.out.println(i++);
 		} 
 		for (String str : fileNameList) 
 		{
 			if(str != null)
 			{
-				File imageFile = new File("../../../imgs_decor/imagesForDecorpot/"+str);
-				File compressedFile = new File("../../../imgs_decor/compressedImages/"+str);
-				
-				InputStream inputStream = new FileInputStream(imageFile);
-				OutputStream outputStream = new FileOutputStream(compressedFile);
-				float imageQuality =  0.3f;
-				//Create the buffered image
-				BufferedImage bufferedImage = ImageIO.read(inputStream);
-				Iterator<ImageWriter> imageWriters =  ImageIO.getImageWritersByFormatName("jpg");
-				
-				if (!imageWriters.hasNext()){
-					inputStream.close();
+				File imageFile = new File("../../../imgs_decor/Salarpuria_hd/"+str);
+				File compressedFile = new File("../../../imgs_decor/Salarpuria_small/"+str);
+				//Check jpg file
+				boolean tmp = compressedFile.getName().contains(".jpg");
+				System.out.println("is Jpg file = "+tmp);
+				if(tmp)
+				{
+					InputStream inputStream = new FileInputStream(imageFile);
+					OutputStream outputStream = new FileOutputStream(compressedFile);
+					//change imageQuality as per requirements
+					float imageQuality =  0.3f;
+					//Create the buffered image
+					BufferedImage bufferedImage = ImageIO.read(inputStream);
+					Iterator<ImageWriter> imageWriters =  ImageIO.getImageWritersByFormatName("jpg");
+					
+					if (!imageWriters.hasNext()){
+						inputStream.close();
+				        outputStream.close();
+				       throw new IllegalStateException("Writers Not Found!!");
+					}
+					ImageWriter imageWriter = imageWriters.next();
+			        ImageOutputStream imageOutputStream = ImageIO.createImageOutputStream(outputStream);
+			        imageWriter.setOutput(imageOutputStream);
+			 
+			        ImageWriteParam imageWriteParam = imageWriter.getDefaultWriteParam();
+			 
+			        //Set the compress quality metrics
+			        imageWriteParam.setCompressionMode(ImageWriteParam.MODE_EXPLICIT);
+			        imageWriteParam.setCompressionQuality(imageQuality);
+			 
+			        //Created image
+			        imageWriter.write(null, new IIOImage(bufferedImage, null, null), imageWriteParam);
+			 
+			        // close all streams
+			        inputStream.close();
 			        outputStream.close();
-			       throw new IllegalStateException("Writers Not Found!!");
+			        imageOutputStream.close();
+			        imageWriter.dispose();
 				}
-				ImageWriter imageWriter = imageWriters.next();
-		        ImageOutputStream imageOutputStream = ImageIO.createImageOutputStream(outputStream);
-		        imageWriter.setOutput(imageOutputStream);
-		 
-		        ImageWriteParam imageWriteParam = imageWriter.getDefaultWriteParam();
-		 
-		        //Set the compress quality metrics
-		        imageWriteParam.setCompressionMode(ImageWriteParam.MODE_EXPLICIT);
-		        imageWriteParam.setCompressionQuality(imageQuality);
-		 
-		        //Created image
-		        imageWriter.write(null, new IIOImage(bufferedImage, null, null), imageWriteParam);
-		 
-		        // close all streams
-		        inputStream.close();
-		        outputStream.close();
-		        imageOutputStream.close();
-		        imageWriter.dispose();
 			}
 		}
 	}

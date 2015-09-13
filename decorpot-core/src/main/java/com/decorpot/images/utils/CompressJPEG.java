@@ -1,4 +1,4 @@
-package com.decorpot.images.compress;
+package com.decorpot.images.utils;
 
 import java.awt.image.BufferedImage;
 import java.io.File;

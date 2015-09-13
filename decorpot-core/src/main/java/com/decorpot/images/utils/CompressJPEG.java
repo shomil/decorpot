@@ -2,28 +2,19 @@ package com.decorpot.images.utils;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
-import javax.imageio.IIOImage;
+import org.imgscalr.Scalr;
 import javax.imageio.ImageIO;
-import javax.imageio.ImageWriteParam;
-import javax.imageio.ImageWriter;
-import javax.imageio.stream.ImageOutputStream;
 
 public class CompressJPEG {
 	public static void main(String[] args) throws FileNotFoundException,IOException {
 		int i = 0;
-		//String[] fileName = new String[100];
 		List<String> fileNameList = new ArrayList<String>(100);
 		File file =  new File("../../../imgs_decor/Salarpuria_hd");
 		Collection<File> files = FileUtils.listFiles(file, null, true);     
@@ -38,43 +29,19 @@ public class CompressJPEG {
 			if(str != null)
 			{
 				File imageFile = new File("../../../imgs_decor/Salarpuria_hd/"+str);
-				File compressedFile = new File("../../../imgs_decor/Salarpuria_small/"+str);
+				
 				//Check jpg file
-				boolean tmp = compressedFile.getName().contains(".jpg");
+				boolean tmp = imageFile.getName().contains(".jpg");
 				System.out.println("is Jpg file = "+tmp);
+				
+				File compressedFile = new File("../../../imgs_decor/Salarpuria_small/"+str);
 				if(tmp)
 				{
-					InputStream inputStream = new FileInputStream(imageFile);
-					OutputStream outputStream = new FileOutputStream(compressedFile);
-					//change imageQuality as per requirements
-					float imageQuality =  0.3f;
-					//Create the buffered image
-					BufferedImage bufferedImage = ImageIO.read(inputStream);
-					Iterator<ImageWriter> imageWriters =  ImageIO.getImageWritersByFormatName("jpg");
-					
-					if (!imageWriters.hasNext()){
-						inputStream.close();
-				        outputStream.close();
-				       throw new IllegalStateException("Writers Not Found!!");
-					}
-					ImageWriter imageWriter = imageWriters.next();
-			        ImageOutputStream imageOutputStream = ImageIO.createImageOutputStream(outputStream);
-			        imageWriter.setOutput(imageOutputStream);
-			 
-			        ImageWriteParam imageWriteParam = imageWriter.getDefaultWriteParam();
-			 
-			        //Set the compress quality metrics
-			        imageWriteParam.setCompressionMode(ImageWriteParam.MODE_EXPLICIT);
-			        imageWriteParam.setCompressionQuality(imageQuality);
-			 
-			        //Created image
-			        imageWriter.write(null, new IIOImage(bufferedImage, null, null), imageWriteParam);
-			 
-			        // close all streams
-			        inputStream.close();
-			        outputStream.close();
-			        imageOutputStream.close();
-			        imageWriter.dispose();
+					BufferedImage originalImage = ImageIO.read(imageFile);
+					int width = originalImage.getWidth()/2;
+					int height =  originalImage.getHeight()/2;
+					BufferedImage resizedImage = Scalr.resize(originalImage, 600,600,Scalr.OP_ANTIALIAS,Scalr.OP_BRIGHTER);// size(originalImage, Scalr.Method.SPEED, Scalr.Mode.FIT_TO_WIDTH,580, 384, Scalr.OP_ANTIALIAS);
+				    ImageIO.write(resizedImage, "jpg", compressedFile);					
 				}
 			}
 		}

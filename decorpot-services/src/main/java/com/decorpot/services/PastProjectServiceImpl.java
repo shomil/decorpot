@@ -14,7 +14,7 @@ public class PastProjectServiceImpl implements PastProjectService {
 	@Autowired
 	private PastProjectsRepo pastProjectRepo;
 	private final String smallImageUrl =  "https://s3-ap-southeast-1.amazonaws.com/decorpot/work_done_low/";
-	private final String hdImageUrl =  "https://s3-ap-southeast-1.amazonaws.com/decorpot/work_done_hd/43.jpg";
+	private final String hdImageUrl =  "https://s3-ap-southeast-1.amazonaws.com/decorpot/work_done_hd/";
 	
 	@Override
 	public List<String> getAllProjects() {

@@ -2,36 +2,20 @@
 
 	<div class="col-md-3">
 		<ul class="sidebar">
-			<li class="eachSidebar"><a href="">
-					<div class="projectName">Salarpuria</div>
-			</a></li>
-			<li class="eachSidebar"><a href="">
-					<div class="projectName">Salarpuria</div>
-			</a></li>
-			<li class="eachSidebar"><a href="">
-					<div class="projectName">Salarpuria</div>
-			</a></li>
+			<li class="eachSidebar" ng-repeat="project in projects | filter:query">
+					<a href="" ng-init="($first) ? getImagesByAppartment(project) : ''"
+						ng-click="getImagesByAppartment(project)"><div class="projectName">{{project}}</div></a>
+			</li>
 		</ul>
 	</div>
 	<div class="col-md-9">
-		<div id="gallery">
-
-			<ul class="pgwSlideshow">
-				<li><img src="resources/core/img/living.jpg"
-					></li>
-				<li><img src="resources/core/img/img1.jpg"
-					></li>
-				<li><img src="resources/core/img/bedroom.jpg" ></li>
-				<li><img src="resources/core/img/Home-decor2.jpg" alt=""></li>
-				<li><img src="resources/core/img/Home-decor2.jpg" alt=""></li>
-				<li><img src="resources/core/img/img1.jpg" alt=""></li>
-			</ul>
-		</div>
-		<script type="text/javascript">
-			$(function() {
-				var pgwSlideshow = $('.pgwSlideshow').pgwSlideshow();
-			});
-		</script>
+	<div class="preview" align="center">
+		<img name="preview" src="{{imageSrc}}" ng-show="content" alt=""/>
 	</div>
+	<div class="thumbnails">
+		<img data-ng-src="{{image.SMALL_PATH}}" alt="" ng-repeat="image in images | filter:query" ng-init="($first) ? getImageSrc(image) : ''"
+					ng-click="getImageSrc(image)"/>
+		</div>
+		</div>
 
 </div>

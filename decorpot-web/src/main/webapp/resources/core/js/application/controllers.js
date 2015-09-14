@@ -99,8 +99,21 @@ decorpotCtrls.controller('CartController', [ '$scope', 'cart', function($scope, 
 	
 }]);
 
-decorpotCtrls.controller('ProjectsController', [ '$scope', 'cart', function($scope, cart){
-	
+decorpotCtrls.controller('ProjectsController', [ '$scope', 'cart', 'projects', function($scope, cart, projects){
+		projects.getAllProjects().success(function(data){
+			$scope.projects = data;
+		});
+		
+		$scope.getImagesByAppartment = function(project){
+			 projects.getImagesByAppartment(project).success(function(data){
+				 $scope.images = data;
+			 });
+		}
+		
+		$scope.getImageSrc = function(image){
+			$scope.imageSrc = image.HD_PATH;
+			$scope.content = true;
+		}
 }]);
 
 decorpotCtrls.controller('ContactsController', [ '$scope', 'cart', function($scope, cart){

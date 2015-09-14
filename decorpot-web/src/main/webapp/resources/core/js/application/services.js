@@ -109,3 +109,20 @@ services.service('User', function() {
 		return JSON.parse(localStorage.getItem('userObj'));;
 	}
 });
+
+services.service('projects', function($http){
+	return{
+		getAllProjects : function(){
+			return $http({
+				method : "get",
+				url : "project"
+			});
+		},
+		getImagesByAppartment : function(project){
+			return $http({
+				method : "get",
+				url : "project/" + project.replace(/\s+/g, '-')
+			});
+		}
+	};
+})

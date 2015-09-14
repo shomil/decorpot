@@ -1098,7 +1098,7 @@ opacity
 	width: 100%;
 }
 
-.eachSidebar a {
+.eachSidebar div {
 	padding: 18px 10px;
 	color: #fff;
 	background: #699C3A;
@@ -1143,4 +1143,22 @@ opacity
         width: 20%;
         float: left;
     }
+}
+
+.thumbnails img {
+	height: 80px;
+	border: 4px solid #555;
+	padding: 1px;
+	margin: 0 10px 10px 0;
+}
+
+.thumbnails img:hover {
+	border: 4px solid #00ccff;
+	cursor:pointer;
+}
+
+.preview img {
+	border: 4px solid #444;
+	padding: 1px;
+	width: 90%;
 }

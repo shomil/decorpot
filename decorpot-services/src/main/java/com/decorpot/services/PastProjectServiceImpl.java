@@ -15,6 +15,7 @@ public class PastProjectServiceImpl implements PastProjectService {
 	private PastProjectsRepo pastProjectRepo;
 	private final String smallImageUrl =  "https://s3-ap-southeast-1.amazonaws.com/decorpot/work_done_low/";
 	private final String hdImageUrl =  "https://s3-ap-southeast-1.amazonaws.com/decorpot/work_done_hd/";
+	private final String mediumImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/work_done_medium/";
 	
 	@Override
 	public List<String> getAllProjects() {
@@ -27,7 +28,7 @@ public class PastProjectServiceImpl implements PastProjectService {
 		List<Map<String, Object>> images = pastProjectRepo.getImagesByAppartment(project.replaceAll("-", " "));
 		for(Map<String, Object> image : images){
 			image.put("SMALL_PATH", smallImageUrl + image.get("SMALL_PATH").toString());
-			image.put("HD_PATH", hdImageUrl + image.get("HD_PATH").toString());
+			image.put("HD_PATH", mediumImageUrl + image.get("HD_PATH").toString());
 		}
 		return images;
 	}

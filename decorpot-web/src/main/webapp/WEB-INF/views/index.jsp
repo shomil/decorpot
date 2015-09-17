@@ -44,7 +44,7 @@
 			<div class="row" style="margin-top: 1%;">
 				<div id="logo" class="col-md-3"><a href="#/" ><img src="resources/core/img/Logofinal.png" width="300" height="50" alt="" /></a></div>
 				<div class=" navigation-bar col-md-6">
-				<div class="col-md-8">
+				<div class="col-md-10">
 					<ul class="primary-menu">
 						<li class="menudropdown hide"><a href="#/imageListTheme">Themes</a>
 							<ul class="sub-menu">
@@ -85,7 +85,7 @@
 								us</a></li>
 					</ul>
 				</div>
-				<div class="col-md-4 hide">
+				<div class="col-md-2 hide">
 					<ul class="nav navbar-nav navbar-right main-top-nav-right">
 						<li ng-hide="isAuthenticated"
 							class="dropdown main-top-nav-right-link login-signup"><a

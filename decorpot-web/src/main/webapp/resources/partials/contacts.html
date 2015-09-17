@@ -1,52 +1,92 @@
 <div class="contactUs">
-	<div class="contactUsHdr">
-		<span>Contact Us</span>
-	</div>
-	<div class="contacts">
+	<div class="col-md-9">
+		<div class="contactUsHdr">
+			<span>Contact Us</span>
+		</div>
+		<div class="contacts">
 
-		<div class="col-md-3 contactSurround">
-			<div class="contactAdjust">
-				<div class="nameHeader">
-					<span>Kanishk Aggarwal</span>
+			<div class="col-md-3 contactSurround">
+				<div class="contactAdjust">
+					<div class="nameHeader">
+						<span>Kanishk Aggarwal</span>
+					</div>
+					<div class="contactNo">
+						<span>+91-8884862511</span>
+					</div>
+					<div class="emailId">
+						<span>kanio2511@gmail.com</span>
+					</div>
 				</div>
-				<div class="contactNo">
-					<span>+91-8884862511</span>
+			</div>
+			<div class="col-md-3"></div>
+			<div class="col-md-3 contactSurround">
+				<div class="contactAdjust">
+					<div class="nameHeader">
+						<span>Sunanda Somani</span>
+					</div>
+					<div class="contactNo">
+						<span>+91-9742460220</span>
+					</div>
+					<div class="emailId">
+						<span>somani.sunanda@gmail.com</span>
+					</div>
 				</div>
-				<div class="emailId">
-					<span>kanio2511@gmail.com</span>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+		<div class="clearer"></div>
+		<div class="col-md-4 center">
+			<div class="contactSurround">
+				<div class="contactAdjust">
+					<div class="nameHeader">
+						<span>Decorpot Office</span>
+					</div>
+					<div class="contactNo">
+						<span>#799, 19th Main, 23rd Cross, 2nd floor</span>
+					</div>
+					<div class="emailId">
+						<span>Sector 2 Near HSR club, Bangalore 560102</span>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="col-md-3"></div>
-		<div class="col-md-3 contactSurround">
-			<div class="contactAdjust">
-				<div class="nameHeader">
-					<span>Sunanda Somani</span>
-				</div>
-				<div class="contactNo">
-					<span>+91-9742460220</span>
-				</div>
-				<div class="emailId">
-					<span>somani.sunanda@gmail.com</span>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3"></div>
 	</div>
-	<div class="clearer"></div>
-	<div class="col-md-4 center">
-		<div class="contactSurround">
-			<div class="contactAdjust">
-				<div class="nameHeader">
-					<span>Decorpot Office</span>
-				</div>
-				<div class="contactNo">
-					<span>#799, 19th Main, 23rd Cross, 2nd floor</span>
-				</div>
-				<div class="emailId">
-					<span>Sector 2 Near HSR club, Bangalore 560102</span>
+	<div class="col-md-3">
+		<form name="userForm" novalidate>
+
+			<div class="form-group"
+				ng-class="{ 'has-error': userForm.name.$touched && userForm.name.$invalid }">
+				<label>Name</label> <input type="text" name="name"
+					class="form-control" ng-model="main.name" ng-minlength="5"
+					ng-maxlength="10" required>
+
+				<div class="help-block" ng-messages="userForm.name.$error"
+					ng-if="userForm.name.$touched">
+					<p ng-message="minlength">Your name is too short.</p>
+					<p ng-message="maxlength">Your name is too long.</p>
+					<p ng-message="required">Your name is required.</p>
 				</div>
 			</div>
-		</div>
+
+			<div class="form-group"
+				ng-class="{ 'has-error': userForm.email.$touched && userForm.email.$invalid }">
+				<label>Email</label> <input type="email" name="email"
+					class="form-control" ng-model="main.email" ng-minlength="5"
+					ng-maxlength="20" required>
+
+				<div class="help-block" ng-messages="userForm.email.$error"
+					ng-if="userForm.email.$touched">
+					<div ng-messages-include="messages.html"></div>
+				</div>
+
+			</div>
+
+			<div class="form-group">
+				<button type="submit" class="btn btn-danger">Submit</button>
+			</div>
+
+		</form>
+
+		<pre>userForm.name.$error = {{ userForm.name.$error | json }}</pre>
 	</div>
 </div>

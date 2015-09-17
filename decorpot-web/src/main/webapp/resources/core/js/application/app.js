@@ -2,7 +2,7 @@
  * @author: vaseem.mohammed
  * @date  : 12-07-2015
  */
-var decorpot = angular.module('decorpot', ['ngRoute', 'satellizer']);
+var decorpot = angular.module('decorpot', ['ngRoute', 'satellizer', 'ngMessages']);
 
 //
 decorpot.config(['$routeProvider', '$provide', '$authProvider', function($routeProvider, $provide, $authProvider){
@@ -35,6 +35,9 @@ decorpot.config(['$routeProvider', '$provide', '$authProvider', function($routeP
 	}).when('/contacts',{
 		templateUrl : 'resources/partials/contacts.html',
 		controller : 'ContactsController'
+	}).when('/about',{
+		templateUrl : 'resources/partials/about.html',
+		controller : 'AboutController'
 	})
 	.otherwise({
 		redirectTo: '/'

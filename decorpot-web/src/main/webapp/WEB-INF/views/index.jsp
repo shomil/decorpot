@@ -81,6 +81,8 @@
 						</li>
 						<li class="menudropdown"><a href="#contacts">Contact
 								us</a></li>
+						<li class="menudropdown"><a href="#about">About
+								us</a></li>
 					</ul>
 				</div>
 				<div class="col-md-4 hide">
@@ -207,6 +209,7 @@
 		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="resources/core/js/bootstrap.min.js"></script>
 	<script src="resources/core/js/login.js"></script>
@@ -216,11 +219,13 @@
 	<script src="resources/core/js/application/app.js"></script>
 	<script src="resources/core/js/application/satellizer.js"></script>
 	<script src="resources/core/js/angularytics.js"></script>
+	
 	<script src="resources/core/js/application/services.js"></script>
 	<script src="resources/core/js/application/controllers.js"></script>
 	<script src="resources/core/js/application/login.js"></script>
 	<script src="resources/core/js/application/directives.js"></script>
 	<script src="resources/core/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+	
 	<script type="text/javascript">
     
 					jQuery(document).ready(function($) {

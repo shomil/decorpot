@@ -54,11 +54,7 @@
 								<li><a ui-sref="#/imageListTheme/modern">Modern</a></li>
 								<li><a ui-sref="#/imageListTheme/fusion">Fusion</a></li>
 							</ul></li>
-<<<<<<< HEAD
 						<li class="menudropdown"><a href="">Space</a>
-=======
-						<li class="menudropdown"><a href="#imageListSpace">Looks</a>
->>>>>>> origin/master
 							<ul class="sub-menu">
 								<li><a ui-sref="imageList({param : 'living'})">Living</a></li>
 								<li><a ui-sref="imageList({param : 'dining'})">Dining</a></li>

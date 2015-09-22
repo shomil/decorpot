@@ -2,46 +2,51 @@
  * @author: vaseem.mohammed
  * @date  : 12-07-2015
  */
-var decorpot = angular.module('decorpot', ['ngRoute', 'satellizer', 'ngMessages']);
+var decorpot = angular.module('decorpot', ['ui.router', 'satellizer', 'ngMessages']);
 
 //
-decorpot.config(['$routeProvider', '$provide', '$authProvider', function($routeProvider, $provide, $authProvider){
+decorpot.config(['$authProvider', '$stateProvider', '$urlRouterProvider', function( $authProvider, $stateProvider, $urlRouterProvider){
 	
-	$provide.decorator('ngViewDirective', function($delegate) {
-        var directive = $delegate[0];
-        directive.replace = true;
-
-        return $delegate;
-    });
+	$urlRouterProvider.otherwise('/');
 	
-	$routeProvider.when('/', {
-		templateUrl: 'resources/partials/home.html',
+	$stateProvider
+    .state('home', {
+        url: '/',
+        templateUrl: 'resources/partials/home.html',
 		controller: 'DecorpotCtrl'
-	}).when('/imageListSpace/:param', {
-		templateUrl: 'resources/partials/imageList.html',
+    }).state('imageList', {
+        url: '/imageListSpace/:param',
+        templateUrl: 'resources/partials/imageList.html',
 		controller: 'ImageListController'
-	}).when('/imageView/:groupid', {
-		templateUrl: 'resources/partials/imageView.html',
+    }).state('imageView', {
+        url: '/imageView/:groupid',
+        templateUrl: 'resources/partials/imageView.html',
 		controller: 'ImageViewController'
-	}).when('/imageListTheme/:param',{
-		templateUrl: 'resources/partials/imageList.html',
-		controller: 'ImageListController'
-	}).when('/checkout',{
-		templateUrl : 'resources/partials/cart.html',
+    }).state('imageListTheme', {
+        url: '/imageListTheme/:param',
+        templateUrl : 'resources/partials/cart.html',
 		controller : 'CartController'
-	}).when('/projects',{
-		templateUrl : 'resources/partials/projects.html',
+    }).state('checkout', {
+        url: '/checkout',
+        templateUrl: 'resources/partials/home.html',
+		controller: 'DecorpotCtrl'
+    }).state('projects', {
+        url: '/projects',
+        templateUrl : 'resources/partials/projectsNew.html',
 		controller : 'ProjectsController'
-	}).when('/contacts',{
-		templateUrl : 'resources/partials/contacts.html',
-		controller : 'ContactsController'
-	}).when('/about',{
-		templateUrl : 'resources/partials/about.html',
-		controller : 'AboutController'
-	})
-	.otherwise({
-		redirectTo: '/'
-	});
+    }).state('projects.project', {
+        url: '/project/:param',
+        templateUrl : 'resources/partials/projects.html',
+		controller : 'ProjectController'
+    }).state('contacts', {
+        url: '/contacts',
+        templateUrl: 'resources/partials/contacts.html',
+        controller : 'ContactsController'
+    }).state('about', {
+        url: '/about',
+        templateUrl: 'resources/partials/about.html',
+        controller : 'AboutController'
+    });
 	
 	$authProvider.google({
 		clientId: '333854512360-bsm18ai5gc6keg3teh8u6vsj9v1aobbo.apps.googleusercontent.com'

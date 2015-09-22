@@ -392,9 +392,9 @@ color
 	height: auto;
 	z-index: 20;
 	background-color: white;
-	border-bottom-color: black;
-	border-bottom-style: inset;
-	border-bottom-width: thin;
+	
+	    position: fixed;
+    width: 100%;
 }
 
 #logo {
@@ -1039,42 +1039,6 @@ opacity
 	margin: 10px;
 }
 
-.contacts {
-	width: 80%;
-	margin-top: 2%;
-	margin-left: 19%;
-}
-
-.contactAdjust {
-	    padding-top: 7%;
-    padding-bottom: 7%;
-    padding-left: 15%;
-    width: 314px;
-    border: black;
-    border-color: black;
-    border-radius: 5px;
-    border-width: 1px;
-    border-style: inset;
-}
-
-.contactUsHdr {
-	margin-top: 4%;
-	margin-left: 13%;
-	font-style: italic;
-	font-size: 2em;
-	color: black;
-}
-
-.nameHeader {
-	font-size: 1.2em;
-	color: black;
-}
-
-.center {
-	margin-top: 6%;
-	margin-left: 33%;
-}
-
 .sidebar {
 	list-style-type: none;
 	    margin-left: 6%;
@@ -1191,4 +1155,162 @@ opacity
     color: #E4E2E2;
     font-size: 24px;
     padding-top: 40px;
+}
+
+.section.workflow {
+    padding: 80px 0 0;
+    text-align: center;
+    background: #f2f2f2;
+}
+
+.section.workflow .meta {
+    padding: 40px 0;
+    max-width: 80%;
+    margin: 0 auto;
+    line-height: 2.4;
+    color: #878787;
+    font-size: 24px;
+}
+.captions{
+	text-align: center;
+	    position: absolute;
+	        margin-top: 15%;
+    margin-left: 14%;
+}
+
+.catchBold{
+color: #06A90E;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.15);
+        letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1;
+    font-size: 4.5em;
+}
+
+.catchSmall{
+	    color: #40BF69;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.75);
+    letter-spacing: 1px;
+    font-weight: 300;
+    line-height: 1;
+    font-size: 2.5em;
+}
+
+.contactUsWriteUp{
+	
+    color: #060606;
+    font-size: 1.2em;
+    
+}
+
+   
+.contactUs {
+border: 1px solid #807E7E;
+        width: 84%;
+    margin-left: 9%;
+    margin-top: 3%;
+    -webkit-box-shadow: 0px -2px 26px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -2px 26px 3px rgba(0,0,0,0.75);
+    box-shadow: 0px -2px 26px 3px rgba(0,0,0,0.75);
+}
+
+.contactUsWriteUp p {
+	padding: 1%;
+	
+}
+
+.contactUsWriteUp div>p {
+    
+    letter-spacing: 1px;
+}
+
+.contactUsWriteUp > div:first-of-type  {
+   background-color: #EAEAEA;
+       border-bottom: 1px solid #807E7E;
+}
+
+.center {
+	margin-top: 6%;
+	margin-left: 33%;
+}
+
+.contactBox{
+	border-right: 1px solid #807E7E;
+    width: 50%;
+        padding-left: 1%;
+}
+
+.contactAttribute{
+	    font-weight: 600;
+    font-style: oblique;
+}
+
+.imgContainer{
+padding: 6px;
+	
+}
+
+.pastProjects div a img{
+	width: 100%;
+    height: 250px;
+    position: relative;
+}
+
+.pastProjects div a{
+	width: 100%;
+	height : 75%;
+}
+
+.imgContainerOuter{
+
+}
+
+.textProjects{
+	    height: 100px;
+    position: relative;
+    text-align: center;
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+    line-height: 1.5;
+}
+
+.pastProjects{
+	margin-top: 3%;
+	margin-left : 3%;
+	width: 95%;
+}
+
+.textProjects h4{
+    font-size: 15px!important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #333;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+.textProjects span{
+        margin-top: 0!important;
+    font-size: 13px!important;
+        display: block;
+    font-weight: 300;
+    color: #777;
+}
+
+.shrink img {
+-webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+ 
+.shrink img:hover {
+     border-radius: 95%;
+  -webkit-transform: rotate(360deg);
+     -moz-transform: rotate(360deg);
+       -o-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
 }

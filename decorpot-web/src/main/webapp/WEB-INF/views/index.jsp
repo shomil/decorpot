@@ -46,42 +46,42 @@
 				<div class=" navigation-bar col-md-6">
 				<div class="col-md-10">
 					<ul class="primary-menu">
-						<li class="menudropdown hide"><a href="#/imageListTheme">Themes</a>
+						<li class="menudropdown hide"><a href="">Themes</a>
 							<ul class="sub-menu">
-								<li><a href="#/imageListTheme/classic">Classic</a></li>
-								<li><a href="#/imageListTheme/contemporary">Contemporary</a></li>
-								<li><a href="#/imageListTheme/minimalistic">Minimalistic</a></li>
-								<li><a href="#/imageListTheme/modern">Modern</a></li>
-								<li><a href="#/imageListTheme/fusion">Fusion</a></li>
+								<li><a ui-sref="#/imageListTheme/classic">Classic</a></li>
+								<li><a ui-sref="#/imageListTheme/contemporary">Contemporary</a></li>
+								<li><a ui-sref="#/imageListTheme/minimalistic">Minimalistic</a></li>
+								<li><a ui-sref="#/imageListTheme/modern">Modern</a></li>
+								<li><a ui-sref="#/imageListTheme/fusion">Fusion</a></li>
 							</ul></li>
-						<li class="menudropdown"><a href="#imageListSpace">Space</a>
+						<li class="menudropdown"><a href="">Space</a>
 							<ul class="sub-menu">
-								<li><a href="#imageListSpace/living">Living</a></li>
-								<li><a href="#imageListSpace/dining">Dining</a></li>
-								<li><a href="#/imageListSpace/kitchen">Kitchen</a></li>
-								<li><a href="#imageListSpace/master_Bedroom">Master
+								<li><a ui-sref="imageList({param : 'living'})">Living</a></li>
+								<li><a ui-sref="imageList({param : 'dining'})">Dining</a></li>
+								<li><a ui-sref="imageList({param : 'kitchen'})">Kitchen</a></li>
+								<li><a ui-sref="imageList({param : 'master_Bedroom'})">Master
 										Bedroom</a></li>
-								<li><a href="#imageListSpace/guest_Bedroom">Guest
+								<li><a ui-sref="imageList({param : 'guest_Bedroom'})">Guest
 										Bedroom</a></li>
-								<li><a href="#imageListSpace/kids_bedroom">Kids Bedroom</a></li>
+								<li><a ui-sref="imageList({param : 'kids_bedroom'})">Kids Bedroom</a></li>
 
 							</ul></li>
 						<li class="menudropdown hide"><a href="#">BHK Type</a>
 							<ul class="sub-menu">
-								<li><a href="#">2 BHK</a></li>
-								<li><a href="#">3 BHK</a></li>
+								<li><a ui-sref="#">2 BHK</a></li>
+								<li><a ui-sref="#">3 BHK</a></li>
 							</ul></li>
 						<li class="menudropdown hide"><a href="#">Furnitures</a>
 							<ul class="sub-menu">
-								<li><a href="#">Table</a></li>
-								<li><a href="#">Bed</a></li>
-								<li><a href="#">Sofa</a></li>
+								<li><a ui-sref="#">Table</a></li>
+								<li><a ui-sref="#">Bed</a></li>
+								<li><a ui-sref="#">Sofa</a></li>
 							</ul></li>
-						<li class="menudropdown"><a href="#projects">Completed Projects</a>
+						<li class="menudropdown"><a ui-sref="projects">Completed Projects</a>
 						</li>
-						<li class="menudropdown"><a href="#contacts">Contact
+						<li class="menudropdown"><a ui-sref="contacts">Contact
 								us</a></li>
-						<li class="menudropdown"><a href="#about">About
+						<li class="menudropdown"><a ui-sref="about">About
 								us</a></li>
 					</ul>
 				</div>
@@ -119,7 +119,7 @@
 		</div>
 		<!-- End of div = header-->
 		<div class="clearer"></div>
-		<div ng-view="" class="mid"></div>
+		<div ui-view class="mid"></div>
 		<div class = "clearer"></div>
 		<footer>
 			<div class="container footer">
@@ -208,7 +208,7 @@
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
 	<script
-		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.min.js"></script>
+		src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="resources/core/js/bootstrap.min.js"></script>

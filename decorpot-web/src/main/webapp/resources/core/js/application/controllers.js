@@ -4,8 +4,8 @@
  */
 var decorpotCtrls = angular.module('decorpot');
 
-decorpotCtrls.controller('DecorpotCtrl', [ '$scope', '$routeParams', 'cart', '$auth', 'User', '$rootScope',
-		function($scope, $routeParams, cart, $auth, User, $rootScope) {
+decorpotCtrls.controller('DecorpotCtrl', [ '$scope', '$stateParams', 'cart', '$auth', 'User', '$rootScope',
+		function($scope, $stateParams, cart, $auth, User, $rootScope) {
 			$scope.getCartCounter = cart.getCartCounter;
 			
 			$scope.isAuthenticated = $auth.isAuthenticated();
@@ -27,11 +27,11 @@ decorpotCtrls.controller('DecorpotCtrl', [ '$scope', '$routeParams', 'cart', '$a
 
 decorpotCtrls.controller('ImageListController', [
 		'$scope',
-		'$routeParams',
+		'$stateParams',
 		'interiors',
 		'$location',
 		'cart',
-		function($scope, $routeParams, interiors, $location, cart) {
+		function($scope, $stateParams, interiors, $location, cart) {
 			console.log('before location');
 			console.log($location);
 			$scope.from = 10000;
@@ -39,7 +39,7 @@ decorpotCtrls.controller('ImageListController', [
 			$scope.page = 1;
 			$scope.imagePath = $location.$$path.split("/")[1];
 			console.log($scope.imagePath);
-			interiors.getImages($scope.imagePath, $routeParams.param,
+			interiors.getImages($scope.imagePath, $stateParams.param,
 					$scope.from, $scope.to, $scope.page).success(
 					function(data) {
 						console.log(data);
@@ -51,14 +51,14 @@ decorpotCtrls.controller('ImageListController', [
 
 decorpotCtrls.controller('ImageViewController', [
 		'$scope',
-		'$routeParams',
+		'$stateParams',
 		'imageView',
 		'$auth',
 		'cart',
-		function($scope, $routeParams, imageView, $auth, cart) {
+		function($scope, $stateParams, imageView, $auth, cart) {
 			$scope.selection = {};
-			$scope.groupId = $routeParams.groupid;
-			imageView.getColors($routeParams.groupid).success(function(data) {
+			$scope.groupId = $stateParams.groupid;
+			imageView.getColors($stateParams.groupid).success(function(data) {
 
 				$scope.colors = data;
 
@@ -68,7 +68,7 @@ decorpotCtrls.controller('ImageViewController', [
 				$scope.color = {};
 			$scope.color.thumbnails = [];
 			$scope.getViewsByColors = function(color) {
-				imageView.getViewsByColors($routeParams.groupid, color.color)
+				imageView.getViewsByColors($stateParams.groupid, color.color)
 						.success(function(data) {
 							$scope.color.thumbnails = data;
 							console.log($scope);
@@ -101,21 +101,43 @@ decorpotCtrls.controller('CartController', [ '$scope', 'cart', function($scope, 
 
 decorpotCtrls.controller('ProjectsController', [ '$scope', 'cart', 'projects', function($scope, cart, projects){
 		projects.getAllProjects().success(function(data){
+			for(var i=0; i<data.length;i++){
+				 data[i].APARTMENT = data[i].APARTMENT.replace(/\s+/g, '-');
+			 }
 			$scope.projects = data;
 		});
-		
-		$scope.getImagesByAppartment = function(project){
-			 projects.getImagesByAppartment(project).success(function(data){
-				 $scope.images = data;
-			 });
-		}
-		
-		$scope.getImageSrc = function(image){
-			$scope.imageSrc = image.HD_PATH;
-			$scope.content = true;
-		}
+}]);
+
+decorpotCtrls.controller('ProjectController', [ '$scope', 'cart', 'projects','$stateParams', function($scope, cart, projects,$stateParams){
+	var project = $stateParams.param;
+	$scope.getImagesByAppartment = function(project){
+		 projects.getImagesByAppartment(project).success(function(data){
+			 console.log(data);
+			 $scope.images = data;
+		 });
+	}
+	
+	$scope.getImageSrc = function(image){
+		$scope.imageSrc = image.HD_PATH;
+		$scope.content = true;
+	}
+	
 }]);
 
 decorpotCtrls.controller('ContactsController', [ '$scope', 'cart', function($scope, cart){
+	$scope.phoneNumberPattern = (function() {
+	    var regexp = /^\(?(\d{3})\)?[ .-]?(\d{3})[ .-]?(\d{4})$/;
+	    return {
+	        test: function(value) {
+	            if( $scope.requireTel === false ) {
+	                return true;
+	            }
+	            return regexp.test(value);
+	        }
+	    };
+	})();
+}]);
+
+decorpotCtrls.controller('AboutController', [ '$scope', 'cart', function($scope, cart){
 	
 }]);

@@ -19,7 +19,7 @@ public class PastProjectController {
 	private PastProjectService pastProjectService;
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public List<String> getAllProjects(){
+	public List<Map<String, Object>> getAllProjects(){
 		return pastProjectService.getAllProjects();
 	}
 	

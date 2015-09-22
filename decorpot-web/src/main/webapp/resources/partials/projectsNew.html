@@ -1,0 +1,14 @@
+<div class="pastProjects" ui-view>
+	<div class="col-md-3 .col-xs-12 .col-sm-6 imgContainerOuter"
+		ng-repeat="project in projects | filter:query">
+		<div class="imgContainer">
+			<a class="shrink"ui-sref="projects.project({param : '{{project.APARTMENT}}'})">
+				<img src={{project.SMALL_PATH}}>
+			</a>
+		</div>
+		<div class="textProjects">
+			<h4>{{project.APARTMENT}}</h4>
+			<span>Bangalore</span>
+		</div>
+	</div>
+</div>

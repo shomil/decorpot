@@ -18,7 +18,7 @@ import com.decorpot.repository.interfaces.PastProjectsRepo;
 public class PastProjectsRepoImpl implements PastProjectsRepo {
 
 	private JdbcTemplate jdbcTemplate;
-	private final String projectsList = "SELECT DISTINCT(APARTMENT) FROM Decorpot.WORKDONEIMAGE_ATTRIBUTE";
+	private final String projectsList = "SELECT    SMALL_PATH,MEDIUM_PATH,APARTMENT FROM Decorpot.WORKDONEIMAGE_ATTRIBUTE group  BY  APARTMENT";
 	private final String projectImageList = "SELECT HD_PATH, SMALL_PATH FROM Decorpot.WORKDONEIMAGE_ATTRIBUTE where APARTMENT=?";
 
 	@Autowired
@@ -29,14 +29,8 @@ public class PastProjectsRepoImpl implements PastProjectsRepo {
 	}
 
 	@Override
-	public List<String> getAllProjects() {
-		List<String> data = jdbcTemplate.query(projectsList,
-				new RowMapper<String>() {
-					public String mapRow(ResultSet rs, int rowNum)
-							throws SQLException {
-						return rs.getString(1);
-					}
-				});
+	public List<Map<String, Object>> getAllProjects() {
+		List<Map<String, Object>> data = jdbcTemplate.queryForList(projectsList);
 		return data;
 	}
 

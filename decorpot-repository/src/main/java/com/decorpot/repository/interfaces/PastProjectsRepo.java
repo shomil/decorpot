@@ -5,7 +5,7 @@ import java.util.Map;
 
 public interface PastProjectsRepo {
 	
-	public List<String> getAllProjects();
+	public List<Map<String, Object>> getAllProjects();
 	public List<Map<String, Object>> getImagesByAppartment(String project);
 
 }

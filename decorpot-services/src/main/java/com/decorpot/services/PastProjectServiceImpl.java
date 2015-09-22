@@ -18,8 +18,13 @@ public class PastProjectServiceImpl implements PastProjectService {
 	private final String mediumImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/work_done_medium/";
 	
 	@Override
-	public List<String> getAllProjects() {
-		return pastProjectRepo.getAllProjects();
+	public List<Map<String, Object>> getAllProjects() {
+		List<Map<String, Object>> projects = pastProjectRepo.getAllProjects();
+		for(Map<String, Object> project : projects){
+			project.put("SMALL_PATH", smallImageUrl + project.get("SMALL_PATH").toString());
+			project.put("MEDIUM_PATH", mediumImageUrl + project.get("MEDIUM_PATH").toString());
+		}
+		return projects;
 	}
 
 	@Override

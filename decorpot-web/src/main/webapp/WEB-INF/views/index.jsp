@@ -54,7 +54,11 @@
 								<li><a ui-sref="#/imageListTheme/modern">Modern</a></li>
 								<li><a ui-sref="#/imageListTheme/fusion">Fusion</a></li>
 							</ul></li>
+<<<<<<< HEAD
 						<li class="menudropdown"><a href="">Space</a>
+=======
+						<li class="menudropdown"><a href="#imageListSpace">Looks</a>
+>>>>>>> origin/master
 							<ul class="sub-menu">
 								<li><a ui-sref="imageList({param : 'living'})">Living</a></li>
 								<li><a ui-sref="imageList({param : 'dining'})">Dining</a></li>
@@ -66,7 +70,7 @@
 								<li><a ui-sref="imageList({param : 'kids_bedroom'})">Kids Bedroom</a></li>
 
 							</ul></li>
-						<li class="menudropdown hide"><a href="#">BHK Type</a>
+						<li class="menudropdown hide"><a href="#">Apartment Types</a>
 							<ul class="sub-menu">
 								<li><a ui-sref="#">2 BHK</a></li>
 								<li><a ui-sref="#">3 BHK</a></li>

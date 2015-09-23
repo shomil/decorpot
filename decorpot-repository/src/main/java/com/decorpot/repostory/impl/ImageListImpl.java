@@ -22,12 +22,12 @@ public class ImageListImpl implements ImageList {
 	private Integer defaultToPrice = 300000;
 	private Integer defaultFromPrice = 100000;
 	private JdbcTemplate jdbcTemplate;
-
+	
 	private String imageListSql = "SELECT * FROM Decorpot.image_categorization ic inner join Decorpot.group_color_mapping gcm on  ic.groupid= gcm.groupid inner join Decorpot.image_location il on gcm.imageid = il.imageid inner join (select groupid, min(price) price from Decorpot.group_price_mapping where price >= ? and price <= ? group by groupid) priceTemp on priceTemp.groupid = ic.groupid where ic.spaces = ? LIMIT ?,?";
-	private String imageSpaceSql = "SELECT * FROM Decorpot.GROUP_ATTRIBUTE ga inner join Decorpot.IMAGE_ATTRIBUTE ia on ga.group_id = ia.group_id where ga.price >= ? and ga.price <= ? and  ga.space = ?";
+	private String imageSpaceSql = "SELECT * FROM Decorpot.GROUP_ATTRIBUTE ga inner join Decorpot.IMAGE_ATTRIBUTE ia on ga.group_id = ia.group_id where ia.image_price >= ? and ia.image_price <= ? and  ga.space = ? and ia.view_id = 1";
 	private String imageViewByColorSql = "select * from Decorpot.image_location il inner join Decorpot.group_color_mapping gcm on gcm.imageid = il.imageid where gcm.groupid = ? and gcm.color = ?";
 	
-	private String colorByGroupid = "select color from Decorpot.group_color_mapping where groupid = ?";
+	private String colorByGroupid = "SELECT color from Decorpot.IMAGE_ATTRIBUTE where group_id = ?";
 	
 	
 	@Autowired
@@ -66,7 +66,7 @@ public class ImageListImpl implements ImageList {
 		imgDetail.setDescriptionShort(rs.getString("description_short"));*/
 		imgDetail.setGroupId(rs.getInt("group_id"));
 		imgDetail.setPathSmall(rs.getString("image_path"));
-		imgDetail.setPrice(rs.getInt("price"));
+		imgDetail.setPrice(rs.getInt("image_price"));
 		imgDetail.setDescriptionShort(rs.getString("image_description"));
 		System.out.println("Image Detail return ");
 	    return imgDetail;

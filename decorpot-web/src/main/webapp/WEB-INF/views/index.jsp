@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/ico"
-	href="resources/core/img/favicon.ico" />
+	href="resource/core/img/sLogo.ico" />
 
 <title>decorpot.com</title>
 <script type="text/javascript">
@@ -31,8 +31,7 @@
 <link rel="stylesheet" href="resources/core/css/normalize.css">
 <link rel="stylesheet" href="resources/core/css/ion.rangeSlider.css">
 <link rel="stylesheet" href="resources/core/css/ngGallery.css">
-<link rel="shortcut icon"
-	href="resource/core/img/decorIcon.ico">
+
 <c:forEach var="entry" items="${pageScripts}">
 	<script src="resources/core/js/application/${entry}.js"></script>
 </c:forEach>
@@ -43,7 +42,7 @@
 		<div id="header" ng-controller="DecorpotCtrl">
 			<div id="top-bar" class="row"></div>
 			<div class="row" style="margin-top: 1%;">
-				<div id="logo" class="col-md-3"><a href="#/" ><img src="resources/core/img/Logofinal.png" width="300" height="50" alt="" /></a></div>
+				<div id="logo" class="col-md-3"><a href="#/" ><img src="resources/core/img/finalLogo.png" width="300" height="50" alt="" /></a></div>
 				<div class=" navigation-bar col-md-6">
 				<div class="col-md-10">
 					<ul class="primary-menu">

@@ -17,29 +17,35 @@
 }
 
 #services {
-	height: 25%;
-	padding-top: 2%;
-	margin-left: 1%;
-    margin-right: 2%;
+	height: auto;
+    padding-top: 0%;
+    overflow: hidden;
+
+}
+
+#services ul{
+	height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,.7);
 }
 
 .service  {
 	display: inline-block;
-	height: 21%;
 }
 
 #services img {
-	display: block;
-	max-height: 200px;
-	height: 170px;
+	    display: block;
+    max-height: 200px;
+    height: 85px;
     width: 96%;
+    border-radius: 6%;
 	
 }
 
 #services h4 {
-	margin-left: 18px;
-	font-family: cursive;
-	color: rgb(105, 103, 103);
+	    margin-left: 18px;
+    font-family: cursive;
+    color: rgb(255, 255, 255);
 }
 
 .titleText {

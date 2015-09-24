@@ -4,25 +4,26 @@
  */
 var decorpotCtrls = angular.module('decorpot');
 
-decorpotCtrls.controller('DecorpotCtrl', [ '$scope', '$stateParams', 'cart', '$auth', 'User', '$rootScope',
+decorpotCtrls.controller('DecorpotCtrl', [ '$scope', '$stateParams', 'cart',
+		'$auth', 'User', '$rootScope',
 		function($scope, $stateParams, cart, $auth, User, $rootScope) {
 			$scope.getCartCounter = cart.getCartCounter;
-			
+
 			$scope.isAuthenticated = $auth.isAuthenticated();
-			
+
 			$scope.name = "Decorpot";
-			
-			$scope.$watch(function(){
+
+			$scope.$watch(function() {
 				return $auth.isAuthenticated();
-			}, function(newValue, oldValue){
+			}, function(newValue, oldValue) {
 				$scope.isAuthenticated = newValue;
 				$scope.name = User.getUser().name || "Guest";
 				console.log('User.getUser() => ', User.getUser());
 			});
-			$rootScope.$on('loggedIn', function () {
-	             //do stuff
-	        })
-			
+			$rootScope.$on('loggedIn', function() {
+				//do stuff
+			})
+
 		} ]);
 
 decorpotCtrls.controller('ImageListController', [
@@ -45,7 +46,6 @@ decorpotCtrls.controller('ImageListController', [
 						console.log(data);
 						$scope.imageList = data;
 					});
-			
 
 		} ]);
 
@@ -82,8 +82,6 @@ decorpotCtrls.controller('ImageViewController', [
 				}
 			};
 
-			
-
 			$scope.addToCart = function(groupid) {
 				var CartImagesDetails = {};
 				CartImagesDetails.groupId = $scope.groupId;
@@ -95,49 +93,84 @@ decorpotCtrls.controller('ImageViewController', [
 			};
 		} ]);
 
-decorpotCtrls.controller('CartController', [ '$scope', 'cart', function($scope, cart){
-	
-}]);
+decorpotCtrls.controller('CartController', [ '$scope', 'cart',
+		function($scope, cart) {
 
-decorpotCtrls.controller('ProjectsController', [ '$scope', 'cart', 'projects', function($scope, cart, projects){
-		projects.getAllProjects().success(function(data){
-			for(var i=0; i<data.length;i++){
-				 data[i].APARTMENT = data[i].APARTMENT.replace(/\s+/g, '-');
-			 }
-			$scope.projects = data;
-		});
-}]);
+		} ]);
 
-decorpotCtrls.controller('ProjectController', [ '$scope', 'cart', 'projects','$stateParams', function($scope, cart, projects,$stateParams){
-	var project = $stateParams.param;
-	$scope.getImagesByAppartment = function(project){
-		 projects.getImagesByAppartment(project).success(function(data){
-			 console.log(data);
-			 $scope.images = data;
-		 });
-	}
-	
-	$scope.getImageSrc = function(image){
-		$scope.imageSrc = image.HD_PATH;
-		$scope.content = true;
-	}
-	
-}]);
+decorpotCtrls.controller('ProjectsController', [ '$scope', 'cart', 'projects', '$rootScope',
+		function($scope, cart, projects, $rootScope) {
+			projects.getAllProjects().success(function(data) {
+				for (var i = 0; i < data.length; i++) {
+					data[i].APARTMENT = data[i].APARTMENT.replace(/\s+/g, '-');
+				}
+				$scope.projects = data;
+			});
+			$rootScope.$on('$stateChangeStart', function(event, toState,
+					toParams, fromState, fromParams) {
+				//event.preventDefault(); 
+				// transitionTo() promise will be rejected with 
+				// a 'transition prevented' error
+				console.log(event, toState, toParams, fromParams, fromState);
+			});
+		} ]);
 
-decorpotCtrls.controller('ContactsController', [ '$scope', 'cart', function($scope, cart){
-	$scope.phoneNumberPattern = (function() {
-	    var regexp = /^\(?(\d{3})\)?[ .-]?(\d{3})[ .-]?(\d{4})$/;
-	    return {
-	        test: function(value) {
-	            if( $scope.requireTel === false ) {
-	                return true;
-	            }
-	            return regexp.test(value);
-	        }
-	    };
-	})();
-}]);
+decorpotCtrls.controller('ProjectController', [
+		'$scope',
+		'cart',
+		'projects',
+		'$stateParams',
+		'$rootScope',
+		'$document',
+		function($scope, cart, projects, $stateParams, $rootScope, $document) {
+			var project = $stateParams.param;
+			var images = [];
+			var self = this;
+			projects.getImagesByAppartment(project).success(function(data) {
+				
+				$scope.alphas = data;
+				console.log($scope.images);
+				for(var i=0; i< data.length; i++){
+					var image = {};
+					image.thumb = data[i].SMALL_PATH;
+					image.img = data[i].HD_PATH;
+					image.description = "";
+					images.push(image);
+				}
+				$scope.images = images;
+				console.log("images are", $scope.images);
+			});
 
-decorpotCtrls.controller('AboutController', [ '$scope', 'cart', function($scope, cart){
-	
-}]);
+			$rootScope.$on('$stateChangeStart', function(event, toState,
+					toParams, fromState, fromParams) {
+				//event.preventDefault(); 
+				// transitionTo() promise will be rejected with 
+				// a 'transition prevented' error
+				console.log(event, toState, toParams, fromParams, fromState);
+			});
+			/*$('#gallery').jGallery({
+				backgroundColor : 'black',
+				textColor : 'white'
+			});*/
+
+		} ]);
+
+decorpotCtrls.controller('ContactsController', [ '$scope', 'cart',
+		function($scope, cart) {
+			$scope.phoneNumberPattern = (function() {
+				var regexp = /^\(?(\d{3})\)?[ .-]?(\d{3})[ .-]?(\d{4})$/;
+				return {
+					test : function(value) {
+						if ($scope.requireTel === false) {
+							return true;
+						}
+						return regexp.test(value);
+					}
+				};
+			})();
+		} ]);
+
+decorpotCtrls.controller('AboutController', [ '$scope', 'cart',
+		function($scope, cart) {
+
+		} ]);

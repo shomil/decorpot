@@ -2,7 +2,7 @@
  * @author: vaseem.mohammed
  * @date  : 12-07-2015
  */
-var decorpot = angular.module('decorpot', ['ui.router', 'satellizer', 'ngMessages']);
+var decorpot = angular.module('decorpot', ['ui.router', 'satellizer', 'ngMessages', 'jkuri.gallery']);
 
 //
 decorpot.config(['$authProvider', '$stateProvider', '$urlRouterProvider', function( $authProvider, $stateProvider, $urlRouterProvider){
@@ -36,8 +36,8 @@ decorpot.config(['$authProvider', '$stateProvider', '$urlRouterProvider', functi
 		controller : 'ProjectsController'
     }).state('projects.project', {
         url: '/project/:param',
-        templateUrl : 'resources/partials/projects.html',
-		controller : 'ProjectController'
+        templateUrl : 'resources/partials/projectImages.html',
+		controller : 'ProjectController as ctrl'
     }).state('contacts', {
         url: '/contacts',
         templateUrl: 'resources/partials/contacts.html',

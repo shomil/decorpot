@@ -30,6 +30,7 @@
 	href="resources/core/css/ion.rangeSlider.skinModern.css">
 <link rel="stylesheet" href="resources/core/css/normalize.css">
 <link rel="stylesheet" href="resources/core/css/ion.rangeSlider.css">
+<link rel="stylesheet" href="resources/core/css/ngGallery.css">
 <link rel="shortcut icon"
 	href="resource/core/img/decorIcon.ico">
 <c:forEach var="entry" items="${pageScripts}">
@@ -225,7 +226,7 @@
 	<script src="resources/core/js/application/login.js"></script>
 	<script src="resources/core/js/application/directives.js"></script>
 	<script src="resources/core/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
-	
+	<script src="resources/core/js/ngGallery.js"></script>
 	<script type="text/javascript">
     
 					jQuery(document).ready(function($) {

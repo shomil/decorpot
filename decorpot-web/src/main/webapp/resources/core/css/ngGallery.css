@@ -46,6 +46,7 @@ img.ng-thumb {
     right: 0;
     width: 2%;
     height: 2%;
+    z-index : 50;
 }
 
 .ng-gallery-content > a.nav-left, .ng-gallery-content > a.nav-right {

@@ -838,6 +838,9 @@ opacity
     padding-top: 40px;
 }
 
+.aboutTitle{
+	color : white;
+}
 .section.workflow {
     padding: 80px 0 0;
     text-align: center;

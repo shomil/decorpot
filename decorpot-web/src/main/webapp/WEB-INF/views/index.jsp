@@ -121,7 +121,7 @@
 	</div>
 	<!--mainPage-->
 	<!--Modal login Pop up Box -->
-	<div id="modal" class="popupContainer" style="display: none;">
+	<div id="modal" class="popupContainer hide" style="display: none;">
 		<header class="popupHeader">
 			<span class="header_title">Login</span> <span class="modal_close"><i
 				class="fa fa-times"></i></span>
@@ -148,7 +148,7 @@
 			</div>
 	</div>
 	<!-- Username & Password Login form -->
-	<div class="user_login">
+	<div class="user_login hide">
 		<form>
 			<label>Email / Username</label> <input type="text" /> <br /> <label>Password</label>
 			<input type="password" /> <br />
@@ -170,7 +170,7 @@
 		<a href="#" class="forgot_password">Forgot password?</a>
 	</div>
 	<!-- Register Form -->
-	<div class="user_register">
+	<div class="user_register hide">
 		<form>
 			<label>Full Name</label> <input type="text" /> <br /> <label>Email
 				Address</label> <input type="email" /> <br /> <label>Password</label> <input

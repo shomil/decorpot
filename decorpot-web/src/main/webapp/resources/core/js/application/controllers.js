@@ -75,10 +75,10 @@ decorpotCtrls.controller('ImageViewController', [
 						});
 			};
 
-			$scope.getHdImage = function(image_Id) {
+			$scope.getHdImage = function(IMAGE_ID) {
 				for (var i = 0; i < $scope.color.thumbnails.length; i++) {
-					if ($scope.color.thumbnails[i]['image_Id'] == image_Id)
-						$scope.path_hd = $scope.color.thumbnails[i]['path_hd'];
+					if ($scope.color.thumbnails[i]['IMAGE_ID'] == IMAGE_ID)
+						$scope.PATH_HD = $scope.color.thumbnails[i]['PATH_HD'];
 				}
 			};
 

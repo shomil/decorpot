@@ -19,16 +19,16 @@
 			<div id="smalliconsText">Select Angle</div>
 			<ul id="thumbnails">
 				<li ng-repeat="thumbnail in color.thumbnails  | filter:query">
-					<img id="imageViewContainer" src="{{thumbnail.path_small}}"
-					ng-init="($first) ? getHdImage(thumbnail.image_Id) : ''"
-					ng-click="getHdImage(thumbnail.image_Id)" />
+					<img id="imageViewContainer" src="{{thumbnail.PATH_SMALL}}"
+					ng-init="($first) ? getHdImage(thumbnail.IMAGE_ID) : ''"
+					ng-click="getHdImage(thumbnail.IMAGE_ID)" />
 				</li>
 			</ul>
 		</div>
 	</div>
 	<div class="clearer"></div>
 	<div id="imageHDView">
-		<img id="imageHd" src="{{path_hd}}">
+		<img id="imageHd" src="{{PATH_HD}}">
 	</div>
 	</div>
 <div class="col-md-3" id="rightSection">

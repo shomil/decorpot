@@ -53,8 +53,8 @@ public class DecorpotServiceImpl implements DecorpotServices{
 		System.out.println("decorpot-services/DecorpotServiceImpl:getViewsByColors()");
 		List<Map<String, Object>> images =  imageList.getViewsByColors(color, groupid);
 		for(Map<String, Object> image : images){
-			 image.put("path_small", smallImageUrl+image.get("path_small").toString());
-			 image.put("path_hd", largeImageUrl+image.get("path_hd").toString());
+			 image.put("PATH_SMALL", smallImageUrl+image.get("PATH_SMALL").toString());
+			 image.put("PATH_HD", largeImageUrl+image.get("PATH_HD").toString());
 		 }
 		 return images;
 		
@@ -73,7 +73,7 @@ public class DecorpotServiceImpl implements DecorpotServices{
 		int to=pageNum*this.defaultList, from=(pageNum-1)*this.defaultList+1;
 		List<Map<String,Object>> images = imageList.getImageListTheme(theme, toPrice, fromPrice, to, from);
 		for(Map<String, Object> image : images){
-			 image.put("path_small", smallImageUrl+image.get("path_small").toString());
+			 image.put("PATH_SMALL", smallImageUrl+image.get("PATH_SMALL").toString());
 		 }
 		 return images;
 	}

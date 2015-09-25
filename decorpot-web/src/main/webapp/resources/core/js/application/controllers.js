@@ -75,9 +75,9 @@ decorpotCtrls.controller('ImageViewController', [
 						});
 			};
 
-			$scope.getHdImage = function(imageSlId) {
+			$scope.getHdImage = function(image_Id) {
 				for (var i = 0; i < $scope.color.thumbnails.length; i++) {
-					if ($scope.color.thumbnails[i]['imageSlId'] == imageSlId)
+					if ($scope.color.thumbnails[i]['image_Id'] == image_Id)
 						$scope.path_hd = $scope.color.thumbnails[i]['path_hd'];
 				}
 			};

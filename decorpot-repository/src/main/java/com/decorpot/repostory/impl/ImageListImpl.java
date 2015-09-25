@@ -27,7 +27,7 @@ public class ImageListImpl implements ImageList {
 	private String imageSpaceSql = "SELECT * FROM Decorpot.GROUP_ATTRIBUTE ga inner join Decorpot.IMAGE_ATTRIBUTE ia on ga.group_id = ia.group_id where ia.image_price >= ? and ia.image_price <= ? and  ga.space = ? and ia.view_id = 1";
 	//private String imageViewByColorSql = "select * from Decorpot.image_location il inner join Decorpot.group_color_mapping gcm on gcm.imageid = il.imageid where gcm.groupid = ? and gcm.color = ?";
 	private String imageViewByColorSql = "select * from Decorpot.IMAGE_ATTRIBUTE where group_id = ? and color  = ?";
-	private String colorByGroupid = "SELECT color from Decorpot.IMAGE_ATTRIBUTE where group_id = ?";
+	private String colorByGroupid = "SELECT Distinct(color) from Decorpot.IMAGE_ATTRIBUTE where group_id = ?";
 	
 	
 	@Autowired

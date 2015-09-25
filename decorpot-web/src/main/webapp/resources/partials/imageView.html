@@ -20,8 +20,8 @@
 			<ul id="thumbnails">
 				<li ng-repeat="thumbnail in color.thumbnails  | filter:query">
 					<img id="imageViewContainer" src="{{thumbnail.path_small}}"
-					ng-init="($first) ? getHdImage(thumbnail.imageSlId) : ''"
-					ng-click="getHdImage(thumbnail.imageSlId)" />
+					ng-init="($first) ? getHdImage(thumbnail.image_Id) : ''"
+					ng-click="getHdImage(thumbnail.image_Id)" />
 				</li>
 			</ul>
 		</div>

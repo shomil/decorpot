@@ -20,6 +20,7 @@ public class DecorpotServiceImpl implements DecorpotServices{
 	private int defaultList = 10;
 	//private String smallImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/low_image/";
 	private String smallImageUrl =  "https://s3-ap-southeast-1.amazonaws.com/decorpot/image_lot_small/";
+	private String largeImageUrl =  "https://s3-ap-southeast-1.amazonaws.com/decorpot/image_lot_large/";
 	@Resource
 	DecorpotRepository decorpotRepository;
 	
@@ -53,7 +54,7 @@ public class DecorpotServiceImpl implements DecorpotServices{
 		List<Map<String, Object>> images =  imageList.getViewsByColors(color, groupid);
 		for(Map<String, Object> image : images){
 			 image.put("path_small", smallImageUrl+image.get("path_small").toString());
-			 image.put("path_hd", smallImageUrl+image.get("path_hd").toString());
+			 image.put("path_hd", largeImageUrl+image.get("path_hd").toString());
 		 }
 		 return images;
 		

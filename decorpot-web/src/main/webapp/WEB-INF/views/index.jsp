@@ -14,20 +14,13 @@
 </script>
 <link href="resources/core/css/bootstrap.min.css" rel="stylesheet">
 <link href="resources/core/css/style.css" rel="stylesheet">
-<link href="resources/core/css/login.css" rel="stylesheet">
-<link href="resources/core/css/loginstyle.css" rel="stylesheet">
-<link href="resources/core/css/normalize.css" rel="stylesheet">
-<link rel="stylesheet" href="resources/core/css/reset.css">
 <!-- CSS reset -->
-<link rel="stylesheet" href="resources/core/css/carousel.css">
 <!-- Resource style -->
-<script src="resources/core/js/modernizr.js"></script>
 <!-- Modernizr -->
 <link rel="stylesheet"
 	href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
 <link rel="stylesheet"
 	href="resources/core/css/ion.rangeSlider.skinModern.css">
-<link rel="stylesheet" href="resources/core/css/normalize.css">
 <link rel="stylesheet" href="resources/core/css/ion.rangeSlider.css">
 <link rel="stylesheet" href="resources/core/css/ngGallery.css">
 
@@ -42,7 +35,7 @@
 			<div id="top-bar" class="row"></div>
 			<div class="row" style="margin-top: 1%;">
 				<div id="logo" class="col-md-3"><a href="#/" ><img src="resources/core/img/finalLogo.png" width="300" height="50" alt="" /></a></div>
-				<div class=" navigation-bar col-md-6">
+				<div class=" navigation-bar col-md-9">
 				<div class="col-md-10">
 					<ul class="primary-menu">
 						<li class="menudropdown hide"><a href="">Themes</a>
@@ -211,17 +204,12 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="resources/core/js/bootstrap.min.js"></script>
-	<script src="resources/core/js/login.js"></script>
-	<script src="resources/core/js/jquery.leanModal.min.js"></script>
-	<script src="resources/core/js/masonry.pkgd.min.js"></script>
-	<script src="resources/core/js/jquery.flexslider-min.js"></script>
 	<script src="resources/core/js/application/app.js"></script>
 	<script src="resources/core/js/application/satellizer.js"></script>
 	<script src="resources/core/js/angularytics.js"></script>
 	
 	<script src="resources/core/js/application/services.js"></script>
 	<script src="resources/core/js/application/controllers.js"></script>
-	<script src="resources/core/js/application/login.js"></script>
 	<script src="resources/core/js/application/directives.js"></script>
 	<script src="resources/core/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
 	<script src="resources/core/js/ngGallery.js"></script>

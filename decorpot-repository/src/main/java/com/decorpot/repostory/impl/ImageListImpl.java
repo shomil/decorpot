@@ -2,6 +2,7 @@ package com.decorpot.repostory.impl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,7 +29,7 @@ public class ImageListImpl implements ImageList {
 	//private String imageViewByColorSql = "select * from Decorpot.image_location il inner join Decorpot.group_color_mapping gcm on gcm.imageid = il.imageid where gcm.groupid = ? and gcm.color = ?";
 	private String imageViewByColorSql = "select * from Decorpot.IMAGE_ATTRIBUTE where group_id = ? and color  = ?";
 	private String colorByGroupid = "SELECT Distinct(color) from Decorpot.IMAGE_ATTRIBUTE where group_id = ?";
-	
+	private String imageAllSpaceSql = "SELECT * FROM Decorpot.GROUP_ATTRIBUTE ga inner join Decorpot.IMAGE_ATTRIBUTE ia on ga.group_id = ia.group_id where ia.image_price >= ? and ia.image_price <= ? and ia.view_id = 1";
 	
 	@Autowired
 	public ImageListImpl(DataSource dataSource) {
@@ -43,6 +44,7 @@ public class ImageListImpl implements ImageList {
 		if(fromPrice == null)
 			fromPrice = this.defaultFromPrice;
 		Map<String, Object> params = new HashMap<>();
+		List<ImageDetail> imgDetailsList = new ArrayList<ImageDetail>();
 		params.put("toPrice", toPrice);
 		params.put("fromPrice", fromPrice);
 		params.put("space", space);
@@ -51,7 +53,10 @@ public class ImageListImpl implements ImageList {
 		System.out.println("decorpot-repository/ImageListImpl:getImageListSpace");
 		System.out.println("getImageListSpace" +to +"  "+ from+"  " + fromPrice+"   "+toPrice+"  "+space);
 		//List<ImageDetail> imgDetailsList =  jdbcTemplate.query(imageListSql, new Object[] {fromPrice, toPrice, space, from, to}, new ImageDetailMapper());
-		List<ImageDetail> imgDetailsList =  jdbcTemplate.query(imageSpaceSql, new Object[] {fromPrice, toPrice, space}, new ImageDetailMapper());
+		if(space.equalsIgnoreCase("looks"))
+			imgDetailsList =  jdbcTemplate.query(imageAllSpaceSql, new Object[] {fromPrice, toPrice}, new ImageDetailMapper());
+		else
+			imgDetailsList =  jdbcTemplate.query(imageSpaceSql, new Object[] {fromPrice, toPrice, space}, new ImageDetailMapper());
 		System.out.println("queryDone");
 		return imgDetailsList;
 	}
@@ -60,14 +65,12 @@ public class ImageListImpl implements ImageList {
 		System.out.println("decorpot-repository/ImageListImpl:ImageDetailMapper" );
 		System.out.println("rs = "+rs +" rowNum = "+rowNum);
 		ImageDetail imgDetail = new ImageDetail();
-		/*imgDetail.setGroupId(rs.getInt("groupid"));
-		imgDetail.setPathSmall(rs.getString("path_small"));
-		imgDetail.setPrice(rs.getInt("price"));
-		imgDetail.setDescriptionShort(rs.getString("description_short"));*/
+		
 		imgDetail.setGroupId(rs.getInt("group_id"));
-		imgDetail.setPathSmall(rs.getString("image_path"));
+		imgDetail.setPathSmall(rs.getString("path_small"));
 		imgDetail.setPrice(rs.getInt("image_price"));
 		imgDetail.setDescriptionShort(rs.getString("image_description"));
+		imgDetail.setImageLongDescription(rs.getString("image_long_description"));
 		System.out.println("Image Detail return ");
 	    return imgDetail;
 	   }

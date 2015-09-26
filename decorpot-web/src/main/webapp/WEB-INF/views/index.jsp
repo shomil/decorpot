@@ -49,7 +49,7 @@
 								<li><a ui-sref="#/imageListTheme/modern">Modern</a></li>
 								<li><a ui-sref="#/imageListTheme/fusion">Fusion</a></li>
 							</ul></li>
-						<li class="menudropdown"><a href="">Looks</a>
+						<li class="menudropdown"><a ui-sref="imageList({param : 'looks'})">Looks</a>
 							<ul class="sub-menu">
 								<li><a ui-sref="imageList({param : 'living'})">Living</a></li>
 								<li><a ui-sref="imageList({param : 'dining'})">Dining</a></li>

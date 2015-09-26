@@ -5,8 +5,18 @@
 var decorpot = angular.module('decorpot', ['ui.router', 'satellizer', 'ngMessages', 'jkuri.gallery']);
 
 //
-decorpot.config(['$authProvider', '$stateProvider', '$urlRouterProvider', function( $authProvider, $stateProvider, $urlRouterProvider){
+decorpot.config(['$authProvider', '$stateProvider', '$urlRouterProvider','$httpProvider', function( $authProvider, $stateProvider, $urlRouterProvider, $httpProvider){
 	
+
+	$httpProvider.interceptors.push('myHttpInterceptor');
+    var spinnerFunction = function (data, headersGetter) {
+        // todo start the spinner here
+        //alert('start spinner');
+        $('#mydiv').show();
+        return data;
+    };
+    $httpProvider.defaults.transformRequest.push(spinnerFunction);
+    
 	$urlRouterProvider.otherwise('/');
 	
 	$stateProvider

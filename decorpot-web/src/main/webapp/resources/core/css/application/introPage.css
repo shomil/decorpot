@@ -78,17 +78,15 @@
 }
 
 .image-tiles {
-	padding-top: 3%;
-    padding-bottom: 3%;
+    text-align: center;
 }
 
 .col-md-4 .imageMenuCation {
-	position: absolute;
 	background-color: transparent;
 	text-shadow: 0.5px 0.33px 1px #000;
-	margin-left: 23%;
 	color: rgb(2, 2, 2);
 	font-weight: 200 !important;
+	position: relative;
 }
 
 .col-md-12 .imageMenuCation {

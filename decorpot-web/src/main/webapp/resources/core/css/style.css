@@ -999,3 +999,153 @@ padding: 6px;
       -ms-transform: rotate(360deg);
           transform: rotate(360deg);
 }
+
+.imageMenu{
+	height: 343px;
+    width: 100%;
+}
+
+#mydiv {  
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:1000;
+    background-color:white;
+ }
+
+.ajax-loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -32px; /* -1 * image width / 2 */
+    margin-top: -32px;  /* -1 * image height / 2 */
+    display: block;     
+}
+
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+
+.cssload-loading {
+	text-align:center;
+	margin: 17% auto;
+	color: rgba(0,0,0,0.62);
+	font-size: 2em;
+	font-family: "Montserrat", sans-serif;
+	animation: cssload-breathe 3.15s ease infinite;
+		-o-animation: cssload-breathe 3.15s ease infinite;
+		-ms-animation: cssload-breathe 3.15s ease infinite;
+		-webkit-animation: cssload-breathe 3.15s ease infinite;
+		-moz-animation: cssload-breathe 3.15s ease infinite;
+}
+
+@keyframes cssload-breathe {
+	0% {
+		letter-spacing: 0;
+		text-shadow: 0 0 2px white;
+	}
+	30% {
+		color: transparent;
+	}
+	50% {
+		letter-spacing: 200px;
+		font-size: 0;
+		text-shadow: 0 0 12px white;
+	}
+	60% {
+		color: transparent;
+	}
+	100% {
+		letter-spacing: 0;
+		text-shadow: 0 0 2px white;
+	}
+}
+
+@-o-keyframes cssload-breathe {
+	0% {
+		letter-spacing: 0;
+		text-shadow: 0 0 2px white;
+	}
+	30% {
+		color: transparent;
+	}
+	50% {
+		letter-spacing: 200px;
+		font-size: 0;
+		text-shadow: 0 0 12px white;
+	}
+	60% {
+		color: transparent;
+	}
+	100% {
+		letter-spacing: 0;
+		text-shadow: 0 0 2px white;
+	}
+}
+
+@-ms-keyframes cssload-breathe {
+	0% {
+		letter-spacing: 0;
+		text-shadow: 0 0 2px white;
+	}
+	30% {
+		color: transparent;
+	}
+	50% {
+		letter-spacing: 200px;
+		font-size: 0;
+		text-shadow: 0 0 12px white;
+	}
+	60% {
+		color: transparent;
+	}
+	100% {
+		letter-spacing: 0;
+		text-shadow: 0 0 2px white;
+	}
+}
+
+@-webkit-keyframes cssload-breathe {
+	0% {
+		letter-spacing: 0;
+		text-shadow: 0 0 2px white;
+	}
+	30% {
+		color: transparent;
+	}
+	50% {
+		letter-spacing: 200px;
+		font-size: 0;
+		text-shadow: 0 0 12px white;
+	}
+	60% {
+		color: transparent;
+	}
+	100% {
+		letter-spacing: 0;
+		text-shadow: 0 0 2px white;
+	}
+}
+
+@-moz-keyframes cssload-breathe {
+	0% {
+		letter-spacing: 0;
+		text-shadow: 0 0 2px white;
+	}
+	30% {
+		color: transparent;
+	}
+	50% {
+		letter-spacing: 200px;
+		font-size: 0;
+		text-shadow: 0 0 12px white;
+	}
+	60% {
+		color: transparent;
+	}
+	100% {
+		letter-spacing: 0;
+		text-shadow: 0 0 2px white;
+	}
+}

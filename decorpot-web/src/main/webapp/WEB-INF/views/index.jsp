@@ -30,13 +30,16 @@
 <link rel="stylesheet" href="resources/core/css/application/${css}.css">
 
 </head>
+<div id="mydiv">
+    <div class="cssload-loading">Loading...</div>
+</div>
 	<div id="mainPage">
 		<div id="header" ng-controller="DecorpotCtrl">
 			<div id="top-bar" class="row"></div>
 			<div class="row" style="margin-top: 1%;">
 				<div id="logo" class="col-md-3"><a href="#/" ><img src="resources/core/img/finalLogo.png" width="300" height="50" alt="" /></a></div>
 				<div class=" navigation-bar col-md-9">
-				<div class="col-md-10">
+				<div class="col-md-10 right">
 					<ul class="primary-menu">
 						<li class="menudropdown hide"><a href="">Themes</a>
 							<ul class="sub-menu">
@@ -204,7 +207,9 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="resources/core/js/bootstrap.min.js"></script>
+	
 	<script src="resources/core/js/application/app.js"></script>
+	<script src="resources/core/js/application/factory.js"></script>
 	<script src="resources/core/js/application/satellizer.js"></script>
 	<script src="resources/core/js/angularytics.js"></script>
 	

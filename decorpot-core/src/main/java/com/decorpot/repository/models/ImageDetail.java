@@ -7,6 +7,7 @@ public class ImageDetail {
 	private String image_description;
 	private String image_long_description;
 	private int price;
+	private String image_title;
 	public int getGroupId() {
 		System.out.println("decorpot-core/ImageDetail:getGroupId()");
 		return group_id;
@@ -48,11 +49,23 @@ public class ImageDetail {
 		System.out.println("decorpot-core/ImageDetail:setPrice()");
 		this.price = price;
 	}
+	public String getImageTitle() {
+		System.out.println("decorpot-core/ImageDetail:getpathSmall()");
+		return image_title;
+	}
+	public void setImageTitle(String image_title) {
+		System.out.println("decorpot-core/ImageDetail:setpathSmall()");
+		this.image_title = image_title;
+	}
 	@Override
 	public String toString() {
-		return "ImageList [group_id=" + group_id + ", path_small=" + path_small
-				+ ", image_description=" + image_description +", image_long_description=" + image_long_description
-				+", price=" + price
+		return "ImageList ["
+				+ "group_id=" + group_id 
+				+ ", path_small=" + path_small
+				+ ", image_description=" + image_description 
+				+ ", image_long_description=" + image_long_description
+				+ ", image_title=" + image_title
+				+ ", price=" + price
 				+ "]";
 	}
 	

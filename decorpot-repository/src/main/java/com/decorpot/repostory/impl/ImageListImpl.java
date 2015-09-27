@@ -71,6 +71,7 @@ public class ImageListImpl implements ImageList {
 		imgDetail.setPrice(rs.getInt("image_price"));
 		imgDetail.setDescriptionShort(rs.getString("image_description"));
 		imgDetail.setImageLongDescription(rs.getString("image_long_description"));
+		imgDetail.setImageTitle(rs.getString("image_title"));
 		System.out.println("Image Detail return ");
 	    return imgDetail;
 	   }

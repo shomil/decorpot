@@ -58,27 +58,23 @@ decorpotCtrls.controller('ImageViewController', [
 		function($scope, $stateParams, imageView, $auth, cart) {
 			$scope.selection = {};
 			$scope.groupId = $stateParams.groupid;
-			imageView.getColors($stateParams.groupid).success(function(data) {
+			/*imageView.getColors($stateParams.groupid).success(function(data) {
 
 				$scope.colors = data;
 
+			});*/
+
+			imageView.getViewsByGroupId($stateParams.groupid)
+						.success(function(data) {
+							$scope.thumbnails = data;
+							$scope.toggleObject = {item: -1};
+							console.log($scope);
 			});
 
-			if (typeof $scope.color == 'undefined')
-				$scope.color = {};
-			$scope.color.thumbnails = [];
-			$scope.getViewsByColors = function(color) {
-				imageView.getViewsByColors($stateParams.groupid, color.color)
-						.success(function(data) {
-							$scope.color.thumbnails = data;
-							console.log($scope);
-						});
-			};
-
 			$scope.getHdImage = function(IMAGE_ID) {
-				for (var i = 0; i < $scope.color.thumbnails.length; i++) {
-					if ($scope.color.thumbnails[i]['IMAGE_ID'] == IMAGE_ID)
-						$scope.PATH_HD = $scope.color.thumbnails[i]['PATH_HD'];
+				for (var i = 0; i < $scope.thumbnails.length; i++) {
+					if ($scope.thumbnails[i]['IMAGE_ID'] == IMAGE_ID)
+						$scope.PATH_HD = $scope.thumbnails[i]['PATH_HD'];
 				}
 			};
 

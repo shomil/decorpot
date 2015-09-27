@@ -22,5 +22,7 @@ public interface ImageList {
 	
 	public List<ImagesByGroup> getAllImages();
 	
+	public List<Map<String, Object>> getViewsByGroup(int groupid);
+	
 
 }

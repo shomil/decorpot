@@ -21,14 +21,18 @@ services.service('imageView', function($http) {
 			var url = "";
 			console.log('services:imageView:getColors');
 			url = "color/" + groupid;
-			console.log($http.get(url));
 			return $http.get(url);
 		},
 		getViewsByColors : function(groupid, color) {
 			console.log('services:imageView:getViewsByColors');
 			var url = "";
 			url = "image/group/" + groupid + "/color/" + color;
-			console.log($http.get(url));
+			return $http.get(url);
+		},
+		getViewsByGroupId : function(groupid) {
+			console.log('services:imageView:getViewsByColors');
+			var url = "";
+			url = "group/" + groupid + "/views";
 			return $http.get(url);
 		}
 	};

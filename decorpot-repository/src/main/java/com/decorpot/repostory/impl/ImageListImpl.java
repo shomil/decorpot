@@ -33,6 +33,7 @@ public class ImageListImpl implements ImageList {
 	private String colorByGroupid = "SELECT Distinct(color) from Decorpot.IMAGE_ATTRIBUTE where group_id = ?";
 	private String getAllImages = "SELECT * FROM ";
 	private String imageAllSpaceSql = "SELECT * FROM Decorpot.GROUP_ATTRIBUTE ga inner join Decorpot.IMAGE_ATTRIBUTE ia on ga.group_id = ia.group_id where ia.image_price >= ? and ia.image_price <= ? and ia.view_id = 1";
+	private String viewsByGroupid = "select * from Decorpot.IMAGE_ATTRIBUTE where group_id = ?";
 	
 	@Autowired
 	public ImageListImpl(DataSource dataSource) {
@@ -114,6 +115,12 @@ public class ImageListImpl implements ImageList {
 		List<ImagesByGroup> imagesByGroup = new LinkedList<ImagesByGroup>();
 		jdbcTemplate.queryForList(getAllImages);
 		return imagesByGroup;
+	}
+
+	@Override
+	public List<Map<String, Object>> getViewsByGroup(int groupid) {
+		// TODO Auto-generated method stub
+		return jdbcTemplate.queryForList(viewsByGroupid,groupid);
 	}
 
 }

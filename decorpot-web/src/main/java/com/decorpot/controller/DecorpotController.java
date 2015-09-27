@@ -67,4 +67,14 @@ public class DecorpotController extends DefaultController{
 		return colors;
 		
 	}
+	
+	@RequestMapping(value="group/{groupid}/views", method = RequestMethod.GET, headers="Accept=*/*", produces="application/json")
+	public List<Map<String, Object>> getViewsByGroup(@PathVariable int groupid){
+		long start = System.currentTimeMillis();
+		List<Map<String, Object>> colors = decorpotServices.getViewsByGroup(groupid);
+		long end = System.currentTimeMillis();
+		System.out.println(end-start);
+		return colors;
+		
+	}
 }

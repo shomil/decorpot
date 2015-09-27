@@ -13,4 +13,5 @@ public interface DecorpotServices {
 	public List<Map<String, Object>> getImageListTheme(String space, Integer toPrice, Integer fromPrice, Integer pageNum);
 	public List<Map<String, Object>> getViewsByColors(String color, int groupid);
 	public List<Map<String, Object>> getColorsByGroup(int groupid);
+	List<Map<String, Object>> getViewsByGroup(int groupid);
 }

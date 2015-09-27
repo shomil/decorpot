@@ -84,7 +84,7 @@
 	font-style: normal;
 	font-weight: 800;
 	color: rgb(182, 174, 171);
-	padding-left: 2%;
+	padding-left: 7%;
 	font-size: large;
 	font-style: normal;
 	font-family: fantasy;
@@ -354,7 +354,7 @@ ul.rig.columns-4 li {
 	height: 12%;
 }
 
-#priceText .col-xs-6 {
+#priceText .col-xs-3, .col-xs-2, .col-xs-6 {
 	margin-top: 5%;
 	font-family: fantasy;
 	font-size: initial;
@@ -863,13 +863,13 @@ opacity
 }
 
 .catchBold{
-color: #06A90E;
-    text-shadow: 1px 1px 1px rgba(0,0,0,.15);
-        letter-spacing: 2px;
-    text-transform: uppercase;
+	color: #FFFFFF;
+    text-shadow: 4px 4px 1px rgba(0,0,0,.75);
+        letter-spacing: 1.5px;
+    text-transform: none;
     font-weight: 700;
     line-height: 1;
-    font-size: 4.5em;
+    font-size: 4em;
 }
 
 .catchSmall{

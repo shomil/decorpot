@@ -3,6 +3,7 @@ package com.decorpot.repostory.impl;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -13,6 +14,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import com.decorpot.repository.core.ImagesByGroup;
 import com.decorpot.repository.interfaces.ImageList;
 import com.decorpot.repository.models.ImageDetail;
 
@@ -28,7 +30,7 @@ public class ImageListImpl implements ImageList {
 	//private String imageViewByColorSql = "select * from Decorpot.image_location il inner join Decorpot.group_color_mapping gcm on gcm.imageid = il.imageid where gcm.groupid = ? and gcm.color = ?";
 	private String imageViewByColorSql = "select * from Decorpot.IMAGE_ATTRIBUTE where group_id = ? and color  = ?";
 	private String colorByGroupid = "SELECT Distinct(color) from Decorpot.IMAGE_ATTRIBUTE where group_id = ?";
-	
+	private String getAllImages = "SELECT * FROM ";
 	
 	@Autowired
 	public ImageListImpl(DataSource dataSource) {
@@ -101,6 +103,12 @@ public class ImageListImpl implements ImageList {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	@Override
+	public List<ImagesByGroup> getAllImages() {
+		List<ImagesByGroup> imagesByGroup = new LinkedList<ImagesByGroup>();
+		jdbcTemplate.queryForList(getAllImages);
+		return imagesByGroup;
+	}
 
 }

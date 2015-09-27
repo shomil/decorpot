@@ -37,7 +37,7 @@
 		<div id="header" ng-controller="DecorpotCtrl">
 			<div id="top-bar" class="row"></div>
 			<div class="row" style="margin-top: 1%;">
-				<div id="logo" class="col-md-3"><a href="#/" ><img src="resources/core/img/FINALCOLORLOGO1.png" width="250" height="33" alt="" /></a></div>
+				<div id="logo" class="col-md-3"><a href="#/" ><img src="resources/core/img/FINALCOLORLOGO1.png" width="300" height="43" alt="" /></a></div>
 				<div class=" navigation-bar col-md-9">
 				<div class="col-md-10 right">
 					<ul class="primary-menu">

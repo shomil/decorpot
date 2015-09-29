@@ -6,5 +6,7 @@ import java.util.Map;
 public interface ApartmentRepo {
 	
 	public List<Map<String, Object>> getAllApartment();
+	
+	public List<Map<String, Object>> getApartment(int aprtId);
 
 }

@@ -21,7 +21,7 @@ decorpotCtrls.controller('DecorpotCtrl', [ '$scope', '$stateParams', 'cart',
 				console.log('User.getUser() => ', User.getUser());
 			});
 			$rootScope.$on('loggedIn', function() {
-				//do stuff
+				// do stuff
 			})
 
 		} ]);
@@ -58,18 +58,22 @@ decorpotCtrls.controller('ImageViewController', [
 		function($scope, $stateParams, imageView, $auth, cart) {
 			$scope.selection = {};
 			$scope.groupId = $stateParams.groupid;
-			/*imageView.getColors($stateParams.groupid).success(function(data) {
+			/*
+			 * imageView.getColors($stateParams.groupid).success(function(data) {
+			 * 
+			 * $scope.colors = data;
+			 * 
+			 * });
+			 */
 
-				$scope.colors = data;
-
-			});*/
-
-			imageView.getViewsByGroupId($stateParams.groupid)
-						.success(function(data) {
-							$scope.thumbnails = data;
-							$scope.toggleObject = {item: -1};
-							console.log($scope);
-			});
+			imageView.getViewsByGroupId($stateParams.groupid).success(
+					function(data) {
+						$scope.thumbnails = data;
+						$scope.toggleObject = {
+							item : -1
+						};
+						console.log($scope);
+					});
 
 			$scope.getHdImage = function(IMAGE_ID) {
 				for (var i = 0; i < $scope.thumbnails.length; i++) {
@@ -94,7 +98,11 @@ decorpotCtrls.controller('CartController', [ '$scope', 'cart',
 
 		} ]);
 
-decorpotCtrls.controller('ProjectsController', [ '$scope', 'cart', 'projects', '$rootScope',
+decorpotCtrls.controller('ProjectsController', [
+		'$scope',
+		'cart',
+		'projects',
+		'$rootScope',
 		function($scope, cart, projects, $rootScope) {
 			projects.getAllProjects().success(function(data) {
 				for (var i = 0; i < data.length; i++) {
@@ -104,8 +112,8 @@ decorpotCtrls.controller('ProjectsController', [ '$scope', 'cart', 'projects', '
 			});
 			$rootScope.$on('$stateChangeStart', function(event, toState,
 					toParams, fromState, fromParams) {
-				//event.preventDefault(); 
-				// transitionTo() promise will be rejected with 
+				// event.preventDefault();
+				// transitionTo() promise will be rejected with
 				// a 'transition prevented' error
 				console.log(event, toState, toParams, fromParams, fromState);
 			});
@@ -123,10 +131,10 @@ decorpotCtrls.controller('ProjectController', [
 			var images = [];
 			var self = this;
 			projects.getImagesByAppartment(project).success(function(data) {
-				
+
 				$scope.alphas = data;
 				console.log($scope.images);
-				for(var i=0; i< data.length; i++){
+				for (var i = 0; i < data.length; i++) {
 					var image = {};
 					image.thumb = data[i].SMALL_PATH;
 					image.img = data[i].HD_PATH;
@@ -139,15 +147,15 @@ decorpotCtrls.controller('ProjectController', [
 
 			$rootScope.$on('$stateChangeStart', function(event, toState,
 					toParams, fromState, fromParams) {
-				//event.preventDefault(); 
-				// transitionTo() promise will be rejected with 
+				// event.preventDefault();
+				// transitionTo() promise will be rejected with
 				// a 'transition prevented' error
 				console.log(event, toState, toParams, fromParams, fromState);
 			});
-			/*$('#gallery').jGallery({
-				backgroundColor : 'black',
-				textColor : 'white'
-			});*/
+			/*
+			 * $('#gallery').jGallery({ backgroundColor : 'black', textColor :
+			 * 'white' });
+			 */
 
 		} ]);
 
@@ -169,4 +177,11 @@ decorpotCtrls.controller('ContactsController', [ '$scope', 'cart',
 decorpotCtrls.controller('AboutController', [ '$scope', 'cart',
 		function($scope, cart) {
 
+		} ]);
+
+decorpotCtrls.controller('ApartmentsController', [ '$scope', 'cart',
+		'appartments', function($scope, cart, appartments) {
+			appartments.getAllApartments().success(function(data) {
+				$scope.appartments = data;
+			})
 		} ]);

@@ -129,4 +129,13 @@ services.service('projects', function($http){
 			});
 		}
 	};
-})
+});
+
+services.service('appartments', function($http){
+	return{
+		getAllApartments : function(){
+			var data = {};
+			return data;
+		}
+	};
+});

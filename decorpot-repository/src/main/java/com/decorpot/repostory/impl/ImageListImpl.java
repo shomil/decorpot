@@ -119,7 +119,6 @@ public class ImageListImpl implements ImageList {
 
 	@Override
 	public List<Map<String, Object>> getViewsByGroup(int groupid) {
-		// TODO Auto-generated method stub
 		return jdbcTemplate.queryForList(viewsByGroupid,groupid);
 	}
 

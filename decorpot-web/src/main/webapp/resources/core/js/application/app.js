@@ -56,6 +56,10 @@ decorpot.config(['$authProvider', '$stateProvider', '$urlRouterProvider','$httpP
         url: '/about',
         templateUrl: 'resources/partials/about.html',
         controller : 'AboutController'
+    }).state('apartments', {
+        url: '/apartments',
+        templateUrl: 'resources/partials/apartments.html',
+        controller : 'ApartmentsController'
     });
 	
 	$authProvider.google({

@@ -41,6 +41,8 @@
 				<div class=" navigation-bar col-md-9">
 				<div class="col-md-10 right">
 					<ul class="primary-menu">
+						<li class="menudropdown hide"><a ui-sref="apartments">Apartments
+								</a></li>
 						<li class="menudropdown hide"><a href="">Themes</a>
 							<ul class="sub-menu">
 								<li><a ui-sref="#/imageListTheme/classic">Classic</a></li>
@@ -218,6 +220,7 @@
 	<script src="resources/core/js/application/directives.js"></script>
 	<script src="resources/core/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
 	<script src="resources/core/js/ngGallery.js"></script>
+	<script src="resources/core/js/jquery.infinitecarousel3.min.js"></script>
 	<script type="text/javascript">
     
 					jQuery(document).ready(function($) {

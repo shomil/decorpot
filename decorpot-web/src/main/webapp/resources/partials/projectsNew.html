@@ -2,7 +2,7 @@
 	<div class="col-md-3 .col-xs-12 .col-sm-6 imgContainerOuter"
 		ng-repeat="project in projects | filter:query">
 		<div class="imgContainer">
-			<a class="shrink"ui-sref="projects.project({param : '{{project.APARTMENT}}'})">
+			<a class="shrink" ui-sref="projects.project({param : '{{project.APARTMENT}}'})">
 				<img src={{project.SMALL_PATH}}>
 			</a>
 		</div>

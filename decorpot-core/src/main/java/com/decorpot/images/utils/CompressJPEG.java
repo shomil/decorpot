@@ -16,7 +16,7 @@ public class CompressJPEG {
 	public static void main(String[] args) throws FileNotFoundException,IOException {
 		int i = 0;
 		List<String> fileNameList = new ArrayList<String>(100);
-		File file =  new File("../../../imgs_decor/Salarpuria_hd");
+		File file =  new File("../../../imgs_decor/imagesForDecorpot");
 		Collection<File> files = FileUtils.listFiles(file, null, true);     
 		for(File file2 : files)
 		{
@@ -28,19 +28,19 @@ public class CompressJPEG {
 		{
 			if(str != null)
 			{
-				File imageFile = new File("../../../imgs_decor/Salarpuria_hd/"+str);
+				File imageFile = new File("../../../imgs_decor/imagesForDecorpot/"+str);
 				
 				//Check jpg file
 				boolean tmp = imageFile.getName().contains(".jpg");
 				System.out.println("is Jpg file = "+tmp);
 				
-				File compressedFile = new File("../../../imgs_decor/Salarpuria_small/"+str);
+				File compressedFile = new File("../../../imgs_decor/imagesForDecorpot_medium/"+str);
 				if(tmp)
 				{
 					BufferedImage originalImage = ImageIO.read(imageFile);
-					int width = originalImage.getWidth()/2;
-					int height =  originalImage.getHeight()/2;
-					BufferedImage resizedImage = Scalr.resize(originalImage, 600,600,Scalr.OP_ANTIALIAS,Scalr.OP_BRIGHTER);// size(originalImage, Scalr.Method.SPEED, Scalr.Mode.FIT_TO_WIDTH,580, 384, Scalr.OP_ANTIALIAS);
+					int width = originalImage.getWidth()/(3/2);
+					int height =  originalImage.getHeight()/(3/2);
+					BufferedImage resizedImage = Scalr.resize(originalImage, width,height,Scalr.OP_ANTIALIAS,Scalr.OP_BRIGHTER);// size(originalImage, Scalr.Method.SPEED, Scalr.Mode.FIT_TO_WIDTH,580, 384, Scalr.OP_ANTIALIAS);
 				    ImageIO.write(resizedImage, "jpg", compressedFile);					
 				}
 			}

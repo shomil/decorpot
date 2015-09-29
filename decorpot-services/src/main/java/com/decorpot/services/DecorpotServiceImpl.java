@@ -22,7 +22,7 @@ public class DecorpotServiceImpl implements DecorpotServices {
 	// private String smallImageUrl =
 	// "https://s3-ap-southeast-1.amazonaws.com/decorpot/low_image/";
 	private String smallImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/image_lot_small/";
-	private String largeImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/image_lot_large/";
+	private String largeImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/image_lot_medium/";
 	@Resource
 	DecorpotRepository decorpotRepository;
 

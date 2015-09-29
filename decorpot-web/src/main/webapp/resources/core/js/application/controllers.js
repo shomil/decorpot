@@ -185,3 +185,10 @@ decorpotCtrls.controller('ApartmentsController', [ '$scope', 'cart',
 				$scope.apartments = data;
 			})
 		} ]);
+
+decorpotCtrls.controller('ApartmentsController', [ '$scope', 'cart', '$stateParams',
+		'apartments', function($scope, cart, $stateParams, apartments) {
+			apartments.getApartment().success(function(data) {
+				$scope.apartments = data;
+			})
+		} ]);

@@ -15,7 +15,7 @@ public class ApartmentServiceImpl implements ApartmentService {
 	@Autowired
 	private ApartmentRepo apartmentRepo;
 
-	private final String mediumImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/image_lot_medium/";
+	private final String smallImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/image_lot_small/";
 
 	@Override
 	public List<Map<String, Object>> getAllApartment() {
@@ -25,7 +25,7 @@ public class ApartmentServiceImpl implements ApartmentService {
 			apartments = apartmentRepo.getAllApartment();
 			for (Map<String, Object> apartment : apartments) {
 				apartment.put("image_id",
-						mediumImageUrl + apartment.get("image_id").toString()
+						smallImageUrl + apartment.get("image_id").toString()
 								+ ".jpg");
 			}
 			DataCache.getInstance().put(key, apartments);

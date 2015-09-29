@@ -1,12 +1,14 @@
-<div class="apartments">
-
-<ul id="carousel">
-	<li><img width="400" height="215" alt="" src="resources/core/img/kit1.jpg" /></li>
-	<li><img width="400" height="215" alt="" src="resources/core/img/img2.jpg" /></li>
-	<li><img width="400" height="215" alt="" src="resources/core/img/img3.jpg" /></li>
-	<li><img width="400" height="215" alt="" src="resources/core/img/img4.jpg" /></li>
-	<li><img width="400" height="215" alt="" src="resources/core/img/img5.jpg" /></li>
-	<li><img width="400" height="215" alt="" src="resources/core/img/img6.jpg" /></li>
-	<li><img width="400" height="215" alt="" src="resources/core/img/img7.jpg" /></li>
-</ul>
+<div class="apartment" ui-view>
+	<div class="col-md-3 .col-xs-12 .col-sm-6 imgContainerOuter"
+		ng-repeat="apartment in apartments | filter:query">
+		<div class="imgContainer">
+			<a  ui-sref="apartments.apartment({param : '{{apartment.aprt_group}}'})">
+				<img src={{apartment.image_id}}>
+			</a>
+		</div>
+		<div class="textProjects">
+			<h4>{{apartment.apartment_name}} - {{apartment.bhk}}</h4>
+			<span class="WebRupee">₹ </span> {{apartment.price}}
+		</div>
+	</div>
 </div>

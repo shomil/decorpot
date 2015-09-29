@@ -41,7 +41,7 @@
 				<div class=" navigation-bar col-md-9">
 				<div class="col-md-10 right">
 					<ul class="primary-menu">
-						<li class="menudropdown hide"><a ui-sref="apartments">Apartments
+						<li class="menudropdown"><a ui-sref="apartments">Apartments
 								</a></li>
 						<li class="menudropdown hide"><a href="">Themes</a>
 							<ul class="sub-menu">

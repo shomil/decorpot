@@ -11,7 +11,7 @@ angular.module('decorpot').controller('LoginCtrl', ['$scope', '$auth', '$http', 
             duration: 3
           }, response, provider);
         	console.log(User.getUser());
-        	$('.modal_close').trigger('click');//temporary need to change
+        	$('.modal_close').trigger('click');// temporary need to change
         	$rootScope.$broadcast('loggedIn');
         })
         .catch(function(response) {

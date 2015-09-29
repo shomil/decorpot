@@ -180,8 +180,8 @@ decorpotCtrls.controller('AboutController', [ '$scope', 'cart',
 		} ]);
 
 decorpotCtrls.controller('ApartmentsController', [ '$scope', 'cart',
-		'appartments', function($scope, cart, appartments) {
-			appartments.getAllApartments().success(function(data) {
-				$scope.appartments = data;
+		'apartments', function($scope, cart, apartments) {
+			apartments.getAllApartments().success(function(data) {
+				$scope.apartments = data;
 			})
 		} ]);

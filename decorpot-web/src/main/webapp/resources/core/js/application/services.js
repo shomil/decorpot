@@ -131,11 +131,13 @@ services.service('projects', function($http){
 	};
 });
 
-services.service('appartments', function($http){
+services.service('apartments', function($http){
 	return{
 		getAllApartments : function(){
-			var data = {};
-			return data;
+			return $http({
+				method : "get",
+				url : "apartments"
+			});
 		}
 	};
 });

@@ -21,8 +21,9 @@
 <!-- 		</ul> -->
 		<div id="smalliconsText">Views</div>
 		<ul id="thumbnails">
-			<li ng-repeat="thumbnail in thumbnails  | filter:query" >
-			<div data-ng-class="{'active' : $first}" ng-init="($first) ? getHdImage(thumbnail.IMAGE_ID) : ''" ng-click="getHdImage(thumbnail.IMAGE_ID)">
+			<li ng-repeat="thumbnail in thumbnails  | filter:query" data-ng-click="toggleObject.item = $index" >
+			<div data-ng-class="{'active' : toggleObject.item == $index }" ng-init="($first) ? getHdImage(thumbnail.IMAGE_ID) : ''" 
+				ng-click="getHdImage(thumbnail.IMAGE_ID)">
 				<img id="imageViewContainer" ng-src="{{thumbnail.PATH_SMALL}}"/>
 			</div>
 			</li>

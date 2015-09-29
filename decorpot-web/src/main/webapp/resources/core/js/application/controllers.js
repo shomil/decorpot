@@ -70,7 +70,7 @@ decorpotCtrls.controller('ImageViewController', [
 					function(data) {
 						$scope.thumbnails = data;
 						$scope.toggleObject = {
-							item : -1
+							item : 0
 						};
 						console.log($scope);
 					});

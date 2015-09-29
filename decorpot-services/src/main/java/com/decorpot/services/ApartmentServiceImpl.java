@@ -51,10 +51,11 @@ public class ApartmentServiceImpl implements ApartmentService {
 			apartment.setAprtId(aprtId);
 			for(Map<String, Object> group : groups){
 				ImageGroup ig = new ImageGroup();
-				ig.setBasePrice(((Double) group.get("IMAGE_PRICE")).doubleValue());
-				ig.setGroupId(((Integer) group.get("group_id")).intValue());
+				ig.setBasePrice(((Integer)group.get("IMAGE_PRICE")).intValue());
+				ig.setGroupId((int) group.get("group_id"));
 				ig.setImageDescription((String) group.get("IMAGE_DESCRIPTION"));
 				ig.setImageSpace((String) group.get("image_space"));
+				ig.setImageTitle((String) group.get("IMAGE_TITLE"));
 				imageGroups.add(ig);
 				totalPrice += ig.getBasePrice();
 			}

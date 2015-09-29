@@ -22,7 +22,8 @@ public class DecorpotServiceImpl implements DecorpotServices {
 	// private String smallImageUrl =
 	// "https://s3-ap-southeast-1.amazonaws.com/decorpot/low_image/";
 	private String smallImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/image_lot_small/";
-	private String largeImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/image_lot_medium/";
+	private String largeImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/image_lot_large/";
+	private String mediumImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/image_lot_medium/";
 	@Resource
 	DecorpotRepository decorpotRepository;
 
@@ -110,6 +111,8 @@ public class DecorpotServiceImpl implements DecorpotServices {
 			for (Map<String, Object> image : images) {
 				image.put("PATH_SMALL", smallImageUrl
 						+ image.get("PATH_SMALL").toString());
+				image.put("PATH_MEDIUM", mediumImageUrl
+						+ image.get("PATH_MEDIUM").toString());
 				image.put("PATH_HD", largeImageUrl
 						+ image.get("PATH_HD").toString());
 			}

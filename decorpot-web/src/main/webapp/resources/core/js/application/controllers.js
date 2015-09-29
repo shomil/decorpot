@@ -186,9 +186,24 @@ decorpotCtrls.controller('ApartmentsController', [ '$scope', 'cart',
 			})
 		} ]);
 
-decorpotCtrls.controller('ApartmentsController', [ '$scope', 'cart', '$stateParams',
-		'apartments', function($scope, cart, $stateParams, apartments) {
-			apartments.getApartment().success(function(data) {
-				$scope.apartments = data;
-			})
+decorpotCtrls.controller('ApartmentController', [ '$scope', 'cart', '$stateParams',
+		'apartments', 'imageView', function($scope, cart, $stateParams, apartments, imageView) {
+			apartments.getApartment($stateParams.aprtId).success(function(data) {
+				
+				$scope.groups = data.groups;
+				$scope.apartmentName = data.apartmentName;
+				$scope.bhk = data.bhk;
+				$scope.totalPrice = data.totalPrice;
+			});
+			$scope.getImageGroupData = function(groupId){
+				imageView.getViewsByGroupId(groupId).success(function(data){
+					$scope.views = data;
+					$scope.toggleObject = {
+							item : 0
+						};
+				});
+			};
+			$scope.setImage = function(PATH_HD){
+				$scope.PATH_HD = PATH_HD;
+			};
 		} ]);

@@ -138,6 +138,13 @@ services.service('apartments', function($http){
 				method : "get",
 				url : "apartments"
 			});
+		},
+		getApartment : function(aprtId){
+			return $http({
+				method : "get",
+				url : "apartments/" + aprtId
+			});
 		}
+	
 	};
 });

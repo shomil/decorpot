@@ -110,12 +110,12 @@ public class DecorpotServiceImpl implements DecorpotServices {
 		if (DataCache.getInstance().get(key) == null) {
 			images = imageList.getViewsByGroup(groupid);
 			for (Map<String, Object> image : images) {
-				image.put("PATH_SMALL", smallImageUrl
-						+ image.get("PATH_SMALL").toString());
-				image.put("PATH_MEDIUM", mediumImageUrl
-						+ image.get("PATH_MEDIUM").toString());
-				image.put("PATH_HD", largeImageUrl
-						+ image.get("PATH_HD").toString());
+				image.put("IMAGE_PATH_SMALL", smallImageUrl
+						+ image.get("IMAGE_PATH_SMALL").toString());
+				image.put("IMAGE_PATH_MEDIUM", mediumImageUrl
+						+ image.get("IMAGE_PATH_MEDIUM").toString());
+				image.put("IMAGE_PATH_HD", largeImageUrl
+						+ image.get("IMAGE_PATH_HD").toString());
 			}
 			DataCache.getInstance().put(key, images);
 		} else {

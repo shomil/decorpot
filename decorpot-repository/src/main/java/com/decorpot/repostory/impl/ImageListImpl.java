@@ -28,16 +28,21 @@ public class ImageListImpl implements ImageList {
 	private JdbcTemplate jdbcTemplate;
 	
 	private String imageListSql = "SELECT * FROM Decorpot.image_categorization ic inner join Decorpot.group_color_mapping gcm on  ic.groupid= gcm.groupid inner join Decorpot.image_location il on gcm.imageid = il.imageid inner join (select groupid, min(price) price from Decorpot.group_price_mapping where price >= ? and price <= ? group by groupid) priceTemp on priceTemp.groupid = ic.groupid where ic.spaces = ? LIMIT ?,?";
-	private String imageSpaceSql = "SELECT * FROM Decorpot.GROUP_ATTRIBUTE ga inner join Decorpot.IMAGE_ATTRIBUTE ia on ga.group_id = ia.group_id where ia.image_price >= ? and ia.image_price <= ? and  ga.space = ? and ia.view_id = 1";
+	//private String imageSpaceSql = "SELECT * FROM Decorpot.GROUP_ATTRIBUTE ga inner join Decorpot.IMAGE_ATTRIBUTE ia on ga.group_id = ia.group_id where ia.image_price >= ? and ia.image_price <= ? and  ga.space = ? and ia.view_id = 1";
 	//private String imageViewByColorSql = "select * from Decorpot.image_location il inner join Decorpot.group_color_mapping gcm on gcm.imageid = il.imageid where gcm.groupid = ? and gcm.color = ?";
-	private String imageViewByColorSql = "select * from Decorpot.IMAGE_ATTRIBUTE where group_id = ? and color  = ?";
-	private String colorByGroupid = "SELECT Distinct(color) from Decorpot.IMAGE_ATTRIBUTE where group_id = ?";
+	//private String imageViewByColorSql = "select * from Decorpot.IMAGE_ATTRIBUTE where group_id = ? and color  = ?";
+	//private String colorByGroupid = "SELECT Distinct(color) from Decorpot.IMAGE_ATTRIBUTE where group_id = ?";
 	private String getAllImages = "SELECT * FROM ";
-	private String imageAllSpaceSql = "SELECT * FROM Decorpot.GROUP_ATTRIBUTE ga inner join Decorpot.IMAGE_ATTRIBUTE ia on ga.group_id = ia.group_id where ia.image_price >= ? and ia.image_price <= ? and ia.view_id = 1";
-	private String viewsByGroupid = "select * from Decorpot.IMAGE_ATTRIBUTE where group_id = ?";
+	//private String imageAllSpaceSql = "SELECT * FROM Decorpot.GROUP_ATTRIBUTE ga inner join Decorpot.IMAGE_ATTRIBUTE ia on ga.group_id = ia.group_id where ia.image_price >= ? and ia.image_price <= ? and ia.view_id = 1";
+	//private String viewsByGroupid = "select * from Decorpot.IMAGE_ATTRIBUTE where group_id = ?";
 	private String imageGroupDetails = "select * from Decorpot.IMAGE_GROUP_ATTRIBUTE where GROUP_ID = ?";
 	private String pricingDetailsByGroup = "select * from Decorpot.price where GROUP_ID = ?";
-	
+	private String imageSpaceSql = "select * from Decorpot.IMAGE_GROUP_ATTRIBUTE iga inner join Decorpot.PROD_IMAGE_ATTRIBUTE pia on iga.GROUP_ID = pia.GROUP_ID where pia.image_view_id = 1 and iga.image_price >=? and iga.image_price <= ? and iga.image_space = ?";
+	private String imageAllSpaceSql ="select * from Decorpot.IMAGE_GROUP_ATTRIBUTE iga inner join Decorpot.PROD_IMAGE_ATTRIBUTE pia on iga.GROUP_ID = pia.GROUP_ID where pia.image_view_id = 1 and iga.image_price >=? and iga.image_price <= ?";
+	private String imageViewByColorSql = "select * from Decorpot.IMAGE_GROUP_ATTRIBUTE iga inner join Decorpot.PROD_IMAGE_ATTRIBUTE pia on iga.GROUP_ID = pia.GROUP_ID where pia.GROUP_ID =? and pia.image_color =?";
+	private String colorByGroupid = "SELECT Distinct(IMAGE_COLOR) from Decorpot.PROD_IMAGE_ATTRIBUTE where GROUP_ID = ?";
+	private String viewsByGroupid = "select * from Decorpot.PROD_IMAGE_ATTRIBUTE where GROUP_ID = ?";
+
 	@Autowired
 	public ImageListImpl(DataSource dataSource) {
 		System.out.println("Decorpot-respository/ImageListImpl:constructor");
@@ -128,10 +133,10 @@ public class ImageListImpl implements ImageList {
 			ImageDetail imgDetail = new ImageDetail();
 			
 			imgDetail.setGroupId(rs.getInt("group_id"));
-			imgDetail.setPathSmall(rs.getString("path_small"));
+			imgDetail.setPathSmall(rs.getString("image_path_small"));
 			imgDetail.setPrice(rs.getInt("image_price"));
 			imgDetail.setDescriptionShort(rs.getString("image_description"));
-			imgDetail.setImageLongDescription(rs.getString("image_long_description"));
+			imgDetail.setImageLongDescription(rs.getString("image_description"));
 			imgDetail.setImageTitle(rs.getString("image_title"));
 			System.out.println("Image Detail return ");
 		    return imgDetail;

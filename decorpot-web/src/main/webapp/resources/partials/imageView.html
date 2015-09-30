@@ -1,7 +1,7 @@
 <div class="containing">
 
 	<div id="imageHDView" class="col-md-8">
-		<img id="imageHd" src="{{PATH_HD}}">
+		<img id="imageHd" src="{{IMAGE_PATH_HD}}">
 	</div>
 	<div class="col-md-4" id="rightSection">
 		<div id="title" class= "col-xs-12 col-sm-12 col-md-12">
@@ -24,7 +24,7 @@
 			<li ng-repeat="thumbnail in thumbnails  | filter:query" data-ng-click="toggleObject.item = $index" >
 			<div data-ng-class="{'active' : toggleObject.item == $index }" ng-init="($first) ? getHdImage(thumbnail.IMAGE_ID) : ''" 
 				ng-click="getHdImage(thumbnail.IMAGE_ID)">
-				<img id="imageViewContainer" ng-src="{{thumbnail.PATH_SMALL}}"/>
+				<img id="imageViewContainer" ng-src="{{thumbnail.IMAGE_PATH_SMALL}}"/>
 			</div>
 			</li>
 		</ul>

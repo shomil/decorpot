@@ -6,6 +6,7 @@ import java.util.Map;
 import com.decorpot.repository.core.ImagesByGroup;
 import com.decorpot.repository.models.Image;
 import com.decorpot.repository.models.ImageDetail;
+import com.decorpot.repository.models.ImageGroup;
 
 public interface ImageList {
 	public List<ImageDetail> getImageListSpace(String space,
@@ -23,6 +24,10 @@ public interface ImageList {
 	public List<ImagesByGroup> getAllImages();
 	
 	public List<Map<String, Object>> getViewsByGroup(int groupid);
+	
+	public ImageGroup getImageGroupDetails(int groupId);
+	
+	public List<Map<String, Object>> getPriceDetailByGroupId(int groupId);
 	
 
 }

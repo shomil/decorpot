@@ -14,6 +14,7 @@ import com.decorpot.repositories.DecorpotRepository;
 import com.decorpot.repository.interfaces.ImageList;
 import com.decorpot.repository.models.Image;
 import com.decorpot.repository.models.ImageDetail;
+import com.decorpot.repository.models.ImageGroup;
 
 @Service
 public class DecorpotServiceImpl implements DecorpotServices {
@@ -122,6 +123,33 @@ public class DecorpotServiceImpl implements DecorpotServices {
 					key);
 		}
 		return images;
+	}
+
+	@Override
+	public ImageGroup getImageGroupDetails(int groupId) {
+		final String key = "getImageGroupDetails" + groupId;
+		ImageGroup imageGroup = null;
+		if(DataCache.getInstance().get(key) == null){
+			imageGroup = imageList.getImageGroupDetails(groupId);
+			DataCache.getInstance().put(key, imageGroup);
+		}else{
+			imageGroup = (ImageGroup) DataCache.getInstance().get(key);
+		}
+		return imageGroup;
+	}
+
+	@SuppressWarnings({ "static-access", "unchecked" })
+	@Override
+	public List<Map<String, Object>> getPriceDetailByGroupId(int groupId) {
+		final String key = "getPriceDetailByGroupId" + groupId;
+		List<Map<String, Object>> groupPrice = null;
+		if(DataCache.getInstance().get(key) == null){
+			groupPrice = imageList.getPriceDetailByGroupId(groupId);
+			DataCache.getInstance().put(key, groupPrice);
+		}else{
+			groupPrice = (List<Map<String, Object>>) DataCache.getInstance().get(key);
+		}
+		return groupPrice;
 	}
 
 }

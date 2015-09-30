@@ -32,8 +32,20 @@ services.service('imageView', function($http) {
 		getViewsByGroupId : function(groupid) {
 			console.log('services:imageView:getViewsByColors');
 			var url = "";
-			url = "group/" + groupid + "/views";
+			url = "groups/" + groupid + "/views";
 			return $http.get(url);
+		},
+		getGroupDetails : function(groupId){
+			return $http({
+				method : "get",
+				url : "groups/" + groupId + "/details"
+			});
+		},
+		getGroupPrice : function(groupId){
+			return $http({
+				method : "get",
+				url : "groups/" + groupId + "/price"
+			});
 		}
 	};
 

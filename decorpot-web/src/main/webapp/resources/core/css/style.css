@@ -564,6 +564,8 @@ opacity
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	cursor: pointer;
+	margin-right: 5px;
+    margin-top: 7px;
 }
 
 #imageViewContainer {
@@ -820,6 +822,7 @@ opacity
     font-size: 38px;
     line-height: 1;
     font-family: AkkuratLight,Helvetica,sans-serif;
+    
 }
 
 .about .header .meta {
@@ -1169,4 +1172,20 @@ border: 2px black solid;
 
 .active{
 	background-color: #B74343;
+}
+
+.spaceList{
+	    padding: 6px;
+    font-size: 18px;
+    /* margin-right: 2px; */
+    color: black;
+}
+
+#title, #priceAndTime{
+	padding-right : 0 !important;
+	padding-left : 0 !important;
+}
+
+ #priceAndTime{
+ margin-bottom : 2%
 }

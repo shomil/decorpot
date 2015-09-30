@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.decorpot.repository.models.ImageDetail;
+import com.decorpot.repository.models.ImageGroup;
 import com.decorpot.services.DecorpotServices;
 
 @EnableWebMvc
@@ -68,7 +69,7 @@ public class DecorpotController extends DefaultController{
 		
 	}
 	
-	@RequestMapping(value="group/{groupid}/views", method = RequestMethod.GET, headers="Accept=*/*", produces="application/json")
+	@RequestMapping(value="groups/{groupid}/views", method = RequestMethod.GET, headers="Accept=*/*", produces="application/json")
 	public List<Map<String, Object>> getViewsByGroup(@PathVariable int groupid){
 		long start = System.currentTimeMillis();
 		List<Map<String, Object>> colors = decorpotServices.getViewsByGroup(groupid);
@@ -76,5 +77,15 @@ public class DecorpotController extends DefaultController{
 		System.out.println(end-start);
 		return colors;
 		
+	}
+	
+	@RequestMapping(value="groups/{groupid}/details", method = RequestMethod.GET, headers="Accept=*/*", produces="application/json")
+	public ImageGroup getImageGroupDetails(@PathVariable int groupid){
+		return decorpotServices.getImageGroupDetails(groupid);
+	}
+	
+	@RequestMapping(value="groups/{groupid}/price", method = RequestMethod.GET, headers="Accept=*/*", produces="application/json")
+	public List<Map<String, Object>> getPriceDetailByGroupId(@PathVariable int groupid) {
+		return decorpotServices.getPriceDetailByGroupId(groupid);
 	}
 }

@@ -75,6 +75,16 @@ decorpotCtrls.controller('ImageViewController', [
 						console.log($scope);
 					});
 
+			imageView.getGroupDetails($stateParams.groupid).success(
+					function(data) {
+						$scope.title = data.imageTitle;
+						$scope.basePrice = data.basePrice;
+						$scope.description = data.imageDescription;
+					});
+			imageView.getGroupPrice($stateParams.groupid).success(
+					function(data) {
+						$scope.groupPrice = data;
+					});
 			$scope.getHdImage = function(IMAGE_ID) {
 				for (var i = 0; i < $scope.thumbnails.length; i++) {
 					if ($scope.thumbnails[i]['IMAGE_ID'] == IMAGE_ID)
@@ -189,7 +199,9 @@ decorpotCtrls.controller('ApartmentsController', [ '$scope', 'cart',
 decorpotCtrls.controller('ApartmentController', [ '$scope', 'cart', '$stateParams',
 		'apartments', 'imageView', function($scope, cart, $stateParams, apartments, imageView) {
 			apartments.getApartment($stateParams.aprtId).success(function(data) {
-				
+				$scope.toggleObject = {
+						item : 0
+					};
 				$scope.groups = data.groups;
 				$scope.apartmentName = data.apartmentName;
 				$scope.bhk = data.bhk;
@@ -198,7 +210,7 @@ decorpotCtrls.controller('ApartmentController', [ '$scope', 'cart', '$stateParam
 			$scope.getImageGroupData = function(groupId){
 				imageView.getViewsByGroupId(groupId).success(function(data){
 					$scope.views = data;
-					$scope.toggleObject = {
+					$scope.toggleObjectSpace = {
 							item : 0
 						};
 				});

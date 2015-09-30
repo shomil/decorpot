@@ -18,6 +18,7 @@ import org.springframework.stereotype.Repository;
 import com.decorpot.repository.core.ImagesByGroup;
 import com.decorpot.repository.interfaces.ImageList;
 import com.decorpot.repository.models.ImageDetail;
+import com.decorpot.repository.models.ImageGroup;
 
 @Repository
 public class ImageListImpl implements ImageList {
@@ -34,6 +35,8 @@ public class ImageListImpl implements ImageList {
 	private String getAllImages = "SELECT * FROM ";
 	private String imageAllSpaceSql = "SELECT * FROM Decorpot.GROUP_ATTRIBUTE ga inner join Decorpot.IMAGE_ATTRIBUTE ia on ga.group_id = ia.group_id where ia.image_price >= ? and ia.image_price <= ? and ia.view_id = 1";
 	private String viewsByGroupid = "select * from Decorpot.IMAGE_ATTRIBUTE where group_id = ?";
+	private String imageGroupDetails = "select * from Decorpot.IMAGE_GROUP_ATTRIBUTE where GROUP_ID = ?";
+	private String pricingDetailsByGroup = "select * from Decorpot.price where GROUP_ID = ?";
 	
 	@Autowired
 	public ImageListImpl(DataSource dataSource) {
@@ -63,22 +66,6 @@ public class ImageListImpl implements ImageList {
 			imgDetailsList =  jdbcTemplate.query(imageSpaceSql, new Object[] {fromPrice, toPrice, space}, new ImageDetailMapper());
 		System.out.println("queryDone");
 		return imgDetailsList;
-	}
-	public class ImageDetailMapper implements RowMapper<ImageDetail> {
-	public ImageDetail mapRow(ResultSet rs, int rowNum) throws SQLException {
-		System.out.println("decorpot-repository/ImageListImpl:ImageDetailMapper" );
-		System.out.println("rs = "+rs +" rowNum = "+rowNum);
-		ImageDetail imgDetail = new ImageDetail();
-		
-		imgDetail.setGroupId(rs.getInt("group_id"));
-		imgDetail.setPathSmall(rs.getString("path_small"));
-		imgDetail.setPrice(rs.getInt("image_price"));
-		imgDetail.setDescriptionShort(rs.getString("image_description"));
-		imgDetail.setImageLongDescription(rs.getString("image_long_description"));
-		imgDetail.setImageTitle(rs.getString("image_title"));
-		System.out.println("Image Detail return ");
-	    return imgDetail;
-	   }
 	}
 
 	@Override
@@ -122,4 +109,47 @@ public class ImageListImpl implements ImageList {
 		return jdbcTemplate.queryForList(viewsByGroupid,groupid);
 	}
 
+	@Override
+	public ImageGroup getImageGroupDetails(int groupId) {
+		ImageGroup imageGroup = jdbcTemplate.query(imageGroupDetails, new Object[] {groupId}, new ImageGroupMapper()).get(0);
+		return imageGroup;
+	}
+
+	@Override
+	public List<Map<String, Object>> getPriceDetailByGroupId(int groupId) {
+		return jdbcTemplate.queryForList(pricingDetailsByGroup, groupId);
+	}
+
+	
+	public class ImageDetailMapper implements RowMapper<ImageDetail> {
+		public ImageDetail mapRow(ResultSet rs, int rowNum) throws SQLException {
+			System.out.println("decorpot-repository/ImageListImpl:ImageDetailMapper" );
+			System.out.println("rs = "+rs +" rowNum = "+rowNum);
+			ImageDetail imgDetail = new ImageDetail();
+			
+			imgDetail.setGroupId(rs.getInt("group_id"));
+			imgDetail.setPathSmall(rs.getString("path_small"));
+			imgDetail.setPrice(rs.getInt("image_price"));
+			imgDetail.setDescriptionShort(rs.getString("image_description"));
+			imgDetail.setImageLongDescription(rs.getString("image_long_description"));
+			imgDetail.setImageTitle(rs.getString("image_title"));
+			System.out.println("Image Detail return ");
+		    return imgDetail;
+		   }
+		}
+	
+	public class ImageGroupMapper implements RowMapper<ImageGroup> {
+		public ImageGroup mapRow(ResultSet rs, int rowNum) throws SQLException {
+			
+			ImageGroup imgDetail = new ImageGroup();
+			
+			imgDetail.setBasePrice(rs.getInt("IMAGE_PRICE"));
+			imgDetail.setGroupId(rs.getInt("GROUP_ID"));
+			imgDetail.setImageDescription(rs.getString("IMAGE_DESCRIPTION"));
+			imgDetail.setImageSpace(rs.getString("IMAGE_SPACE"));
+			imgDetail.setImageTheme(rs.getString("IMAGE_THEME"));
+			imgDetail.setImageTitle(rs.getString("IMAGE_TITLE"));
+		    return imgDetail;
+		   }
+		}
 }

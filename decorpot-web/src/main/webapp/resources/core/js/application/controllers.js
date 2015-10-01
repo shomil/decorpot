@@ -96,7 +96,7 @@ decorpotCtrls.controller('ImageViewController', [
 			$scope.getHdImage = function(IMAGE_ID) {
 				for (var i = 0; i < $scope.thumbnails.length; i++) {
 					if ($scope.thumbnails[i]['IMAGE_ID'] == IMAGE_ID)
-						$scope.IMAGE_PATH_HD = $scope.thumbnails[i]['IMAGE_PATH_HD'];
+						$scope.IMAGE_PATH_HD = $scope.thumbnails[i]['IMAGE_PATH_MEDIUM'];
 				}
 			};
 

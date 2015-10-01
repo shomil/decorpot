@@ -95,8 +95,9 @@
 }
 
 .text-right {
-	margin-right: 0px;
-	padding-right: 3%;
+	    margin-right: 0px;
+    padding-right: 13%;
+    margin-bottom: 1%;
 }
 
 .clearer {
@@ -113,7 +114,6 @@
 }
 
 .navigation-bar {
-	padding-top: 2%;
 	z-index: 25;
 }
 

@@ -85,6 +85,13 @@ decorpotCtrls.controller('ImageViewController', [
 			imageView.getGroupPrice($stateParams.groupid).success(
 					function(data) {
 						$scope.groupPrice = data;
+					}).success(
+					function(){
+						$scope.totalImagePrice = 0;
+						for(var i =0; i<$scope.groupPrice.length; i++)
+						{
+							$scope.totalImagePrice =  $scope.totalImagePrice + $scope.groupPrice[i]['price'];
+						}
 					});
 			$scope.getHdImage = function(IMAGE_ID) {
 				for (var i = 0; i < $scope.thumbnails.length; i++) {

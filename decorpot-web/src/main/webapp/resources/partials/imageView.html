@@ -36,9 +36,17 @@
 				<th>Specifics</th>
 				<th>Price</th>
 			</tr>
+			<tr>
+				<td>Base Price</b></td>
+				<td>{{basePrice}}</td>
+			</tr>
 			<tr ng-repeat="price in groupPrice">
 				<td>{{price.addon}}</td>
 				<td>{{price.price}}</td>
+			</tr>
+			<tr>
+				<td><b>Total Price</b></td>
+				<td>{{totalImagePrice+basePrice}}</td>
 			</tr>
 		</table>
 		<div id="selectionRadio" class= "hide">

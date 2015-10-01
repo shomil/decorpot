@@ -35,7 +35,7 @@
 		<div id="">Spaces</div>
 			<li ng-repeat="view in views " data-ng-click="toggleObjectSpace.item = $index" >
 			<div data-ng-class="{'active' : toggleObjectSpace.item == $index }" ng-init="($first) ? setImage(view.IMAGE_PATH_MEDIUM) : ''" 
-				ng-click="setImage(view.PATH_MEDIUM)">
+				ng-click="setImage(view.IMAGE_PATH_MEDIUM)">
 				<img id="imageViewContainer" ng-src="{{view.IMAGE_PATH_SMALL}}"/>
 			</div>
 			</li>

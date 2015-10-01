@@ -55,7 +55,8 @@ decorpotCtrls.controller('ImageViewController', [
 		'imageView',
 		'$auth',
 		'cart',
-		function($scope, $stateParams, imageView, $auth, cart) {
+		'$sce',
+		function($scope, $stateParams, imageView, $auth, cart, $sce) {
 			$scope.selection = {};
 			$scope.groupId = $stateParams.groupid;
 			/*
@@ -79,7 +80,7 @@ decorpotCtrls.controller('ImageViewController', [
 					function(data) {
 						$scope.title = data.imageTitle;
 						$scope.basePrice = data.basePrice;
-						$scope.description = data.imageDescription;
+						$scope.description = $sce.trustAsHtml(data.imageDescription);
 					});
 			imageView.getGroupPrice($stateParams.groupid).success(
 					function(data) {

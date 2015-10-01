@@ -2,7 +2,7 @@
  * @author: vaseem.mohammed
  * @date  : 12-07-2015
  */
-var decorpot = angular.module('decorpot', ['ui.router', 'satellizer', 'ngMessages', 'jkuri.gallery']);
+var decorpot = angular.module('decorpot', ['ui.router', 'satellizer', 'ngMessages', 'jkuri.gallery','wt.responsive']);
 
 //
 decorpot.config(['$authProvider', '$stateProvider', '$urlRouterProvider','$httpProvider', function( $authProvider, $stateProvider, $urlRouterProvider, $httpProvider){

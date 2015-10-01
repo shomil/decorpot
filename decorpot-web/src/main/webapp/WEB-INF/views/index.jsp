@@ -23,7 +23,7 @@
 	href="resources/core/css/ion.rangeSlider.skinModern.css">
 <link rel="stylesheet" href="resources/core/css/ion.rangeSlider.css">
 <link rel="stylesheet" href="resources/core/css/ngGallery.css">
-
+<link rel="stylesheet" href="resources/core/css/angular-responsive-tables.css"></script>
 <c:forEach var="entry" items="${pageScripts}">
 	<script src="resources/core/js/application/${entry}.js"></script>
 </c:forEach>
@@ -221,6 +221,7 @@
 	<script src="resources/core/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
 	<script src="resources/core/js/ngGallery.js"></script>
 	<script src="resources/core/js/jquery.infinitecarousel3.min.js"></script>
+	<script src="resources/core/js/angular-responsive-tables.js"></script>
 	<script type="text/javascript">
     
 					jQuery(document).ready(function($) {

@@ -31,6 +31,16 @@
 		<div class="clearer"></div>
 		
 		<div class="priceMetrics"></div>
+		<table wt-responsive-table>
+			<tr>
+				<th>Specifics</th>
+				<th>Price</th>
+			</tr>
+			<tr ng-repeat="price in groupPrice">
+				<td>{{price.addon}}</td>
+				<td>{{price.price}}</td>
+			</tr>
+		</table>
 		<div id="selectionRadio" class= "hide">
 			<div id="iwantTo" >I want to</div>
 			<div id="radioButton">

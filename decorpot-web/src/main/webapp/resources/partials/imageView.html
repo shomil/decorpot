@@ -8,7 +8,7 @@
 			<h2>{{title}}</h2>
 		</div>
 		<div id="priceAndTime" class ="col-xs-12 col-sm-12 col-md-12">
-			<div class="col-xs-6 col-sm-6 col-md-6" style="padding: 0;"><span class="WebRupee">₹ </span> {{basePrice}}</div>
+			<div class="col-xs-6 col-sm-6 col-md-6" style="padding: 0;"><span class="WebRupee">₹ </span> {{basePrice}}.00</div>
 			<div class="col-xs-6 col-sm-6 col-md-6">45 days delivery</class>
 		</div>
 <!-- 		<div id="smalliconsText">Select Color</div> -->
@@ -38,15 +38,15 @@
 			</tr>
 			<tr>
 				<td>Base Price</b></td>
-				<td>{{basePrice}}</td>
+				<td><span class="WebRupee">₹ </span> {{basePrice}}.00</td>
 			</tr>
 			<tr ng-repeat="price in groupPrice">
 				<td>{{price.addon}}</td>
-				<td>{{price.price}}</td>
+				<td><span class="WebRupee">₹ </span> {{price.price}}.00</td>
 			</tr>
 			<tr>
 				<td><b>Total Price</b></td>
-				<td>{{totalImagePrice+basePrice}}</td>
+				<td><span class="WebRupee">₹ </span>{{totalImagePrice+basePrice}}.00</td>
 			</tr>
 		</table>
 		<div id="selectionRadio" class= "hide">

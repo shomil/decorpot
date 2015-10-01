@@ -215,7 +215,7 @@ decorpotCtrls.controller('ApartmentController', [ '$scope', 'cart', '$stateParam
 				$scope.bhk = data.bhk;
 				$scope.totalPrice = data.totalPrice;
 				$scope.description = $sce.trustAsHtml(data.groups[$scope.toggleObject.item].imageDescription);
-				$scope.basePrice = data.groups[$scope.toggleObject.item].basePrice;
+				
 				
 			});
 			$scope.getImageGroupData = function(groupId){
@@ -225,6 +225,7 @@ decorpotCtrls.controller('ApartmentController', [ '$scope', 'cart', '$stateParam
 					$scope.toggleObjectSpace = {
 							item : 0
 						};
+					$scope.basePrice = $scope.groups[$scope.toggleObject.item].basePrice;
 				});
 				imageView.getGroupPrice(groupId).success(
 						function(data) {

@@ -40,7 +40,25 @@
 			</div>
 			</li>
 		</ul>
-		<div class="priceMetrics"></div>
+		<div class="priceMetrics">
+		<table class="table table-bordered table-striped table-condensed table-hover" wt-responsive-table>
+			<tr>
+				<th>Specifics</th>
+				<th>Price</th>
+			</tr>
+			<tr>
+				<td>Base Price</b></td>
+				<td><span class="WebRupee">₹ </span> {{basePrice}}.00</td>
+			</tr>
+			<tr ng-repeat="price in groupPrice">
+				<td>{{price.addon}}</td>
+				<td><span class="WebRupee">₹ </span> {{price.price}}.00</td>
+			</tr>
+			<tr>
+				<td><b>Total Price</b></td>
+				<td><span class="WebRupee">₹ </span>{{totalImagePrice+basePrice}}.00</td>
+			</tr>
+		</table></div>
 		
 	
 </div>

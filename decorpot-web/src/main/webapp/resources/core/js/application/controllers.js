@@ -205,7 +205,7 @@ decorpotCtrls.controller('ApartmentsController', [ '$scope', 'cart',
 		} ]);
 
 decorpotCtrls.controller('ApartmentController', [ '$scope', 'cart', '$stateParams',
-		'apartments', 'imageView', function($scope, cart, $stateParams, apartments, imageView) {
+		'apartments', 'imageView', '$sce', function($scope, cart, $stateParams, apartments, imageView, $sce) {
 			apartments.getApartment($stateParams.aprtId).success(function(data) {
 				$scope.toggleObject = {
 						item : 0
@@ -214,10 +214,13 @@ decorpotCtrls.controller('ApartmentController', [ '$scope', 'cart', '$stateParam
 				$scope.apartmentName = data.apartmentName;
 				$scope.bhk = data.bhk;
 				$scope.totalPrice = data.totalPrice;
+				$scope.description = $sce.trustAsHtml(data.groups[$scope.toggleObject.item].imageDescription);
+				
 			});
 			$scope.getImageGroupData = function(groupId){
 				imageView.getViewsByGroupId(groupId).success(function(data){
 					$scope.views = data;
+					
 					$scope.toggleObjectSpace = {
 							item : 0
 						};

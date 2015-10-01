@@ -3,7 +3,7 @@
 	<div id="imageHDView" class="col-md-8">
 		<img id="imageHd" src="{{IMAGE_PATH_HD}}">
 	</div>
-	<div class="col-md-4" id="rightSection">
+	<div class="col-md-4 decorpotFont1" id="rightSection">
 		<div id="title" class= "col-xs-12 col-sm-12 col-md-12">
 			<h2>{{title}}</h2>
 		</div>
@@ -30,7 +30,7 @@
 		</ul>
 		<div class="clearer"></div>
 		
-		<div class="priceMetrics"></div>
+		<div class="priceMetrics">
 		<table class="table table-bordered table-striped table-condensed table-hover" wt-responsive-table>
 			<tr>
 				<th>Specifics</th>
@@ -48,7 +48,7 @@
 				<td><b>Total Price</b></td>
 				<td><span class="WebRupee">₹ </span>{{totalImagePrice+basePrice}}.00</td>
 			</tr>
-		</table>
+		</table></div>
 		<div id="selectionRadio" class= "hide">
 			<div id="iwantTo" >I want to</div>
 			<div id="radioButton">
@@ -90,6 +90,11 @@
 		</div>
 	</div>
 </div>
-<div classs="description" ng-bind-html ="description">
+
 </div>
+<div class = "clearer"></div>
+<div class="description decorpotFont1" >
+<h3>Description</h3>
+<ul ng-bind-html ="description" >
+</ul>
 </div>

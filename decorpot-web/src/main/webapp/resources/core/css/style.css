@@ -578,6 +578,7 @@ opacity
 	width: auto;
 	max-width: 100%;
 	max-height: 40%;
+	    border: 1px solid black;
 }
 
 #radioButton {
@@ -591,7 +592,7 @@ opacity
 	margin-top: 19px;
 }
 
-#rightSection {
+.decorpotFont1 {
 	font-family: Baskerville, "Baskerville Old Face", "Hoefler Text",
 		Garamond, "Times New Roman", serif;
 	font-size: 17px;
@@ -1188,4 +1189,16 @@ border: 2px black solid;
 
  #priceAndTime{
  margin-bottom : 2%
+}
+
+.description{
+	margin-left: 3%;
+    margin-top: 1%;
+}
+.description li{
+	list-style-type: upper-roman;
+}
+
+.priceMetrics{
+	margin-top: 5%;
 }

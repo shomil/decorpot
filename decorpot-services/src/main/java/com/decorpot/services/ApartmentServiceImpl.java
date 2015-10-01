@@ -50,6 +50,7 @@ public class ApartmentServiceImpl implements ApartmentService {
 			List<ImageGroup> imageGroups = new ArrayList<>();
 			apartment.setAprtId(aprtId);
 			for(Map<String, Object> group : groups){
+				System.out.println(group);
 				ImageGroup ig = new ImageGroup();
 				ig.setBasePrice(((Integer)group.get("IMAGE_PRICE")).intValue());
 				ig.setGroupId((int) group.get("group_id"));

@@ -3,7 +3,7 @@
 	<div id="imageHDView" class="col-md-8">
 		<img id="imageHd" src="{{PATH_HD}}">
 	</div>
-	<div class="col-md-4" id="rightSection">
+	<div class="col-md-4 decorpotFont1" id="rightSection">
 		<div id="title" class= "col-xs-12 col-sm-12 col-md-12">
 			<h2>{{apartmentName}} - {{bhk}}</h2>
 		</div>
@@ -34,9 +34,9 @@
 		<ul id="thumbnails">
 		<div id="">Spaces</div>
 			<li ng-repeat="view in views " data-ng-click="toggleObjectSpace.item = $index" >
-			<div data-ng-class="{'active' : toggleObjectSpace.item == $index }" ng-init="($first) ? setImage(view.PATH_MEDIUM) : ''" 
+			<div data-ng-class="{'active' : toggleObjectSpace.item == $index }" ng-init="($first) ? setImage(view.IMAGE_PATH_MEDIUM) : ''" 
 				ng-click="setImage(view.PATH_MEDIUM)">
-				<img id="imageViewContainer" ng-src="{{view.PATH_SMALL}}"/>
+				<img id="imageViewContainer" ng-src="{{view.IMAGE_PATH_SMALL}}"/>
 			</div>
 			</li>
 		</ul>
@@ -44,5 +44,11 @@
 		
 	
 </div>
-<div classs="description"></div>
+
+</div>
+<div class = "clearer"></div>
+<div class="description decorpotFont1" >
+<h3>Description</h3>
+<ul ng-bind-html ="description" >
+</ul>
 </div>

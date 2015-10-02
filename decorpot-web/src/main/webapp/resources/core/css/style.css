@@ -90,12 +90,13 @@
 	font-variant: small-caps;
 	font-stretch: semi-condensed;
 	font-size: 312%;
+	    margin-top: 2%;
 }
 
 .text-right {
 	    margin-right: 0px;
     padding-right: 13%;
-    margin-bottom: 1%;
+        margin-bottom: 3%;
 }
 
 .clearer {

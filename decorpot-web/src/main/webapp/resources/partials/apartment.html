@@ -1,6 +1,6 @@
 <div class="containing">
 
-	<div id="imageHDView" class="col-md-8">
+	<div id="imageHDView" class="col-md-8" prevent-right-click>
 		<img id="imageHd" src="{{PATH_HD}}">
 	</div>
 	<div class="col-md-4 decorpotFont1" id="rightSection">
@@ -32,7 +32,7 @@
 			</li>
 		</ul>
 		<ul id="thumbnails">
-		<div id="">Spaces</div>
+		<div id="">Views</div>
 			<li ng-repeat="view in views " data-ng-click="toggleObjectSpace.item = $index" >
 			<div data-ng-class="{'active' : toggleObjectSpace.item == $index }" ng-init="($first) ? setImage(view.IMAGE_PATH_MEDIUM) : ''" 
 				ng-click="setImage(view.IMAGE_PATH_MEDIUM)">

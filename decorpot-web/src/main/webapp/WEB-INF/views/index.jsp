@@ -39,7 +39,7 @@
 			<div class="row" style="margin-top: 1%;">
 				<div id="logo" class="col-md-3"><a href="#/" ><img src="resources/core/img/FINALCOLORLOGO1.png" width="300" height="43" alt="" /></a></div>
 				<div class=" navigation-bar col-md-9">
-				<div class="col-md-12 text-right pull-right text-muted"> careers@decorpot.com | +91 9986076761 | +91 9986076761</div>
+				<div class="col-md-12 text-right pull-right text-muted"> sales@decorpot.com | +91 9986076761 | +91 9986076761</div>
 				<div class="col-md-10 right">
 					<ul class="primary-menu">
 						<li class="menudropdown"><a ui-sref="apartments">Apartments
@@ -77,8 +77,6 @@
 							</ul></li>
 						<li class="menudropdown"><a ui-sref="projects">Completed Projects</a>
 						</li>
-						<li class="menudropdown"><a ui-sref="contacts">Contact
-								us</a></li>
 						<li class="menudropdown"><a ui-sref="about">About
 								us</a></li>
 					</ul>

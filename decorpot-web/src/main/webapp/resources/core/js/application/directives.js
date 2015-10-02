@@ -12,7 +12,7 @@ decortDirectives.directive("priceRange", function() {
 		min : 10000,
 		max : 10000000,
 		prefix : "Rs.",
-		prettify_enabled: true,
+		prettify_enabled : true,
 		step : 50000
 	});
 });
@@ -337,16 +337,28 @@ decortDirectives
 					});
 				});
 
-decortDirectives
-.directive('dynamic', function($compile){
-	return{
-		restrict: 'A',
-		replace: true,
-		link : function(scope, ele, attrs){
-			scope.$watch(attrs.dynamic, function(html){
+decortDirectives.directive('dynamic', function($compile) {
+	return {
+		restrict : 'A',
+		replace : true,
+		link : function(scope, ele, attrs) {
+			scope.$watch(attrs.dynamic, function(html) {
 				ele.html(html);
 				$compile(ele.contents())(scope);
 			});
 		}
 	};
 });
+
+decortDirectives.directive('preventRightClick', [ function() {
+	document.oncontextmenu = function (e) {
+	       if(e.target.hasAttribute('right-click')) {
+	           return false;
+	       }
+	    };
+	    return function(scope,el,attrs){
+	        el.bind('contextmenu',function(e){
+	        	 return false;            
+	        }) ;
+	    };
+} ]);

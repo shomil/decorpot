@@ -362,3 +362,14 @@ decortDirectives.directive('preventRightClick', [ function() {
 	        }) ;
 	    };
 } ]);
+
+decortDirectives.directive('imageonload', function() {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            element.bind('load', function() {
+            	 $('#mydiv1').hide();
+            });
+        }
+    };
+});

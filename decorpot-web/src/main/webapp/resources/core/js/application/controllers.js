@@ -240,6 +240,7 @@ decorpotCtrls.controller('ApartmentController', [ '$scope', 'cart', '$stateParam
 						});
 			};
 			$scope.setImage = function(PATH_HD){
+				$('#mydiv1').show();
 				$scope.PATH_HD = PATH_HD;
 			};
 		} ]);

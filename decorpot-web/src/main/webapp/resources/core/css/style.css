@@ -856,7 +856,7 @@ opacity
 	text-align: center;
 	    position: absolute;
     margin-top: 20%;
-    margin-left: 15%;
+    margin-left: 20%;
 }
 
 .catchBold{
@@ -1212,4 +1212,15 @@ border: 2px black solid;
 
 .priceMetrics{
 	margin-top: 5%;
+}
+
+.contactHeader li{
+	display: inline-block;
+	    margin-left: 23px;
+	
+}
+
+.contactHeader {
+    margin-left: 27%;
+    margin-bottom: 4%;
 }

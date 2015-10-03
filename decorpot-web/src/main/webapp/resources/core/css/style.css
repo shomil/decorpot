@@ -1224,3 +1224,7 @@ border: 2px black solid;
     margin-left: 27%;
     margin-bottom: 4%;
 }
+
+.footer p{
+	    font-size: 12px;
+}

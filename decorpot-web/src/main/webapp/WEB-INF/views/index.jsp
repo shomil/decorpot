@@ -124,7 +124,21 @@
 		<div class = "clearer"></div>
 		<footer>
 			<div class="container footer">
-				<div class="row"></div>
+				<div class="col-md-4">
+					<h4>decorpot.com</h4>
+					<p>#799,
+						19th Main, 23rd Cross, 2nd floor, Sector 2 Near HSR club,
+						Bangalore 560102</p>
+				</div>
+				<div class="col-md-4">
+					<h4>email : </h4>
+					<p>sales@decorpot.com</p>
+				</div>
+				<div class="col-md-4">
+					<h4>phone : </h4>
+					<p>(o) +91 9986076761</p>
+					<p>(o) +91 9986076762</p>
+				</div>
 			</div>
 		</footer>
 	</div>

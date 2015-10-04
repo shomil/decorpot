@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" href="resources/core/img/decorFinalIcon.png" type="image/x-icon">
+<link rel="shortcut icon" href="resources/core/img/1a.png" type="image/x-icon">
 
 <title>decorpot.com</title>
 <script type="text/javascript">
@@ -37,7 +37,7 @@
 		<div id="header" ng-controller="DecorpotCtrl">
 			<div id="top-bar" class="row"></div>
 			<div class="row" style="margin-top: 1%;">
-				<div id="logo" class="col-md-3"><a href="#/" ><img src="resources/core/img/FINALCOLORLOGO1.png" width="300" height="43" alt="" /></a></div>
+				<div id="logo" class="col-md-3"><a href="#/" ><img src="resources/core/img/1.png" width="300" height="43" alt="" /></a></div>
 				<div class=" navigation-bar col-md-9">
 				
 				<div class="col-md-12 right">

@@ -8,6 +8,8 @@ public class ImageDetail {
 	private String image_long_description;
 	private int price;
 	private String image_title;
+	private String basePrice_description;
+	private String image_code;
 	public int getGroupId() {
 		System.out.println("decorpot-core/ImageDetail:getGroupId()");
 		return group_id;
@@ -57,6 +59,22 @@ public class ImageDetail {
 		System.out.println("decorpot-core/ImageDetail:setpathSmall()");
 		this.image_title = image_title;
 	}
+	public String getBasePriceDescription() {
+		System.out.println("decorpot-core/ImageDetail:getBasePriceDescription()");
+		return basePrice_description;
+	}
+	public void setBasePriceDescription(String basePrice_description) {
+		System.out.println("decorpot-core/ImageDetail:setBasePriceDescription()");
+		this.basePrice_description = basePrice_description;
+	}
+	public String getImageCode() {
+		System.out.println("decorpot-core/ImageDetail:getImageCode()");
+		return image_code;
+	}
+	public void setImageCode(String image_code) {
+		System.out.println("decorpot-core/ImageDetail:setImageCode()");
+		this.image_code = image_code;
+	}
 	@Override
 	public String toString() {
 		return "ImageList ["
@@ -66,6 +84,8 @@ public class ImageDetail {
 				+ ", image_long_description=" + image_long_description
 				+ ", image_title=" + image_title
 				+ ", price=" + price
+				+ ", basePrice_description=" + basePrice_description
+				+ ", image_code=" + image_code
 				+ "]";
 	}
 	

@@ -37,11 +37,11 @@ public class ImageListImpl implements ImageList {
 	//private String viewsByGroupid = "select * from Decorpot.IMAGE_ATTRIBUTE where group_id = ?";
 	private String imageGroupDetails = "select * from Decorpot.IMAGE_GROUP_ATTRIBUTE where GROUP_ID = ?";
 	private String pricingDetailsByGroup = "select * from Decorpot.price where GROUP_ID = ?";
-	private String imageSpaceSql = "select * from Decorpot.IMAGE_GROUP_ATTRIBUTE iga inner join Decorpot.PROD_IMAGE_ATTRIBUTE pia on iga.GROUP_ID = pia.GROUP_ID where pia.image_view_id = 1 and iga.image_price >=? and iga.image_price <= ? and iga.image_space = ?";
-	private String imageAllSpaceSql ="select * from Decorpot.IMAGE_GROUP_ATTRIBUTE iga inner join Decorpot.PROD_IMAGE_ATTRIBUTE pia on iga.GROUP_ID = pia.GROUP_ID where pia.image_view_id = 1 and iga.image_price >=? and iga.image_price <= ?";
-	private String imageViewByColorSql = "select * from Decorpot.IMAGE_GROUP_ATTRIBUTE iga inner join Decorpot.PROD_IMAGE_ATTRIBUTE pia on iga.GROUP_ID = pia.GROUP_ID where pia.GROUP_ID =? and pia.image_color =?";
-	private String colorByGroupid = "SELECT Distinct(IMAGE_COLOR) from Decorpot.PROD_IMAGE_ATTRIBUTE where GROUP_ID = ?";
-	private String viewsByGroupid = "select * from Decorpot.PROD_IMAGE_ATTRIBUTE where GROUP_ID = ?";
+	private String imageSpaceSql = "select * from Decorpot.IMAGE_GROUP_ATTRIBUTE iga inner join Decorpot.IMAGE_ATTRIBUTE pia on iga.GROUP_ID = pia.GROUP_ID where pia.image_view_id = 1 and iga.image_price >=? and iga.image_price <= ? and iga.image_space = ?";
+	private String imageAllSpaceSql ="select * from Decorpot.IMAGE_GROUP_ATTRIBUTE iga inner join Decorpot.IMAGE_ATTRIBUTE pia on iga.GROUP_ID = pia.GROUP_ID where pia.image_view_id = 1 and iga.image_price >=? and iga.image_price <= ?";
+	private String imageViewByColorSql = "select * from Decorpot.IMAGE_GROUP_ATTRIBUTE iga inner join Decorpot.IMAGE_ATTRIBUTE pia on iga.GROUP_ID = pia.GROUP_ID where pia.GROUP_ID =? and pia.image_color =?";
+	private String colorByGroupid = "SELECT Distinct(IMAGE_COLOR) from Decorpot.IMAGE_ATTRIBUTE where GROUP_ID = ?";
+	private String viewsByGroupid = "select * from Decorpot.IMAGE_ATTRIBUTE where GROUP_ID = ?";
 
 	@Autowired
 	public ImageListImpl(DataSource dataSource) {
@@ -138,6 +138,8 @@ public class ImageListImpl implements ImageList {
 			imgDetail.setDescriptionShort(rs.getString("image_description"));
 			imgDetail.setImageLongDescription(rs.getString("image_description"));
 			imgDetail.setImageTitle(rs.getString("image_title"));
+			imgDetail.setBasePriceDescription(rs.getString("basePrice_description"));
+			imgDetail.setImageCode(rs.getString("image_code"));
 			System.out.println("Image Detail return ");
 		    return imgDetail;
 		   }
@@ -154,7 +156,8 @@ public class ImageListImpl implements ImageList {
 			imgDetail.setImageSpace(rs.getString("IMAGE_SPACE"));
 			imgDetail.setImageTheme(rs.getString("IMAGE_THEME"));
 			imgDetail.setImageTitle(rs.getString("IMAGE_TITLE"));
-		    return imgDetail;
+			imgDetail.setBasePriceDescription(rs.getString("basePrice_description"));
+			return imgDetail;
 		   }
 		}
 }

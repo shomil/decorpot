@@ -16,7 +16,7 @@ public class CompressJPEG {
 	public static void main(String[] args) throws FileNotFoundException,IOException {
 		int i = 0;
 		List<String> fileNameList = new ArrayList<String>(100);
-		File file =  new File("../../../imgs_decor/imageLot2_large");
+		File file =  new File("../../../imgs_decor/imageLot3_large");
 		Collection<File> files = FileUtils.listFiles(file, null, true);     
 		for(File file2 : files)
 		{
@@ -28,19 +28,19 @@ public class CompressJPEG {
 		{
 			if(str != null)
 			{
-				File imageFile = new File("../../../imgs_decor/imageLot2_large/"+str);
+				File imageFile = new File("../../../imgs_decor/imageLot3_large/"+str);
 				
 				//Check jpg file
 				boolean tmp = imageFile.getName().contains(".jpg");
 				System.out.println("is Jpg file = "+tmp);
 				
-				File compressedFile = new File("../../../imgs_decor/imageLot2_small/"+str);
+				File compressedFile = new File("../../../imgs_decor/imageLot3_medium/"+str);
 				if(tmp)
 				{
 					BufferedImage originalImage = ImageIO.read(imageFile);
 					int width = originalImage.getWidth()/(3/2);
 					int height =  originalImage.getHeight()/(3/2);
-					BufferedImage resizedImage = Scalr.resize(originalImage, 600,600,Scalr.OP_ANTIALIAS,Scalr.OP_BRIGHTER);// size(originalImage, Scalr.Method.SPEED, Scalr.Mode.FIT_TO_WIDTH,580, 384, Scalr.OP_ANTIALIAS);
+					BufferedImage resizedImage = Scalr.resize(originalImage, width,height,Scalr.OP_ANTIALIAS,Scalr.OP_BRIGHTER);// size(originalImage, Scalr.Method.SPEED, Scalr.Mode.FIT_TO_WIDTH,580, 384, Scalr.OP_ANTIALIAS);
 				    ImageIO.write(resizedImage, "jpg", compressedFile);					
 				}
 			}

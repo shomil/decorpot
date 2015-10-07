@@ -8,6 +8,7 @@ public class ImageGroup {
 	private String imageTheme;
 	private String imageSpace;
 	private double basePrice;
+	private String basePrice_description;
 	public int getGroupId() {
 		return groupId;
 	}
@@ -44,7 +45,12 @@ public class ImageGroup {
 	public void setBasePrice(double basePrice) {
 		this.basePrice = basePrice;
 	}
-	
+	public String getBasePriceDescription() {
+		return basePrice_description;
+	}
+	public void setBasePriceDescription(String basePrice_description) {
+		this.basePrice_description = basePrice_description;
+	}
 	
 
 }

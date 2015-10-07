@@ -81,6 +81,7 @@ decorpotCtrls.controller('ImageViewController', [
 						$scope.title = data.imageTitle;
 						$scope.basePrice = data.basePrice;
 						$scope.description = $sce.trustAsHtml(data.imageDescription);
+						$scope.basePriceDescription = data.basePriceDescription;
 					});
 			imageView.getGroupPrice($stateParams.groupid).success(
 					function(data) {

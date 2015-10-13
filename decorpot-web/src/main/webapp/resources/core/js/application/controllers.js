@@ -228,7 +228,8 @@ decorpotCtrls.controller('ApartmentController', [ '$scope', 'cart', '$stateParam
 							item : 0
 						};
 					$scope.basePrice = $scope.groups[$scope.toggleObject.item].basePrice;
-					$scope.description = $sce.trustAsHtml(data.groups[$scope.toggleObjectSpace.item].imageDescription);
+					$scope.description = $sce.trustAsHtml($scope.groups[$scope.toggleObject.item].imageDescription);
+					
 				});
 				imageView.getGroupPrice(groupId).success(
 						function(data) {
@@ -244,6 +245,9 @@ decorpotCtrls.controller('ApartmentController', [ '$scope', 'cart', '$stateParam
 			};
 			$scope.setImage = function(PATH_HD){
 				$('#mydiv1').show();
+				if($scope.PATH_HD == PATH_HD){
+					$('#mydiv1').hide();
+				}
 				$scope.PATH_HD = PATH_HD;
 			};
 		} ]);

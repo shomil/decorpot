@@ -43,7 +43,7 @@
 				<div class="col-md-12 right">
 					<ul class="contactHeader">
 						<li><span style="margin-right: 8px;" ><i class="fa fa-envelope-o"></i></span><span>sales@decorpot.com</span></li>
-						<li><span style="margin-right: 8px;" ><i class="fa fa-phone"></i></span><span>+91 9986076761 | +91 9986076761</span></li>
+						<li><span style="margin-right: 8px;" ><i class="fa fa-phone"></i></span><span>+91 9986076761 | +91 9986076762</span></li>
 					</ul>
 				<div class="col-md-10 right">
 					<ul class="primary-menu">
@@ -141,7 +141,6 @@
 				</div>
 			</div>
 		</footer>
-	</div>
 	<!--mainPage-->
 	<!--Modal login Pop up Box -->
 	<div id="modal" class="popupContainer hide" style="display: none;">

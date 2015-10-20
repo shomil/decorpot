@@ -59,6 +59,10 @@ decorpotCtrls.controller('ImageViewController', [
 		function($scope, $stateParams, imageView, $auth, cart, $sce) {
 			$scope.selection = {};
 			$scope.groupId = $stateParams.groupid;
+			$scope.contactUsModalShown = false;
+			$scope.toggleContactUsModal = function() {
+    			$scope.contactUsModalShown = !$scope.contactUsModalShown;
+  			};
 			/*
 			 * imageView.getColors($stateParams.groupid).success(function(data) {
 			 * 

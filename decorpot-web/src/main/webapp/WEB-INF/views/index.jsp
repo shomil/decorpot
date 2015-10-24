@@ -57,8 +57,8 @@
 
 				<div class="col-md-12 right">
 					<ul class="contactHeader">
-						<li><span style="margin-right: 8px;"><i
-								class="fa fa-envelope-o"></i></span><span>sales@decorpot.com</span></li>
+						<li><a href="mailto:sales@decorpot.com" target="_blank"><span style="margin-right: 8px;"><i
+								class="fa fa-envelope-o"></i></span><span>sales@decorpot.com</span></a></li>
 						<li><span style="margin-right: 8px;"><i
 								class="fa fa-phone"></i></span><span>+91 9986076761 | +91
 								9986076762</span></li>

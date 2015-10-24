@@ -831,12 +831,17 @@ opacity
     margin: 0 auto;
     line-height: 2.4;
     color: #E4E2E2;
-    font-size: 24px;
+    font-size: 18px;
     padding-top: 40px;
 }
 
-.aboutTitle{
+.about .aboutTitle{
 	color : white;
+}
+
+
+.workflow .aboutTitle{
+	color : black;
 }
 .section.workflow {
     padding: 80px 0 0;
@@ -850,7 +855,7 @@ opacity
     margin: 0 auto;
     line-height: 2.4;
     color: #878787;
-    font-size: 24px;
+    font-size: 18px;
 }
 .captions{
 	text-align: center;

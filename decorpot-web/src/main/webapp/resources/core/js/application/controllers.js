@@ -220,12 +220,13 @@ decorpotCtrls.controller('ApartmentController', [ '$scope', 'cart', '$stateParam
 				$scope.bhk = data.bhk;
 				$scope.totalPrice = data.totalPrice;
 				
-				
+				console.log($scope.toggleObject);
 				
 			});
-			$scope.getImageGroupData = function(groupId){
+			$scope.getImageGroupData = function(group){
 				$scope.PATH_HD = "";
-				imageView.getViewsByGroupId(groupId).success(function(data){
+				$scope.spaceName = group.imageSpace;
+				imageView.getViewsByGroupId(group.groupId).success(function(data){
 					$scope.views = data;
 					
 					$scope.toggleObjectSpace = {
@@ -235,7 +236,7 @@ decorpotCtrls.controller('ApartmentController', [ '$scope', 'cart', '$stateParam
 					$scope.description = $sce.trustAsHtml($scope.groups[$scope.toggleObject.item].imageDescription);
 					
 				});
-				imageView.getGroupPrice(groupId).success(
+				imageView.getGroupPrice(group.groupId).success(
 						function(data) {
 							$scope.groupPrice = data;
 						}).success(

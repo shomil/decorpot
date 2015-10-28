@@ -78,14 +78,14 @@
 
 #logo {
 	font-size: 42px;
-	font-family: fantasy;
+	font-family: serif;
 	font-style: normal;
 	font-weight: 800;
 	color: rgb(182, 174, 171);
 	padding-left: 3%;
 	font-size: large;
 	font-style: normal;
-	font-family: fantasy;
+	font-family: serif;
 	font-weight: bolder;
 	font-variant: small-caps;
 	font-stretch: semi-condensed;
@@ -231,7 +231,7 @@ ul.sub-menu li:hover>a {
 	color: black !important;
 	text-decoration: none !important;
 	font-style: normal;
-	font-family: fantasy;
+	font-family: serif;
 	font-weight: 200;
 	font-size: initial;
 	margin-left: 5px;
@@ -355,7 +355,7 @@ ul.rig.columns-4 li {
 
 #priceText .col-xs-3, .col-xs-2, .col-xs-6 {
 	margin-top: 5%;
-	font-family: fantasy;
+	font-family: cursive;
 	font-size: initial;
 	font-weight: 200;
 	color: black;
@@ -706,7 +706,7 @@ opacity
 	text-decoration: none !important;
 	font-size: large;
 	font-style: normal;
-	/* font-family: fantasy; */
+	/* font-family: serif; */
 	font-weight: bolder;
 	font-stretch: semi-condensed;
 }
@@ -933,9 +933,14 @@ border: 1px solid #807E7E;
     font-style: oblique;
 }
 
+
 .imgContainer{
-padding: 6px;
-border: 2px black solid;
+max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    background: #000;
+    position: relative;
 }
 
 .imgContainer a img{
@@ -1274,4 +1279,12 @@ border: 2px black solid;
   display: inline-block;
   font-weight: bold;
   font-family: 'arial', 'sans-serif';
+}
+
+.activeBorder{
+	border: #B74343 solid 2px;
+}
+
+#rightSection .row{
+	margin : 0;
 }

@@ -9,16 +9,23 @@
 <link rel="shortcut icon" href="resources/core/img/1a.png"
 	type="image/x-icon">
 
-    <title>Interior Designers Bangalore, Modular Kitchen Manufacturers - Decorpot</title>
-    <meta name="description" content="Decorpot Best Top Good Interior Designers in Bangalore &amp; Modular Kitchen Manufactures , 5 year warranty service no extra cost, Two years free service warranty.">
-    <meta name="keywords" content="Interior Designers Bangalore, Modular Kitchen Manufacturers, 3D Modeling Bangalore, Hire Free Designers - Decorpot">
-	 <!--  start: facebook tag-->
-    <meta property="og:title" content="Interior Designers Bangalore, Modular Kitchen Manufacturers, 3D Modeling Bangalore - Decorpot">
-    <meta property="og:description" content="Decorpot Top Interior Designers in Bangalore &amp; Modular Kitchen Manufactures with 3D Modeling, 5 year warranty service no extra cost, Two years free service warranty.">
-    <!--  end: facebook tag-->
-	<!--  start: google tag-->
-        <meta itemprop="name" content="Interior Designers Bangalore, Modular Kitchen Manufacturers, 3D Modeling Bangalore - Decorpot">
-        <meta itemprop="description" content="Decorpot Top Interior Designers in Bangalore &amp; Modular Kitchen Manufactures with 3D Modeling, 5 year warranty service no extra cost, Two years free service warranty.">
+<title>Interior Designers Bangalore, Modular Kitchen
+	Manufacturers - Decorpot</title>
+<meta name="description"
+	content="Decorpot Best Top Good Interior Designers in Bangalore &amp; Modular Kitchen Manufactures , 5 year warranty service no extra cost, Two years free service warranty.">
+<meta name="keywords"
+	content="Interior Designers Bangalore, Modular Kitchen Manufacturers, 3D Modeling Bangalore, Hire Free Designers - Decorpot">
+<!--  start: facebook tag-->
+<meta property="og:title"
+	content="Interior Designers Bangalore, Modular Kitchen Manufacturers, 3D Modeling Bangalore - Decorpot">
+<meta property="og:description"
+	content="Decorpot Top Interior Designers in Bangalore &amp; Modular Kitchen Manufactures with 3D Modeling, 5 year warranty service no extra cost, Two years free service warranty.">
+<!--  end: facebook tag-->
+<!--  start: google tag-->
+<meta itemprop="name"
+	content="Interior Designers Bangalore, Modular Kitchen Manufacturers, 3D Modeling Bangalore - Decorpot">
+<meta itemprop="description"
+	content="Decorpot Top Interior Designers in Bangalore &amp; Modular Kitchen Manufactures with 3D Modeling, 5 year warranty service no extra cost, Two years free service warranty.">
 <script type="text/javascript">
 	var _contextPath = "${pageContext.request.contextPath}";
 </script>
@@ -55,15 +62,17 @@
 			</div>
 			<div class=" navigation-bar col-md-9">
 
-				<div class="col-md-12 right">
-					<ul class="contactHeader">
-						<li><a href="mailto:sales@decorpot.com" target="_blank"><span style="margin-right: 8px;"><i
-								class="fa fa-envelope-o"></i></span><span>sales@decorpot.com</span></a></li>
-						<li><span style="margin-right: 8px;"><i
-								class="fa fa-phone"></i></span><span>+91 9986076761 | +91
-								9986076762</span></li>
-					</ul>
-					<div class="col-md-10 right">
+				<div class="col-md-12">
+					<div class="col-md-12 row">
+						<ul class="contactHeader pull-right">
+							<li><a href="mailto:sales@decorpot.com" target="_blank"><span
+									style="margin-right: 8px;"><i class="fa fa-envelope-o"></i></span><span>sales@decorpot.com</span></a></li>
+							<li><span style="margin-right: 8px;"><i
+									class="fa fa-phone"></i></span><span>+91 9986076761 | +91
+									9986076762</span></li>
+						</ul>
+					</div>
+					<div class="col-md-12 row">
 						<ul class="primary-menu">
 							<li class="menudropdown"><a ui-sref="apartments">Apartments
 							</a></li>
@@ -260,6 +269,7 @@
 <script src="resources/core/js/ngGallery.js"></script>
 <script src="resources/core/js/jquery.infinitecarousel3.min.js"></script>
 <script src="resources/core/js/angular-responsive-tables.js"></script>
+<script src="resources/core/js/angular-breadcrumb.min.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 

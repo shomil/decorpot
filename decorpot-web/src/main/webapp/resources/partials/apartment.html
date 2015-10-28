@@ -1,5 +1,5 @@
 <div class="containing">
-
+<div ncy-breadcrumb></div>
 	<div id="imageHDView" class="col-md-8" prevent-right-click>
 		<div id="mydiv1">
    			 <div class="cssload-loading">Loading...</div>
@@ -7,10 +7,10 @@
 		<img id="imageHd" ng-src="{{PATH_HD}}" imageonload>
 	</div>
 	<div class="col-md-4 decorpotFont1" id="rightSection">
-		<div id="title" class= "col-xs-12 col-sm-12 col-md-12">
+		<div id="title" class= "col-xs-12 col-sm-12 col-md-12 row">
 			<h2>{{apartmentName}} - {{bhk}}</h2>
 		</div>
-		<div id="priceAndTime" class ="col-xs-12 col-sm-12 col-md-12">
+		<div id="priceAndTime" class ="col-xs-12 col-sm-12 col-md-12 row">
 			<div class="col-xs-6 col-sm-6 col-md-6" style="padding: 0;">Total Apartment Cost</div>
 			<div class="col-xs-6 col-sm-6 col-md-6" ><span class="WebRupee">₹ </span> {{totalPrice}}.00</div>
 			
@@ -26,16 +26,19 @@
 		
 		<br>
 		<br>
-		<div id="">Spaces</div>
+		<div class="row">Spaces</div>
+		<div class="row">
 		<ul id="thumbnails">
 		
 			<li ng-repeat="group in groups  | filter:query" data-ng-click="toggleObject.item = $index" >
-			<div class = "spaceList" data-ng-class="{'active' : toggleObject.item == $index }" ng-init="($first) ? getImageGroupData(group.groupId) : ''" 
-				ng-click="getImageGroupData(group.groupId)">
+			<div class = "spaceList" data-ng-class="{'activeBorder' : toggleObject.item == $index }" ng-init="($first) ? getImageGroupData(group) : ''" 
+				ng-click="getImageGroupData(group)">
 				{{group.imageSpace}}
 			</div>
 			</li>
 		</ul>
+		</div>
+		<div class="row">
 		<ul id="thumbnails">
 		<div id="">Views</div>
 			<li ng-repeat="view in views " data-ng-click="toggleObjectSpace.item = $index" >
@@ -45,7 +48,10 @@
 			</div>
 			</li>
 		</ul>
-		<div class="priceMetrics">
+		</div>
+		<div class="priceMetrics row">
+		<div class="row"> {{spaceName}} Base Price & Addons</div>
+		
 		<table class="table table-bordered table-striped table-condensed table-hover" wt-responsive-table>
 			<tr>
 				<th>Specifics</th>

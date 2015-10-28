@@ -1,7 +1,7 @@
 <div class="apartments" ui-view>
 	<div class="col-md-3 .col-xs-12 .col-sm-6 imgContainerOuter"
 		ng-repeat="apartment in apartments | filter:query">
-		<div class="imgContainer">
+		<div class="imgContainer shrink">
 			<a  ui-sref="apartments.apartment({aprtId : '{{apartment.aprt_group}}'})">
 				<img src={{apartment.image_id}}>
 			</a>

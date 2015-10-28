@@ -2,7 +2,7 @@
  * @author: vaseem.mohammed
  * @date  : 12-07-2015
  */
-var decorpot = angular.module('decorpot', ['ui.router', 'satellizer', 'ngMessages', 'jkuri.gallery','wt.responsive']);
+var decorpot = angular.module('decorpot', ['ui.router', 'satellizer', 'ngMessages', 'jkuri.gallery','wt.responsive', 'ncy-angular-breadcrumb']);
 
 //
 decorpot.config(['$authProvider', '$stateProvider', '$urlRouterProvider','$httpProvider', function( $authProvider, $stateProvider, $urlRouterProvider, $httpProvider){
@@ -63,7 +63,8 @@ decorpot.config(['$authProvider', '$stateProvider', '$urlRouterProvider','$httpP
     }).state('apartments.apartment', {
         url: '/apartment/:aprtId',
         templateUrl: 'resources/partials/apartment.html',
-        controller : 'ApartmentController'
+        controller : 'ApartmentController',
+        
     });
 	
 	$authProvider.google({

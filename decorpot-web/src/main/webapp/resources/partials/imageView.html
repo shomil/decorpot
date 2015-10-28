@@ -9,7 +9,7 @@
 		</div>
 		<div id="priceAndTime" class ="col-xs-12 col-sm-12 col-md-12">
 			<div class="col-xs-6 col-sm-6 col-md-6" style="padding: 0;"><span class="WebRupee">₹ </span> {{basePrice}}.00</div>
-			<div class="col-xs-6 col-sm-6 col-md-6">45 days delivery</div>
+			<div class="hide col-xs-6 col-sm-6 col-md-6">45 days delivery</div>
 			<div class="clearer"></div>
 			<div class="col-xs-12 col-sm-12 col-md-12" style="padding: 0;"><span><i>(Base Price Includes {{basePriceDescription}})</i></span></div>
 <!-- 		<div id="smalliconsText">Select Color</div> -->
@@ -51,7 +51,7 @@
 				</tr>
 			</table>
 		</div>
-		<div id="selectionRadio" class= "">
+		<div id="selectionRadio" class= "hide">
 			<div id="iwantTo" >I want to</div>
 			<div id="radioButton">
 				<input type="radio" name="selection" value="onlyImage"
@@ -91,7 +91,7 @@
 		</div>
 	</div>
 </div>
-<div >
+		<div class="hide">
 			<button ng-click='toggleContactUsModal()'>Open Modal Dialog</button>
 			<contact-modal show='contactUsModalShown' width='750px' height='60%'>
 	  			<p>Modal Content Goes here<p>

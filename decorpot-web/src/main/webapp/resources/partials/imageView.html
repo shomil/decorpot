@@ -51,53 +51,8 @@
 				</tr>
 			</table>
 		</div>
-		<div id="selectionRadio" class= "">
-			<div id="iwantTo" >I want to</div>
-			<div id="radioButton">
-				<input type="radio" name="selection" value="onlyImage"
-					ng-model="content" /> Buy this image
-			</div>
-			<div id="radioButton">
-				<input type="radio" name="selection" value="complete"
-					ng-model="content" /> Get this done
-			</div>
-		</div>
-		<div class="clearer"></div>
-		<div id="contents">
-			<div id="content" ng-show="content == 'onlyImage'">
-				<p id="infoText">Buy this image at only Rs. 1000.Buying this
-					image you will get B&Q and free call back from experts for complete
-					explanation</p>
-				<input type="checkbox" ng-model="customization"> Include
-				customization @Rs499.00 <br>
-				<textarea id="custText" type="text" class="form-control"
-					ng-show="customization" ng-model="custText"></textarea>
-				<br>
-				<div id="addToCart" class="btn btn-primary btn-lg buyNCartButton"
-					ng-click="addToCart(groupId)">Add To Cart</div>
-				<a id="buyNow" class="btn btn-primary btn-lg"
-					href="#/buy/{{groupId}}">Buy Now</a>
-			</div>
-
-			<div id="content" ng-show="content == 'complete'">
-				<p id="infoText">Buy this image at only Rs. 1000.Buying this
-					image you will get B&Q and free call back from experts for complete
-					explanation</p>
-				<div id="addToCart" class="btn btn-primary btn-lg buyNCartButton"
-					ng-click="addToCart(groupId)">Add To Cart</div>
-				<a id="getItDone" class="btn btn-primary btn-lg"
-					href="#/done/{{groupId}}">Get It Done!</a>
-			</div>
-		</div>
 	</div>
 </div>
-<div >
-			<button ng-click='toggleContactUsModal()'>Open Modal Dialog</button>
-			<contact-modal show='contactUsModalShown' width='750px' height='60%'>
-	  			<p>Modal Content Goes here<p>
-			</contact-modal>
-		</div>
-
 </div>
 <div class = "clearer"></div>
 <div class="description decorpotFont1" >

@@ -7,6 +7,6 @@ import com.decorpot.repository.models.Apartment;
 
 public interface ApartmentService {
 	public List<Map<String, Object>> getAllApartment();
-	public Apartment getApartment(int aprtId);
+	public Apartment getApartment(String aprtId);
 
 }

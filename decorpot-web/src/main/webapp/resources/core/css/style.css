@@ -565,6 +565,7 @@ opacity
 	cursor: pointer;
 	margin-right: 5px;
     margin-top: 7px;
+        text-transform: capitalize;
 }
 
 #imageViewContainer {
@@ -990,8 +991,7 @@ max-width: 100%;
 
 .textProjects span{
         margin-top: 0!important;
-    font-size: 13px!important;
-        display: block;
+    font-size: 15px!important;
     font-weight: 300;
     color: #777;
 }
@@ -1206,10 +1206,11 @@ max-width: 100%;
 #title, #priceAndTime{
 	padding-right : 0 !important;
 	padding-left : 0 !important;
+	
 }
 
  #priceAndTime{
- margin-bottom : 2%
+ margin-bottom: 14px !important;
 }
 
 .description{
@@ -1221,7 +1222,8 @@ max-width: 100%;
 }
 
 .priceMetrics{
-	margin-top: 5%;
+	margin-top: 14px !important;
+	text-transform: capitalize;
 }
 
 .contactHeader li{
@@ -1287,4 +1289,17 @@ max-width: 100%;
 
 #rightSection .row{
 	margin : 0;
+}
+
+.breadcrumb>.active {
+    color: #000;
+    background-color : #E88C8C;
+}
+
+.spacesThumbnails{
+	 margin-bottom: 21px;
+}
+   
+.startingFrom{
+	    font-family: cursive;
 }

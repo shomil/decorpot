@@ -1,5 +1,6 @@
 package com.decorpot.controller;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.Map;
 
@@ -27,8 +28,10 @@ public class ApartmentController {
 	}
 	
 	@RequestMapping(value="/{aprtId}", method = RequestMethod.GET)
-	public Apartment getApartment(@PathVariable int aprtId, HttpServletRequest request){
-		return apartmentService.getApartment(aprtId);
+	public Apartment getApartment(@PathVariable String aprtId, HttpServletRequest request) throws UnsupportedEncodingException{
+		String result = java.net.URLDecoder.decode(aprtId, "UTF-8");
+		System.out.println("decode url  " + result);
+		return apartmentService.getApartment(result);
 	}
 
 }

@@ -258,6 +258,7 @@
 <script src="resources/core/js/bootstrap.min.js"></script>
 
 <script src="resources/core/js/application/app.js"></script>
+<script src="resources/core/js/application/filters.js"></script>
 <script src="resources/core/js/application/factory.js"></script>
 <script src="resources/core/js/application/satellizer.js"></script>
 <script src="resources/core/js/angularytics.js"></script>

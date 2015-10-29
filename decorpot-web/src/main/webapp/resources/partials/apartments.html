@@ -2,13 +2,15 @@
 	<div class="col-md-3 .col-xs-12 .col-sm-6 imgContainerOuter"
 		ng-repeat="apartment in apartments | filter:query">
 		<div class="imgContainer shrink">
-			<a  ui-sref="apartments.apartment({aprtId : '{{apartment.aprt_group}}'})">
+			<a  ui-sref="apartments.apartment({aprtId : '{{apartment.apartment_name}}-{{apartment.bhk}}'})">
 				<img src={{apartment.image_id}}>
 			</a>
 		</div>
 		<div class="textProjects">
 			<h4>{{apartment.apartment_name}} - {{apartment.bhk}}</h4>
-			<span>₹ {{apartment.price}} - Group {{apartment.aprt_group}}</span>
+			<div class="row">
+			<span class="startingFrom">starting from   </span><span class="aprtPrice">  Rs. {{apartment.price}}</span>
+			</div>
 		</div>
 	</div>
 </div>

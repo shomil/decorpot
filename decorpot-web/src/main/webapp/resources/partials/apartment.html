@@ -1,83 +1,93 @@
 <div class="containing">
-<div ncy-breadcrumb></div>
+	<div ncy-breadcrumb></div>
 	<div id="imageHDView" class="col-md-8" prevent-right-click>
 		<div id="mydiv1">
-   			 <div class="cssload-loading">Loading...</div>
+			<div class="cssload-loading">Loading...</div>
 		</div>
 		<img id="imageHd" ng-src="{{PATH_HD}}" imageonload>
 	</div>
 	<div class="col-md-4 decorpotFont1" id="rightSection">
-		<div id="title" class= "col-xs-12 col-sm-12 col-md-12 row">
-			<h2>{{apartmentName}} - {{bhk}}</h2>
-		</div>
-		<div id="priceAndTime" class ="col-xs-12 col-sm-12 col-md-12 row">
-			<div class="col-xs-6 col-sm-6 col-md-6" style="padding: 0;">Total Apartment Cost</div>
-			<div class="col-xs-6 col-sm-6 col-md-6" ><span class="WebRupee">₹ </span> {{totalPrice}}.00</div>
-			
-		</div>
-<!-- 		<div id="smalliconsText">Select Color</div> -->
-<!-- 		<ul id="colors"> -->
-<!-- 			<li ng-repeat="color in colors | filter:query"> -->
-<!-- 				<div id="imageViewContainer" style="background-color: {{" -->
-<!-- 					ng-init="($first) ? getViewsByColors(color) : ''" -->
-<!-- 					ng-click="getViewsByColors(color)"></div> -->
-<!-- 			</li> -->
-<!-- 		</ul> -->
-		
-		<br>
-		<br>
-		<div class="row">Spaces</div>
 		<div class="row">
-		<ul id="thumbnails">
-		
-			<li ng-repeat="group in groups  | filter:query" data-ng-click="toggleObject.item = $index" >
-			<div class = "spaceList" data-ng-class="{'activeBorder' : toggleObject.item == $index }" ng-init="($first) ? getImageGroupData(group) : ''" 
-				ng-click="getImageGroupData(group)">
-				{{group.imageSpace}}
+			<div id="title" class="col-xs-12 col-sm-12 col-md-12 row">
+				<h2>{{apartmentName}} - {{bhk}}</h2>
 			</div>
-			</li>
-		</ul>
 		</div>
 		<div class="row">
-		<ul id="thumbnails">
-		<div id="">Views</div>
-			<li ng-repeat="view in views " data-ng-click="toggleObjectSpace.item = $index" >
-			<div data-ng-class="{'active' : toggleObjectSpace.item == $index }" ng-init="($first) ? setImage(view.IMAGE_PATH_MEDIUM) : ''" 
-				ng-click="setImage(view.IMAGE_PATH_MEDIUM)">
-				<img id="imageViewContainer" ng-src="{{view.IMAGE_PATH_SMALL}}"/>
+			<div id="priceAndTime" class="col-xs-12 col-sm-12 col-md-12 row">
+				<div class="col-xs-6 col-sm-6 col-md-6" style="padding: 0;">Total
+					Apartment Base Cost</div>
+				<div class="col-xs-6 col-sm-6 col-md-6">
+					<span class="WebRupee">Rs. </span> {{totalPrice}}.00
+				</div>
+
 			</div>
-			</li>
-		</ul>
+		</div>
+		<!-- 		<div id="smalliconsText">Select Color</div> -->
+		<!-- 		<ul id="colors"> -->
+		<!-- 			<li ng-repeat="color in colors | filter:query"> -->
+		<!-- 				<div id="imageViewContainer" style="background-color: {{" -->
+		<!-- 					ng-init="($first) ? getViewsByColors(color) : ''" -->
+		<!-- 					ng-click="getViewsByColors(color)"></div> -->
+		<!-- 			</li> -->
+		<!-- 		</ul> -->
+<div class="row spacesThumbnails">
+			<div>Spaces</div>
+			<ul id="thumbnails">
+
+				<li ng-repeat="group in groups  | filter:query"
+					data-ng-click="toggleObject.item = $index">
+					<div class="spaceList"
+						data-ng-class="{'activeBorder' : toggleObject.item == $index }"
+						ng-init="($first) ? getImageGroupData(group) : ''"
+						ng-click="getImageGroupData(group)">{{group.imageSpace | underscoreless}}</div>
+				</li>
+			</ul>
+		</div>
+		<div class="row">
+			<ul id="thumbnails">
+				<div id="">Views</div>
+				<li ng-repeat="view in views "
+					data-ng-click="toggleObjectSpace.item = $index">
+					<div data-ng-class="{'active' : toggleObjectSpace.item == $index }"
+						ng-init="($first) ? setImage(view.IMAGE_PATH_MEDIUM) : ''"
+						ng-click="setImage(view.IMAGE_PATH_MEDIUM)">
+						<img id="imageViewContainer" ng-src="{{view.IMAGE_PATH_SMALL}}" />
+					</div>
+				</li>
+			</ul>
 		</div>
 		<div class="priceMetrics row">
-		<div class="row"> {{spaceName}} Base Price & Addons</div>
-		
-		<table class="table table-bordered table-striped table-condensed table-hover" wt-responsive-table>
-			<tr>
-				<th>Specifics</th>
-				<th>Price</th>
-			</tr>
-			<tr>
-				<td>Base Price</b></td>
-				<td><span class="WebRupee">₹ </span> {{basePrice}}.00</td>
-			</tr>
-			<tr ng-repeat="price in groupPrice">
-				<td>{{price.addon}}</td>
-				<td><span class="WebRupee">₹ </span> {{price.price}}.00</td>
-			</tr>
-			<tr>
-				<td><b>Total Price</b></td>
-				<td><span class="WebRupee">₹ </span>{{totalImagePrice+basePrice}}.00</td>
-			</tr>
-		</table></div>
-		
-	
-</div>
+			<div class="row">{{spaceName}} Base Price & Addons</div>
+
+			<table
+				class="table table-bordered table-striped table-condensed table-hover"
+				wt-responsive-table>
+				<tr>
+					<th>Specifics</th>
+					<th>Price</th>
+				</tr>
+				<tr>
+					<td>Base Price</b></td>
+					<td><span class="WebRupee">₹ </span> {{basePrice}}.00</td>
+				</tr>
+				<tr ng-repeat="price in groupPrice">
+					<td>{{price.addon}}</td>
+					<td><span class="WebRupee">₹ </span> {{price.price}}.00</td>
+				</tr>
+				<tr>
+					<td><b>Total Price</b></td>
+					<td><span class="WebRupee">₹ </span>{{totalImagePrice+basePrice}}.00</td>
+				</tr>
+			</table>
+		</div>
+
+
+	</div>
 
 </div>
-<div class = "clearer"></div>
-<div class="description decorpotFont1" >
-<h3>Description</h3>
-<ul ng-bind-html ="description" >
-</ul>
+<div class="clearer"></div>
+<div class="description decorpotFont1">
+	<h3>Description</h3>
+	<ul ng-bind-html="description">
+	</ul>
 </div>

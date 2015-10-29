@@ -205,12 +205,14 @@ decorpotCtrls.controller('AboutController', [ '$scope', 'cart',
 decorpotCtrls.controller('ApartmentsController', [ '$scope', 'cart',
 		'apartments', function($scope, cart, apartments) {
 			apartments.getAllApartments().success(function(data) {
+				
 				$scope.apartments = data;
 			})
 		} ]);
 
 decorpotCtrls.controller('ApartmentController', [ '$scope', 'cart', '$stateParams',
 		'apartments', 'imageView', '$sce', function($scope, cart, $stateParams, apartments, imageView, $sce) {
+			$scope.aprtId = $stateParams.aprtId;
 			apartments.getApartment($stateParams.aprtId).success(function(data) {
 				$scope.toggleObject = {
 						item : 0

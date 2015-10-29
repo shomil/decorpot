@@ -39,16 +39,17 @@ public class ApartmentServiceImpl implements ApartmentService {
 	}
 
 	@Override
-	public Apartment getApartment(int aprtId) {
+	public Apartment getApartment(String aprtId) {
 		final String key = "getApartment" + aprtId;
 		List<Map<String, Object>> groups = null;
 		Apartment apartment = null;
+		String [] params = aprtId.split("-");
 		if(DataCache.getInstance().get(key) == null){
-			groups = apartmentRepo.getApartment(aprtId);
+			groups = apartmentRepo.getApartment(params[0], params[1]);
 			double totalPrice = 0.0;
 			apartment = new Apartment();
 			List<ImageGroup> imageGroups = new ArrayList<>();
-			apartment.setAprtId(aprtId);
+			
 			for(Map<String, Object> group : groups){
 				System.out.println(group);
 				ImageGroup ig = new ImageGroup();
@@ -63,6 +64,7 @@ public class ApartmentServiceImpl implements ApartmentService {
 			apartment.setGroups(imageGroups);
 			apartment.setTotalPrice(totalPrice);
 			apartment.setApartmentName((String) groups.get(0).get("apartment_name"));
+			apartment.setAprtId((Integer)groups.get(0).get("aprt_group"));
 			apartment.setBhk((String) groups.get(0).get("bhk"));
 			DataCache.getInstance().put(key, apartment);
 		}else{

@@ -353,11 +353,10 @@ ul.rig.columns-4 li {
 	height: 12%;
 }
 
-#priceText .col-xs-3, .col-xs-2, .col-xs-6 {
-	margin-top: 5%;
-	font-family: cursive;
-	font-size: initial;
-	font-weight: 200;
+#priceText .col-xs-3, .col-xs-2, .col-xs-8, .col-xs-4 {
+	margin-top: 1%;
+	font-size: 20px;
+	font-weight: 600;
 	color: black;
 }
 
@@ -845,7 +844,7 @@ opacity
 	color : black;
 }
 .section.workflow {
-    padding: 80px 0 0;
+    padding: 40px 0 0;
     text-align: center;
     background: #f2f2f2;
 }
@@ -990,10 +989,11 @@ max-width: 100%;
 }
 
 .textProjects span{
-        margin-top: 0!important;
+    margin-top: 0!important;
     font-size: 15px!important;
-    font-weight: 300;
-    color: #777;
+    font-weight: 600;
+	color: black;
+	font-family: inherit;
 }
 
 .shrink img {
@@ -1040,7 +1040,7 @@ max-width: 100%;
  }
  
 .ajax-loader {
-    position: absolute;
+    position: absolute;`
     left: 50%;
     top: 50%;
     margin-left: -32px; /* -1 * image width / 2 */
@@ -1189,7 +1189,7 @@ max-width: 100%;
 }
 
 #thumbnails li div{
-	padding : 4px;
+	/*padding : 4px;*/
 }
 
 .active{
@@ -1197,10 +1197,17 @@ max-width: 100%;
 }
 
 .spaceList{
-	    padding: 6px;
-    font-size: 18px;
+	padding: 6px;
     /* margin-right: 2px; */
     color: black;
+    padding: 6px;
+	font-size: 15px;
+	color: #fff;
+	font-family: "Trebuchet MS";
+	/* font-weight: bold; */
+	display: inline-block;
+	/* border: #58A4D8 solid 2px; */
+	background: -webkit-gradient(linear,0 0,0 100%,from(#6ebde2),to(#003dad));
 }
 
 #title, #priceAndTime{
@@ -1284,7 +1291,7 @@ max-width: 100%;
 }
 
 .activeBorder{
-	border: #B74343 solid 2px;
+	border: #58A4D8 solid 2px;
 }
 
 #rightSection .row{
@@ -1301,5 +1308,8 @@ max-width: 100%;
 }
    
 .startingFrom{
-	    font-family: cursive;
+
+}
+.divider{
+	border-top: 1px solid #CCC;
 }

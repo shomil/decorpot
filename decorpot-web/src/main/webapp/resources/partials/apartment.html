@@ -12,11 +12,11 @@
 				<h2>{{apartmentName}} - {{bhk}}</h2>
 			</div>
 		</div>
+		<div class="divider" style=""></div>
 		<div class="row">
 			<div id="priceAndTime" class="col-xs-12 col-sm-12 col-md-12 row">
-				<div class="col-xs-6 col-sm-6 col-md-6" style="padding: 0;">Total
-					Apartment Base Cost</div>
-				<div class="col-xs-6 col-sm-6 col-md-6">
+				<div class="col-xs-8 col-sm-6 col-md-6" style="padding: 0;">Apartment Base Price</div>
+				<div class="col-xs-4 col-sm-6 col-md-6">
 					<span class="WebRupee">Rs. </span> {{totalPrice}}.00
 				</div>
 
@@ -31,7 +31,7 @@
 		<!-- 			</li> -->
 		<!-- 		</ul> -->
 <div class="row spacesThumbnails">
-			<div>Spaces</div>
+			<!--<div>Spaces</div>-->
 			<ul id="thumbnails">
 
 				<li ng-repeat="group in groups  | filter:query"
@@ -43,9 +43,10 @@
 				</li>
 			</ul>
 		</div>
+		<div class="divider" style=""></div>
 		<div class="row">
 			<ul id="thumbnails">
-				<div id="">Views</div>
+				<div style="padding: 0;font-size: 20px;font-weight: 600;color: black;">Views</div>
 				<li ng-repeat="view in views "
 					data-ng-click="toggleObjectSpace.item = $index">
 					<div data-ng-class="{'active' : toggleObjectSpace.item == $index }"
@@ -56,8 +57,9 @@
 				</li>
 			</ul>
 		</div>
+		<div class="divider" style=""></div>
 		<div class="priceMetrics row">
-			<div class="row">{{spaceName}} Base Price & Addons</div>
+			<div class="row" style="font-size: 20px;font-weight: 600;color: black;">{{spaceName}} : Base Price & Addons</div>
 
 			<table
 				class="table table-bordered table-striped table-condensed table-hover"
@@ -85,7 +87,8 @@
 	</div>
 
 </div>
-<div class="clearer"></div>
+<div class="clearer divider"></div>
+
 <div class="description decorpotFont1">
 	<h3>Description</h3>
 	<ul ng-bind-html="description">

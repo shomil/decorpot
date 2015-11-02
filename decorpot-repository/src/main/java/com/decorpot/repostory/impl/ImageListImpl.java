@@ -37,8 +37,8 @@ public class ImageListImpl implements ImageList {
 	//private String viewsByGroupid = "select * from Decorpot.IMAGE_ATTRIBUTE where group_id = ?";
 	private String imageGroupDetails = "select * from Decorpot.IMAGE_GROUP_ATTRIBUTE where GROUP_ID = ?";
 	private String pricingDetailsByGroup = "select * from Decorpot.price where GROUP_ID = ?";
-	private String imageSpaceSql = "select * from Decorpot.IMAGE_GROUP_ATTRIBUTE iga inner join Decorpot.IMAGE_ATTRIBUTE pia on iga.GROUP_ID = pia.GROUP_ID where pia.image_view_id = 1 and iga.image_price >=? and iga.image_price <= ? and iga.image_space = ?";
-	private String imageAllSpaceSql ="select * from Decorpot.IMAGE_GROUP_ATTRIBUTE iga inner join Decorpot.IMAGE_ATTRIBUTE pia on iga.GROUP_ID = pia.GROUP_ID where pia.image_view_id = 1 and iga.image_price >=? and iga.image_price <= ?";
+	private String imageSpaceSql = "select * from Decorpot.IMAGE_GROUP_ATTRIBUTE iga inner join Decorpot.IMAGE_ATTRIBUTE pia on iga.GROUP_ID = pia.GROUP_ID where pia.image_view_id = 1 and iga.image_price >=? and iga.image_price <= ? and iga.image_space = ? order by iga.Created_Date Desc";
+	private String imageAllSpaceSql ="select * from Decorpot.IMAGE_GROUP_ATTRIBUTE iga inner join Decorpot.IMAGE_ATTRIBUTE pia on iga.GROUP_ID = pia.GROUP_ID where pia.image_view_id = 1 and iga.image_price >=? and iga.image_price <= ? order by iga.Created_Date Desc";
 	private String imageViewByColorSql = "select * from Decorpot.IMAGE_GROUP_ATTRIBUTE iga inner join Decorpot.IMAGE_ATTRIBUTE pia on iga.GROUP_ID = pia.GROUP_ID where pia.GROUP_ID =? and pia.image_color =?";
 	private String colorByGroupid = "SELECT Distinct(IMAGE_COLOR) from Decorpot.IMAGE_ATTRIBUTE where GROUP_ID = ?";
 	private String viewsByGroupid = "select * from Decorpot.IMAGE_ATTRIBUTE where GROUP_ID = ?";

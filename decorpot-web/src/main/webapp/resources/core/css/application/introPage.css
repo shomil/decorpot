@@ -19,6 +19,7 @@
 #services {
 	height: auto;
     padding-top: 0%;
+    padding-bottom: 1%;
     overflow: hidden;
 
 }

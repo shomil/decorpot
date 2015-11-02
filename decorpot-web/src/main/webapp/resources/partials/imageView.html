@@ -1,72 +1,81 @@
 <div class="containing">
-
-	<div id="imageHDView" class="col-md-8">
-		<img id="imageHd" src="{{IMAGE_PATH_HD}}" prevent-right-click>
+	<div id="imageHDView" class="col-md-8" prevent-right-click>
+		<div id="mydiv1">
+			<div class="cssload-loading">Loading...</div>
+		</div>
+		<img id="imageHd" src="{{IMAGE_PATH_HD}}" imageonload>
 	</div>
 	<div class="col-md-4 decorpotFont1" id="rightSection">
-		<div id="title" class="col-xs-12 col-sm-12 col-md-12">
-			<h2>{{title}}</h2>
+		<div class="row">
+			<div id="title" class="col-xs-12 col-sm-12 col-md-12 row">
+				<h2>{{title}}</h2>
+			</div>
 		</div>
-		<div id="priceAndTime" class="col-xs-12 col-sm-12 col-md-12">
-			<div class="col-xs-6 col-sm-6 col-md-6" style="padding: 0;">
-				<span class="WebRupee">₹ </span> {{basePrice}}.00
+		<div class="divider" style=""></div>
+		<div class="row">
+			<div id="priceAndTime" class="col-xs-12 col-sm-12 col-md-12 row">
+				<div class="col-xs-8 col-sm-6 col-md-6" style="padding: 0;">Base Price</div>
+				<div class="col-xs-4 col-sm-6 col-md-6">
+					<span class="WebRupee">₹ </span> {{basePrice}}.00
+				</div>
 			</div>
-			<div class="hide col-xs-6 col-sm-6 col-md-6">45 days delivery</div>
-			<div class="clearer"></div>
-			<div class="col-xs-12 col-sm-12 col-md-12" style="padding: 0;">
-				<span><i>(Base Price Includes {{basePriceDescription}})</i></span>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 row" style="padding: 0;">(Base Price Includes {{basePriceDescription}})
 			</div>
-			<!-- 		<div id="smalliconsText">Select Color</div> -->
-			<!-- 		<ul id="colors"> -->
-			<!-- 			<li ng-repeat="color in colors | filter:query"> -->
-			<!-- 				<div id="imageViewContainer" style="background-color: {{" -->
-			<!-- 					ng-init="($first) ? getViewsByColors(color) : ''" -->
-			<!-- 					ng-click="getViewsByColors(color)"></div> -->
-			<!-- 			</li> -->
-			<!-- 		</ul> -->
-			<div id="smalliconsText">Views</div>
+		</div>
+		<div class="divider" style=""></div>
+		<!-- 		<div id="smalliconsText">Select Color</div> -->
+		<!-- 		<ul id="colors"> -->
+		<!-- 			<li ng-repeat="color in colors | filter:query"> -->
+		<!-- 				<div id="imageViewContainer" style="background-color: {{" -->
+		<!-- 					ng-init="($first) ? getViewsByColors(color) : ''" -->
+		<!-- 					ng-click="getViewsByColors(color)"></div> -->
+		<!-- 			</li> -->
+		<!-- 		</ul> -->
+		<div class="row">
 			<ul id="thumbnails">
+				<div style="padding: 0;font-size: 20px;font-weight: 600;color: black;" id="smalliconsText">Views</div>
 				<li ng-repeat="thumbnail in thumbnails  | filter:query"
 					data-ng-click="toggleObject.item = $index">
 					<div data-ng-class="{'active' : toggleObject.item == $index }"
 						ng-init="($first) ? getHdImage(thumbnail.IMAGE_ID) : ''"
 						ng-click="getHdImage(thumbnail.IMAGE_ID)">
 						<img id="imageViewContainer"
-							ng-src="{{thumbnail.IMAGE_PATH_SMALL}}" />
+						ng-src="{{thumbnail.IMAGE_PATH_SMALL}}" />
 					</div>
 				</li>
 			</ul>
-			<div class="clearer"></div>
-
-			<div class="priceMetrics">
-				<table
-					class="table table-bordered table-striped table-condensed table-hover"
-					wt-responsive-table>
-					<tr>
-						<th>Specifics</th>
-						<th>Price</th>
-					</tr>
-					<tr>
-						<td>Base Price</b></td>
-						<td><span class="WebRupee">₹ </span> {{basePrice}}.00</td>
-					</tr>
-					<tr ng-repeat="price in groupPrice">
-						<td>{{price.addon}}</td>
-						<td><span class="WebRupee">₹ </span> {{price.price}}.00</td>
-					</tr>
-					<tr>
-						<td><b>Total Price</b></td>
-						<td><span class="WebRupee">₹ </span>{{totalImagePrice+basePrice}}.00</td>
-					</tr>
-				</table>
-			</div>
-
+		</div>
+		<div class="divider" style=""></div>
+		<div class="priceMetrics">
+			<table
+				class="table table-bordered table-striped table-condensed table-hover"
+				wt-responsive-table>
+				<tr>
+					<th>Specifics</th>
+					<th>Price</th>
+				</tr>
+				<tr>
+					<td>Base Price</b></td>
+					<td><span class="WebRupee">₹ </span> {{basePrice}}.00</td>
+				</tr>
+				<tr ng-repeat="price in groupPrice">
+					<td>{{price.addon}}</td>
+					<td><span class="WebRupee">₹ </span> {{price.price}}.00</td>
+				</tr>
+				<tr>
+					<td><b>Total Price</b></td>
+					<td><span class="WebRupee">₹ </span>{{totalImagePrice+basePrice}}.00</td>
+				</tr>
+			</table>
 		</div>
 	</div>
-	<div class="clearer"></div>
-	<div class="description decorpotFont1">
-		<h3>Description</h3>
-		<ul ng-bind-html="description">
-		</ul>
-	</div>
+	<div class="clearer divider"></div>
+</div>
+<div class="description decorpotFont1">
+	<h3>Description</h3>
+	<ul ng-bind-html="description">
+	</ul>
+</div>
 </div>

@@ -43,9 +43,9 @@ public class ApartmentServiceImpl implements ApartmentService {
 		final String key = "getApartment" + aprtId;
 		List<Map<String, Object>> groups = null;
 		Apartment apartment = null;
-		String [] params = aprtId.split("-");
+		String[] params = aprtId.split("-");
 		if(DataCache.getInstance().get(key) == null){
-			groups = apartmentRepo.getApartment(params[0], params[1]);
+			groups = apartmentRepo.getApartment(params[0]);
 			double totalPrice = 0.0;
 			apartment = new Apartment();
 			List<ImageGroup> imageGroups = new ArrayList<>();

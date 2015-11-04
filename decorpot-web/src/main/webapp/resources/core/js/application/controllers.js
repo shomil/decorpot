@@ -258,4 +258,10 @@ decorpotCtrls.controller('ApartmentController', [ '$scope', 'cart', '$stateParam
 				}
 				$scope.PATH_HD = PATH_HD;
 			};
+			$scope.getAprtId = function(aprtId) {
+                console.log(aprtId);
+                apartment = aprtId.replace(/\d+-/,"");
+                console.log(apartment);
+                return apartment;
+            }
 		} ]);

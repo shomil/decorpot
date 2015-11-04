@@ -65,7 +65,7 @@ decorpot.config(['$authProvider', '$stateProvider', '$urlRouterProvider','$httpP
         templateUrl: 'resources/partials/apartment.html',
         controller : 'ApartmentController',
         ncyBreadcrumb: {
-            label: '{{aprtId}}'
+            label: '{{getAprtId(aprtId)}}'
           }
     });
 	

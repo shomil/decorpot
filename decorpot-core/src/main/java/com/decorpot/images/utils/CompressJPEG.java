@@ -16,7 +16,7 @@ public class CompressJPEG {
 	public static void main(String[] args) throws FileNotFoundException,IOException {
 		int i = 0;
 		List<String> fileNameList = new ArrayList<String>(100);
-		File file =  new File("../../../imgs_decor/imageLot3_large");
+		File file =  new File("../../../imgs_decor-1/gm6");
 		Collection<File> files = FileUtils.listFiles(file, null, true);     
 		for(File file2 : files)
 		{
@@ -28,13 +28,13 @@ public class CompressJPEG {
 		{
 			if(str != null)
 			{
-				File imageFile = new File("../../../imgs_decor/imageLot3_large/"+str);
+				File imageFile = new File("../../../imgs_decor-1/gm6/"+str);
 				
 				//Check jpg file
 				boolean tmp = imageFile.getName().contains(".jpg");
 				System.out.println("is Jpg file = "+tmp);
 				
-				File compressedFile = new File("../../../imgs_decor/imageLot3_medium/"+str);
+				File compressedFile = new File("../../../imgs_decor-1/gm6_med/"+str);
 				if(tmp)
 				{
 					BufferedImage originalImage = ImageIO.read(imageFile);

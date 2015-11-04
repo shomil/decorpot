@@ -237,6 +237,7 @@ decorpotCtrls.controller('ApartmentController', [ '$scope', 'cart', '$stateParam
 					$scope.basePrice = $scope.groups[$scope.toggleObject.item].basePrice;
 					$scope.description = $sce.trustAsHtml($scope.groups[$scope.toggleObject.item].imageDescription);
 					$scope.aprtImageTitle = $scope.groups[$scope.toggleObject.item].imageTitle;
+					$scope.aprtBasePriceDescription = $scope.groups[$scope.toggleObject.item].basePriceDescription;
 					
 				});
 				imageView.getGroupPrice(group.groupId).success(

@@ -58,6 +58,7 @@ public class ApartmentServiceImpl implements ApartmentService {
 				ig.setImageDescription((String) group.get("IMAGE_DESCRIPTION"));
 				ig.setImageSpace((String) group.get("image_space"));
 				ig.setImageTitle((String) group.get("IMAGE_TITLE"));
+				ig.setBasePriceDescription((String)group.get("BASEPRICE_DESCRIPTION"));
 				imageGroups.add(ig);
 				totalPrice += ig.getBasePrice();
 			}

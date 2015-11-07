@@ -16,7 +16,7 @@
 			<div id="priceAndTime" class="col-xs-12 col-sm-12 col-md-12 row">
 				<div class="col-xs-8 col-sm-6 col-md-6" style="padding: 0;">Base Price</div>
 				<div class="col-xs-4 col-sm-6 col-md-6">
-					<span class="WebRupee">₹ </span> {{basePrice}}.00
+					<span class="WebRupee">Rs. </span> {{basePrice}}.00
 				</div>
 			</div>
 		</div>
@@ -58,15 +58,15 @@
 				</tr>
 				<tr>
 					<td>Base Price</b></td>
-					<td><span class="WebRupee">₹ </span> {{basePrice}}.00</td>
+					<td><span class="WebRupee">Rs. </span> {{basePrice}}.00</td>
 				</tr>
 				<tr ng-repeat="price in groupPrice">
 					<td>{{price.addon}}</td>
-					<td><span class="WebRupee">₹ </span> {{price.price}}.00</td>
+					<td><span class="WebRupee">Rs. </span> {{price.price}}.00</td>
 				</tr>
 				<tr>
 					<td><b>Total Price</b></td>
-					<td><span class="WebRupee">₹ </span>{{totalImagePrice+basePrice}}.00</td>
+					<td><span class="WebRupee">Rs. </span>{{totalImagePrice+basePrice}}.00</td>
 				</tr>
 			</table>
 		</div>

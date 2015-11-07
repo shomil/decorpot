@@ -1298,7 +1298,11 @@ max-width: 100%;
 }
 
 .activeBorder{
-	border: #58A4D8 solid 2px;
+	border: #D6655B solid 2px;
+}
+
+.activeButton{
+	background: -webkit-gradient(linear,0 0,0 100%,from(#E2836E),to(#AD001C));
 }
 
 #rightSection .row{

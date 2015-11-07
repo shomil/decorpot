@@ -33,19 +33,14 @@ public class DecorpotServiceImpl implements DecorpotServices {
 
 	@Override
 	public List<Map<String, Object>> getDataBaseTables() {
-		System.out
-				.println("decorpot-services/DecorpotServiceImpl:getDataBaseTables");
 		return decorpotRepository.getDatabaseName();
 	}
 
 	@Override
 	public List<ImageDetail> getImageListSpace(String space, Integer toPrice,
 			Integer fromPrice, Integer pageNum) {
-		System.out
-				.println("decorpot-services/DecorpotServiceImpl:getImageListSpace");
 		int to = pageNum * this.defaultList, from = (pageNum - 1)
 				* this.defaultList + 1;
-		System.out.println("to= " + to + " and from= " + from);
 
 		String key = "getImageListSpace" + space;
 		List<ImageDetail> images = null;
@@ -60,14 +55,11 @@ public class DecorpotServiceImpl implements DecorpotServices {
 		}else{
 			images = (List<ImageDetail>) DataCache.getInstance().get(key);
 		}
-		System.out.println("Images Returned");
 		return images;
 	}
 
 	@Override
 	public List<Map<String, Object>> getViewsByColors(String color, int groupid) {
-		System.out
-				.println("decorpot-services/DecorpotServiceImpl:getViewsByColors()");
 		List<Map<String, Object>> images = imageList.getViewsByColors(color,
 				groupid);
 		for (Map<String, Object> image : images) {
@@ -89,8 +81,6 @@ public class DecorpotServiceImpl implements DecorpotServices {
 	@Override
 	public List<Map<String, Object>> getImageListTheme(String theme,
 			Integer toPrice, Integer fromPrice, Integer pageNum) {
-		System.out
-				.println("services/com.decorpot.services/DecorpotServiceImpl.getImageListTheme");
 		int to = pageNum * this.defaultList, from = (pageNum - 1)
 				* this.defaultList + 1;
 		List<Map<String, Object>> images = imageList.getImageListTheme(theme,

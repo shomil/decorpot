@@ -57,7 +57,7 @@ decorpot.config(['$authProvider', '$stateProvider', '$urlRouterProvider','$httpP
         templateUrl: 'resources/partials/about.html',
         controller : 'AboutController'
     }).state('apartments', {
-        url: '/apartments',
+        url: '/apartments/:apartmentName',
         templateUrl: 'resources/partials/apartments.html',
         controller : 'ApartmentsController'
     }).state('apartments.apartment', {

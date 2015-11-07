@@ -202,9 +202,9 @@ decorpotCtrls.controller('AboutController', [ '$scope', 'cart',
 
 		} ]);
 
-decorpotCtrls.controller('ApartmentsController', [ '$scope', 'cart',
-		'apartments', function($scope, cart, apartments) {
-			apartments.getAllApartments().success(function(data) {
+decorpotCtrls.controller('ApartmentsController', [ '$scope', 'cart', '$stateParams', 
+		'apartments', function($scope, cart, $stateParams, apartments) {
+			apartments.getAllApartments($stateParams.apartmentName).success(function(data) {
 				
 				$scope.apartments = data;
 			})

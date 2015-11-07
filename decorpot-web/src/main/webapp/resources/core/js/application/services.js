@@ -145,10 +145,10 @@ services.service('projects', function($http){
 
 services.service('apartments', function($http){
 	return{
-		getAllApartments : function(){
+		getAllApartments : function(apartmentName){
 			return $http({
 				method : "get",
-				url : "apartments"
+				url : "apartments/name/" + apartmentName
 			});
 		},
 		getApartment : function(aprtId){

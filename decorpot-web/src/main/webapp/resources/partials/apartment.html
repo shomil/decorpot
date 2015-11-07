@@ -18,12 +18,17 @@
 		<div class="divider" style=""></div>
 		<div class="row">
 			<div id="priceAndTime" class="col-xs-12 col-sm-12 col-md-12 row">
-				<div class="col-xs-8 col-sm-6 col-md-6" style="padding: 0;">Apartment Base Price</div>
+				<div class="col-xs-8 col-sm-6 col-md-6" style="padding: 0;">
+					Base Price</div>
+					
 				<div class="col-xs-4 col-sm-6 col-md-6">
-					<span class="WebRupee">Rs. </span> {{totalPrice}}.00
+					<span class="WebRupee">Rs. </span> {{totalPrice | roundoffnumber}}
 				</div>
-
+				<div class = "row">
+				<div class="col-md-12">(Includes - Tv unit, wardrobes in all rooms and complete kitchen)</div>
+				</div>
 			</div>
+			
 		</div>
 		<!-- 		<div id="smalliconsText">Select Color</div> -->
 		<!-- 		<ul id="colors"> -->
@@ -40,7 +45,7 @@
 				<li ng-repeat="group in groups  | filter:query"
 					data-ng-click="toggleObject.item = $index">
 					<div class="spaceList"
-						data-ng-class="{'activeBorder' : toggleObject.item == $index }"
+						data-ng-class="{'activeButton' : toggleObject.item == $index }"
 						ng-init="($first) ? getImageGroupData(group) : ''"
 						ng-click="getImageGroupData(group)">{{group.imageSpace | underscoreless}}</div>
 				</li>
@@ -52,7 +57,7 @@
 				<div style="padding: 0;font-size: 20px;font-weight: 600;color: black;">Views</div>
 				<li ng-repeat="view in views "
 					data-ng-click="toggleObjectSpace.item = $index">
-					<div data-ng-class="{'active' : toggleObjectSpace.item == $index }"
+					<div data-ng-class="{'activeBorder' : toggleObjectSpace.item == $index }"
 						ng-init="($first) ? setImage(view.IMAGE_PATH_MEDIUM) : ''"
 						ng-click="setImage(view.IMAGE_PATH_MEDIUM)">
 						<img id="imageViewContainer" ng-src="{{view.IMAGE_PATH_SMALL}}" />
@@ -72,7 +77,7 @@
 					<th>Price</th>
 				</tr>
 				<tr>
-					<td>Base Price <a href ="" class="fa fa-question-circle" title="Base Price Includes" data-content={{aprtBasePriceDescription}} data-toggle="popover"></a></td>
+					<td><span>Base Price</span><span  style="font-size: 13px;">({{aprtBasePriceDescription}})</span></td>
 					<td><span class="WebRupee">₹ </span> {{basePrice}}.00</td>
 				</tr>
 				<tr ng-repeat="price in groupPrice">

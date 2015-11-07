@@ -18,17 +18,21 @@ import com.decorpot.services.ApartmentService;
 @RestController
 @RequestMapping("/apartments")
 public class ApartmentController {
-	
+
 	@Autowired
 	private ApartmentService apartmentService;
-	
-	@RequestMapping( method = RequestMethod.GET)
-	public List<Map<String, Object>> getAllApartment( HttpServletRequest request){
-		return apartmentService.getAllApartment();
+
+	@RequestMapping(value = "/name/{apartmentName}", method = RequestMethod.GET)
+	public List<Map<String, Object>> getAllApartment(
+			@PathVariable String apartmentName, HttpServletRequest request)
+			throws UnsupportedEncodingException {
+		return apartmentService.getAllApartment(java.net.URLDecoder.decode(
+				apartmentName, "UTF-8"));
 	}
-	
-	@RequestMapping(value="/{aprtId}", method = RequestMethod.GET)
-	public Apartment getApartment(@PathVariable String aprtId, HttpServletRequest request) throws UnsupportedEncodingException{
+
+	@RequestMapping(value = "/{aprtId}", method = RequestMethod.GET)
+	public Apartment getApartment(@PathVariable String aprtId,
+			HttpServletRequest request) throws UnsupportedEncodingException {
 		String result = java.net.URLDecoder.decode(aprtId, "UTF-8");
 		System.out.println("decode url  " + result);
 		return apartmentService.getApartment(result);

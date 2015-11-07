@@ -21,11 +21,17 @@ public class ApartmentServiceImpl implements ApartmentService {
 	private final String smallImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/image_lot_small/";
 
 	@Override
-	public List<Map<String, Object>> getAllApartment() {
-		final String key = "getAllApartment";
+	public List<Map<String, Object>> getAllApartment(String apartmentName) {
+		final String key = "getAllApartment" + apartmentName;
+		System.out.println(apartmentName);
 		List<Map<String, Object>> apartments = null;
 		if (DataCache.getInstance().get(key) == null) {
-			apartments = apartmentRepo.getAllApartment();
+			if(apartmentName.equals("all")){
+				apartments = apartmentRepo.getAllApartment();
+			}else{
+				apartments = apartmentRepo.getAllApartmentByName(apartmentName);
+			}
+			
 			for (Map<String, Object> apartment : apartments) {
 				apartment.put("image_id",
 						smallImageUrl + apartment.get("image_id").toString()

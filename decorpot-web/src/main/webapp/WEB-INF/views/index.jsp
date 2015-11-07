@@ -74,8 +74,14 @@
 					</div>
 					<div class="col-md-12 row">
 						<ul class="primary-menu">
-							<li class="menudropdown"><a ui-sref="apartments">Apartments
-							</a></li>
+							<li class="menudropdown"><a ui-sref="apartments({apartmentName : 'all'})">Apartments
+							</a>
+								<ul class="sub-menu">
+									<li><a ui-sref="apartments({apartmentName : 'Salarpuria Senorita'})">Salarpuria Senorita</a></li>
+									<li><a ui-sref="apartments({apartmentName : 'Trifecta Esplanade'})">Trifecta Esplanade</a></li>
+									<li><a ui-sref="apartments({apartmentName : 'GM Infinite'})">GM Infinite</a></li>
+								</ul>
+							</li>
 							<li class="menudropdown hide"><a href="">Themes</a>
 								<ul class="sub-menu">
 									<li><a ui-sref="#/imageListTheme/classic">Classic</a></li>

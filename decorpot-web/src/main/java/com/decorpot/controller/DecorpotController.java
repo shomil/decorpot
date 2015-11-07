@@ -25,7 +25,6 @@ public class DecorpotController extends DefaultController{
 	
 	@RequestMapping(value="/test")
 	public List<Map<String, Object>> index() {
-		System.out.println("decorpot-web/DecorpotController:index()");
 		return decorpotServices.getDataBaseTables();
 	}
 		
@@ -36,12 +35,9 @@ public class DecorpotController extends DefaultController{
 			@QueryParam("page") Integer page
 			
 			) {
-		System.out.println("decorpot-web/DecorpotController:getImageListSpace");
-		System.out.println("space is " + space + " from is " +from + " to is " +to+ "page is "+  page);
 		long start = System.currentTimeMillis();
 		List<ImageDetail> images = decorpotServices.getImageListSpace(space, to, from, page);
 		long end = System.currentTimeMillis();
-		System.out.println(end-start);
 		return images;
 	}
 	
@@ -50,12 +46,9 @@ public class DecorpotController extends DefaultController{
 	public List<Map<String, Object>> getViewsByColors(@PathVariable int groupid,
 			@PathVariable String color
 			) {
-		System.out.println("decorpot-web/DecorpotController:getViewsByColors");
-		System.out.println("groupId->" +groupid + " color =" + color );
 		long start = System.currentTimeMillis();
 		List<Map<String, Object>> views = decorpotServices.getViewsByColors(color, groupid);
 		long end = System.currentTimeMillis();
-		System.out.println(end-start);
 		return views;
 	}
 	
@@ -64,7 +57,6 @@ public class DecorpotController extends DefaultController{
 		long start = System.currentTimeMillis();
 		List<Map<String, Object>> colors = decorpotServices.getColorsByGroup(groupid);
 		long end = System.currentTimeMillis();
-		System.out.println(end-start);
 		return colors;
 		
 	}
@@ -74,7 +66,6 @@ public class DecorpotController extends DefaultController{
 		long start = System.currentTimeMillis();
 		List<Map<String, Object>> colors = decorpotServices.getViewsByGroup(groupid);
 		long end = System.currentTimeMillis();
-		System.out.println(end-start);
 		return colors;
 		
 	}

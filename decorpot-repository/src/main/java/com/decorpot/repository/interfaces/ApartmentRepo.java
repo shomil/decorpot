@@ -7,6 +7,8 @@ public interface ApartmentRepo {
 	
 	public List<Map<String, Object>> getAllApartment();
 	
-	public List<Map<String, Object>> getApartment(String aprtName);
+	public List<Map<String, Object>> getAllApartmentByName(String apartmentName);
+	
+	public List<Map<String, Object>> getApartment(String aprtId);
 
 }

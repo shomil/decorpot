@@ -77,9 +77,12 @@
 							<li class="menudropdown"><a ui-sref="apartments({apartmentName : 'all'})">Apartments
 							</a>
 								<ul class="sub-menu">
+									<li><a ui-sref="apartments({apartmentName : 'GM Infinite'})">GM Infinite</a></li>
 									<li><a ui-sref="apartments({apartmentName : 'Salarpuria Senorita'})">Salarpuria Senorita</a></li>
 									<li><a ui-sref="apartments({apartmentName : 'Trifecta Esplanade'})">Trifecta Esplanade</a></li>
-									<li><a ui-sref="apartments({apartmentName : 'GM Infinite'})">GM Infinite</a></li>
+									
+									<li><a ui-sref="apartments({apartmentName : 'Rohan Avriti'})">Rohan Avriti</a></li>
+									<li><a ui-sref="apartments({apartmentName : 'Salarpuria Greenage'})">Salarpuria Greenage</a></li>
 								</ul>
 							</li>
 							<li class="menudropdown hide"><a href="">Themes</a>

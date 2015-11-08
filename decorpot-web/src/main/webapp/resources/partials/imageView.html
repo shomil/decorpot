@@ -21,7 +21,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 row" style="padding: 0;">(Base Price Includes {{basePriceDescription}})
+			<div class="col-xs-12 col-sm-12 col-md-12 row" style="padding: 0;">(Base Price {{basePriceDescription}})
 			</div>
 		</div>
 		<div class="divider" style=""></div>
@@ -38,7 +38,7 @@
 				<div style="padding: 0;font-size: 20px;font-weight: 600;color: black;" id="smalliconsText">Views</div>
 				<li ng-repeat="thumbnail in thumbnails  | filter:query"
 					data-ng-click="toggleObject.item = $index">
-					<div data-ng-class="{'active' : toggleObject.item == $index }"
+					<div data-ng-class="{'activeBorder' : toggleObject.item == $index }"
 						ng-init="($first) ? getHdImage(thumbnail.IMAGE_ID) : ''"
 						ng-click="getHdImage(thumbnail.IMAGE_ID)">
 						<img id="imageViewContainer"

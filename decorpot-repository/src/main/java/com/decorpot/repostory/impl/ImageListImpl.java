@@ -37,11 +37,11 @@ public class ImageListImpl implements ImageList {
 	//private String viewsByGroupid = "select * from Decorpot.IMAGE_ATTRIBUTE where group_id = ?";
 	private String imageGroupDetails = "select * from Decorpot.IMAGE_GROUP_ATTRIBUTE where GROUP_ID = ?";
 	private String pricingDetailsByGroup = "select * from Decorpot.price where GROUP_ID = ?";
-	private String imageSpaceSql = "select * from Decorpot.IMAGE_GROUP_ATTRIBUTE iga inner join Decorpot.IMAGE_ATTRIBUTE pia on iga.GROUP_ID = pia.GROUP_ID where pia.image_view_id = 1 and iga.image_price >=? and iga.image_price <= ? and iga.image_space = ? order by iga.Created_Date Desc";
-	private String imageAllSpaceSql ="select * from Decorpot.IMAGE_GROUP_ATTRIBUTE iga inner join Decorpot.IMAGE_ATTRIBUTE pia on iga.GROUP_ID = pia.GROUP_ID where pia.image_view_id = 1 and iga.image_price >=? and iga.image_price <= ? order by iga.Created_Date Desc";
+	private String imageSpaceSql = "select * from Decorpot.IMAGE_GROUP_ATTRIBUTE iga inner join Decorpot.IMAGE_ATTRIBUTE pia on iga.GROUP_ID = pia.GROUP_ID where pia.image_view_id = 1 and iga.image_space = ? order by iga.Created_Date Desc";
+	private String imageAllSpaceSql ="select * from Decorpot.IMAGE_GROUP_ATTRIBUTE iga inner join Decorpot.IMAGE_ATTRIBUTE pia on iga.GROUP_ID = pia.GROUP_ID where pia.image_view_id = 1 order by iga.Created_Date Desc";
 	private String imageViewByColorSql = "select * from Decorpot.IMAGE_GROUP_ATTRIBUTE iga inner join Decorpot.IMAGE_ATTRIBUTE pia on iga.GROUP_ID = pia.GROUP_ID where pia.GROUP_ID =? and pia.image_color =?";
 	private String colorByGroupid = "SELECT Distinct(IMAGE_COLOR) from Decorpot.IMAGE_ATTRIBUTE where GROUP_ID = ?";
-	private String viewsByGroupid = "select * from Decorpot.IMAGE_ATTRIBUTE where GROUP_ID = ?";
+	private String viewsByGroupid = "select * from Decorpot.IMAGE_ATTRIBUTE where GROUP_ID = ? order by IMAGE_VIEW_ID";
 
 	@Autowired
 	public ImageListImpl(DataSource dataSource) {
@@ -66,9 +66,9 @@ public class ImageListImpl implements ImageList {
 		System.out.println("getImageListSpace" +to +"  "+ from+"  " + fromPrice+"   "+toPrice+"  "+space);
 		//List<ImageDetail> imgDetailsList =  jdbcTemplate.query(imageListSql, new Object[] {fromPrice, toPrice, space, from, to}, new ImageDetailMapper());
 		if(space.equalsIgnoreCase("looks"))
-			imgDetailsList =  jdbcTemplate.query(imageAllSpaceSql, new Object[] {fromPrice, toPrice}, new ImageDetailMapper());
+			imgDetailsList =  jdbcTemplate.query(imageAllSpaceSql, new ImageDetailMapper());
 		else
-			imgDetailsList =  jdbcTemplate.query(imageSpaceSql, new Object[] {fromPrice, toPrice, space}, new ImageDetailMapper());
+			imgDetailsList =  jdbcTemplate.query(imageSpaceSql, new Object[] {space}, new ImageDetailMapper());
 		System.out.println("queryDone");
 		return imgDetailsList;
 	}

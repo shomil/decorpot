@@ -126,23 +126,6 @@ services.service('User', function() {
 	}
 });
 
-services.service('projects', function($http){
-	return{
-		getAllProjects : function(){
-			return $http({
-				method : "get",
-				url : "project"
-			});
-		},
-		getImagesByAppartment : function(project){
-			return $http({
-				method : "get",
-				url : "project/" + project.replace(/\s+/g, '-')
-			});
-		}
-	};
-});
-
 services.service('apartments', function($http){
 	return{
 		getAllApartments : function(apartmentName){
@@ -158,5 +141,53 @@ services.service('apartments', function($http){
 			});
 		}
 	
+	};
+});
+
+services.service('ongoingProjects', function($http){
+	return{
+		getAllOngoingProjects : function(){
+			return $http({
+				method : "get",
+				url : "projects/ongoing"
+			});
+		},
+		
+		getOngoingProject : function(aprtId){
+			return $http({
+				method : "get",
+				url : "projects/ongoing/" + apartId
+			});
+		}
+	};
+});
+
+services.service('projects', function($http){
+	return{
+		getAllOngoingProjects : function(){
+			return $http({
+				method : "get",
+				url : "projects/ongoing"
+			});
+		},
+		
+		getOngoingProject : function(project){
+			return $http({
+				method : "get",
+				url : "projects/ongoing/" + project.replace(/\s+/g, '-')
+			});
+		},
+		getAllProjects : function(){
+			return $http({
+				method : "get",
+				url : "projects/completed"
+			});
+		},
+		getImagesByAppartment : function(project){
+			return $http({
+				method : "get",
+				url : "projects/completed/" + project.replace(/\s+/g, '-')
+			});
+		}
 	};
 });

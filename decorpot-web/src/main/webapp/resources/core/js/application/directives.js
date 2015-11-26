@@ -406,4 +406,21 @@ decortDirectives.directive('toggle', function(){
       }
     }
   };
-})
+});
+
+decortDirectives.directive('owlCarouselBig', function(){
+	return{
+		restrict: 'A',
+		link: function(scope, element, attrs){
+			$(element).owlCarousel({
+				singleItem:true,
+		        lazyLoad : true,
+		        navigation : false,
+		        autoPlay : 3000,
+		        stopOnHover: true,
+		        pagination : false
+		      });
+		}
+	}
+	
+});

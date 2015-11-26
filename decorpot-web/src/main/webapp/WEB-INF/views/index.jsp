@@ -40,6 +40,8 @@
 	href="resources/core/css/ion.rangeSlider.skinModern.css">
 <link rel="stylesheet" href="resources/core/css/ion.rangeSlider.css">
 <link rel="stylesheet" href="resources/core/css/ngGallery.css">
+<link rel="stylesheet" href="resources/core/css/owl.carousel.css">
+<link rel="stylesheet" href="resources/core/css/owl.theme.css">
 <link rel="stylesheet"
 	href="resources/core/css/angular-responsive-tables.css">
 </script>
@@ -119,8 +121,13 @@
 									<li><a ui-sref="#">Bed</a></li>
 									<li><a ui-sref="#">Sofa</a></li>
 								</ul></li>
-							<li class="menudropdown"><a ui-sref="projects">Completed
-									Projects</a></li>
+								
+							<li class="menudropdown"><a href="#">Projects
+									</a>
+								<ul class="sub-menu">
+									<li><a ui-sref="projects">Completed Projects</a></li>
+									<li><a ui-sref="ongoingprojects">Ongoing Projects</a></li>
+								</ul></li>
 							<li class="menudropdown"><a ui-sref="about">About us</a></li>
 						</ul>
 					</div>
@@ -280,6 +287,7 @@
 <script src="resources/core/js/jquery.infinitecarousel3.min.js"></script>
 <script src="resources/core/js/angular-responsive-tables.js"></script>
 <script src="resources/core/js/angular-breadcrumb.min.js"></script>
+<script src="resources/core/js/owl.carousel.min.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 

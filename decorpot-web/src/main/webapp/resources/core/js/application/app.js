@@ -67,6 +67,14 @@ decorpot.config(['$authProvider', '$stateProvider', '$urlRouterProvider','$httpP
         ncyBreadcrumb: {
             label: '{{getAprtId(aprtId)}}'
           }
+    }).state('ongoingprojects', {
+        url: '/ongoing',
+        templateUrl : 'resources/partials/ongoingProjects.html',
+		controller : 'OngoingProjectsController'
+    }).state('ongoingprojects.project', {
+        url: '/project/:param',
+        templateUrl : 'resources/partials/ongoingProject.html',
+		controller : 'OngoingProjectController as onCtrl'
     });
 	
 	$authProvider.google({

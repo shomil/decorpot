@@ -67,6 +67,7 @@
 	}
 #mainPage {
 	min-height: 1000px;
+	min-width:700px;
 }
 
 #header {
@@ -169,7 +170,8 @@
 
 footer {
 	height: 16%;
-	background-color: rgba(3, 3, 3, 0.42)
+	background-color: #333;
+    color: #EFEFEF;
 }
 
 .primary-menu li {
@@ -768,11 +770,19 @@ opacity
     height:;
 }
 
+@media (max-width : 767px){
+	.serviceMargin{
+    	margin-left:30%;
+    }
+}
 @media (min-width: 768px) {
     .col-sm-5ths {
         width: 15%;
         float: left;
         margin-left: 4%;
+    }
+     .serviceMargin{
+    	margin-left:90px;
     }
 }
 
@@ -782,6 +792,9 @@ opacity
         float: left;
         margin-left: 4%;
     }
+   .serviceMargin{
+    	margin-left:0;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -789,6 +802,9 @@ opacity
         width: 15%;
         float: left;
         margin-left: 4%;
+    }
+    .serviceMargin{
+    	margin-left:0;
     }
 }
 

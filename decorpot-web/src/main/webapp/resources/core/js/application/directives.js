@@ -417,7 +417,6 @@ decortDirectives.directive('owlCarouselBig', function(){
 		        lazyLoad : true,
 		        navigation : false,
 		        autoPlay : 3000,
-		        stopOnHover: true,
 		        pagination : false
 		      });
 		}

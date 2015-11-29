@@ -77,6 +77,20 @@
 					</div>
 					<div class="col-md-12 row">
 						<ul class="primary-menu">
+							<li class="menudropdown"><a
+								ui-sref="imageList({param : 'looks'})">Looks</a>
+								<ul class="sub-menu">
+									<li><a ui-sref="imageList({param : 'living'})">Living</a></li>
+									<li><a ui-sref="imageList({param : 'dining'})">Dining</a></li>
+									<li><a ui-sref="imageList({param : 'kitchen'})">Kitchen</a></li>
+									<li><a ui-sref="imageList({param : 'master_Bedroom'})">Master
+											Bedroom</a></li>
+									<li><a ui-sref="imageList({param : 'guest_Bedroom'})">Guest
+											Bedroom</a></li>
+									<li><a ui-sref="imageList({param : 'kids_bedroom'})">Kids
+											Bedroom</a></li>
+
+								</ul></li>
 							<li class="menudropdown"><a ui-sref="apartments({apartmentName : 'all'})">Apartments
 							</a>
 								<ul class="sub-menu">
@@ -96,20 +110,7 @@
 									<li><a ui-sref="#/imageListTheme/modern">Modern</a></li>
 									<li><a ui-sref="#/imageListTheme/fusion">Fusion</a></li>
 								</ul></li>
-							<li class="menudropdown"><a
-								ui-sref="imageList({param : 'looks'})">Looks</a>
-								<ul class="sub-menu">
-									<li><a ui-sref="imageList({param : 'living'})">Living</a></li>
-									<li><a ui-sref="imageList({param : 'dining'})">Dining</a></li>
-									<li><a ui-sref="imageList({param : 'kitchen'})">Kitchen</a></li>
-									<li><a ui-sref="imageList({param : 'master_Bedroom'})">Master
-											Bedroom</a></li>
-									<li><a ui-sref="imageList({param : 'guest_Bedroom'})">Guest
-											Bedroom</a></li>
-									<li><a ui-sref="imageList({param : 'kids_bedroom'})">Kids
-											Bedroom</a></li>
-
-								</ul></li>
+							
 							<li class="menudropdown hide"><a href="#">Apartment
 									Types</a>
 								<ul class="sub-menu">
@@ -127,7 +128,7 @@
 									</a>
 								<ul class="sub-menu">
 									<li><a ui-sref="projects">Completed Projects</a></li>
-									<li><a ui-sref="ongoingprojects" class="hide">Ongoing Projects</a></li>
+									<li class="hide"><a ui-sref="ongoingprojects" >Ongoing Projects</a></li>
 								</ul></li>
 							<li class="menudropdown"><a ui-sref="about">About us</a></li>
 						</ul>

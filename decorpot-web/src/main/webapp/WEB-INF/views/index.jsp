@@ -127,7 +127,7 @@
 									</a>
 								<ul class="sub-menu">
 									<li><a ui-sref="projects">Completed Projects</a></li>
-									<li><a ui-sref="ongoingprojects">Ongoing Projects</a></li>
+									<li><a ui-sref="ongoingprojects" class="hide">Ongoing Projects</a></li>
 								</ul></li>
 							<li class="menudropdown"><a ui-sref="about">About us</a></li>
 						</ul>

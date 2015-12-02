@@ -72,10 +72,15 @@
 
 .serviceText{
 	margin-top: 4%;
-    font-size: 18px;
-    font-family: Raleway,sans-serif;
+    font-size: 17px;
+    font-family: "Baskerville", "Baskerville Old Face", "Hoefler Text",
+		"Garamond", "Times New Roman", serif;
     font-family: serif;
-    font-style: italic;
+    font-style: normal;
+	font-variant: normal;
+	font-weight: 800;
+	color: #525050;
+	overflow: auto;
     padding-left: 18%;
 }
 

@@ -41,8 +41,10 @@
 	href="resources/core/css/ion.rangeSlider.skinModern.css">
 <link rel="stylesheet" href="resources/core/css/ion.rangeSlider.css">
 <link rel="stylesheet" href="resources/core/css/ngGallery.css">
-<link rel="stylesheet" href="resources/core/css/owl.carousel.css">
-<link rel="stylesheet" href="resources/core/css/owl.theme.css">
+<link rel="stylesheet" href="resources/core/css/owl.carousel.min.css">
+<link rel="stylesheet" href="resources/core/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="resources/core/css/owl.theme.green.min.css">
+
 <link rel="stylesheet"
 	href="resources/core/css/angular-responsive-tables.css">
 </script>

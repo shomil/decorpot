@@ -413,12 +413,14 @@ decortDirectives.directive('owlCarouselBig', function(){
 		restrict: 'A',
 		link: function(scope, element, attrs){
 			$(element).owlCarousel({
-				singleItem:true,
-		        lazyLoad : true,
-		        navigation : false,
-		        autoPlay : 3000,
-		        pagination : false,
-		        rewindNav : false,
+				items : 1,
+				mouseDrag : true,
+				touchDrag : true,
+				pullDrag : true,
+				lazyLoad : true,
+		        autoplayTimeout : 3000,
+		        autoplay : true,
+		        autoplayHoverPause : true,
 		        loop : true
 		      });
 		}

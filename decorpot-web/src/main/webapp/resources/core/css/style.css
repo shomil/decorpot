@@ -596,8 +596,8 @@ opacity
 }
 
 .decorpotFont1 {
-	font-family: Baskerville, "Baskerville Old Face", "Hoefler Text",
-		Garamond, "Times New Roman", serif;
+	font-family: "Baskerville", "Baskerville Old Face", "Hoefler Text",
+		"Garamond", "Times New Roman", serif;
 	font-size: 17px;
 	font-style: normal;
 	font-variant: normal;
@@ -1061,7 +1061,7 @@ max-width: 100%;
  }
  
 .ajax-loader {
-    position: absolute;`
+    position: absolute;
     left: 50%;
     top: 50%;
     margin-left: -32px; /* -1 * image width / 2 */
@@ -1213,9 +1213,9 @@ max-width: 100%;
 	/*padding : 4px;*/
 }
 
-.active{
+/*.active{
 	background-color: #B74343;
-}
+}*/
 
 .spaceList{
 	padding: 6px;

@@ -1036,8 +1036,7 @@ max-width: 100%;
 /* } */
 
 .imageMenu{
-	height: 343px;
-    width: 100%;
+	max-width: 100%; height: auto;
 }
 
 #mydiv {  

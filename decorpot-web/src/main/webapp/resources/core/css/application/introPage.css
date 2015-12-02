@@ -38,9 +38,7 @@
 
 #services img {
     display: block;
-    max-height: 100%;
-    height: 140px;
-    width: 140px;
+    max-width: 100%; height: auto;
 }
 
 #services h4 {
@@ -88,7 +86,7 @@
 
 .image-tiles {
     text-align: center;
-    margin-bottom: 90px;
+    margin-bottom: 54px;
 }
 
 .col-md-4 .imageMenuCation {
@@ -100,12 +98,13 @@
 }
 
 .col-md-12 .imageMenuCation {
-	position: absolute;
-	background-color: transparent;
-	text-shadow: 0.5px 0.33px 1px #000;
-	margin-left: 43%;
-	color: rgb(2, 2, 2);
-	font-weight: 200 !important;
+    /* position: absolute; */
+    background-color: transparent;
+    text-shadow: 0.5px 0.33px 1px #000;
+    /* margin-left: 43%; */
+    color: rgb(2, 2, 2);
+    font-weight: 200 !important;
+    font-size: 23px;
 }
 
 .cd-testimonials li {

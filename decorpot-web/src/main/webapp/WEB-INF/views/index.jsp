@@ -44,6 +44,7 @@
 <link rel="stylesheet" href="resources/core/css/owl.carousel.min.css">
 <link rel="stylesheet" href="resources/core/css/owl.theme.default.min.css">
 <link rel="stylesheet" href="resources/core/css/owl.theme.green.min.css">
+<link rel="stylesheet" href="resources/core/css/animate.css">
 
 <link rel="stylesheet"
 	href="resources/core/css/angular-responsive-tables.css">

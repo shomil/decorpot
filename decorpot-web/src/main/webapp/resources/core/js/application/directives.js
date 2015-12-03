@@ -418,10 +418,11 @@ decortDirectives.directive('owlCarouselBig', function(){
 				touchDrag : true,
 				pullDrag : true,
 				lazyLoad : true,
-		        autoplayTimeout : 3000,
 		        autoplay : true,
+		        autoplayTimeout : 3000,
 		        autoplayHoverPause : true,
-		        loop : true
+		        loop : true,
+		        animateOut : 'fadeOut'
 		      });
 		}
 	}

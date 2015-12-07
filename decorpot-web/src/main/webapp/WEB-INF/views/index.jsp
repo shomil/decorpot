@@ -205,7 +205,7 @@
 
 			<button class="btn btn-google-plus" ng-click="authenticate('google')">Sign
 				in with Google</button>
-
+ 
 			<div class="centeredText">
 				<span>Or use your Email address</span>
 			</div>

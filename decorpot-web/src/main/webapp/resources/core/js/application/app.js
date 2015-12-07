@@ -75,6 +75,10 @@ decorpot.config(['$authProvider', '$stateProvider', '$urlRouterProvider','$httpP
         url: '/project/:param',
         templateUrl : 'resources/partials/ongoingProject.html',
 		controller : 'OngoingProjectController as onCtrl'
+    }).state('furnitures', {
+    	url: '/furnitures',
+    	templateUrl: 'resources/partials/furnitures.html',
+    	controller: 'FurnituresController'
     });
 	
 	$authProvider.google({

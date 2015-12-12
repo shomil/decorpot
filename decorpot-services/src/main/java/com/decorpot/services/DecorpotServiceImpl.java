@@ -15,16 +15,13 @@ import com.decorpot.repository.interfaces.ImageList;
 import com.decorpot.repository.models.Image;
 import com.decorpot.repository.models.ImageDetail;
 import com.decorpot.repository.models.ImageGroup;
+import com.decorpot.utils.DecorpotConstants;
 
 @Service
 public class DecorpotServiceImpl implements DecorpotServices {
 
 	private int defaultList = 10;
-	// private String smallImageUrl =
-	// "https://s3-ap-southeast-1.amazonaws.com/decorpot/low_image/";
-	private String smallImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/image_lot_small/";
-	private String largeImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/image_lot_large/";
-	private String mediumImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/image_lot_medium/";
+	
 	@Resource
 	DecorpotRepository decorpotRepository;
 
@@ -49,7 +46,7 @@ public class DecorpotServiceImpl implements DecorpotServices {
 					fromPrice, to, from);
 
 			for (ImageDetail image : images) {
-				image.setPathSmall(smallImageUrl + image.getPathSmall());
+				image.setPathSmall(DecorpotConstants.IMAGE_910X521 + image.getPathSmall());
 			}
 			DataCache.getInstance().put(key, images);
 		}else{
@@ -63,9 +60,9 @@ public class DecorpotServiceImpl implements DecorpotServices {
 		List<Map<String, Object>> images = imageList.getViewsByColors(color,
 				groupid);
 		for (Map<String, Object> image : images) {
-			image.put("PATH_SMALL", smallImageUrl
+			image.put("PATH_SMALL", DecorpotConstants.IMAGE_910X521
 					+ image.get("PATH_SMALL").toString());
-			image.put("PATH_HD", largeImageUrl
+			image.put("PATH_HD", DecorpotConstants.IMAGE_910X521
 					+ image.get("PATH_HD").toString());
 		}
 		return images;
@@ -86,7 +83,7 @@ public class DecorpotServiceImpl implements DecorpotServices {
 		List<Map<String, Object>> images = imageList.getImageListTheme(theme,
 				toPrice, fromPrice, to, from);
 		for (Map<String, Object> image : images) {
-			image.put("PATH_SMALL", smallImageUrl
+			image.put("PATH_SMALL", DecorpotConstants.IMAGE_910X521
 					+ image.get("PATH_SMALL").toString());
 		}
 		return images;
@@ -100,11 +97,11 @@ public class DecorpotServiceImpl implements DecorpotServices {
 		if (DataCache.getInstance().get(key) == null) {
 			images = imageList.getViewsByGroup(groupid);
 			for (Map<String, Object> image : images) {
-				image.put("IMAGE_PATH_SMALL", smallImageUrl
+				image.put("IMAGE_PATH_SMALL", DecorpotConstants.IMAGE_910X521
 						+ image.get("IMAGE_PATH_SMALL").toString());
-				image.put("IMAGE_PATH_MEDIUM", mediumImageUrl
+				image.put("IMAGE_PATH_MEDIUM", DecorpotConstants.IMAGE_910X521
 						+ image.get("IMAGE_PATH_MEDIUM").toString());
-				image.put("IMAGE_PATH_HD", largeImageUrl
+				image.put("IMAGE_PATH_HD", DecorpotConstants.IMAGE_910X521
 						+ image.get("IMAGE_PATH_HD").toString());
 			}
 			DataCache.getInstance().put(key, images);

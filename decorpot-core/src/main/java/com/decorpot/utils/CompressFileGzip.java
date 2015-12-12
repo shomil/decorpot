@@ -10,8 +10,8 @@ public class CompressFileGzip {
 	public static void main(String[] args) {
 
 		
-		String source_filepath = "";
-		String destinaton_zip_filepath = "";
+		String source_filepath = "/Users/ssaurav/Documents/Website/banner1.jpg";
+		String destinaton_zip_filepath = "/Users/ssaurav/Documents/Website1/banner1.jpg";
 
 		CompressFileGzip gZipFile = new CompressFileGzip();
 		gZipFile.gzipFile(source_filepath, destinaton_zip_filepath);

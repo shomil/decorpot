@@ -1,9 +1,9 @@
 <div class="apartments row" ui-view>
 	<div class="col-md-4 col-xs-12 col-sm-6 imgContainerOuter"
 		ng-repeat="apartment in apartments | filter:query">
-		<div class="imgContainer">
+		<div class="imgContainer shrink">
 			<a  ui-sref="apartments.apartment({aprtId : '{{apartment.aprt_group}}-{{apartment.apartment_name}}-{{apartment.bhk}}'})">
-				<img src={{apartment.image_id}}>
+				<img bn-lazy-src={{apartment.image_id}}>
 			</a>
 		</div>
 		<div class="textProjects">

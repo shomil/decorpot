@@ -11,6 +11,7 @@ import com.decorpot.cache.DataCache;
 import com.decorpot.repository.interfaces.ApartmentRepo;
 import com.decorpot.repository.models.Apartment;
 import com.decorpot.repository.models.ImageGroup;
+import com.decorpot.utils.DecorpotConstants;
 
 @Service
 public class ApartmentServiceImpl implements ApartmentService {
@@ -18,28 +19,26 @@ public class ApartmentServiceImpl implements ApartmentService {
 	@Autowired
 	private ApartmentRepo apartmentRepo;
 
-	private final String smallImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/image_lot_small/";
-
 	@Override
 	public List<Map<String, Object>> getAllApartment(String apartmentName) {
 		final String key = "getAllApartment" + apartmentName;
 		System.out.println(apartmentName);
 		List<Map<String, Object>> apartments = null;
 		if (DataCache.getInstance().get(key) == null) {
-			if(apartmentName.equals("all")){
+			if (apartmentName.equals("all")) {
 				apartments = apartmentRepo.getAllApartment();
-			}else{
+			} else {
 				apartments = apartmentRepo.getAllApartmentByName(apartmentName);
 			}
-			
+
 			for (Map<String, Object> apartment : apartments) {
-				apartment.put("image_id",
-						smallImageUrl + apartment.get("image_id").toString()
-								+ ".jpg");
+				apartment.put("image_id", DecorpotConstants.IMAGE_910X521
+						+ apartment.get("image_id").toString() + ".jpg");
 			}
 			DataCache.getInstance().put(key, apartments);
-		}else{
-			apartments = (List<Map<String, Object>>) DataCache.getInstance().get(key);
+		} else {
+			apartments = (List<Map<String, Object>>) DataCache.getInstance()
+					.get(key);
 		}
 		return apartments;
 	}
@@ -50,34 +49,56 @@ public class ApartmentServiceImpl implements ApartmentService {
 		List<Map<String, Object>> groups = null;
 		Apartment apartment = null;
 		String[] params = aprtId.split("-");
-		if(DataCache.getInstance().get(key) == null){
+		if (DataCache.getInstance().get(key) == null) {
 			groups = apartmentRepo.getApartment(params[0]);
 			double totalPrice = 0.0;
 			apartment = new Apartment();
 			List<ImageGroup> imageGroups = new ArrayList<>();
-			
-			for(Map<String, Object> group : groups){
+
+			for (Map<String, Object> group : groups) {
 				System.out.println(group);
 				ImageGroup ig = new ImageGroup();
-				ig.setBasePrice(((Integer)group.get("IMAGE_PRICE")).intValue());
+				ig.setBasePrice(((Integer) group.get("IMAGE_PRICE")).intValue());
 				ig.setGroupId((int) group.get("group_id"));
 				ig.setImageDescription((String) group.get("IMAGE_DESCRIPTION"));
 				ig.setImageSpace((String) group.get("image_space"));
 				ig.setImageTitle((String) group.get("IMAGE_TITLE"));
-				ig.setBasePriceDescription((String)group.get("BASEPRICE_DESCRIPTION"));
+				ig.setBasePriceDescription((String) group
+						.get("BASEPRICE_DESCRIPTION"));
 				imageGroups.add(ig);
 				totalPrice += ig.getBasePrice();
 			}
 			apartment.setGroups(imageGroups);
 			apartment.setTotalPrice(totalPrice);
-			apartment.setApartmentName((String) groups.get(0).get("apartment_name"));
-			apartment.setAprtId((Integer)groups.get(0).get("aprt_group"));
+			apartment.setApartmentName((String) groups.get(0).get(
+					"apartment_name"));
+			apartment.setAprtId((Integer) groups.get(0).get("aprt_group"));
 			apartment.setBhk((String) groups.get(0).get("bhk"));
 			DataCache.getInstance().put(key, apartment);
-		}else{
+		} else {
 			apartment = (Apartment) DataCache.getInstance().get(key);
 		}
 		return apartment;
+	}
+
+	@Override
+	public List<Map<String, Object>> getAllApartment() {
+		final String key = "getAllApartment";
+		List<Map<String, Object>> apartments = null;
+		if (DataCache.getInstance().get(key) == null) {
+
+			apartments = apartmentRepo.getAllApartment();
+
+			for (Map<String, Object> apartment : apartments) {
+				apartment.put("image_id", DecorpotConstants.IMAGE_910X521
+						+ apartment.get("image_id").toString() + ".jpg");
+			}
+			DataCache.getInstance().put(key, apartments);
+		} else {
+			apartments = (List<Map<String, Object>>) DataCache.getInstance()
+					.get(key);
+		}
+		return apartments;
 	}
 
 }

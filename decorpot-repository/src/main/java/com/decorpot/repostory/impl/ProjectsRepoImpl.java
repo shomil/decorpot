@@ -15,7 +15,7 @@ import com.decorpot.repository.interfaces.ProjectsRepo;
 public class ProjectsRepoImpl implements ProjectsRepo {
 
 	private JdbcTemplate jdbcTemplate;
-	private final String projectsList = "SELECT    SMALL_PATH,MEDIUM_PATH,APARTMENT FROM Decorpot.WORKDONEIMAGE_ATTRIBUTE group  BY  APARTMENT";
+	private final String projectsList = "SELECT SMALL_PATH,MEDIUM_PATH,APARTMENT FROM Decorpot.WORKDONEIMAGE_ATTRIBUTE group  BY  APARTMENT order by image_id desc";
 	private final String projectImageList = "SELECT HD_PATH, SMALL_PATH FROM Decorpot.WORKDONEIMAGE_ATTRIBUTE where APARTMENT=?";
 
 	@Autowired

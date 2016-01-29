@@ -8,15 +8,16 @@ import org.springframework.stereotype.Service;
 
 import com.decorpot.cache.DataCache;
 import com.decorpot.repository.interfaces.ProjectsRepo;
+import com.decorpot.utils.DecorpotConstants;
 
 @Service
 public class ProjectsServiceImpl implements ProjectsService {
 
 	@Autowired
 	private ProjectsRepo pastProjectRepo;
-	private final String smallImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/work_done_low/";
-	private final String hdImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/work_done_hd/";
-	private final String mediumImageUrl = "https://s3-ap-southeast-1.amazonaws.com/decorpot/work_done_medium/";
+	private final String smallImageUrl = DecorpotConstants.S3_BUCKET+DecorpotConstants.WORK_DONE_BY_US_LOW;
+	private final String hdImageUrl = DecorpotConstants.S3_BUCKET+DecorpotConstants.WORK_DONE_BY_US_HD;
+	private final String mediumImageUrl = DecorpotConstants.S3_BUCKET+DecorpotConstants.WORK_DONE_BY_US_MEDIUM;
 
 	@Override
 	public List<Map<String, Object>> getAllProjects() {

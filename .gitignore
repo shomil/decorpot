@@ -11,3 +11,9 @@ Servers/*
 decorpot-services/src/main/java/com/decorpot/services/impl/ImageListImpl.java
 .recommenders*
 *.csv
+
+*.sh
+
+default
+
+*.conf

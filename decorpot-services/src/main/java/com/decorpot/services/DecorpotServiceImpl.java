@@ -46,7 +46,7 @@ public class DecorpotServiceImpl implements DecorpotServices {
 					fromPrice, to, from);
 
 			for (ImageDetail image : images) {
-				image.setPathSmall(DecorpotConstants.IMAGE_910X521 + image.getPathSmall());
+				image.setPathSmall(DecorpotConstants.S3_BUCKET+DecorpotConstants.IMAGE_910X521 + image.getPathSmall());
 			}
 			DataCache.getInstance().put(key, images);
 		}else{
@@ -60,9 +60,9 @@ public class DecorpotServiceImpl implements DecorpotServices {
 		List<Map<String, Object>> images = imageList.getViewsByColors(color,
 				groupid);
 		for (Map<String, Object> image : images) {
-			image.put("PATH_SMALL", DecorpotConstants.IMAGE_910X521
+			image.put("PATH_SMALL", DecorpotConstants.S3_BUCKET+DecorpotConstants.IMAGE_910X521
 					+ image.get("PATH_SMALL").toString());
-			image.put("PATH_HD", DecorpotConstants.IMAGE_910X521
+			image.put("PATH_HD", DecorpotConstants.S3_BUCKET+DecorpotConstants.IMAGE_910X521
 					+ image.get("PATH_HD").toString());
 		}
 		return images;
@@ -83,7 +83,7 @@ public class DecorpotServiceImpl implements DecorpotServices {
 		List<Map<String, Object>> images = imageList.getImageListTheme(theme,
 				toPrice, fromPrice, to, from);
 		for (Map<String, Object> image : images) {
-			image.put("PATH_SMALL", DecorpotConstants.IMAGE_910X521
+			image.put("PATH_SMALL", DecorpotConstants.S3_BUCKET+DecorpotConstants.IMAGE_910X521
 					+ image.get("PATH_SMALL").toString());
 		}
 		return images;
@@ -97,11 +97,11 @@ public class DecorpotServiceImpl implements DecorpotServices {
 		if (DataCache.getInstance().get(key) == null) {
 			images = imageList.getViewsByGroup(groupid);
 			for (Map<String, Object> image : images) {
-				image.put("IMAGE_PATH_SMALL", DecorpotConstants.IMAGE_910X521
+				image.put("IMAGE_PATH_SMALL", DecorpotConstants.S3_BUCKET+DecorpotConstants.IMAGE_910X521
 						+ image.get("IMAGE_PATH_SMALL").toString());
-				image.put("IMAGE_PATH_MEDIUM", DecorpotConstants.IMAGE_910X521
+				image.put("IMAGE_PATH_MEDIUM", DecorpotConstants.S3_BUCKET+DecorpotConstants.IMAGE_910X521
 						+ image.get("IMAGE_PATH_MEDIUM").toString());
-				image.put("IMAGE_PATH_HD", DecorpotConstants.IMAGE_910X521
+				image.put("IMAGE_PATH_HD", DecorpotConstants.S3_BUCKET+DecorpotConstants.IMAGE_910X521
 						+ image.get("IMAGE_PATH_HD").toString());
 			}
 			DataCache.getInstance().put(key, images);

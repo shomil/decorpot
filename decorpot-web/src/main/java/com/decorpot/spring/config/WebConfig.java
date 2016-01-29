@@ -41,8 +41,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     	System.out.println("WebConfig:getDataSource");
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://decorpotdb.cvxkjdlwiyuo.us-west-2.rds.amazonaws.com");
-		dataSource.setUsername("Decorpot");
+		dataSource.setUrl("jdbc:mysql://decorpotdb.cdah17t6tkzr.us-west-2.rds.amazonaws.com");
+		dataSource.setUsername("decorpot");
 		dataSource.setPassword("Interior1");
 		System.out.println("datasource = "+dataSource);
 		return dataSource;

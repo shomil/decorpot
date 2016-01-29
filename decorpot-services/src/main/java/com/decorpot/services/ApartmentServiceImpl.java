@@ -32,7 +32,7 @@ public class ApartmentServiceImpl implements ApartmentService {
 			}
 
 			for (Map<String, Object> apartment : apartments) {
-				apartment.put("image_id", DecorpotConstants.IMAGE_910X521
+				apartment.put("image_id", DecorpotConstants.S3_BUCKET+DecorpotConstants.IMAGE_910X521
 						+ apartment.get("image_id").toString() + ".jpg");
 			}
 			DataCache.getInstance().put(key, apartments);
@@ -90,7 +90,7 @@ public class ApartmentServiceImpl implements ApartmentService {
 			apartments = apartmentRepo.getAllApartment();
 
 			for (Map<String, Object> apartment : apartments) {
-				apartment.put("image_id", DecorpotConstants.IMAGE_910X521
+				apartment.put("image_id", DecorpotConstants.S3_BUCKET+DecorpotConstants.IMAGE_910X521
 						+ apartment.get("image_id").toString() + ".jpg");
 			}
 			DataCache.getInstance().put(key, apartments);

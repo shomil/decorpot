@@ -102,7 +102,8 @@
 									<li><a ui-sref="apartments({apartmentName : 'Trifecta Esplanade'})">Trifecta Esplanade</a></li>
 									
 									<li><a ui-sref="apartments({apartmentName : 'Rohan Avriti'})">Rohan Avriti</a></li>
-									<li><a ui-sref="apartments({apartmentName : 'Isa casa'})">Isa casa</a></li>
+									<li><a ui-sref="apartments({apartmentName : 'Isa casa'})">Isa Casa</a></li>
+									<li><a ui-sref="apartments({apartmentName : 'Purva Midtown'})">Purva Midtown</a></li>
 								</ul>
 							</li>
 							<li class="menudropdown hide"><a href="">Themes</a>

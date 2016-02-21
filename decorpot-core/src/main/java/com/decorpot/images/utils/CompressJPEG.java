@@ -38,8 +38,8 @@ public class CompressJPEG {
 				if(tmp)
 				{
 					BufferedImage originalImage = ImageIO.read(imageFile);
-					int width = 600;
-					int height = 600;
+					int width = 910;
+					int height = 521;
 					BufferedImage resizedImage = Scalr.resize(originalImage, width,height,Scalr.OP_ANTIALIAS,Scalr.OP_BRIGHTER);// size(originalImage, Scalr.Method.SPEED, Scalr.Mode.FIT_TO_WIDTH,580, 384, Scalr.OP_ANTIALIAS);
 				    ImageIO.write(resizedImage, "jpg", compressedFile);					
 				}
